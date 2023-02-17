@@ -4137,6 +4137,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.Sprite.Acts.SetPosToObject,
+		C3.Plugins.Sprite.Cnds.IsOutsideLayout,
 		C3.Plugins.Sprite.Acts.SetTowardPosition,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
@@ -4150,12 +4151,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.AngleWithin,
 		C3.Behaviors.EightDir.Acts.SimulateControl,
 		C3.Plugins.System.Exps.random,
-		C3.Plugins.Sprite.Cnds.IsOutsideLayout,
 		C3.Plugins.Sprite.Acts.SetAngle,
 		C3.Plugins.Sprite.Exps.Angle,
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.Plugins.Sprite.Exps.Width,
 		C3.Plugins.Sprite.Exps.Height,
+		C3.Behaviors.Bullet.Cnds.IsEnabled,
 		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Behaviors.DragnDrop.Acts.Drop,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
@@ -4165,7 +4166,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.Sprite.Acts.SetScale,
 		C3.Plugins.Sprite.Acts.RemoveChild,
-		C3.Behaviors.DragnDrop.Cnds.IsEnabled
+		C3.Behaviors.Bullet.Acts.SetEnabled,
+		C3.Plugins.Sprite.Acts.Destroy,
+		C3.Plugins.Sprite.Acts.SetDefaultColor,
+		C3.Plugins.System.Acts.UnloadObjectTextures,
+		C3.Plugins.Text.Acts.SetVisible,
+		C3.Behaviors.DragnDrop.Cnds.IsEnabled,
+		C3.Plugins.System.Acts.RestartLayout
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4203,11 +4210,13 @@ self.C3_JsPropNameTable = [
 	{TimelineController: 0},
 	{Mouse: 0},
 	{Sprite2: 0},
+	{waterflow: 0},
 	{fish2: 0},
 	{fish3: 0},
 	{fish4: 0},
 	{fish5: 0},
-	{Sprite4: 0},
+	{Text: 0},
+	{Text2: 0},
 	{distanceAllowed: 0}
 ];
 }
@@ -4314,6 +4323,9 @@ self.C3_ExpressionFuncs = [
 		() => 934,
 		() => 0,
 		() => 1,
+		() => "Parallax",
+		() => -951,
+		() => 399,
 		() => "Touch",
 		p => {
 			const n0 = p._GetNode(0);
@@ -4366,9 +4378,8 @@ self.C3_ExpressionFuncs = [
 		() => 689,
 		() => 504,
 		() => 0.25,
-		() => "Parallax",
-		() => -951,
-		() => 399
+		() => -43805311999,
+		() => "Restart"
 ];
 
 
