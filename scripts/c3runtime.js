@@ -3610,6 +3610,20 @@ e=>this._OnJobWorkerMessage(e)}catch(err){this._hadErrorCreatingWorker=true;this
 
 {
 self["C3_Shaders"] = {};
+self["C3_Shaders"]["water"] = {
+	glsl: "#ifdef GL_FRAGMENT_PRECISION_HIGH\n#define highmedp highp\n#else\n#define highmedp mediump\n#endif\nvarying mediump vec2 vTex;\nuniform lowp sampler2D samplerFront;\nuniform mediump vec2 srcStart;\nuniform mediump vec2 srcEnd;\nprecision mediump float;\nuniform highmedp float seconds;\nuniform mediump vec2 pixelSize;\nconst float PI = 3.1415926535897932;\nuniform float speed;\nuniform float speed_x;\nuniform float speed_y;\nuniform float intensity;\nconst float steps = 8.0;\nuniform float frequency;\nuniform float angle; // better when a prime\nuniform float delta;\nuniform float intence;\nuniform float emboss;\nfloat col(vec2 coord)\n{\nfloat delta_theta = 2.0 * PI / angle;\nfloat col = 0.0;\nfloat theta = 0.0;\nfor (float i = 0.0; i < steps; i++)\n{\nvec2 adjc = coord;\ntheta = delta_theta*i;\nadjc.x += cos(theta)*seconds*speed + seconds * speed_x;\nadjc.y -= sin(theta)*seconds*speed - seconds * speed_y;\ncol = col + cos( (adjc.x*cos(theta) - adjc.y*sin(theta))*frequency)*intensity;\n}\nreturn cos(col);\n}\nvoid main(void)\n{\nmediump vec2 tex = (vTex - srcStart) / (srcEnd - srcStart);\nvec2 p = tex, c1 = p, c2 = p;\nfloat cc1 = col(c1);\nc2.x += (1.0 / pixelSize.x) / delta;\nfloat dx = emboss*(cc1-col(c2))/delta;\nc2.x = p.x;\nc2.y += (1.0 / pixelSize.y) / delta;\nfloat dy = emboss*(cc1-col(c2))/delta;\nc1.x += dx;\nc1.y = -(c1.y+dy);\nfloat alpha = 1.+dot(dx,dy)*intence;\nc1.y = -c1.y;\nc1 = clamp(c1, 0.0, 1.0);\ngl_FragColor = texture2D(samplerFront, mix(srcStart, srcEnd, c1)) * alpha;\n}",
+	glslWebGL2: "",
+	wgsl: "%%SAMPLERFRONT_BINDING%% var samplerFront : sampler;\n%%TEXTUREFRONT_BINDING%% var textureFront : texture_2d<f32>;\nstruct ShaderParams {\nspeed : f32,\nspeed_x : f32,\nspeed_y : f32,\nintensity : f32,\nfrequency : f32,\nangle : f32,\ndelta : f32,\nintence : f32,\nemboss : f32\n};\n%%SHADERPARAMS_BINDING%% var<uniform> shaderParams : ShaderParams;\n%%C3PARAMS_STRUCT%%\n%%C3_UTILITY_FUNCTIONS%%\n%%FRAGMENTINPUT_STRUCT%%\n%%FRAGMENTOUTPUT_STRUCT%%\nconst pi : f32 = 3.1415926535897932;\nconst steps = 8.0;\nfn col(coord : vec2<f32>) -> f32\n{\nvar delta_theta : f32 = 2.0 * pi / shaderParams.angle;\nvar col : f32 = 0.0;\nvar theta : f32 = 0.0;\nfor (var i : f32 = 0.0; i < steps; i = i + 1.0)\n{\nvar adjc : vec2<f32> = coord;\ntheta = delta_theta * i;\nadjc.x = adjc.x + cos(theta) * c3Params.seconds * shaderParams.speed + c3Params.seconds * shaderParams.speed_x;\nadjc.y = adjc.y - (sin(theta) * c3Params.seconds * shaderParams.speed - c3Params.seconds * shaderParams.speed_y);\ncol = col + cos((adjc.x * cos(theta) - adjc.y * sin(theta)) * shaderParams.frequency) * shaderParams.intensity;\n}\nreturn cos(col);\n}\n@fragment\nfn main(input : FragmentInput) -> FragmentOutput\n{\nvar texSize : vec2<f32> = vec2<f32>(textureDimensions(textureFront));\nvar tex : vec2<f32> = c3_srcToNorm(input.fragUV);\nvar p : vec2<f32> = tex;\nvar c1 : vec2<f32> = tex;\nvar c2 : vec2<f32> = tex;\nvar cc1 : f32 = col(c1);\nc2.x = c2.x + texSize.x / shaderParams.delta;\nvar dx : f32 = shaderParams.emboss * (cc1 - col(c2)) / shaderParams.delta;\nc2.x = p.x;\nc2.y = c2.y + texSize.y / shaderParams.delta;\nvar dy : f32 = shaderParams.emboss * (cc1 - col(c2)) / shaderParams.delta;\nc1.x = c1.x + dx;\nc1.y = -(c1.y + dy);\nvar alpha : f32 = 1.0 + dx * dy * shaderParams.intence;\nc1.y = -c1.y;\nc1 = c3_clamp2(c1, 0.0, 1.0);\nvar output : FragmentOutput;\noutput.color = textureSample(textureFront, samplerFront, mix(c3Params.srcStart, c3Params.srcEnd, c1)) * alpha;\nreturn output;\n}",
+	blendsBackground: false,
+	usesDepth: false,
+	extendBoxHorizontal: 40,
+	extendBoxVertical: 40,
+	crossSampling: false,
+	mustPreDraw: false,
+	preservesOpaqueness: false,
+	animated: true,
+	parameters: [["speed",0,"percent"],["speed_x",0,"percent"],["speed_y",0,"percent"],["intensity",0,"float"],["frequency",0,"float"],["angle",0,"float"],["delta",0,"float"],["intence",0,"float"],["emboss",0,"percent"]]
+};
 
 }
 
@@ -4119,7 +4133,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.Width,
 		C3.Plugins.Sprite.Exps.Height,
 		C3.Plugins.Sprite.Cnds.OnCollision,
-		C3.Behaviors.DragnDrop.Acts.Drop,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
 		C3.Behaviors.Tween.Acts.TweenTwoProperties,
 		C3.Behaviors.Bullet.Acts.SetSpeed,
@@ -4127,7 +4140,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.Sprite.Acts.SetScale,
 		C3.Plugins.Sprite.Acts.RemoveChild,
-		C3.Behaviors.DragnDrop.Cnds.IsEnabled
+		C3.Behaviors.DragnDrop.Cnds.IsEnabled,
+		C3.Behaviors.DragnDrop.Acts.Drop
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4164,6 +4178,7 @@ self.C3_JsPropNameTable = [
 	{circle4: 0},
 	{circle5: 0},
 	{TimelineController: 0},
+	{water: 0},
 	{distanceAllowed: 0}
 ];
 }
