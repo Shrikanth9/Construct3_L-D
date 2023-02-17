@@ -4278,7 +4278,10 @@ self.C3_ExpressionFuncs = [
 		() => "OnattackBtnClicked",
 		() => "",
 		() => 1,
-		() => 2
+		() => 2,
+		() => "Parallax",
+		() => -951,
+		() => 399
 ];
 
 
