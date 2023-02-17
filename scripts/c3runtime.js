@@ -4119,6 +4119,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.Width,
 		C3.Plugins.Sprite.Exps.Height,
 		C3.Plugins.Sprite.Cnds.OnCollision,
+		C3.Behaviors.DragnDrop.Acts.Drop,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
 		C3.Behaviors.Tween.Acts.TweenTwoProperties,
 		C3.Behaviors.Bullet.Acts.SetSpeed,
@@ -4126,8 +4127,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.Sprite.Acts.SetScale,
 		C3.Plugins.Sprite.Acts.RemoveChild,
-		C3.Behaviors.DragnDrop.Cnds.IsEnabled,
-		C3.Behaviors.DragnDrop.Acts.Drop
+		C3.Behaviors.DragnDrop.Cnds.IsEnabled
 	];
 };
 self.C3_JsPropNameTable = [
