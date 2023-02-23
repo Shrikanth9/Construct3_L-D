@@ -3898,19 +3898,23 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Rotate,
 		C3.Plugins.Touch,
 		C3.Plugins.System.Cnds.IsGroupActive,
+		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.Sprite.Acts.AddChild,
+		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Behaviors.Bullet.Acts.SetEnabled,
+		C3.Plugins.Touch.Cnds.OnTouchObject,
+		C3.Plugins.Sprite.Acts.RemoveFromParent,
+		C3.Plugins.System.Acts.SetBoolVar,
+		C3.Plugins.Sprite.Acts.SetAngle,
+		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Plugins.Sprite.Cnds.IsOutsideLayout,
+		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.Sprite.Exps.X,
-		C3.Plugins.Touch.Cnds.OnTouchObject,
-		C3.Plugins.Sprite.Acts.SetAnimFrame,
-		C3.Plugins.System.Acts.SetBoolVar,
-		C3.Plugins.Sprite.Acts.AddChild,
+		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.Sprite.Cnds.HasChildren,
-		C3.Plugins.Sprite.Acts.RemoveChild,
-		C3.Plugins.Sprite.Cnds.OnCollision,
-		C3.Plugins.Sprite.Acts.Destroy
+		C3.Plugins.System.Acts.RestartLayout
 	];
 };
 self.C3_JsPropNameTable = [
@@ -3928,6 +3932,9 @@ self.C3_JsPropNameTable = [
 	{lemon_piece: 0},
 	{Touch: 0},
 	{cone: 0},
+	{lemon_piece2: 0},
+	{lemon_piece5: 0},
+	{lemon_piece6: 0},
 	{gamestart: 0}
 ];
 }
@@ -4030,13 +4037,17 @@ function or(l, r)
 
 self.C3_ExpressionFuncs = [
 		() => "Setup",
+		() => 0,
+		() => 270,
+		() => 1,
+		() => "Parallax",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
 		},
-		() => 354,
-		() => 0,
-		() => 1
+		() => -449,
+		() => "Resetting positions",
+		() => "CheckGameover"
 ];
 
 
