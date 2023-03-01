@@ -4028,10 +4028,11 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.Sprite.Cnds.IsOutsideLayout,
-		C3.Plugins.System.Acts.ResetGlobals,
-		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.System.Cnds.ForEachOrdered,
 		C3.Plugins.Sprite.Cnds.CompareY,
+		C3.Plugins.System.Acts.ResetGlobals,
+		C3.Plugins.Sprite.Acts.SetVisible,
+		C3.Plugins.Sprite.Acts.SetZElevation,
 		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Sprite.Exps.UID,
@@ -4218,7 +4219,7 @@ self.C3_ExpressionFuncs = [
 			const v1 = p._GetNode(1).GetVar();
 			return () => (n0.ExpObject() + (v1.GetValue() * 0.6));
 		},
-		() => 900,
+		() => 1000,
 		() => "Collision",
 		() => 1,
 		p => {
