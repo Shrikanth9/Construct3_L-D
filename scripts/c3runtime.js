@@ -4003,6 +4003,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.Sprite.Cnds.CompareChildCount,
 		C3.Plugins.Browser.Acts.ConsoleLog,
+		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.Text.Acts.SetText
@@ -4014,11 +4015,11 @@ self.C3_JsPropNameTable = [
 	{btnStart: 0},
 	{cloud: 0},
 	{game_bg: 0},
+	{Tween: 0},
 	{huajuan: 0},
 	{icon: 0},
 	{menu_bg: 0},
 	{textBorder: 0},
-	{Tween: 0},
 	{sp1: 0},
 	{sp2: 0},
 	{sp3: 0},
@@ -4176,7 +4177,9 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => and("curWidth", v0.GetValue());
-		}
+		},
+		() => 338,
+		() => 0.5
 ];
 
 
