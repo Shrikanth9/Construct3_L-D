@@ -1,0 +1,49 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "gamestart",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 614020062866605
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 320743123803198,
+					"parameters": {
+						"object": "btnStart"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 368263817183389,
+					"parameters": {
+						"layout": "Layout 2"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 777848269680313,
+					"parameters": {
+						"variable": "gamestart",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 835265301640718
+		}
+	],
+	"sid": 678366132125772
+}

@@ -1,0 +1,63 @@
+{
+	"name": "huajuan",
+	"plugin-id": "Sprite",
+	"sid": 762977417609279,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 691617738822827
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 338,
+						"height": 291,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1883973,
+						"collisionPoly": {
+							"points": [
+								0.023668639053254437,
+								0.027491408934707903,
+								0.5,
+								0.12714776632302405,
+								0.9763313609467456,
+								0.027491408934707903,
+								0.9704142011834319,
+								0.5,
+								0.9526627218934911,
+								0.9450171821305842,
+								0.5,
+								0.7972508591065293,
+								0.05029585798816568,
+								0.9415807560137457,
+								0.03254437869822485,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 228000346492252,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
