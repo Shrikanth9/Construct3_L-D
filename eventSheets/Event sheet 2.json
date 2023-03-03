@@ -1,0 +1,748 @@
+{
+	"name": "Event sheet 2",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "initialwidth",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 525818784544246
+		},
+		{
+			"eventType": "variable",
+			"name": "togglewidth",
+			"type": "number",
+			"initialValue": "-3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 431795337859880
+		},
+		{
+			"eventType": "variable",
+			"name": "thresholdwidth",
+			"type": "number",
+			"initialValue": "50",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 890883276633784
+		},
+		{
+			"eventType": "variable",
+			"name": "widthflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 207154476840871
+		},
+		{
+			"eventType": "variable",
+			"name": "sp1uid",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 104814842417829
+		},
+		{
+			"eventType": "variable",
+			"name": "createObjectFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 794568389902115
+		},
+		{
+			"eventType": "variable",
+			"name": "comparisionFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 266310688620872
+		},
+		{
+			"eventType": "variable",
+			"name": "prevHouseWidth",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 358853619154859
+		},
+		{
+			"eventType": "variable",
+			"name": "currentHouseWidth",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 552526570667449
+		},
+		{
+			"eventType": "variable",
+			"name": "prevUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 411649592342249
+		},
+		{
+			"eventType": "variable",
+			"name": "UIDprev",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 473373031730298
+		},
+		{
+			"eventType": "variable",
+			"name": "UIDCur",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 569254364697071
+		},
+		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 178572284397331
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 660668059137019
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 171591900700036,
+					"parameters": {
+						"variable": "initialwidth",
+						"value": "sp1.Width"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 370380503051746,
+					"parameters": {
+						"variable": "widthflag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 448800049209077,
+					"parameters": {
+						"variable": "sp1uid",
+						"value": "sp1.UID"
+					}
+				}
+			],
+			"sid": 319099426270835
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 185114511479044,
+					"parameters": {
+						"variable": "gamestart"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 863951155538713,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "sp1",
+							"sid": 320602433416425,
+							"parameters": {
+								"unique-id": "sp1uid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 322775226868793,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 300683467608582,
+									"parameters": {
+										"variable": "widthflag"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "sp1",
+									"sid": 793940927812408,
+									"parameters": {
+										"width": "sp1.Width + togglewidth"
+									}
+								}
+							],
+							"sid": 975370313727655,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 855242303642642,
+											"parameters": {
+												"first-value": "sp1.Width",
+												"comparison": 3,
+												"second-value": "thresholdwidth"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 967382936147591,
+											"parameters": {
+												"variable": "togglewidth",
+												"value": "-togglewidth"
+											}
+										}
+									],
+									"sid": 357968673476770
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 180220691425351,
+											"parameters": {
+												"first-value": "sp1.Width",
+												"comparison": 5,
+												"second-value": "initialwidth"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 334814544810744,
+											"parameters": {
+												"variable": "togglewidth",
+												"value": "-togglewidth"
+											}
+										}
+									],
+									"sid": 522537055960104
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 123298002329502,
+									"parameters": {
+										"object": "bg"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 759131802748890,
+									"parameters": {
+										"variable": "UIDprev",
+										"value": "UIDCur"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 126512572018748,
+									"parameters": {
+										"variable": "widthflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "sp1",
+									"sid": 511932164049187,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetY",
+										"end-value": "583",
+										"time": "1",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 864850289824382
+								},
+								{
+									"id": "set-position",
+									"objectClass": "game_bg",
+									"sid": 343318848687448,
+									"parameters": {
+										"x": "game_bg.X",
+										"y": "game_bg.Y + 125"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "sp1",
+									"sid": 612402450371005,
+									"parameters": {
+										"x": "sp1.X",
+										"y": "sp1.Y + 125"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 383303732467474,
+									"parameters": {
+										"variable": "widthflag",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 643127363362857,
+									"parameters": {
+										"variable": "createObjectFlag",
+										"value": "true"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "game_bg",
+									"sid": 318786742443425,
+									"parameters": {
+										"child": "sp1",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": true,
+										"transform-a": true,
+										"transform-z-elevation": true,
+										"destroy-with-parent": false
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 232033303086518,
+									"parameters": {
+										"variable": "UIDCur",
+										"value": "sp1uid"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "cloud",
+									"sid": 693147377657638,
+									"parameters": {
+										"x": "cloud.X",
+										"y": "cloud.Y + 125"
+									}
+								}
+							],
+							"sid": 861127562964150,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-outside-layout",
+											"objectClass": "cloud",
+											"sid": 881294370167708
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "cloud",
+											"sid": 241498383461229,
+											"parameters": {
+												"x": "150",
+												"y": "240"
+											}
+										}
+									],
+									"sid": 229392346021687
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 589855371393312,
+					"parameters": {
+						"variable": "createObjectFlag"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 852196400504970,
+					"parameters": {
+						"variable": "createObjectFlag",
+						"value": "false"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 564496838512053,
+					"parameters": {
+						"object-to-create": "sp1",
+						"layer": "0",
+						"x": "255",
+						"y": "74",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 976605855983105,
+					"parameters": {
+						"variable": "sp1uid",
+						"value": "sp1.UID"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 651621559874949,
+					"parameters": {
+						"variable": "togglewidth",
+						"value": "-3"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 753279837922268,
+					"parameters": {
+						"variable": "comparisionFlag",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 381996286429010
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 383420211776715,
+					"parameters": {
+						"variable": "comparisionFlag"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 189661298318751,
+					"parameters": {
+						"variable": "comparisionFlag",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 805514585370020,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-child-count",
+							"objectClass": "game_bg",
+							"sid": 982003033874749,
+							"parameters": {
+								"which": "own",
+								"comparison": 5,
+								"count": "2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 857780490202530,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "sp1",
+									"sid": 441868050231166,
+									"parameters": {
+										"unique-id": "UIDprev"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 336020267992389,
+									"parameters": {
+										"variable": "prevHouseWidth",
+										"value": "sp1.Width"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 629754362035350,
+									"parameters": {
+										"type": "log",
+										"message": "\"prevWidth\" & prevHouseWidth"
+									}
+								}
+							],
+							"sid": 159980687846663
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "sp1",
+									"sid": 506159213230603,
+									"parameters": {
+										"unique-id": "UIDCur"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 522929977759244,
+									"parameters": {
+										"variable": "currentHouseWidth",
+										"value": "sp1.Width"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 186936931419697,
+									"parameters": {
+										"type": "log",
+										"message": "\"curWidth\" & currentHouseWidth"
+									}
+								}
+							],
+							"sid": 392770135655436
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 506970715411896,
+									"parameters": {
+										"first-value": "prevHouseWidth",
+										"comparison": 2,
+										"second-value": "currentHouseWidth"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 142237127705538,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "sp1",
+											"sid": 505221245349487,
+											"parameters": {
+												"unique-id": "sp1uid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "sp1",
+											"sid": 110622674273511
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "huajuan",
+											"sid": 966303226660621,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "offsetWidth",
+												"end-value": "338",
+												"time": "0.5",
+												"ease": "noease",
+												"destroy-on-complete": "yes",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 385327008049324
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 857569445837218,
+											"parameters": {
+												"layout": "Layout 3"
+											}
+										}
+									],
+									"sid": 298149340915554
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 586024260966019
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 765172412026744,
+									"parameters": {
+										"variable": "score",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "score",
+									"sid": 305214228887602,
+									"parameters": {
+										"text": "score"
+									}
+								}
+							],
+							"sid": 732979315413506
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 197128860530438
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 897758107351552,
+							"parameters": {
+								"variable": "score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "score",
+							"sid": 293831262413110,
+							"parameters": {
+								"text": "score"
+							}
+						}
+					],
+					"sid": 824100026273329
+				}
+			]
+		}
+	],
+	"sid": 764472958090334
+}

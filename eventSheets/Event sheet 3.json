@@ -1,0 +1,56 @@
+{
+	"name": "Event sheet 3",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 684018054756820
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "score",
+					"sid": 351218373725928,
+					"parameters": {
+						"text": "score"
+					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 581042800326453
+				}
+			],
+			"sid": 713086771123263
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 339364860968923,
+					"parameters": {
+						"object": "btnRestart"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 896111325016537,
+					"parameters": {
+						"layout": "Layout 1"
+					}
+				}
+			],
+			"sid": 308529898694953
+		}
+	],
+	"sid": 414745664552846
+}
