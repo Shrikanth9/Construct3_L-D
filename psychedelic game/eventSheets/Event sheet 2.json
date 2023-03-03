@@ -1,0 +1,460 @@
+{
+	"name": "Event sheet 2",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "temp",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 424712771106547
+		},
+		{
+			"eventType": "variable",
+			"name": "tempIndex",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 199752179612422
+		},
+		{
+			"eventType": "variable",
+			"name": "shuffleforLevel1",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 443607706613569
+		},
+		{
+			"eventType": "variable",
+			"name": "Xrandomflag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 467558462840897
+		},
+		{
+			"eventType": "variable",
+			"name": "YrandomFlag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 158044065310542
+		},
+		{
+			"eventType": "variable",
+			"name": "matchcount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 282856749105390
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 555406291435914
+				}
+			],
+			"actions": [
+				{
+					"id": "set-at-x",
+					"objectClass": "XArray",
+					"sid": 959507531227037,
+					"parameters": {
+						"x": "0",
+						"value": "153"
+					}
+				},
+				{
+					"id": "set-at-x",
+					"objectClass": "XArray",
+					"sid": 550254670070996,
+					"parameters": {
+						"x": "1",
+						"value": "258"
+					}
+				},
+				{
+					"id": "set-at-x",
+					"objectClass": "XArray",
+					"sid": 793450765344315,
+					"parameters": {
+						"x": "2",
+						"value": "363"
+					}
+				},
+				{
+					"id": "set-at-x",
+					"objectClass": "YArray",
+					"sid": 397347376025924,
+					"parameters": {
+						"x": "0",
+						"value": "180"
+					}
+				},
+				{
+					"id": "set-at-x",
+					"objectClass": "YArray",
+					"sid": 524962320823417,
+					"parameters": {
+						"x": "1",
+						"value": "280"
+					}
+				},
+				{
+					"id": "set-at-x",
+					"objectClass": "YArray",
+					"sid": 279986022419147,
+					"parameters": {
+						"x": "2",
+						"value": "380"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 837452248490519,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "level_1_sprite",
+					"sid": 957250580289312,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "position",
+						"end-x": "662",
+						"end-y": "170",
+						"time": "1",
+						"ease": "easeinsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "level_1_sprite",
+					"sid": 976138449910577,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "size",
+						"end-x": "227",
+						"end-y": "213",
+						"time": "1",
+						"ease": "easeinsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 897659987534872
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 256270520269348,
+					"parameters": {
+						"variable": "Xrandomflag"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 242250009913510
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 702989704248035,
+					"parameters": {
+						"variable": "Xrandomflag",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 147716046138357,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 456032777654463,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 868822193382940,
+							"parameters": {
+								"variable": "temp",
+								"value": "XArray.At(loopindex)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 543258101089226,
+							"parameters": {
+								"variable": "tempIndex",
+								"value": "floor(random(0, 3))"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "XArray",
+							"sid": 359349441345100,
+							"parameters": {
+								"x": "loopindex",
+								"value": "XArray.At(tempIndex)"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "XArray",
+							"sid": 358445709791717,
+							"parameters": {
+								"x": "tempIndex",
+								"value": "temp"
+							}
+						}
+					],
+					"sid": 402217281515274
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 346179338332628,
+					"parameters": {
+						"variable": "YrandomFlag"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 841190617183460
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 838131725138967,
+					"parameters": {
+						"variable": "YrandomFlag",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 939023580168357,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 218901590485899,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 320116402901734,
+							"parameters": {
+								"variable": "temp",
+								"value": "YArray.At(loopindex)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 995265494943390,
+							"parameters": {
+								"variable": "tempIndex",
+								"value": "floor(random(0, 3))"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "YArray",
+							"sid": 615380344176142,
+							"parameters": {
+								"x": "loopindex",
+								"value": "YArray.At(tempIndex)"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "YArray",
+							"sid": 332253305040843,
+							"parameters": {
+								"x": "tempIndex",
+								"value": "temp"
+							}
+						}
+					],
+					"sid": 606691215648108
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 407902356475539,
+					"parameters": {
+						"variable": "shuffleforLevel1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 169220515801905
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sprite11",
+					"sid": 469531117667637,
+					"parameters": {
+						"x": "XArray.At(0)",
+						"y": "YArray.At(0)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sprite12",
+					"sid": 815357693605152,
+					"parameters": {
+						"x": "XArray.At(0)",
+						"y": "YArray.At(1)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sprite13",
+					"sid": 623502622056228,
+					"parameters": {
+						"x": "XArray.At(0)",
+						"y": "YArray.At(2)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sprite21",
+					"sid": 380728339681884,
+					"parameters": {
+						"x": "XArray.At(1)",
+						"y": "YArray.At(0)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sprite22",
+					"sid": 577945468802976,
+					"parameters": {
+						"x": "XArray.At(1)",
+						"y": "YArray.At(1)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sprite23",
+					"sid": 365853997796128,
+					"parameters": {
+						"x": "XArray.At(1)",
+						"y": "YArray.At(2)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sprite31",
+					"sid": 736683365428396,
+					"parameters": {
+						"x": "XArray.At(2)",
+						"y": "YArray.At(0)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sprite32",
+					"sid": 915041829807275,
+					"parameters": {
+						"x": "XArray.At(2)",
+						"y": "YArray.At(1)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sprite33",
+					"sid": 279935233971740,
+					"parameters": {
+						"x": "XArray.At(2)",
+						"y": "YArray.At(2)"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 216624203071610,
+					"parameters": {
+						"variable": "shuffleforLevel1",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 498091045193606
+		}
+	],
+	"sid": 465165158048301
+}

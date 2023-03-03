@@ -206,7 +206,28 @@
 		}
 	],
 	"sid": 890575760712688,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "XArray",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 19,
+			"instanceVariables": {}
+		},
+		{
+			"type": "YArray",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 21,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 854,
 	"height": 480,

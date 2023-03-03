@@ -168,6 +168,54 @@
 				}
 			],
 			"sid": 607419508956221
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 157192085454075,
+					"parameters": {
+						"object": "playBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 706481917336537,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 635987933145452
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 284314521279605,
+					"parameters": {
+						"object": "playBtn2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 782318437369282,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 949426759565207
 		}
 	],
 	"sid": 675291516179797
