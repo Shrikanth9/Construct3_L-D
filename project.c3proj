@@ -1,67 +1,14 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 32702,
-	"name": "Scaldfish",
+	"name": "Psychedelic",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [
-		{
-			"type": "plugin",
-			"id": "Browser",
-			"name": "Browser",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Sprite",
-			"name": "Sprite",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Touch",
-			"name": "Touch",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Tween",
-			"name": "Tween",
-			"author": "Scirra",
-			"bundled": false
-		}
-	],
-	"uniqueId": "m7a3a90hn0k",
+	"usedAddons": [],
+	"uniqueId": "qe9g7wbv9xi",
 	"objectTypes": {
-		"items": [
-			"bg",
-			"btnRestart",
-			"btnStart",
-			"cloud",
-			"game_bg",
-			"huajuan",
-			"menu_bg",
-			"textBorder",
-			"sp1",
-			"sp2",
-			"sp3",
-			"background_large",
-			"bg_large",
-			"Touch",
-			"Browser",
-			"score"
-		],
+		"items": [],
 		"subfolders": []
 	},
 	"autosaveData": null,
@@ -72,17 +19,13 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1",
-			"Layout 2",
-			"Layout 3"
+			"Layout 1"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1",
-			"Event sheet 2",
-			"Event sheet 3"
+			"Event sheet 1"
 		],
 		"subfolders": []
 	},
@@ -112,47 +55,7 @@
 				{
 					"name": "icon-16.png",
 					"type": "image/png",
-					"sid": 894827647002873,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "icon-64.png",
-					"type": "image/png",
-					"sid": 725322685117645,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "icon-256.png",
-					"type": "image/png",
-					"sid": 425166297552877,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "icon-128.png",
-					"type": "image/png",
-					"sid": 749634310481701,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "loading-logo.png",
-					"type": "image/png",
-					"sid": 394522109038950,
-					"icon-info": {
-						"purpose": "loading-logo"
-					}
-				},
-				{
-					"name": "icon-512.png",
-					"type": "image/png",
-					"sid": 489242678537890,
+					"sid": 524525285334944,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -160,9 +63,49 @@
 				{
 					"name": "icon-32.png",
 					"type": "image/png",
-					"sid": 262493688681357,
+					"sid": 753126203981928,
 					"icon-info": {
 						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 880721758312730,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 897653070322439,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 732374221740732,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 199329121634411,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 521264135693720,
+					"icon-info": {
+						"purpose": "loading-logo"
 					}
 				}
 			],
@@ -195,7 +138,7 @@
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
-		"fullscreenMode": "scale-outer",
+		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
@@ -217,7 +160,7 @@
 			1,
 			0
 		],
-		"orientations": "portrait",
+		"orientations": "landscape",
 		"webgpu": "auto",
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
@@ -237,7 +180,7 @@
 		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "folders"
 	},
-	"viewportWidth": 500,
-	"viewportHeight": 890,
+	"viewportWidth": 854,
+	"viewportHeight": 480,
 	"firstLayout": null
 }
