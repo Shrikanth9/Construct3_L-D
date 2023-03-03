@@ -62,6 +62,36 @@
 			"sid": 282856749105390
 		},
 		{
+			"eventType": "variable",
+			"name": "tapflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 506767089279896
+		},
+		{
+			"eventType": "variable",
+			"name": "tapcount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 134997575032308
+		},
+		{
+			"eventType": "variable",
+			"name": "timercount",
+			"type": "number",
+			"initialValue": "60",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 622860144683894
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -167,6 +197,20 @@
 						"loop": "no",
 						"ping-pong": "no",
 						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 360545971275711
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 522403841090871,
+					"parameters": {
+						"variable": "tapflag",
+						"value": "true"
 					}
 				}
 			],
@@ -454,6 +498,399 @@
 				}
 			],
 			"sid": 498091045193606
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 516119852668075,
+					"parameters": {
+						"variable": "tapflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 762771070051635,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 954766713918853,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 249696136979086,
+							"parameters": {
+								"variable": "timercount",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "timercount",
+							"sid": 954104598194296,
+							"parameters": {
+								"text": "timercount"
+							}
+						}
+					],
+					"sid": 318466937132248
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 977825977593374,
+							"parameters": {
+								"object": "Sprite11"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "selected",
+							"sid": 427862076878324,
+							"parameters": {
+								"object": "Sprite11",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 530450443820505,
+							"parameters": {
+								"variable": "tapcount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 780614887279752
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 562405771079091,
+							"parameters": {
+								"object": "Sprite12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "selected",
+							"sid": 310643451322318,
+							"parameters": {
+								"object": "Sprite12",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 774516389737358,
+							"parameters": {
+								"variable": "tapcount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 847478110204392
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 272757644131232,
+							"parameters": {
+								"object": "Sprite13"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "selected",
+							"sid": 285146086961826,
+							"parameters": {
+								"object": "Sprite13",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 433828809646186,
+							"parameters": {
+								"variable": "tapcount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 254727401173155
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 412852571360870,
+							"parameters": {
+								"object": "Sprite21"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "selected",
+							"sid": 646958663202638,
+							"parameters": {
+								"object": "Sprite21",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 814868139912858,
+							"parameters": {
+								"variable": "tapcount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 331990485657105
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 423347222195754,
+							"parameters": {
+								"object": "Sprite22"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "selected",
+							"sid": 961169070446007,
+							"parameters": {
+								"object": "Sprite22",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 875227771796667,
+							"parameters": {
+								"variable": "tapcount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 394079663839775
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 360669017448535,
+							"parameters": {
+								"object": "Sprite23"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "selected",
+							"sid": 202912412977882,
+							"parameters": {
+								"object": "Sprite23",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 612766787821622,
+							"parameters": {
+								"variable": "tapcount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 157163424466462
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 189790354439556,
+							"parameters": {
+								"object": "Sprite31"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "selected",
+							"sid": 630983848281144,
+							"parameters": {
+								"object": "Sprite31",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 977437549689699,
+							"parameters": {
+								"variable": "tapcount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 349559414234481
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 741886455857125,
+							"parameters": {
+								"object": "Sprite32"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "selected",
+							"sid": 402799153800881,
+							"parameters": {
+								"object": "Sprite32",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 270743458947274,
+							"parameters": {
+								"variable": "tapcount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 447229506320818
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 802352504043734,
+							"parameters": {
+								"object": "Sprite33"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "selected",
+							"sid": 615047432644484,
+							"parameters": {
+								"object": "Sprite33",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 139484678667534,
+							"parameters": {
+								"variable": "tapcount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 585217457676825
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 814228349301012,
+					"parameters": {
+						"variable": "tapcount",
+						"comparison": 5,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 163603396026594,
+					"parameters": {
+						"variable": "tapflag",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "selected",
+					"sid": 588141887733404,
+					"parameters": {
+						"x": "140",
+						"y": "-90"
+					}
+				}
+			],
+			"sid": 309422766161320,
+			"disabled": true
 		}
 	],
 	"sid": 465165158048301
