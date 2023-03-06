@@ -52,467 +52,62 @@
 			"sid": 622860144683894
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 555406291435914
-				}
-			],
-			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 147415452801772,
-					"parameters": {
-						"seconds": "1.0"
-					}
-				},
-				{
-					"id": "tween-two-properties",
-					"objectClass": "level_1_sprite",
-					"sid": 957250580289312,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "position",
-						"end-x": "662",
-						"end-y": "170",
-						"time": "1",
-						"ease": "easeinsine",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "tween-two-properties",
-					"objectClass": "level_1_sprite",
-					"sid": 976138449910577,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "size",
-						"end-x": "227",
-						"end-y": "213",
-						"time": "1",
-						"ease": "easeinsine",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"callFunction": "setArray",
-					"sid": 416020882523148
-				},
-				{
-					"callFunction": "ShuffleArrays",
-					"sid": 707939290099240
-				},
-				{
-					"callFunction": "ShufflePieces",
-					"sid": 201110508586004
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 580259534950579,
-					"parameters": {
-						"seconds": "2"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 616192418669240,
-					"parameters": {
-						"variable": "tapflag",
-						"value": "true"
-					}
-				}
-			],
-			"sid": 897659987534872
+			"eventType": "variable",
+			"name": "timerflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 430459885464047
 		},
 		{
-			"functionName": "setArray",
-			"functionDescription": "sets the default values in the array",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 850076735652099,
+			"eventType": "variable",
+			"name": "levelCompleted",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 305852030863509
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Setup",
+			"description": "Initial setup for the gamePlay",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "for",
+							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 413977311365701,
-							"parameters": {
-								"name": "\"\"",
-								"start-index": "0",
-								"end-index": "8"
-							}
+							"sid": 769854215563259
 						}
 					],
 					"actions": [
 						{
-							"id": "set-at-x",
-							"objectClass": "piecesArray",
-							"sid": 945515218111003,
-							"parameters": {
-								"x": "loopindex",
-								"value": "loopindex"
-							}
-						},
-						{
-							"id": "set-at-x",
-							"objectClass": "DefaultArray",
-							"sid": 644313609940727,
-							"parameters": {
-								"x": "loopindex",
-								"value": "loopindex"
-							}
-						}
-					],
-					"sid": 650526754013700
-				}
-			]
-		},
-		{
-			"functionName": "ShuffleArrays",
-			"functionDescription": "Shuffles the array",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 463972519594381,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
+							"id": "wait",
 							"objectClass": "System",
-							"sid": 618692201477339,
+							"sid": 717468322920850,
 							"parameters": {
-								"name": "\"\"",
-								"start-index": "0",
-								"end-index": "8"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 532187691223200,
-							"parameters": {
-								"variable": "temp",
-								"value": "piecesArray.At(loopindex)"
+								"seconds": "1.0"
 							}
 						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 493891954964584,
-							"parameters": {
-								"variable": "tempIndex",
-								"value": "floor(random(0, 9))"
-							}
-						},
-						{
-							"id": "set-at-x",
-							"objectClass": "piecesArray",
-							"sid": 758059481450621,
-							"parameters": {
-								"x": "loopindex",
-								"value": "piecesArray.At(tempIndex)"
-							}
-						},
-						{
-							"id": "set-at-x",
-							"objectClass": "piecesArray",
-							"sid": 763989175733791,
-							"parameters": {
-								"x": "tempIndex",
-								"value": "temp"
-							}
-						}
-					],
-					"sid": 814177525141881
-				}
-			]
-		},
-		{
-			"functionName": "ShufflePieces",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 335803845899290,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each-ordered",
-							"objectClass": "System",
-							"sid": 372207443402578,
-							"parameters": {
-								"object": "pieces",
-								"expression": "0",
-								"order": "ascending"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "pieces",
-							"sid": 101612515897560,
-							"parameters": {
-								"frame-number": "piecesArray.At(loopindex)"
-							}
-						}
-					],
-					"sid": 689026920776663
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 516119852668075,
-					"parameters": {
-						"variable": "tapflag"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 762771070051635,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 954766713918853,
-							"parameters": {
-								"interval-seconds": "1.0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 249696136979086,
-							"parameters": {
-								"variable": "timercount",
-								"value": "-1"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "timercount",
-							"sid": 954104598194296,
-							"parameters": {
-								"text": "timercount"
-							}
-						}
-					],
-					"sid": 318466937132248
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-touched-object",
-							"objectClass": "Touch",
-							"sid": 472939651267844,
-							"parameters": {
-								"object": "pieces"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-at-x",
-							"objectClass": "selectedCards",
-							"sid": 189567367918873,
-							"parameters": {
-								"x": "tapcount",
-								"value": "pieces.UID"
-							}
-						},
-						{
-							"id": "set-at-x",
-							"objectClass": "xpos",
-							"sid": 729428270821431,
-							"parameters": {
-								"x": "tapcount",
-								"value": "pieces.X"
-							}
-						},
-						{
-							"id": "set-at-x",
-							"objectClass": "ypos",
-							"sid": 276054960305101,
-							"parameters": {
-								"x": "tapcount",
-								"value": "pieces.Y"
-							}
-						},
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "selected",
-							"sid": 331110910768382,
-							"parameters": {
-								"object": "pieces",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 194074501450479,
-							"parameters": {
-								"variable": "tapcount",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 780614887279752
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 814228349301012,
-					"parameters": {
-						"variable": "tapcount",
-						"comparison": 5,
-						"value": "2"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position",
-					"objectClass": "selected",
-					"sid": 588141887733404,
-					"parameters": {
-						"x": "140",
-						"y": "-90"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 409205249409319,
-					"parameters": {
-						"variable": "tapflag",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 278550544936472,
-					"parameters": {
-						"variable": "tapcount",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 309422766161320,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "pieces",
-							"sid": 677896947771851,
-							"parameters": {
-								"unique-id": "selectedCards.At(0)"
-							}
-						}
-					],
-					"actions": [
 						{
 							"id": "tween-two-properties",
-							"objectClass": "pieces",
-							"sid": 436820676103286,
+							"objectClass": "level_1_sprite",
+							"sid": 385632810287001,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
 								"property": "position",
-								"end-x": "xpos.At(1)",
-								"end-y": "ypos.At(1)",
-								"time": "0.2",
-								"ease": "noease",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						}
-					],
-					"sid": 601692473053958
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "pieces",
-							"sid": 386449528871782,
-							"parameters": {
-								"unique-id": "selectedCards.At(1)"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "tween-two-properties",
-							"objectClass": "pieces",
-							"sid": 469311995361758,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "xpos.At(0)",
-								"end-y": "ypos.At(0)",
-								"time": "0.2",
-								"ease": "noease",
+								"end-x": "662",
+								"end-y": "170",
+								"time": "1",
+								"ease": "easeinsine",
 								"destroy-on-complete": "no",
 								"loop": "no",
 								"ping-pong": "no",
@@ -520,23 +115,735 @@
 							}
 						},
 						{
-							"id": "wait-for-previous-actions",
+							"id": "tween-two-properties",
+							"objectClass": "level_1_sprite",
+							"sid": 676839896160289,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "227",
+								"end-y": "213",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"callFunction": "setArray",
+							"sid": 184547455564639
+						},
+						{
+							"callFunction": "ShuffleArrays",
+							"sid": 282259008646317
+						},
+						{
+							"callFunction": "ShufflePieces",
+							"sid": 332784402211050
+						},
+						{
+							"id": "wait",
 							"objectClass": "System",
-							"sid": 607763002973864
+							"sid": 505974586418779,
+							"parameters": {
+								"seconds": "2"
+							}
 						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 776925958559462,
+							"sid": 835844163412164,
 							"parameters": {
 								"variable": "tapflag",
 								"value": "true"
 							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 603961265981916,
+							"parameters": {
+								"variable": "timerflag",
+								"value": "true"
+							}
 						}
 					],
-					"sid": 207272932563293
+					"sid": 913283355035152
 				}
-			]
+			],
+			"sid": 448810090135301
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "GamePlay",
+			"description": "Basic gamePlay logic",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 590327981150596,
+							"parameters": {
+								"variable": "tapflag"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 674145582106676,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-touched-object",
+									"objectClass": "Touch",
+									"sid": 313005917043792,
+									"parameters": {
+										"object": "pieces"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-x",
+									"objectClass": "selectedCards",
+									"sid": 361635519359102,
+									"parameters": {
+										"x": "tapcount",
+										"value": "pieces.UID"
+									}
+								},
+								{
+									"id": "set-at-x",
+									"objectClass": "xpos",
+									"sid": 338063736606292,
+									"parameters": {
+										"x": "tapcount",
+										"value": "pieces.X"
+									}
+								},
+								{
+									"id": "set-at-x",
+									"objectClass": "ypos",
+									"sid": 793226517374420,
+									"parameters": {
+										"x": "tapcount",
+										"value": "pieces.Y"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "selected",
+									"sid": 522060227510481,
+									"parameters": {
+										"object": "pieces",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 329990560710526,
+									"parameters": {
+										"variable": "tapcount",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 605284944566509
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 250691730385479,
+									"parameters": {
+										"variable": "tapcount",
+										"comparison": 5,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "selected",
+									"sid": 742367105335727,
+									"parameters": {
+										"x": "140",
+										"y": "-90"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 177747748836345,
+									"parameters": {
+										"variable": "tapflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 322944143506551,
+									"parameters": {
+										"variable": "tapcount",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 380070229305236,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "pieces",
+											"sid": 177717380981460,
+											"parameters": {
+												"unique-id": "selectedCards.At(0)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "pieces",
+											"sid": 804866608171884,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "position",
+												"end-x": "xpos.At(1)",
+												"end-y": "ypos.At(1)",
+												"time": "0.2",
+												"ease": "noease",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 840752533520683,
+											"parameters": {
+												"variable": "tempIndex",
+												"value": "piecesArray.IndexOf(pieces.AnimationFrame)"
+											}
+										}
+									],
+									"sid": 127230137076197
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "pieces",
+											"sid": 964715276059954,
+											"parameters": {
+												"unique-id": "selectedCards.At(1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "pieces",
+											"sid": 445768675770001,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "position",
+												"end-x": "xpos.At(0)",
+												"end-y": "ypos.At(0)",
+												"time": "0.2",
+												"ease": "noease",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 712342417574906
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 708668285624603,
+											"parameters": {
+												"variable": "temp",
+												"value": "pieces.AnimationFrame"
+											}
+										},
+										{
+											"id": "set-at-x",
+											"objectClass": "piecesArray",
+											"sid": 247823933204949,
+											"parameters": {
+												"x": "piecesArray.IndexOf(pieces.AnimationFrame)",
+												"value": "piecesArray.At(tempIndex)"
+											}
+										},
+										{
+											"id": "set-at-x",
+											"objectClass": "piecesArray",
+											"sid": 197523780110912,
+											"parameters": {
+												"x": "tempIndex",
+												"value": "temp"
+											}
+										},
+										{
+											"callFunction": "isMatching",
+											"sid": 845682635064599
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 889808863087714,
+											"parameters": {
+												"variable": "tapflag",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 677116035171687
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 351850001115154,
+							"parameters": {
+								"variable": "timerflag"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 634755971314325,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 784817263568840,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 796932614517579,
+									"parameters": {
+										"variable": "timercount",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "timercount",
+									"sid": 223091643762231,
+									"parameters": {
+										"text": "timercount"
+									}
+								}
+							],
+							"sid": 165684642275129
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 846181799510605,
+									"parameters": {
+										"variable": "timercount",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 196940324623982,
+									"parameters": {
+										"variable": "tapflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 242556659584280,
+									"parameters": {
+										"variable": "levelCompleted",
+										"value": "0"
+									}
+								},
+								{
+									"callFunction": "ShowResultScreen",
+									"sid": 900652386747804
+								}
+							],
+							"sid": 730461271605385
+						}
+					]
+				}
+			],
+			"sid": 350019613979451
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Functions",
+			"description": "All used functions",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "setArray",
+					"functionDescription": "sets the default values in the array",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 704909690034524,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 357542166178906,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-x",
+									"objectClass": "piecesArray",
+									"sid": 667205930263158,
+									"parameters": {
+										"x": "loopindex",
+										"value": "loopindex"
+									}
+								},
+								{
+									"id": "set-at-x",
+									"objectClass": "DefaultArray",
+									"sid": 854025552784286,
+									"parameters": {
+										"x": "loopindex",
+										"value": "loopindex"
+									}
+								}
+							],
+							"sid": 387178851849520
+						}
+					]
+				},
+				{
+					"functionName": "ShuffleArrays",
+					"functionDescription": "Shuffles the array",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 565367698882809,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 100571094452542,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 593940264765272,
+									"parameters": {
+										"variable": "temp",
+										"value": "piecesArray.At(loopindex)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 805759294774244,
+									"parameters": {
+										"variable": "tempIndex",
+										"value": "floor(random(0, 9))"
+									}
+								},
+								{
+									"id": "set-at-x",
+									"objectClass": "piecesArray",
+									"sid": 135607374015022,
+									"parameters": {
+										"x": "loopindex",
+										"value": "piecesArray.At(tempIndex)"
+									}
+								},
+								{
+									"id": "set-at-x",
+									"objectClass": "piecesArray",
+									"sid": 672194591761489,
+									"parameters": {
+										"x": "tempIndex",
+										"value": "temp"
+									}
+								}
+							],
+							"sid": 845236873120813
+						}
+					]
+				},
+				{
+					"functionName": "ShufflePieces",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 150034378635651,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 513412343693911,
+									"parameters": {
+										"object": "pieces",
+										"expression": "0",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "pieces",
+									"sid": 429243235366414,
+									"parameters": {
+										"frame-number": "piecesArray.At(loopindex)"
+									}
+								}
+							],
+							"sid": 940614324561798
+						}
+					]
+				},
+				{
+					"functionName": "isMatching",
+					"functionDescription": "Checks if all the image pieces are in its current position",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 343427957386120,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "matchcount",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 255520125168570
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 371311801289956,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "8"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 485615310609063,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 571865027755799,
+											"parameters": {
+												"first-value": "piecesArray.At(loopindex)",
+												"comparison": 0,
+												"second-value": "DefaultArray.At(loopindex)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 861573343810289,
+											"parameters": {
+												"variable": "matchcount",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 364253946563247
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 791499584840515,
+									"parameters": {
+										"variable": "matchcount",
+										"comparison": 0,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 262518824587149
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 213813040560877,
+									"parameters": {
+										"variable": "tapflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 487346466773000,
+									"parameters": {
+										"variable": "levelCompleted",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "ShowResultScreen",
+									"sid": 444140769641040
+								}
+							],
+							"sid": 709781913410236
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 399478396709142
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 711238614915252,
+									"parameters": {
+										"variable": "tapflag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 122755303207680
+						}
+					]
+				},
+				{
+					"functionName": "ShowResultScreen",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 449732548688974
+				}
+			],
+			"sid": 395128557946514
 		}
 	],
 	"sid": 465165158048301
