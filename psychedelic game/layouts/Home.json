@@ -216,6 +216,46 @@
 			},
 			"uid": 18,
 			"instanceVariables": {}
+		},
+		{
+			"type": "selectedCards",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 19,
+			"instanceVariables": {}
+		},
+		{
+			"type": "DefaultArray",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 21,
+			"instanceVariables": {}
+		},
+		{
+			"type": "xpos",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 26,
+			"instanceVariables": {}
+		},
+		{
+			"type": "ypos",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 27,
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],

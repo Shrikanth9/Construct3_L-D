@@ -65,7 +65,11 @@
 			"selected",
 			"timercount",
 			"scorecount",
-			"piecesArray"
+			"piecesArray",
+			"selectedCards",
+			"DefaultArray",
+			"xpos",
+			"ypos"
 		],
 		"subfolders": []
 	},

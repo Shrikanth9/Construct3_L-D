@@ -52,16 +52,6 @@
 			"sid": 622860144683894
 		},
 		{
-			"eventType": "variable",
-			"name": "objUID",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 682588988435950
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -130,9 +120,9 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 360490220590257,
+					"sid": 580259534950579,
 					"parameters": {
-						"seconds": "1.5"
+						"seconds": "2"
 					}
 				},
 				{
@@ -179,6 +169,15 @@
 							"id": "set-at-x",
 							"objectClass": "piecesArray",
 							"sid": 945515218111003,
+							"parameters": {
+								"x": "loopindex",
+								"value": "loopindex"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "DefaultArray",
+							"sid": 644313609940727,
 							"parameters": {
 								"x": "loopindex",
 								"value": "loopindex"
@@ -351,9 +350,9 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-tap-object",
+							"id": "on-touched-object",
 							"objectClass": "Touch",
-							"sid": 977825977593374,
+							"sid": 472939651267844,
 							"parameters": {
 								"object": "pieces"
 							}
@@ -361,52 +360,52 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 209581578826277,
+							"id": "set-at-x",
+							"objectClass": "selectedCards",
+							"sid": 189567367918873,
 							"parameters": {
-								"variable": "objUID",
+								"x": "tapcount",
 								"value": "pieces.UID"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "xpos",
+							"sid": 729428270821431,
+							"parameters": {
+								"x": "tapcount",
+								"value": "pieces.X"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "ypos",
+							"sid": 276054960305101,
+							"parameters": {
+								"x": "tapcount",
+								"value": "pieces.Y"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "selected",
+							"sid": 331110910768382,
+							"parameters": {
+								"object": "pieces",
+								"image-point-optional": "0"
 							}
 						},
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 530450443820505,
+							"sid": 194074501450479,
 							"parameters": {
 								"variable": "tapcount",
 								"value": "1"
 							}
 						}
 					],
-					"sid": 780614887279752,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "pieces",
-									"sid": 499991770475882,
-									"parameters": {
-										"unique-id": "objUID"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position-to-another-object",
-									"objectClass": "selected",
-									"sid": 587643851160324,
-									"parameters": {
-										"object": "pieces",
-										"image-point-optional": "0"
-									}
-								}
-							],
-							"sid": 780755915329533
-						}
-					]
+					"sid": 780614887279752
 				}
 			]
 		},
@@ -426,15 +425,6 @@
 			],
 			"actions": [
 				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 163603396026594,
-					"parameters": {
-						"variable": "tapflag",
-						"value": "false"
-					}
-				},
-				{
 					"id": "set-position",
 					"objectClass": "selected",
 					"sid": 588141887733404,
@@ -442,10 +432,111 @@
 						"x": "140",
 						"y": "-90"
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 409205249409319,
+					"parameters": {
+						"variable": "tapflag",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 278550544936472,
+					"parameters": {
+						"variable": "tapcount",
+						"value": "0"
+					}
 				}
 			],
 			"sid": 309422766161320,
-			"disabled": true
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "pieces",
+							"sid": 677896947771851,
+							"parameters": {
+								"unique-id": "selectedCards.At(0)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "pieces",
+							"sid": 436820676103286,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "xpos.At(1)",
+								"end-y": "ypos.At(1)",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 601692473053958
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "pieces",
+							"sid": 386449528871782,
+							"parameters": {
+								"unique-id": "selectedCards.At(1)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "pieces",
+							"sid": 469311995361758,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "xpos.At(0)",
+								"end-y": "ypos.At(0)",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 607763002973864
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 776925958559462,
+							"parameters": {
+								"variable": "tapflag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 207272932563293
+				}
+			]
 		}
 	],
 	"sid": 465165158048301
