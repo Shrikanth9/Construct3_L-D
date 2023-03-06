@@ -128,6 +128,18 @@
 			],
 			"actions": [
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 333150770515745,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "1",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
 					"id": "tween-two-properties",
 					"objectClass": "howtoPlay",
 					"sid": 320725644728162,
@@ -188,6 +200,18 @@
 			],
 			"actions": [
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 869010819857063,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "1",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 706481917336537,
@@ -211,6 +235,18 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 931240188896167,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "1",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",

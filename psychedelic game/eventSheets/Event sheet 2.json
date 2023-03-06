@@ -267,6 +267,18 @@
 										"variable": "tapcount",
 										"value": "1"
 									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 612303262499557,
+									"parameters": {
+										"audio-file": "unflipping",
+										"loop": "not-looping",
+										"volume": "1",
+										"stereo-pan": "0",
+										"tag-optional": "\"1\""
+									}
 								}
 							],
 							"sid": 723705905265341
@@ -286,6 +298,14 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 300900436936636,
+									"parameters": {
+										"tag": "\"1\""
+									}
+								},
 								{
 									"id": "set-position",
 									"objectClass": "selected",
@@ -311,6 +331,18 @@
 									"parameters": {
 										"variable": "tapcount",
 										"value": "0"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 446672913370679,
+									"parameters": {
+										"audio-file": "flipping",
+										"loop": "not-looping",
+										"volume": "1",
+										"stereo-pan": "0",
+										"tag-optional": "\"2\""
 									}
 								}
 							],
@@ -488,7 +520,39 @@
 									}
 								}
 							],
-							"sid": 864874834031162
+							"sid": 864874834031162,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 735233432513699,
+											"parameters": {
+												"variable": "timercount",
+												"comparison": 0,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 842652612159532,
+											"parameters": {
+												"audio-file": "countdown",
+												"loop": "not-looping",
+												"volume": "1",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 545016333943116
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -1034,7 +1098,80 @@
 							}
 						}
 					],
-					"sid": 449732548688974
+					"sid": 449732548688974,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 699354902377294,
+									"parameters": {
+										"variable": "levelCompleted",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 424043157781771,
+									"parameters": {
+										"tag": "\"2\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 474314579473610,
+									"parameters": {
+										"audio-file": "matched",
+										"loop": "not-looping",
+										"volume": "1",
+										"stereo-pan": "0",
+										"tag-optional": "\"3\""
+									}
+								}
+							],
+							"sid": 116672678029844
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 563739318527002
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 147300867212143,
+									"parameters": {
+										"tag": "\"2\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 392086188092206,
+									"parameters": {
+										"audio-file": "lost",
+										"loop": "not-looping",
+										"volume": "1",
+										"stereo-pan": "0",
+										"tag-optional": "\"3\""
+									}
+								}
+							],
+							"sid": 651240226390732
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -1049,6 +1186,18 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 163568858842607,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "1",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",

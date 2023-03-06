@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -74,7 +81,8 @@
 			"GO",
 			"result",
 			"continue",
-			"score"
+			"score",
+			"Audio"
 		],
 		"subfolders": []
 	},
@@ -104,7 +112,56 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "flipping.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 829552724855869,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "matched.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 682156103784081,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "unflipping.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 180403916452273,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "tap.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 904960357747320,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "countdown.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 464028388504614,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "lost.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 218751983533670,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
