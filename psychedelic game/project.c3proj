@@ -67,9 +67,9 @@
 			"scorecount",
 			"piecesArray",
 			"selectedCards",
-			"DefaultArray",
 			"xpos",
-			"ypos"
+			"ypos",
+			"blackBg"
 		],
 		"subfolders": []
 	},
