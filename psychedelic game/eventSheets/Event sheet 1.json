@@ -12,6 +12,11 @@
 			],
 			"actions": [
 				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 960150376391111
+				},
+				{
 					"id": "set-size",
 					"objectClass": "playBtn",
 					"sid": 727774523236773,

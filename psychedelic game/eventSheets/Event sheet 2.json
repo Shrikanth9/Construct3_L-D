@@ -45,7 +45,7 @@
 			"eventType": "variable",
 			"name": "timercount",
 			"type": "number",
-			"initialValue": "60",
+			"initialValue": "30",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -89,11 +89,15 @@
 					],
 					"actions": [
 						{
+							"callFunction": "ShowLevelPopUp",
+							"sid": 630550597754076
+						},
+						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 717468322920850,
+							"sid": 226606551839821,
 							"parameters": {
-								"seconds": "1.0"
+								"seconds": "2.0"
 							}
 						},
 						{
@@ -147,7 +151,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 410487653466159,
+							"sid": 222239884197735,
 							"parameters": {
 								"seconds": "1"
 							}
@@ -159,6 +163,14 @@
 							"parameters": {
 								"variable": "tapflag",
 								"value": "true"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 683949153120191,
+							"parameters": {
+								"seconds": "0.5"
 							}
 						},
 						{
@@ -503,6 +515,15 @@
 									}
 								},
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 370970954508996,
+									"parameters": {
+										"variable": "timerflag",
+										"value": "false"
+									}
+								},
+								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
 									"sid": 446274456432059,
@@ -530,6 +551,108 @@
 			"description": "All used functions",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"functionName": "ShowLevelPopUp",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "levelPopUp",
+							"sid": 462913500716698,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "levelScreen.X",
+								"end-y": "levelScreen.Y",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 836498906033551,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "levelPopUp",
+							"sid": 748443002606678,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "413",
+								"end-y": "670",
+								"time": "0.3",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "GO",
+							"sid": 621170373102483,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "levelScreen.X",
+								"end-y": "levelScreen.Y",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 402709083992257,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "GO",
+							"sid": 475086057813803,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "413",
+								"end-y": "670",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 293602203632553
+				},
 				{
 					"functionName": "setArray",
 					"functionDescription": "sets the default values in the array",
@@ -781,6 +904,15 @@
 									}
 								},
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 254022143308813,
+									"parameters": {
+										"variable": "timerflag",
+										"value": "false"
+									}
+								},
+								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
 									"sid": 487346466773000,
@@ -830,8 +962,103 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "scorecount",
+							"sid": 423424634552615,
+							"parameters": {
+								"text": "timercount"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "score",
+							"sid": 194219310463198,
+							"parameters": {
+								"text": "timercount"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "result",
+							"sid": 342438212757584,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "levelScreen.X",
+								"end-y": "levelScreen.y",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "score",
+							"sid": 160875056461825,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "levelScreen.X - 20",
+								"end-y": "levelScreen.y",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "continue",
+							"sid": 491797294272530,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "levelScreen.X",
+								"end-y": "levelScreen.y + 120",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
 					"sid": 449732548688974
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 425673921797646,
+							"parameters": {
+								"object": "continue"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 967440061474139,
+							"parameters": {
+								"layout": "Home"
+							}
+						}
+					],
+					"sid": 476287019573713
 				}
 			],
 			"sid": 395128557946514

@@ -69,7 +69,12 @@
 			"selectedCards",
 			"xpos",
 			"ypos",
-			"blackBg"
+			"blackBg",
+			"levelPopUp",
+			"GO",
+			"result",
+			"continue",
+			"score"
 		],
 		"subfolders": []
 	},

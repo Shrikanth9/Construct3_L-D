@@ -1,0 +1,15 @@
+{
+	"name": "continue",
+	"plugin-id": "Text",
+	"sid": 854394995784802,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 963130924323605
+		}
+	],
+	"effectTypes": []
+}
