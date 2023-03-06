@@ -23,46 +23,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "shuffleforLevel1",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 443607706613569
-		},
-		{
-			"eventType": "variable",
-			"name": "Xrandomflag",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 467558462840897
-		},
-		{
-			"eventType": "variable",
-			"name": "YrandomFlag",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 158044065310542
-		},
-		{
-			"eventType": "variable",
-			"name": "matchcount",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 282856749105390
-		},
-		{
-			"eventType": "variable",
 			"name": "tapflag",
 			"type": "boolean",
 			"initialValue": "false",
@@ -92,6 +52,16 @@
 			"sid": 622860144683894
 		},
 		{
+			"eventType": "variable",
+			"name": "objUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 682588988435950
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -102,63 +72,9 @@
 			],
 			"actions": [
 				{
-					"id": "set-at-x",
-					"objectClass": "XArray",
-					"sid": 959507531227037,
-					"parameters": {
-						"x": "0",
-						"value": "153"
-					}
-				},
-				{
-					"id": "set-at-x",
-					"objectClass": "XArray",
-					"sid": 550254670070996,
-					"parameters": {
-						"x": "1",
-						"value": "258"
-					}
-				},
-				{
-					"id": "set-at-x",
-					"objectClass": "XArray",
-					"sid": 793450765344315,
-					"parameters": {
-						"x": "2",
-						"value": "363"
-					}
-				},
-				{
-					"id": "set-at-x",
-					"objectClass": "YArray",
-					"sid": 397347376025924,
-					"parameters": {
-						"x": "0",
-						"value": "180"
-					}
-				},
-				{
-					"id": "set-at-x",
-					"objectClass": "YArray",
-					"sid": 524962320823417,
-					"parameters": {
-						"x": "1",
-						"value": "280"
-					}
-				},
-				{
-					"id": "set-at-x",
-					"objectClass": "YArray",
-					"sid": 279986022419147,
-					"parameters": {
-						"x": "2",
-						"value": "380"
-					}
-				},
-				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 837452248490519,
+					"sid": 147415452801772,
 					"parameters": {
 						"seconds": "1.0"
 					}
@@ -200,14 +116,29 @@
 					}
 				},
 				{
-					"id": "wait-for-previous-actions",
+					"callFunction": "setArray",
+					"sid": 416020882523148
+				},
+				{
+					"callFunction": "ShuffleArrays",
+					"sid": 707939290099240
+				},
+				{
+					"callFunction": "ShufflePieces",
+					"sid": 201110508586004
+				},
+				{
+					"id": "wait",
 					"objectClass": "System",
-					"sid": 360545971275711
+					"sid": 360490220590257,
+					"parameters": {
+						"seconds": "1.5"
+					}
 				},
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 522403841090871,
+					"sid": 616192418669240,
 					"parameters": {
 						"variable": "tapflag",
 						"value": "true"
@@ -217,34 +148,17 @@
 			"sid": 897659987534872
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 256270520269348,
-					"parameters": {
-						"variable": "Xrandomflag"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 242250009913510
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 702989704248035,
-					"parameters": {
-						"variable": "Xrandomflag",
-						"value": "false"
-					}
-				}
-			],
-			"sid": 147716046138357,
+			"functionName": "setArray",
+			"functionDescription": "sets the default values in the array",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 850076735652099,
 			"children": [
 				{
 					"eventType": "block",
@@ -252,85 +166,41 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 456032777654463,
+							"sid": 413977311365701,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "0",
-								"end-index": "2"
+								"end-index": "8"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 868822193382940,
-							"parameters": {
-								"variable": "temp",
-								"value": "XArray.At(loopindex)"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 543258101089226,
-							"parameters": {
-								"variable": "tempIndex",
-								"value": "floor(random(0, 3))"
-							}
-						},
-						{
 							"id": "set-at-x",
-							"objectClass": "XArray",
-							"sid": 359349441345100,
+							"objectClass": "piecesArray",
+							"sid": 945515218111003,
 							"parameters": {
 								"x": "loopindex",
-								"value": "XArray.At(tempIndex)"
-							}
-						},
-						{
-							"id": "set-at-x",
-							"objectClass": "XArray",
-							"sid": 358445709791717,
-							"parameters": {
-								"x": "tempIndex",
-								"value": "temp"
+								"value": "loopindex"
 							}
 						}
 					],
-					"sid": 402217281515274
+					"sid": 650526754013700
 				}
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 346179338332628,
-					"parameters": {
-						"variable": "YrandomFlag"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 841190617183460
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 838131725138967,
-					"parameters": {
-						"variable": "YrandomFlag",
-						"value": "false"
-					}
-				}
-			],
-			"sid": 939023580168357,
+			"functionName": "ShuffleArrays",
+			"functionDescription": "Shuffles the array",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 463972519594381,
 			"children": [
 				{
 					"eventType": "block",
@@ -338,11 +208,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 218901590485899,
+							"sid": 618692201477339,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "0",
-								"end-index": "2"
+								"end-index": "8"
 							}
 						}
 					],
@@ -350,154 +220,84 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 320116402901734,
+							"sid": 532187691223200,
 							"parameters": {
 								"variable": "temp",
-								"value": "YArray.At(loopindex)"
+								"value": "piecesArray.At(loopindex)"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 995265494943390,
+							"sid": 493891954964584,
 							"parameters": {
 								"variable": "tempIndex",
-								"value": "floor(random(0, 3))"
+								"value": "floor(random(0, 9))"
 							}
 						},
 						{
 							"id": "set-at-x",
-							"objectClass": "YArray",
-							"sid": 615380344176142,
+							"objectClass": "piecesArray",
+							"sid": 758059481450621,
 							"parameters": {
 								"x": "loopindex",
-								"value": "YArray.At(tempIndex)"
+								"value": "piecesArray.At(tempIndex)"
 							}
 						},
 						{
 							"id": "set-at-x",
-							"objectClass": "YArray",
-							"sid": 332253305040843,
+							"objectClass": "piecesArray",
+							"sid": 763989175733791,
 							"parameters": {
 								"x": "tempIndex",
 								"value": "temp"
 							}
 						}
 					],
-					"sid": 606691215648108
+					"sid": 814177525141881
 				}
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"functionName": "ShufflePieces",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 335803845899290,
+			"children": [
 				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 407902356475539,
-					"parameters": {
-						"variable": "shuffleforLevel1"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 372207443402578,
+							"parameters": {
+								"object": "pieces",
+								"expression": "0",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "pieces",
+							"sid": 101612515897560,
+							"parameters": {
+								"frame-number": "piecesArray.At(loopindex)"
+							}
+						}
+					],
+					"sid": 689026920776663
 				}
-			],
-			"actions": [
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 169220515801905
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Sprite11",
-					"sid": 469531117667637,
-					"parameters": {
-						"x": "XArray.At(0)",
-						"y": "YArray.At(0)"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Sprite12",
-					"sid": 815357693605152,
-					"parameters": {
-						"x": "XArray.At(0)",
-						"y": "YArray.At(1)"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Sprite13",
-					"sid": 623502622056228,
-					"parameters": {
-						"x": "XArray.At(0)",
-						"y": "YArray.At(2)"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Sprite21",
-					"sid": 380728339681884,
-					"parameters": {
-						"x": "XArray.At(1)",
-						"y": "YArray.At(0)"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Sprite22",
-					"sid": 577945468802976,
-					"parameters": {
-						"x": "XArray.At(1)",
-						"y": "YArray.At(1)"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Sprite23",
-					"sid": 365853997796128,
-					"parameters": {
-						"x": "XArray.At(1)",
-						"y": "YArray.At(2)"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Sprite31",
-					"sid": 736683365428396,
-					"parameters": {
-						"x": "XArray.At(2)",
-						"y": "YArray.At(0)"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Sprite32",
-					"sid": 915041829807275,
-					"parameters": {
-						"x": "XArray.At(2)",
-						"y": "YArray.At(1)"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Sprite33",
-					"sid": 279935233971740,
-					"parameters": {
-						"x": "XArray.At(2)",
-						"y": "YArray.At(2)"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 216624203071610,
-					"parameters": {
-						"variable": "shuffleforLevel1",
-						"value": "false"
-					}
-				}
-			],
-			"sid": 498091045193606
+			]
 		},
 		{
 			"eventType": "block",
@@ -555,18 +355,18 @@
 							"objectClass": "Touch",
 							"sid": 977825977593374,
 							"parameters": {
-								"object": "Sprite11"
+								"object": "pieces"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-position-to-another-object",
-							"objectClass": "selected",
-							"sid": 427862076878324,
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 209581578826277,
 							"parameters": {
-								"object": "Sprite11",
-								"image-point-optional": "0"
+								"variable": "objUID",
+								"value": "pieces.UID"
 							}
 						},
 						{
@@ -579,279 +379,34 @@
 							}
 						}
 					],
-					"sid": 780614887279752
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+					"sid": 780614887279752,
+					"children": [
 						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 562405771079091,
-							"parameters": {
-								"object": "Sprite12"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "pieces",
+									"sid": 499991770475882,
+									"parameters": {
+										"unique-id": "objUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "selected",
+									"sid": 587643851160324,
+									"parameters": {
+										"object": "pieces",
+										"image-point-optional": "0"
+									}
+								}
+							],
+							"sid": 780755915329533
 						}
-					],
-					"actions": [
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "selected",
-							"sid": 310643451322318,
-							"parameters": {
-								"object": "Sprite12",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 774516389737358,
-							"parameters": {
-								"variable": "tapcount",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 847478110204392
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 272757644131232,
-							"parameters": {
-								"object": "Sprite13"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "selected",
-							"sid": 285146086961826,
-							"parameters": {
-								"object": "Sprite13",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 433828809646186,
-							"parameters": {
-								"variable": "tapcount",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 254727401173155
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 412852571360870,
-							"parameters": {
-								"object": "Sprite21"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "selected",
-							"sid": 646958663202638,
-							"parameters": {
-								"object": "Sprite21",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 814868139912858,
-							"parameters": {
-								"variable": "tapcount",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 331990485657105
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 423347222195754,
-							"parameters": {
-								"object": "Sprite22"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "selected",
-							"sid": 961169070446007,
-							"parameters": {
-								"object": "Sprite22",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 875227771796667,
-							"parameters": {
-								"variable": "tapcount",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 394079663839775
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 360669017448535,
-							"parameters": {
-								"object": "Sprite23"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "selected",
-							"sid": 202912412977882,
-							"parameters": {
-								"object": "Sprite23",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 612766787821622,
-							"parameters": {
-								"variable": "tapcount",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 157163424466462
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 189790354439556,
-							"parameters": {
-								"object": "Sprite31"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "selected",
-							"sid": 630983848281144,
-							"parameters": {
-								"object": "Sprite31",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 977437549689699,
-							"parameters": {
-								"variable": "tapcount",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 349559414234481
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 741886455857125,
-							"parameters": {
-								"object": "Sprite32"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "selected",
-							"sid": 402799153800881,
-							"parameters": {
-								"object": "Sprite32",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 270743458947274,
-							"parameters": {
-								"variable": "tapcount",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 447229506320818
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 802352504043734,
-							"parameters": {
-								"object": "Sprite33"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "selected",
-							"sid": 615047432644484,
-							"parameters": {
-								"object": "Sprite33",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 139484678667534,
-							"parameters": {
-								"variable": "tapcount",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 585217457676825
+					]
 				}
 			]
 		},
