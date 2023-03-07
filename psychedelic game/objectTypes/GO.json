@@ -1,0 +1,15 @@
+{
+	"name": "GO",
+	"plugin-id": "Text",
+	"sid": 795737520159583,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 986552105527409
+		}
+	],
+	"effectTypes": []
+}

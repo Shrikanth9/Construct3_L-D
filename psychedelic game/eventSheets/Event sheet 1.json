@@ -1,0 +1,263 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 918608856018518
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 960150376391111
+				},
+				{
+					"id": "set-size",
+					"objectClass": "playBtn",
+					"sid": 727774523236773,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "howtoPlay",
+					"sid": 719365631500398,
+					"parameters": {
+						"child": "playBtn2",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": true,
+						"transform-h": true,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "playBtn2",
+					"sid": 517146570632357,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "howtoplayBtn",
+					"sid": 985606456819099,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "howtoPlay",
+					"sid": 913900270628604,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 774874731348282,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "howtoplayBtn",
+					"sid": 732923213141579,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "size",
+						"end-x": "180",
+						"end-y": "50",
+						"time": "0.3",
+						"ease": "easeoutback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "playBtn",
+					"sid": 661590493470469,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "size",
+						"end-x": "190",
+						"end-y": "70",
+						"time": "0.3",
+						"ease": "easeoutback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 666525326810684
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 676729368587492,
+					"parameters": {
+						"object": "howtoplayBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 333150770515745,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "1",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "howtoPlay",
+					"sid": 320725644728162,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "size",
+						"end-x": "854",
+						"end-y": "480",
+						"time": "0.5",
+						"ease": "easeoutback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 840063076548736,
+					"parameters": {
+						"seconds": "2.0"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "playBtn2",
+					"sid": 855291017145089,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "size",
+						"end-x": "190",
+						"end-y": "70",
+						"time": "0.3",
+						"ease": "easeoutback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 607419508956221
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 157192085454075,
+					"parameters": {
+						"object": "playBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 869010819857063,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "1",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 706481917336537,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 635987933145452
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 284314521279605,
+					"parameters": {
+						"object": "playBtn2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 931240188896167,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "1",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 782318437369282,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 949426759565207
+		}
+	],
+	"sid": 675291516179797
+}

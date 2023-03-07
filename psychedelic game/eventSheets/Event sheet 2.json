@@ -1,0 +1,1306 @@
+{
+	"name": "Event sheet 2",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "temp",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 424712771106547
+		},
+		{
+			"eventType": "variable",
+			"name": "tempIndex",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 199752179612422
+		},
+		{
+			"eventType": "variable",
+			"name": "tapflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 506767089279896
+		},
+		{
+			"eventType": "variable",
+			"name": "tapcount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 134997575032308
+		},
+		{
+			"eventType": "variable",
+			"name": "timercount",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 622860144683894
+		},
+		{
+			"eventType": "variable",
+			"name": "timerflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 430459885464047
+		},
+		{
+			"eventType": "variable",
+			"name": "levelCompleted",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 305852030863509
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Setup",
+			"description": "Initial setup for the gamePlay",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 769854215563259
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ShowLevelPopUp",
+							"sid": 630550597754076
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 226606551839821,
+							"parameters": {
+								"seconds": "2.0"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "level_1_sprite",
+							"sid": 385632810287001,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "662",
+								"end-y": "170",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "level_1_sprite",
+							"sid": 676839896160289,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "227",
+								"end-y": "213",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"callFunction": "setArray",
+							"sid": 184547455564639
+						},
+						{
+							"callFunction": "ShuffleArrays",
+							"sid": 282259008646317
+						},
+						{
+							"callFunction": "ShufflePiecesForLevel1",
+							"sid": 332784402211050
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 222239884197735,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 835844163412164,
+							"parameters": {
+								"variable": "tapflag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 683949153120191,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 603961265981916,
+							"parameters": {
+								"variable": "timerflag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 913283355035152
+				}
+			],
+			"sid": 448810090135301
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "GameLogic",
+			"description": "Basic gamePlay logic",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 414578131494996,
+							"parameters": {
+								"variable": "tapflag"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 831472436677776,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-touched-object",
+									"objectClass": "Touch",
+									"sid": 993345761736265,
+									"parameters": {
+										"object": "pieces"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-x",
+									"objectClass": "selectedCards",
+									"sid": 252085675473518,
+									"parameters": {
+										"x": "tapcount",
+										"value": "pieces.UID"
+									}
+								},
+								{
+									"id": "set-at-x",
+									"objectClass": "xpos",
+									"sid": 340065889849812,
+									"parameters": {
+										"x": "tapcount",
+										"value": "pieces.X"
+									}
+								},
+								{
+									"id": "set-at-x",
+									"objectClass": "ypos",
+									"sid": 893274876290521,
+									"parameters": {
+										"x": "tapcount",
+										"value": "pieces.Y"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "selected",
+									"sid": 816407521477745,
+									"parameters": {
+										"object": "pieces",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 939017067816495,
+									"parameters": {
+										"variable": "tapcount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 612303262499557,
+									"parameters": {
+										"audio-file": "unflipping",
+										"loop": "not-looping",
+										"volume": "1",
+										"stereo-pan": "0",
+										"tag-optional": "\"1\""
+									}
+								}
+							],
+							"sid": 723705905265341
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 921299456832001,
+									"parameters": {
+										"variable": "tapcount",
+										"comparison": 5,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 300900436936636,
+									"parameters": {
+										"tag": "\"1\""
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "selected",
+									"sid": 784279184942077,
+									"parameters": {
+										"x": "140",
+										"y": "-90"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 482852311282673,
+									"parameters": {
+										"variable": "tapflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 469944806523177,
+									"parameters": {
+										"variable": "tapcount",
+										"value": "0"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 446672913370679,
+									"parameters": {
+										"audio-file": "flipping",
+										"loop": "not-looping",
+										"volume": "1",
+										"stereo-pan": "0",
+										"tag-optional": "\"2\""
+									}
+								}
+							],
+							"sid": 897091071770861,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "pieces",
+											"sid": 370573359025242,
+											"parameters": {
+												"unique-id": "selectedCards.At(0)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "pieces",
+											"sid": 948723705611478,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "position",
+												"end-x": "xpos.At(1)",
+												"end-y": "ypos.At(1)",
+												"time": "0.2",
+												"ease": "noease",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 108745217837566,
+											"parameters": {
+												"variable": "tempIndex",
+												"value": "piecesArray.IndexOf(pieces.AnimationFrame)"
+											}
+										}
+									],
+									"sid": 754843959459831
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "pieces",
+											"sid": 766933593502241,
+											"parameters": {
+												"unique-id": "selectedCards.At(1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "pieces",
+											"sid": 615633280214489,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "position",
+												"end-x": "xpos.At(0)",
+												"end-y": "ypos.At(0)",
+												"time": "0.2",
+												"ease": "noease",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 302796869656490
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 111299812624305,
+											"parameters": {
+												"variable": "temp",
+												"value": "pieces.AnimationFrame"
+											}
+										},
+										{
+											"id": "set-at-x",
+											"objectClass": "piecesArray",
+											"sid": 935559325409035,
+											"parameters": {
+												"x": "piecesArray.IndexOf(pieces.AnimationFrame)",
+												"value": "piecesArray.At(tempIndex)"
+											}
+										},
+										{
+											"id": "set-at-x",
+											"objectClass": "piecesArray",
+											"sid": 971007736630035,
+											"parameters": {
+												"x": "tempIndex",
+												"value": "temp"
+											}
+										},
+										{
+											"callFunction": "isMatching",
+											"sid": 172972825075017
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 924780532895338,
+											"parameters": {
+												"variable": "tapflag",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 120605227430029
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 253100380383297,
+							"parameters": {
+								"variable": "timerflag"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 153707680906690,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 404449736775664,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 510086670304563,
+									"parameters": {
+										"variable": "timercount",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "timercount",
+									"sid": 849753283205221,
+									"parameters": {
+										"text": "timercount"
+									}
+								}
+							],
+							"sid": 864874834031162,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 735233432513699,
+											"parameters": {
+												"variable": "timercount",
+												"comparison": 0,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 842652612159532,
+											"parameters": {
+												"audio-file": "countdown",
+												"loop": "not-looping",
+												"volume": "1",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 545016333943116
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 483205990035622,
+									"parameters": {
+										"variable": "timercount",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 361889768927039,
+									"parameters": {
+										"variable": "tapflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 370970954508996,
+									"parameters": {
+										"variable": "timerflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 446274456432059,
+									"parameters": {
+										"variable": "levelCompleted",
+										"value": "0"
+									}
+								},
+								{
+									"callFunction": "ShowResultScreen",
+									"sid": 968691382894436
+								}
+							],
+							"sid": 418147345254088
+						}
+					]
+				}
+			],
+			"sid": 350019613979451
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Functions",
+			"description": "All used functions",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "ShowLevelPopUp",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "levelPopUp",
+							"sid": 462913500716698,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "levelScreen.X",
+								"end-y": "levelScreen.Y",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 836498906033551,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "levelPopUp",
+							"sid": 748443002606678,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "413",
+								"end-y": "670",
+								"time": "0.3",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "GO",
+							"sid": 621170373102483,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "levelScreen.X",
+								"end-y": "levelScreen.Y",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 402709083992257,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "GO",
+							"sid": 475086057813803,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "413",
+								"end-y": "670",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 293602203632553
+				},
+				{
+					"functionName": "setArray",
+					"functionDescription": "sets the default values in the array",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 704909690034524,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 357542166178906,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-x",
+									"objectClass": "piecesArray",
+									"sid": 667205930263158,
+									"parameters": {
+										"x": "loopindex",
+										"value": "loopindex"
+									}
+								}
+							],
+							"sid": 387178851849520
+						}
+					]
+				},
+				{
+					"functionName": "ShuffleArrays",
+					"functionDescription": "Shuffles the array",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 565367698882809,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 100571094452542,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 593940264765272,
+									"parameters": {
+										"variable": "temp",
+										"value": "piecesArray.At(loopindex)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 805759294774244,
+									"parameters": {
+										"variable": "tempIndex",
+										"value": "floor(random(0, 9))"
+									}
+								},
+								{
+									"id": "set-at-x",
+									"objectClass": "piecesArray",
+									"sid": 135607374015022,
+									"parameters": {
+										"x": "loopindex",
+										"value": "piecesArray.At(tempIndex)"
+									}
+								},
+								{
+									"id": "set-at-x",
+									"objectClass": "piecesArray",
+									"sid": 672194591761489,
+									"parameters": {
+										"x": "tempIndex",
+										"value": "temp"
+									}
+								}
+							],
+							"sid": 845236873120813
+						}
+					]
+				},
+				{
+					"functionName": "ShufflePiecesForLevel1",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 150034378635651,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 513412343693911,
+									"parameters": {
+										"object": "pieces",
+										"expression": "0",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "pieces",
+									"sid": 429243235366414,
+									"parameters": {
+										"frame-number": "piecesArray.At(loopindex)"
+									}
+								}
+							],
+							"sid": 940614324561798
+						}
+					]
+				},
+				{
+					"functionName": "isMatching",
+					"functionDescription": "Checks if all the image pieces are in its current position",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 343427957386120,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "matchcount",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 255520125168570
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 371311801289956,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "8"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 485615310609063,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 338101057867905,
+											"parameters": {
+												"first-value": "piecesArray.At(loopindex)",
+												"comparison": 0,
+												"second-value": "loopindex"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 861573343810289,
+											"parameters": {
+												"variable": "matchcount",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 364253946563247
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 791499584840515,
+									"parameters": {
+										"variable": "matchcount",
+										"comparison": 0,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 262518824587149
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 213813040560877,
+									"parameters": {
+										"variable": "tapflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 254022143308813,
+									"parameters": {
+										"variable": "timerflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 487346466773000,
+									"parameters": {
+										"variable": "levelCompleted",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "ShowResultScreen",
+									"sid": 444140769641040
+								}
+							],
+							"sid": 709781913410236
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 399478396709142
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 711238614915252,
+									"parameters": {
+										"variable": "tapflag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 122755303207680
+						}
+					]
+				},
+				{
+					"functionName": "ShowResultScreen",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "flips",
+							"sid": 677204141898471
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 260588978341972,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "scorecount",
+							"sid": 423424634552615,
+							"parameters": {
+								"text": "timercount"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "score",
+							"sid": 194219310463198,
+							"parameters": {
+								"text": "timercount"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "result",
+							"sid": 342438212757584,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "levelScreen.X",
+								"end-y": "levelScreen.y",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "score",
+							"sid": 160875056461825,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "levelScreen.X - 20",
+								"end-y": "levelScreen.y",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "continue",
+							"sid": 491797294272530,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "levelScreen.X",
+								"end-y": "levelScreen.y + 120",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 449732548688974,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 699354902377294,
+									"parameters": {
+										"variable": "levelCompleted",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 251534962084965
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 474314579473610,
+									"parameters": {
+										"audio-file": "matched",
+										"loop": "not-looping",
+										"volume": "1",
+										"stereo-pan": "0",
+										"tag-optional": "\"3\""
+									}
+								}
+							],
+							"sid": 116672678029844
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 563739318527002
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 449546981634402
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 392086188092206,
+									"parameters": {
+										"audio-file": "lost",
+										"loop": "not-looping",
+										"volume": "1",
+										"stereo-pan": "0",
+										"tag-optional": "\"3\""
+									}
+								}
+							],
+							"sid": 651240226390732
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 425673921797646,
+							"parameters": {
+								"object": "continue"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 163568858842607,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "1",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 967440061474139,
+							"parameters": {
+								"layout": "Home"
+							}
+						}
+					],
+					"sid": 476287019573713
+				},
+				{
+					"functionName": "flips",
+					"functionDescription": "flip and unflip animation",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 169930054291039,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 222286149292564,
+									"parameters": {
+										"object": "pieces",
+										"expression": "0",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "pieces",
+									"sid": 985291873316543,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetWidth",
+										"end-value": "0",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 820818269452601,
+									"parameters": {
+										"seconds": "0.3"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "pieces",
+									"sid": 912424915648546,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetWidth",
+										"end-value": "105",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 563285256875701,
+									"parameters": {
+										"seconds": "0.3"
+									}
+								}
+							],
+							"sid": 840330071671215
+						}
+					]
+				}
+			],
+			"sid": 395128557946514
+		}
+	],
+	"sid": 465165158048301
+}

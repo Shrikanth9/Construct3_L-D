@@ -1,0 +1,63 @@
+{
+	"name": "levelPopUp",
+	"plugin-id": "Sprite",
+	"sid": 751282715514350,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 154574741617635
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 636,
+						"height": 309,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5000742,
+						"collisionPoly": {
+							"points": [
+								0.06446540880503145,
+								0.13268608414239483,
+								0.5,
+								0.06472491909385113,
+								0.9685534591194969,
+								0.06472491909385113,
+								0.9544025157232704,
+								0.5,
+								0.9544025157232704,
+								0.9061488673139159,
+								0.5,
+								0.9967637540453075,
+								0.09276729559748427,
+								0.8090614886731392,
+								0.09276729559748427,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 961431104890288,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
