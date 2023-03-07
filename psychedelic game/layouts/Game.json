@@ -202,7 +202,7 @@
 					"world": {
 						"x": 153,
 						"y": 180,
-						"width": 105,
+						"width": 105.38,
 						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -239,7 +239,7 @@
 					"world": {
 						"x": 258,
 						"y": 180,
-						"width": 105,
+						"width": 105.38,
 						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -276,7 +276,7 @@
 					"world": {
 						"x": 363,
 						"y": 180,
-						"width": 105,
+						"width": 105.38,
 						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -313,7 +313,7 @@
 					"world": {
 						"x": 153,
 						"y": 280,
-						"width": 105,
+						"width": 105.38,
 						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -350,7 +350,7 @@
 					"world": {
 						"x": 258,
 						"y": 280,
-						"width": 105,
+						"width": 105.38,
 						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -387,7 +387,7 @@
 					"world": {
 						"x": 363,
 						"y": 280,
-						"width": 105,
+						"width": 105.38,
 						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -424,7 +424,7 @@
 					"world": {
 						"x": 153,
 						"y": 380,
-						"width": 105,
+						"width": 105.38,
 						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -461,7 +461,7 @@
 					"world": {
 						"x": 258,
 						"y": 380,
-						"width": 105,
+						"width": 105.38,
 						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -498,7 +498,7 @@
 					"world": {
 						"x": 363,
 						"y": 380,
-						"width": 105,
+						"width": 105.38,
 						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,

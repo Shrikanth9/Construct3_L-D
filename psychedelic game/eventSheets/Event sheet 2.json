@@ -145,7 +145,7 @@
 							"sid": 282259008646317
 						},
 						{
-							"callFunction": "ShufflePieces",
+							"callFunction": "ShufflePiecesForLevel1",
 							"sid": 332784402211050
 						},
 						{
@@ -829,7 +829,7 @@
 					]
 				},
 				{
-					"functionName": "ShufflePieces",
+					"functionName": "ShufflePiecesForLevel1",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -1028,6 +1028,18 @@
 					"conditions": [],
 					"actions": [
 						{
+							"callFunction": "flips",
+							"sid": 677204141898471
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 260588978341972,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
 							"id": "set-text",
 							"objectClass": "scorecount",
 							"sid": 423424634552615,
@@ -1116,12 +1128,9 @@
 							],
 							"actions": [
 								{
-									"id": "stop",
+									"id": "stop-all",
 									"objectClass": "Audio",
-									"sid": 424043157781771,
-									"parameters": {
-										"tag": "\"2\""
-									}
+									"sid": 251534962084965
 								},
 								{
 									"id": "play",
@@ -1149,12 +1158,9 @@
 							],
 							"actions": [
 								{
-									"id": "stop",
+									"id": "stop-all",
 									"objectClass": "Audio",
-									"sid": 147300867212143,
-									"parameters": {
-										"tag": "\"2\""
-									}
+									"sid": 449546981634402
 								},
 								{
 									"id": "play",
@@ -1208,6 +1214,89 @@
 						}
 					],
 					"sid": 476287019573713
+				},
+				{
+					"functionName": "flips",
+					"functionDescription": "flip and unflip animation",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 169930054291039,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 222286149292564,
+									"parameters": {
+										"object": "pieces",
+										"expression": "0",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "pieces",
+									"sid": 985291873316543,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetWidth",
+										"end-value": "0",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 820818269452601,
+									"parameters": {
+										"seconds": "0.3"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "pieces",
+									"sid": 912424915648546,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetWidth",
+										"end-value": "105",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 563285256875701,
+									"parameters": {
+										"seconds": "0.3"
+									}
+								}
+							],
+							"sid": 840330071671215
+						}
+					]
 				}
 			],
 			"sid": 395128557946514
