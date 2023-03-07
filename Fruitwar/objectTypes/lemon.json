@@ -1,0 +1,65 @@
+{
+	"name": "lemon",
+	"plugin-id": "Sprite",
+	"sid": 711227673839881,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 954743922690341
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 512,
+						"height": 512,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1375437,
+						"collisionPoly": {
+							"points": [
+								0.146484375,
+								0.146484375,
+								0.5,
+								0,
+								0.853515625,
+								0.146484375,
+								1,
+								0.5,
+								0.85546875,
+								0.85546875,
+								0.5,
+								1,
+								0.14453125,
+								0.85546875,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 407514789800946,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
