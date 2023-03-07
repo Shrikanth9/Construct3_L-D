@@ -1,0 +1,63 @@
+{
+	"name": "enemyFish",
+	"plugin-id": "Sprite",
+	"sid": 360757267252757,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 369265464808833
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 421,
+						"height": 290,
+						"originX": 0.498812351543943,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4758526,
+						"collisionPoly": {
+							"points": [
+								0.166270783847981,
+								0.2413793103448276,
+								0.5,
+								0.18620689655172415,
+								0.6888361045130641,
+								0.4517241379310345,
+								0.9168646080760094,
+								0.5,
+								0.8812351543942993,
+								0.8275862068965517,
+								0.5,
+								0.9862068965517241,
+								0.1330166270783848,
+								0.8068965517241379,
+								0.06413301662707839,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 144115443455472,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

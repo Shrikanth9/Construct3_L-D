@@ -1,0 +1,63 @@
+{
+	"name": "midground1",
+	"plugin-id": "Sprite",
+	"sid": 788942528472197,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 863845584634240
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 2907,
+						"height": 485,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6742425,
+						"collisionPoly": {
+							"points": [
+								0.08806329549363605,
+								0.5278350515463918,
+								0.5,
+								0.27422680412371137,
+								0.9222566219470244,
+								0.465979381443299,
+								0.9962160302717579,
+								0.5,
+								1,
+								1,
+								0.5,
+								1,
+								0,
+								1,
+								0.02063983488132095,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 950628377712929,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

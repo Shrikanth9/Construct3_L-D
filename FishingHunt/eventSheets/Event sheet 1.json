@@ -1,0 +1,667 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Setup",
+			"description": "setting up positions",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 430558940986098
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "ring",
+							"sid": 486360201370582,
+							"parameters": {
+								"x": "1727",
+								"y": "934"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "line",
+							"sid": 408041151220007,
+							"parameters": {
+								"object": "ring",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "dot",
+							"sid": 947999984588472,
+							"parameters": {
+								"object": "ring",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "anchor",
+							"sid": 206956968700554,
+							"parameters": {
+								"x": "689",
+								"y": "504"
+							}
+						}
+					],
+					"sid": 466840022509291
+				}
+			],
+			"sid": 833974014150506
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Touch",
+			"description": "this is the touch can go before getting limited.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "distanceAllowed",
+					"type": "number",
+					"initialValue": "100",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 252958247687578
+				},
+				{
+					"eventType": "comment",
+					"text": "This is setting the angle of direction. The line represents where our player wants to go. We need to give it a direction to go."
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "line",
+							"sid": 629398189908954,
+							"parameters": {
+								"x": "dot.x",
+								"y": "dot.Y"
+							}
+						}
+					],
+					"sid": 279839035573404
+				},
+				{
+					"eventType": "comment",
+					"text": "This will make sure that the touch doesn't leave its circle or limitation."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 293683098802359,
+							"parameters": {
+								"first-value": "distance(ring.X, ring.Y, dot.X, dot.Y)",
+								"comparison": 3,
+								"second-value": "distanceAllowed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-width",
+							"objectClass": "line",
+							"sid": 949678415651767,
+							"parameters": {
+								"width": "distance(ring.X,ring.Y,dot.X, dot.Y)"
+							}
+						}
+					],
+					"sid": 631148564766334
+				},
+				{
+					"eventType": "comment",
+					"text": "This is when player's touch is attempting to leave the limitation, it will instead the set the joystick to the line and the line will not get longer."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 127650068348011
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "dot",
+							"sid": 426943026878445,
+							"parameters": {
+								"x": "line.ImagePointX(1)",
+								"y": "line.ImagePointY(1)"
+							}
+						}
+					],
+					"sid": 984271431148351
+				},
+				{
+					"eventType": "comment",
+					"text": "This just resets the joystick after the user lets go."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-drop",
+							"objectClass": "dot",
+							"sid": 898068814311039,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "dot",
+							"sid": 539073378170239,
+							"parameters": {
+								"object": "ring",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 733252173595459
+				}
+			],
+			"sid": 158861798894366
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Moving player",
+			"description": "this moves the player a certain speed and angle depending on the joystick",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-dragging",
+							"objectClass": "dot",
+							"sid": 713398952120242,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [],
+					"sid": 372767685548845,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-within-angle",
+									"objectClass": "line",
+									"sid": 268645304166491,
+									"parameters": {
+										"within": "60",
+										"angle": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "anchor",
+									"sid": 528842289509321,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 556128677848711
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-within-angle",
+									"objectClass": "line",
+									"sid": 904256618962712,
+									"parameters": {
+										"within": "60",
+										"angle": "90"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "anchor",
+									"sid": 228316483461138,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								},
+								{
+									"id": "set-height",
+									"objectClass": "rope",
+									"sid": 834270162196129,
+									"parameters": {
+										"height": "rope.Height + 10"
+									}
+								}
+							],
+							"sid": 450964254981916
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-within-angle",
+									"objectClass": "line",
+									"sid": 894969376301188,
+									"parameters": {
+										"within": "60",
+										"angle": "180"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "anchor",
+									"sid": 712846543657269,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 527582947395261
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-within-angle",
+									"objectClass": "line",
+									"sid": 596119378551460,
+									"parameters": {
+										"within": "60",
+										"angle": "270"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "anchor",
+									"sid": 307618219725149,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "up"
+									}
+								}
+							],
+							"sid": 148811505410173
+						}
+					]
+				}
+			],
+			"sid": 818949649352068
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Moving fish",
+			"description": "Random spawning and moving the fishes horizontally",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 148032820811148
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "fish1",
+							"sid": 330449339237055,
+							"parameters": {
+								"x": "random(-70,1940)",
+								"y": "fish1.y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "enemyFish",
+							"sid": 761510180593969,
+							"parameters": {
+								"x": "random(-70,1940)",
+								"y": "enemyFish.y"
+							}
+						}
+					],
+					"sid": 247005937629495
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "fish1",
+							"sid": 469774269695262
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "fish1",
+							"sid": 276131606108597,
+							"parameters": {
+								"angle": "180 + fish1.Angle"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "fish1",
+							"sid": 744599795145498,
+							"parameters": {
+								"width": "fish1.Width",
+								"height": "-fish1.Height"
+							}
+						}
+					],
+					"sid": 678622740144031
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "enemyFish",
+							"sid": 914122203044481
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "enemyFish",
+							"sid": 565404125512378,
+							"parameters": {
+								"angle": "180 + enemyFish.Angle"
+							}
+						},
+						{
+							"id": "set-flipped",
+							"objectClass": "enemyFish",
+							"sid": 867907128677566,
+							"parameters": {
+								"state": "flipped"
+							}
+						}
+					],
+					"sid": 813890367512815
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-within-angle",
+							"objectClass": "enemyFish",
+							"sid": 236566713729181,
+							"parameters": {
+								"within": "180",
+								"angle": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-flipped",
+							"objectClass": "enemyFish",
+							"sid": 127780271974827,
+							"parameters": {
+								"state": "not-flipped"
+							}
+						}
+					],
+					"sid": 489186939023690
+				}
+			],
+			"sid": 262802086159465
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy Fish",
+			"description": "Enemy fish collision detection",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "enemyFish",
+							"sid": 573583199026593,
+							"parameters": {
+								"object": "anchor"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "anchor",
+							"sid": 237001161513487,
+							"parameters": {
+								"x": "689",
+								"y": "504"
+							}
+						}
+					],
+					"sid": 489547718567763
+				}
+			],
+			"sid": 660794873864224
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "OnattackBtnClicked",
+			"description": "Detect fish collision with anchor when attack button pressed.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 913726406473628,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "anchor",
+							"sid": 851053286517129,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "689",
+								"end-y": "504",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 197125746271764,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "anchor",
+									"sid": 790386036328249,
+									"parameters": {
+										"object": "fish1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "fish1",
+									"sid": 637739055086575,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "0"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "anchor",
+									"sid": 714920036248548,
+									"parameters": {
+										"child": "fish1",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": true,
+										"transform-a": true,
+										"transform-z-elevation": true,
+										"destroy-with-parent": false
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "fish1",
+									"sid": 497653474360080,
+									"parameters": {
+										"object": "anchor",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 346101727787448,
+									"parameters": {
+										"seconds": "2.0"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "fish1",
+									"sid": 444961147026659
+								}
+							],
+							"sid": 847434476201790
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-enabled",
+									"objectClass": "dot",
+									"sid": 377750319093847,
+									"behaviorType": "DragDrop"
+								}
+							],
+							"actions": [
+								{
+									"id": "drop",
+									"objectClass": "dot",
+									"sid": 405631866414714,
+									"behaviorType": "DragDrop"
+								}
+							],
+							"sid": 418647302006539
+						}
+					]
+				}
+			],
+			"sid": 910789536436065
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Parallax",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "midground1",
+							"sid": 329754834884306
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "midground1",
+							"sid": 914458323635772,
+							"parameters": {
+								"x": "-951",
+								"y": "399"
+							}
+						}
+					],
+					"sid": 292621817586047
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "midground",
+							"sid": 109927520447633
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "midground",
+							"sid": 823300003907043,
+							"parameters": {
+								"x": "-951",
+								"y": "399"
+							}
+						}
+					],
+					"sid": 939352495778439
+				}
+			],
+			"sid": 635503977139975
+		}
+	],
+	"sid": 854866932236327
+}

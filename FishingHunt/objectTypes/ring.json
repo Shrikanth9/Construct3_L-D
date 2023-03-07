@@ -1,0 +1,64 @@
+{
+	"name": "ring",
+	"plugin-id": "Sprite",
+	"sid": 944451692265982,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 200,
+						"height": 200,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3505945,
+						"collisionPoly": {
+							"points": [
+								0.155,
+								0.155,
+								0.5,
+								0.015,
+								0.845,
+								0.155,
+								0.985,
+								0.5,
+								0.845,
+								0.845,
+								0.5,
+								0.985,
+								0.155,
+								0.845,
+								0.015,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 914197666313503,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
