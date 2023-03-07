@@ -1,0 +1,269 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "playflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 587320740024838
+		},
+		{
+			"eventType": "variable",
+			"name": "playnowflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 598527402590150
+		},
+		{
+			"eventType": "variable",
+			"name": "helpflag",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 622926041332101
+		},
+		{
+			"eventType": "variable",
+			"name": "levelflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 170718824591837
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 366121824869494
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 727376995365541,
+					"parameters": {
+						"variable": "playflag",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 449170738406289
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 167164536013937,
+					"parameters": {
+						"variable": "playflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 789192692363853,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 439378262599109,
+							"parameters": {
+								"object": "play"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "cloud",
+							"sid": 790814509619988,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "-1224",
+								"end-y": "168",
+								"time": "0.5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 170101616966354
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "Intermediate",
+							"sid": 948941459750957
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "playnow",
+							"sid": 225233176936522
+						},
+						{
+							"id": "set-position",
+							"objectClass": "cloud",
+							"sid": 634441860051524,
+							"parameters": {
+								"x": "2092",
+								"y": "168"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 585905206959972,
+							"parameters": {
+								"variable": "playnowflag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "cloud",
+							"sid": 409084229463051
+						}
+					],
+					"sid": 840839098027115
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 286831642522013,
+					"parameters": {
+						"variable": "playnowflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 368834409151618,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 112747812110220,
+							"parameters": {
+								"object": "playnow"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "cloud",
+							"sid": 512773064914191,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "-1224",
+								"end-y": "168",
+								"time": "0.5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 611777614395739
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "levelscreen",
+							"sid": 603174266978664
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 684113668243267,
+							"parameters": {
+								"variable": "levelflag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 263913359638391
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 647746614045703,
+					"parameters": {
+						"variable": "levelflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 527492422906813,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 473087764040402,
+							"parameters": {
+								"object": "label"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 606990218389071,
+							"parameters": {
+								"type": "log",
+								"message": "\"Should go to gameplay\""
+							}
+						}
+					],
+					"sid": 352362475509270
+				}
+			]
+		}
+	],
+	"sid": 495140299658961
+}
