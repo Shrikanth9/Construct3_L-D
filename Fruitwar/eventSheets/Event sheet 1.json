@@ -1,0 +1,1264 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "lemonspeed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 321149593794556
+		},
+		{
+			"eventType": "variable",
+			"name": "playerspeed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 618766818098864
+		},
+		{
+			"eventType": "variable",
+			"name": "overlapflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 111587843366562
+		},
+		{
+			"eventType": "variable",
+			"name": "gamestart",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 593998271749166
+		},
+		{
+			"eventType": "variable",
+			"name": "objectflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 483176963463987
+		},
+		{
+			"eventType": "variable",
+			"name": "xVector",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 971929036549385
+		},
+		{
+			"eventType": "variable",
+			"name": "yVector",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 353124260461135
+		},
+		{
+			"eventType": "variable",
+			"name": "parallaxFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 434022208762137
+		},
+		{
+			"eventType": "variable",
+			"name": "direction",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 876169757929689
+		},
+		{
+			"eventType": "variable",
+			"name": "lemonX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 196572529086825
+		},
+		{
+			"eventType": "variable",
+			"name": "lemonY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 430008749606380
+		},
+		{
+			"eventType": "variable",
+			"name": "lemon_uid",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 431354442210779
+		},
+		{
+			"eventType": "variable",
+			"name": "parallaxSpeed",
+			"type": "number",
+			"initialValue": "2.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 669552304392667
+		},
+		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 775319863558701
+		},
+		{
+			"eventType": "variable",
+			"name": "initialflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 118366573609559
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Setup",
+			"description": "Initial setup for the game",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 374721118147898
+						}
+					],
+					"actions": [
+						{
+							"id": "set-world-gravity",
+							"objectClass": "player",
+							"sid": 227572178104299,
+							"behaviorType": "Physics",
+							"parameters": {
+								"gravity": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 620547202629124,
+							"parameters": {
+								"variable": "direction",
+								"value": "random(-1, 1)"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "waterbg",
+							"sid": 421012714046506,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"WaterBackground\""
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "waterbg2",
+							"sid": 698111707339444,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"WaterBackground\""
+							}
+						}
+					],
+					"sid": 357904379689040
+				}
+			],
+			"sid": 674749438025137
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "OnPlayBtnClicked",
+			"description": "on play button pressed",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 482188848884078,
+							"parameters": {
+								"object": "play"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "play",
+							"sid": 838375230010595
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 619867215226855,
+							"parameters": {
+								"variable": "gamestart",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "waterbg",
+							"sid": 466964691819598,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"WaterBackground\""
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "waterbg2",
+							"sid": 266446812828514,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"WaterBackground\""
+							}
+						}
+					],
+					"sid": 281409415768335
+				}
+			],
+			"sid": 991130731231110
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "OnBgClicked",
+			"description": "On pressed on background.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 481859165531740,
+							"parameters": {
+								"variable": "gamestart"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 581927875263185,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 328932358843931,
+									"parameters": {
+										"object": "bg"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 605494552582252,
+									"parameters": {
+										"variable": "objectflag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 793094321703591,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 340042854357662,
+											"parameters": {
+												"variable": "initialflag"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 367962784877800,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 951705803389364,
+													"parameters": {
+														"variable": "overlapflag"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 130297891831203,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "lemon",
+															"sid": 628967844888219,
+															"parameters": {
+																"unique-id": "lemon_uid"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 698235419316598,
+															"parameters": {
+																"variable": "xVector",
+																"value": "(player.X - lemon.X) * 4"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 768738513149995,
+															"parameters": {
+																"variable": "yVector",
+																"value": "(player.Y - lemon.y) * 4"
+															}
+														},
+														{
+															"id": "set-velocity",
+															"objectClass": "player",
+															"sid": 612877385553679,
+															"behaviorType": "Physics",
+															"parameters": {
+																"x-component": "xVector",
+																"y-component": "yVector"
+															}
+														},
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 522857011907537,
+															"parameters": {
+																"variable": "overlapflag",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 529317769628717
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 788164652972486
+												}
+											],
+											"actions": [
+												{
+													"id": "set-velocity",
+													"objectClass": "player",
+													"sid": 878578207987153,
+													"behaviorType": "Physics",
+													"parameters": {
+														"x-component": "0",
+														"y-component": "-500"
+													}
+												}
+											],
+											"sid": 795459128670290
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 429556963231743
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 960326879686601,
+											"parameters": {
+												"variable": "initialflag",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 479182185035176
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 983732074781520
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Parallax",
+			"description": "Parallax effect",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 838385739477217,
+							"parameters": {
+								"variable": "parallaxFlag"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "bgdesign",
+							"sid": 783488542627761,
+							"parameters": {
+								"x": "bgdesign.X",
+								"y": "bgdesign.Y + parallaxSpeed"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "bgdesign2",
+							"sid": 379272667005180,
+							"parameters": {
+								"x": "bgdesign2.X",
+								"y": "bgdesign2.Y + parallaxSpeed"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ground",
+							"sid": 428713730026387,
+							"parameters": {
+								"x": "ground.X",
+								"y": "ground.Y + parallaxSpeed"
+							}
+						}
+					],
+					"sid": 326685603903891,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "bgdesign",
+									"sid": 757056346414734
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "bgdesign",
+									"sid": 557564185900106,
+									"parameters": {
+										"x": "bgdesign.X",
+										"y": "-448"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 919912158262928,
+									"parameters": {
+										"variable": "parallaxSpeed",
+										"value": "parallaxSpeed + 0.1"
+									}
+								}
+							],
+							"sid": 356080112907530
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "bgdesign2",
+									"sid": 323497428153626
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "bgdesign2",
+									"sid": 257441161233006,
+									"parameters": {
+										"x": "bgdesign2.X",
+										"y": "-448"
+									}
+								}
+							],
+							"sid": 687454606369784
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "ground",
+									"sid": 195313513016914
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "ground",
+									"sid": 685145072585386
+								}
+							],
+							"sid": 507234124465931
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 672015283753150,
+									"parameters": {
+										"object": "lemon",
+										"expression": "0",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lemon",
+									"sid": 162928222120506,
+									"parameters": {
+										"x": "lemon.X + direction * 0.6",
+										"y": "lemon.Y + parallaxSpeed"
+									}
+								}
+							],
+							"sid": 262017097922925,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-y",
+											"objectClass": "lemon",
+											"sid": 579340004087917,
+											"parameters": {
+												"comparison": 4,
+												"y-co-ordinate": "1000"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "lemon",
+											"sid": 411194505803281
+										}
+									],
+									"sid": 111695173146000
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "player",
+									"sid": 128755263186644
+								}
+							],
+							"actions": [
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 329189836204519
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "restart",
+									"sid": 241544307807490,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "restart",
+									"sid": 901314327132213,
+									"parameters": {
+										"z": "0"
+									}
+								},
+								{
+									"id": "set-velocity",
+									"objectClass": "player",
+									"sid": 959507688520306,
+									"behaviorType": "Physics",
+									"parameters": {
+										"x-component": "0",
+										"y-component": "0"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "waterbg",
+									"sid": 767088113725206,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"WaterBackground\""
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "waterbg2",
+									"sid": 572714408188662,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"WaterBackground\""
+									}
+								}
+							],
+							"sid": 721638084454779
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "player",
+									"sid": 893609948687867,
+									"parameters": {
+										"object": "waterbg"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 151241812113692
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "restart",
+									"sid": 883794453426910,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "restart",
+									"sid": 351129747113718,
+									"parameters": {
+										"z": "0"
+									}
+								},
+								{
+									"id": "set-velocity",
+									"objectClass": "player",
+									"sid": 933655042229483,
+									"behaviorType": "Physics",
+									"parameters": {
+										"x-component": "0",
+										"y-component": "0"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "waterbg",
+									"sid": 606489146804851,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"WaterBackground\""
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "waterbg2",
+									"sid": 179614448316305,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"WaterBackground\""
+									}
+								}
+							],
+							"sid": 108964877637001
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "waterbg2",
+									"sid": 790930119788280,
+									"parameters": {
+										"object": "waterbg2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 387207000028639
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "restart",
+									"sid": 751192176944815,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "restart",
+									"sid": 474125016132341,
+									"parameters": {
+										"z": "0"
+									}
+								},
+								{
+									"id": "set-velocity",
+									"objectClass": "player",
+									"sid": 827317630776161,
+									"behaviorType": "Physics",
+									"parameters": {
+										"x-component": "0",
+										"y-component": "0"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "waterbg",
+									"sid": 183198212991430,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"WaterBackground\""
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "waterbg2",
+									"sid": 643494007021515,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"WaterBackground\""
+									}
+								}
+							],
+							"sid": 483596028207844
+						}
+					]
+				}
+			],
+			"sid": 795260736465148
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collision",
+			"description": "Handle collisions",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 338626268285551,
+							"parameters": {
+								"object": "lemon"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 115148963996921,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 363887204202206,
+									"parameters": {
+										"first-value": "lemon.UID",
+										"comparison": 1,
+										"second-value": "lemon_uid"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 573322984681392,
+									"parameters": {
+										"variable": "lemon_uid",
+										"value": "lemon.UID"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 261221648718396,
+									"parameters": {
+										"variable": "score",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Score",
+									"sid": 722046094421128,
+									"parameters": {
+										"text": "\"Score : \" & score"
+									}
+								}
+							],
+							"sid": 649531865673869,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "lemon",
+											"sid": 826446280002036,
+											"parameters": {
+												"unique-id": "lemon_uid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-velocity",
+											"objectClass": "player",
+											"sid": 133706888116776,
+											"behaviorType": "Physics",
+											"parameters": {
+												"x-component": "0",
+												"y-component": "0"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 364943772778132,
+											"parameters": {
+												"variable": "playerspeed",
+												"value": "angle(player.X, player.y, lemon.x, lemon.y) + 90"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 234037633381861,
+											"parameters": {
+												"variable": "overlapflag",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 658463479951318,
+											"parameters": {
+												"variable": "parallaxFlag",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 923271549942604
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 604106658107737
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 469383917048044,
+											"parameters": {
+												"type": "log",
+												"message": "\"Not picked\""
+											}
+										}
+									],
+									"sid": 946164088147372
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 326561699311929
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Movements",
+			"description": "Logic for object and player movement",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 304823968001421,
+							"parameters": {
+								"variable": "overlapflag"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 680525745580089,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "lemon",
+									"sid": 476907640029033,
+									"parameters": {
+										"unique-id": "lemon_uid"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 864414207980788,
+									"parameters": {
+										"variable": "playerspeed",
+										"value": "playerspeed + 3"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "player",
+									"sid": 573456543947525,
+									"parameters": {
+										"angle": "angle(lemon.X, lemon.Y, player.X, player.Y)  + 90"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "player",
+									"sid": 568024381808657,
+									"parameters": {
+										"x": "lemon.X  + sin(- playerspeed) *  70",
+										"y": "lemon.y  + cos(-playerspeed) * 70"
+									}
+								}
+							],
+							"sid": 417214145558329,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 892496441805782,
+											"parameters": {
+												"variable": "playerspeed",
+												"comparison": 4,
+												"value": "360"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 639257810748958,
+											"parameters": {
+												"variable": "playerspeed",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 487411904816107
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 366350782697753,
+									"parameters": {
+										"interval-seconds": "random(2, 3)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 594909625519732,
+									"parameters": {
+										"object-to-create": "lemon",
+										"layer": "0",
+										"x": "207",
+										"y": "-200",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 607796682268142,
+									"parameters": {
+										"variable": "direction",
+										"value": "random(-1, 1)"
+									}
+								}
+							],
+							"sid": 772640442280923,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 728327801033312,
+											"parameters": {
+												"interval-seconds": "5.0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 828896021463005,
+											"parameters": {
+												"variable": "parallaxSpeed",
+												"value": "parallaxSpeed + 0.1"
+											}
+										}
+									],
+									"sid": 893121432097164
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 703707858356937,
+							"parameters": {
+								"variable": "objectflag"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 524162792067739,
+							"parameters": {
+								"variable": "lemonspeed",
+								"value": "lemonspeed + 3"
+							}
+						}
+					],
+					"sid": 173357765159491,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 963002717460052,
+									"parameters": {
+										"object": "lemon",
+										"expression": "0",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "lemon",
+									"sid": 659966604826815,
+									"parameters": {
+										"angle": "lemonspeed"
+									}
+								}
+							],
+							"sid": 449943873259902
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 889452661549383,
+									"parameters": {
+										"variable": "lemonspeed",
+										"comparison": 4,
+										"value": "360"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 975602233661712,
+									"parameters": {
+										"variable": "lemonspeed",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 535167541025638
+						}
+					]
+				}
+			],
+			"sid": 861954375271430
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "OnrestartBtnClicked",
+			"description": "on restart button pressed",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "restart",
+							"sid": 825323104452983
+						}
+					],
+					"actions": [],
+					"sid": 506212556910838,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 412517517684755,
+									"parameters": {
+										"object": "restart"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 451675093770412
+								}
+							],
+							"sid": 183780131291350
+						}
+					]
+				}
+			],
+			"sid": 270948666430778
+		}
+	],
+	"sid": 901757566894864
+}
