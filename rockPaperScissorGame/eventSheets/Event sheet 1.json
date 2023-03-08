@@ -1,0 +1,1136 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "compareFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 121698510486331
+		},
+		{
+			"eventType": "variable",
+			"name": "you",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 874891519753838
+		},
+		{
+			"eventType": "variable",
+			"name": "computer",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 794683661051018
+		},
+		{
+			"eventType": "variable",
+			"name": "YouWeapon",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 438105762794530
+		},
+		{
+			"eventType": "variable",
+			"name": "ComputerWeapon",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 356499440611493
+		},
+		{
+			"eventType": "variable",
+			"name": "fightcount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 590421362958367
+		},
+		{
+			"eventType": "variable",
+			"name": "touchflag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 874294965999841
+		},
+		{
+			"eventType": "variable",
+			"name": "restartflag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 517417398245487
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Start",
+			"description": "start",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 154445302500571
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Youlosttext",
+							"sid": 921706206979007,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Youwontext",
+							"sid": 830046252244903,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "tie",
+							"sid": 943402986959371,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "restart",
+							"sid": 185528382638427,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 952126841538155
+				}
+			],
+			"sid": 127367545580001
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "CheckWinner",
+			"description": "Check who wins at every turn",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 787853858194398,
+							"parameters": {
+								"variable": "compareFlag"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 192925620904340,
+							"parameters": {
+								"variable": "fightcount",
+								"value": "fightcount + 1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "fight",
+							"sid": 429826458381210,
+							"parameters": {
+								"text": "fightcount"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 550694033754362,
+							"parameters": {
+								"variable": "compareFlag",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 349991706916828,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 845961231028766,
+									"parameters": {
+										"first-value": "ComputerWeapon - YouWeapon",
+										"comparison": 0,
+										"second-value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 288311203397093,
+									"parameters": {
+										"variable": "you",
+										"value": "you + 1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "left_score",
+									"sid": 852558989243669,
+									"parameters": {
+										"text": "you"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 460753008274261,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "explosion_computer",
+									"sid": 412180242189460,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "0.3"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "left_rock",
+									"sid": 258246111599576,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetX",
+										"end-value": "1026",
+										"time": "0.5",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 203705884552751
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "explosion_computer",
+									"sid": 634543029677231,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 962377247550143,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 707508656036422
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 721294498463237,
+									"parameters": {
+										"first-value": "ComputerWeapon - YouWeapon",
+										"comparison": 0,
+										"second-value": "-2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 834619375556870,
+									"parameters": {
+										"variable": "computer",
+										"value": "computer + 1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "right_score",
+									"sid": 450374389631985,
+									"parameters": {
+										"text": "computer"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 406941015384305,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "explosion_you",
+									"sid": 715265601432419,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "0.3"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "right_rock",
+									"sid": 822812299993243,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetX",
+										"end-value": "781",
+										"time": "0.5",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 100638041157872
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "explosion_you",
+									"sid": 237906587249795,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 908297059679223,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 600472334426969
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 499167390167170,
+									"parameters": {
+										"first-value": "ComputerWeapon - YouWeapon",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 666451370883394,
+									"parameters": {
+										"variable": "computer",
+										"value": "computer + 1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "right_score",
+									"sid": 176368549990831,
+									"parameters": {
+										"text": "computer"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 885337082017442,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "right_rock",
+									"sid": 407232660289827,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetX",
+										"end-value": "781",
+										"time": "0.5",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "explosion_you",
+									"sid": 390959538483477,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "0.3"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 796604909381680
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "explosion_you",
+									"sid": 961033963381547,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 169366649547572,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 343641574915337
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 402205226349922,
+									"parameters": {
+										"first-value": "ComputerWeapon - YouWeapon",
+										"comparison": 0,
+										"second-value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 479804198451318,
+									"parameters": {
+										"variable": "you",
+										"value": "you + 1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "left_score",
+									"sid": 648786531469275,
+									"parameters": {
+										"text": "you"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 994208170098110,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "explosion_computer",
+									"sid": 857473575416938,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "0.3"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "left_rock",
+									"sid": 861140688984373,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetX",
+										"end-value": "1026",
+										"time": "0.5",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 380681725439906
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "explosion_computer",
+									"sid": 295488419372445,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 983485436847458,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 945916107407026
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 836886349777770,
+									"parameters": {
+										"first-value": "ComputerWeapon - YouWeapon",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 274357925199035,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "left_rock",
+									"sid": 261501809734746,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "0.2"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "right_rock",
+									"sid": 795626403084573,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "0.2"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 725138260805657,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 185707039169206
+						}
+					]
+				}
+			],
+			"sid": 888621928259419
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Btn events",
+			"description": "Rock paper scissor button events",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 717445711907579,
+							"parameters": {
+								"variable": "touchflag"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 614947151985100,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-clicked",
+									"objectClass": "rock",
+									"sid": 456998765908881
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 345556764440894,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "left_rock",
+									"sid": 467961684815612,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "right_rock",
+									"sid": 990970144020794,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "play-all-timelines",
+									"objectClass": "TimelineController",
+									"sid": 231966685051826
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 445508694041190,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 230366282791766,
+									"parameters": {
+										"variable": "YouWeapon",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "left_rock",
+									"sid": 330622447174442,
+									"parameters": {
+										"frame-number": "YouWeapon"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 654824922327901,
+									"parameters": {
+										"variable": "ComputerWeapon",
+										"value": "floor(random(0,3))"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "right_rock",
+									"sid": 662117694566155,
+									"parameters": {
+										"frame-number": "ComputerWeapon"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 524088586525370,
+									"parameters": {
+										"variable": "compareFlag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 954415746384320
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-clicked",
+									"objectClass": "paper",
+									"sid": 353209410201054
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 941836125385014,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "left_rock",
+									"sid": 126003231510528,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "right_rock",
+									"sid": 344462583244040,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "play-all-timelines",
+									"objectClass": "TimelineController",
+									"sid": 626621327781887
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 181557119364294,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 967360743143968,
+									"parameters": {
+										"variable": "YouWeapon",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "left_rock",
+									"sid": 245752293046173,
+									"parameters": {
+										"frame-number": "YouWeapon"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 929745148836752,
+									"parameters": {
+										"variable": "ComputerWeapon",
+										"value": "floor(random(0,3))"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "right_rock",
+									"sid": 680178023934810,
+									"parameters": {
+										"frame-number": "ComputerWeapon"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 249088654004357,
+									"parameters": {
+										"variable": "compareFlag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 791002330730780
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-clicked",
+									"objectClass": "scissor",
+									"sid": 400533075769353
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 643230511482104,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "left_rock",
+									"sid": 382334952308685,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "right_rock",
+									"sid": 425858411014497,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "play-all-timelines",
+									"objectClass": "TimelineController",
+									"sid": 578672070246845
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 802788317481168,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 572672207090888,
+									"parameters": {
+										"variable": "YouWeapon",
+										"value": "2"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "left_rock",
+									"sid": 100654774375449,
+									"parameters": {
+										"frame-number": "YouWeapon"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "left_rock",
+									"sid": 477194768910149,
+									"parameters": {
+										"frame-number": "2"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 808475725816206,
+									"parameters": {
+										"variable": "ComputerWeapon",
+										"value": "floor(random(0,3))"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "right_rock",
+									"sid": 953567941621753,
+									"parameters": {
+										"frame-number": "ComputerWeapon"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 169716077470395,
+									"parameters": {
+										"variable": "compareFlag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 650118531745226
+						}
+					]
+				}
+			],
+			"sid": 918661083499482
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "GameOver",
+			"description": "After the game over",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 983160537597781,
+							"parameters": {
+								"variable": "fightcount",
+								"comparison": 0,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 215441455258999,
+							"parameters": {
+								"variable": "touchflag",
+								"value": "false"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 374469319225606,
+							"parameters": {
+								"seconds": "2.0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "restart",
+							"sid": 293827538465680,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 661199991422452,
+							"parameters": {
+								"variable": "restartflag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 509463449209961,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 290878633914791,
+									"parameters": {
+										"variable": "computer",
+										"comparison": 2,
+										"value": "you"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Youwontext",
+									"sid": 510045046039395,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 930237180884850
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 396950132120824,
+									"parameters": {
+										"variable": "you",
+										"comparison": 2,
+										"value": "computer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Youlosttext",
+									"sid": 265581812659195,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 486693348942135
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 296784844075097,
+									"parameters": {
+										"variable": "computer",
+										"comparison": 0,
+										"value": "you"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "tie",
+									"sid": 939885550620120,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 424313709602045
+						}
+					]
+				}
+			],
+			"sid": 541812900095302
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "RestartEvent",
+			"description": "Restart the game",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 995070989539345,
+							"parameters": {
+								"variable": "restartflag"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 304514923823158,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 477593380066806,
+									"parameters": {
+										"object": "restart"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 397561071498062
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 836080396921072
+								}
+							],
+							"sid": 280658919794954
+						}
+					]
+				}
+			],
+			"sid": 963822159229318
+		}
+	],
+	"sid": 368744411608381
+}

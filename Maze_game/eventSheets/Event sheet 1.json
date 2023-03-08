@@ -1,0 +1,167 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "diamonds",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 914710063380161
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "hero",
+					"sid": 379214163199481,
+					"parameters": {
+						"object": "enemy"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "hero",
+					"sid": 978210967874052
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 389449941449343,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 731735317702367
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 767993934043788
+				}
+			],
+			"sid": 648652222314765
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "hero",
+					"sid": 658621986758494,
+					"parameters": {
+						"object": "diamond"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "diamond",
+					"sid": 178108544861158
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 375458167597064,
+					"parameters": {
+						"variable": "diamonds",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 807488774334924,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 599432727672274,
+							"parameters": {
+								"variable": "diamonds",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "enemy",
+							"sid": 822161010285676
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "hero",
+							"sid": 223398131467015,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "restart",
+							"sid": 805909832257129,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 424611299663056
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-visible",
+					"objectClass": "restart",
+					"sid": 395961270805826
+				}
+			],
+			"actions": [],
+			"sid": 882561089884978,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 876407394844195,
+							"parameters": {
+								"object": "restart"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 474250703319630
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 940212773022305
+						}
+					],
+					"sid": 521151238961548
+				}
+			]
+		}
+	],
+	"sid": 549887259853029
+}

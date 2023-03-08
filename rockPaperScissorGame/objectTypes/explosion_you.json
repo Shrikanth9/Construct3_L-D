@@ -1,0 +1,63 @@
+{
+	"name": "explosion_you",
+	"plugin-id": "Sprite",
+	"sid": 175823660755483,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 930080890443689
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 925,
+						"height": 833,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 784139,
+						"collisionPoly": {
+							"points": [
+								0.2691891891891892,
+								0.29891956782713086,
+								0.5,
+								0.19567827130852342,
+								0.7048648648648649,
+								0.3277310924369748,
+								0.8605405405405405,
+								0.5,
+								0.7156756756756757,
+								0.6842737094837935,
+								0.5,
+								0.9387755102040817,
+								0.2508108108108108,
+								0.7214885954381752,
+								0.2172972972972973,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 806549212253748,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

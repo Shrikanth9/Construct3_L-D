@@ -1,0 +1,57 @@
+{
+	"name": "right_paper",
+	"plugin-id": "Sprite",
+	"sid": 620867880356058,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 591,
+						"height": 422,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9385402,
+						"collisionPoly": {
+							"points": [
+								0.1658206429780034,
+								0.23222748815165878,
+								0.5,
+								0.13744075829383887,
+								0.7935702199661591,
+								0.2890995260663507,
+								1,
+								0.5,
+								0.8020304568527918,
+								0.7227488151658767,
+								0.5,
+								0.7796208530805687,
+								0.22165820642978004,
+								0.6895734597156398,
+								0.077834179357022,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 608527523811720,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

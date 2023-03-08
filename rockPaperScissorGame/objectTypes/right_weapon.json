@@ -1,0 +1,57 @@
+{
+	"name": "right_weapon",
+	"plugin-id": "Sprite",
+	"sid": 528019858901950,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 591,
+						"height": 422,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2297893,
+						"collisionPoly": {
+							"points": [
+								0.25380710659898476,
+								0.35545023696682465,
+								0.5,
+								0.12322274881516587,
+								0.7851099830795262,
+								0.3009478672985782,
+								1,
+								0.5,
+								0.766497461928934,
+								0.6729857819905213,
+								0.5,
+								0.7985781990521327,
+								0.2673434856175973,
+								0.6255924170616114,
+								0.25042301184433163,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 318296760829150,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
