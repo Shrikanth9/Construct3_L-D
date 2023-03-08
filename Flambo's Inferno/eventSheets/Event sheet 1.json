@@ -519,6 +519,24 @@
 							"id": "move-to-top",
 							"objectClass": "cloud",
 							"sid": 681016564133133
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 696937057467135,
+							"parameters": {
+								"variable": "menuflag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 555844958760588,
+							"parameters": {
+								"variable": "playnowflag",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 263913359638391
@@ -560,6 +578,15 @@
 							"parameters": {
 								"type": "log",
 								"message": "\"gameplay start\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 850359999743919,
+							"parameters": {
+								"variable": "levelflag",
+								"value": "false"
 							}
 						}
 					],
