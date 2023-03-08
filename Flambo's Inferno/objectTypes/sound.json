@@ -1,7 +1,7 @@
 {
-	"name": "levelscreen",
+	"name": "sound",
 	"plugin-id": "Sprite",
-	"sid": 710939600941381,
+	"sid": 338612917820257,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,14 +11,14 @@
 			{
 				"frames": [
 					{
-						"width": 986,
-						"height": 805,
+						"width": 39,
+						"height": 39,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1669010,
+						"imageSpriteId": 6214733,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -43,7 +43,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 443545083927747,
+				"sid": 712041031854477,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
