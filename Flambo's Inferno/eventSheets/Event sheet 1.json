@@ -537,6 +537,11 @@
 								"variable": "playnowflag",
 								"value": "false"
 							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "label",
+							"sid": 198570705080058
 						}
 					],
 					"sid": 263913359638391
@@ -587,6 +592,14 @@
 							"parameters": {
 								"variable": "levelflag",
 								"value": "false"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 379871845928588,
+							"parameters": {
+								"layout": "Game"
 							}
 						}
 					],

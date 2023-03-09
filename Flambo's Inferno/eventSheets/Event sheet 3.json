@@ -1,0 +1,30 @@
+{
+	"name": "Event sheet 3",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 424851246815984,
+					"parameters": {
+						"object": "Sprite4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 874181959022921,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 909047974649282
+		}
+	],
+	"sid": 993585946501135
+}

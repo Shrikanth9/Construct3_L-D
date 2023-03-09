@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
@@ -29,8 +36,29 @@
 		},
 		{
 			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Touch",
 			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -39,6 +67,20 @@
 			"id": "Tween",
 			"name": "Tween",
 			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "water",
+			"name": "Water",
+			"author": "Viktor Korsun",
 			"bundled": false
 		}
 	],
@@ -62,7 +104,21 @@
 			"notSound",
 			"adventureTime",
 			"help",
-			"menu"
+			"menu",
+			"player",
+			"gamebg",
+			"block",
+			"perishable_block",
+			"Keyboard",
+			"water",
+			"end",
+			"Sprite2",
+			"coal",
+			"diamond",
+			"instructions",
+			"Sprite",
+			"Sprite3",
+			"Sprite4"
 		],
 		"subfolders": []
 	},
@@ -74,13 +130,17 @@
 	},
 	"layouts": {
 		"items": [
-			"Home"
+			"Home",
+			"Game",
+			"Result"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Event sheet 1",
+			"Event sheet 2",
+			"Event sheet 3"
 		],
 		"subfolders": []
 	},

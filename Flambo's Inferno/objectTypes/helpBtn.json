@@ -11,14 +11,14 @@
 			{
 				"frames": [
 					{
-						"width": 290,
-						"height": 67,
+						"width": 220,
+						"height": 52,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2601933,
+						"imageSpriteId": 8288389,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -41,6 +41,38 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1
+					},
+					{
+						"width": 220,
+						"height": 52,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2641864,
+						"collisionPoly": {
+							"points": [
+								0.00909090909090909,
+								0.038461538461538464,
+								0.5,
+								0,
+								0.990909090909091,
+								0.038461538461538464,
+								1,
+								0.5,
+								0.990909090909091,
+								0.9615384615384616,
+								0.5,
+								1,
+								0.00909090909090909,
+								0.9615384615384616,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
 					}
 				],
 				"sid": 530649854060497,
@@ -49,7 +81,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			}
 		],
 		"subfolders": []
