@@ -1,0 +1,89 @@
+{
+	"name": "fireBoyRes",
+	"plugin-id": "Sprite",
+	"sid": 322783464501789,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 515,
+						"height": 432,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4733765,
+						"collisionPoly": {
+							"points": [
+								0.16310679611650486,
+								0.19444444444444445,
+								0.5,
+								0.2777777777777778,
+								0.654368932038835,
+								0.41203703703703703,
+								0.8135922330097087,
+								0.5,
+								0.8679611650485437,
+								0.8425925925925926,
+								0.5,
+								1,
+								0.07572815533980583,
+								0.9097222222222222,
+								0.13009708737864079,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 515,
+						"height": 432,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2708485,
+						"collisionPoly": {
+							"points": [
+								0.24854368932038834,
+								0.2962962962962963,
+								0.5,
+								0.29398148148148145,
+								0.6932038834951456,
+								0.36574074074074076,
+								0.8466019417475729,
+								0.5,
+								0.8990291262135922,
+								0.8796296296296297,
+								0.5,
+								1,
+								0.10679611650485436,
+								0.8726851851851852,
+								0.170873786407767,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 539776519507585,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

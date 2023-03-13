@@ -36,7 +36,7 @@
 					}
 				},
 				{
-					"type": "Sprite3",
+					"type": "fireBoyRes",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -65,7 +65,7 @@
 					}
 				},
 				{
-					"type": "Sprite4",
+					"type": "retry",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -77,10 +77,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 419,
-						"y": 437,
-						"width": 219,
-						"height": 52,
+						"x": 248.09452906222248,
+						"y": 433.2924663615873,
+						"width": 157.5287890171436,
+						"height": 48.584932723174575,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -155,6 +155,70 @@
 						"height": 28,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 51,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 588.0908963177571,
+						"y": 434.7695525545671,
+						"width": 159.54198473282443,
+						"height": 49.52380952380952,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "cloud",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 52,
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1374,
+						"y": 222,
+						"width": 1042,
+						"height": 659,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

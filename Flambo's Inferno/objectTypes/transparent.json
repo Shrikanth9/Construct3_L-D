@@ -1,49 +1,35 @@
 {
-	"name": "Sprite5",
+	"name": "transparent",
 	"plugin-id": "Sprite",
-	"sid": 208853747437766,
+	"sid": 583703990176981,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 783073671903217
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 663,
-						"height": 34,
+						"width": 250,
+						"height": 250,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4369083,
-						"collisionPoly": {
-							"points": [
-								0,
-								0,
-								0.5,
-								0,
-								1,
-								0,
-								1,
-								0.5,
-								1,
-								1,
-								0.5,
-								1,
-								0,
-								1,
-								0,
-								0.5
-							]
-						},
+						"imageSpriteId": 9912067,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 816654236418672,
+				"sid": 394127063066097,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

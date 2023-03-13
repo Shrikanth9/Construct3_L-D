@@ -461,7 +461,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "transparent",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -497,7 +497,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "transparent",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -860,7 +860,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "transparent",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -896,7 +896,7 @@
 					}
 				},
 				{
-					"type": "Sprite5",
+					"type": "levelHeader",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",

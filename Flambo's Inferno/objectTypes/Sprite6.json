@@ -1,16 +1,10 @@
 {
-	"name": "Sprite2",
+	"name": "Sprite6",
 	"plugin-id": "Sprite",
-	"sid": 583703990176981,
+	"sid": 380089954660458,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 783073671903217
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -24,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9912067,
+						"imageSpriteId": 1262010,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 394127063066097,
+				"sid": 863973427281979,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
