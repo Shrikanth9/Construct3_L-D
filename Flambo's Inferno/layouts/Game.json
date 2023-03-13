@@ -545,37 +545,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 219,
-						"y": 160,
-						"width": 27,
-						"height": 27,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "coal",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 38,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 218,
-						"y": 158,
+						"x": 219.53256789958854,
+						"y": 149.34864200822926,
 						"width": 27,
 						"height": 27,
 						"originX": 0.5,
@@ -603,8 +574,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 324.015869140625,
-						"y": 137.91131591796875,
+						"x": 327.21127653815626,
+						"y": 129.92279742414073,
 						"width": 27,
 						"height": 27,
 						"originX": 0.5,
@@ -632,8 +603,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 448.1220959906781,
-						"y": 231.9180006019677,
+						"x": 446.12146526344844,
+						"y": 222.3149731112653,
 						"width": 27,
 						"height": 27,
 						"originX": 0.5,
@@ -661,8 +632,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 537.9999205457659,
-						"y": 247.13922696932875,
+						"x": 540.8008035638874,
+						"y": 248.73973155111247,
 						"width": 27,
 						"height": 27,
 						"originX": 0.5,
@@ -691,7 +662,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 696.9568481445312,
-						"y": 325.39208984375,
+						"y": 254.17487027790042,
 						"width": 27,
 						"height": 27,
 						"originX": 0.5,
@@ -923,6 +894,107 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "Sprite5",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 47,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 426.9608935423003,
+						"y": 17.662001856136413,
+						"width": 854.724443851873,
+						"height": 34,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "0/5",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 48,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 585.218370409875,
+						"y": 5.082755561481235,
+						"width": 31.282489410351445,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "diamond",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 38,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 510,
+						"y": 621,
+						"width": 28,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 188442928202896,
@@ -963,5 +1035,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Event sheet 2"
+	"eventSheet": "Event sheet_Game"
 }

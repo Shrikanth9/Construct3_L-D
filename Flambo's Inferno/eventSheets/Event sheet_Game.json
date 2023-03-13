@@ -1,5 +1,5 @@
 {
-	"name": "Event sheet 2",
+	"name": "Event sheet_Game",
 	"events": [
 		{
 			"eventType": "variable",
@@ -40,6 +40,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 648630112052057
+		},
+		{
+			"eventType": "variable",
+			"name": "coalcount",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 978556571257154
 		},
 		{
 			"eventType": "block",
@@ -384,21 +394,48 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 593849159628617,
+					"sid": 259850266432548,
 					"parameters": {
 						"layout": "Result"
 					}
 				}
 			],
-			"sid": 984300109112625
+			"sid": 984300109112625,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 604752896062385,
+							"parameters": {
+								"object": "coal"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 539669453338238,
+							"parameters": {
+								"variable": "coalCollected",
+								"value": "-1"
+							}
+						}
+					],
+					"sid": 388062673659104
+				}
+			]
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-collision-with-another-object",
+					"id": "is-overlapping-another-object",
 					"objectClass": "player",
-					"sid": 995502258747902,
+					"sid": 439350730296711,
 					"parameters": {
 						"object": "coal"
 					}
@@ -408,7 +445,24 @@
 				{
 					"id": "destroy",
 					"objectClass": "coal",
-					"sid": 835504059720647
+					"sid": 198062738604210
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 964538291918944,
+					"parameters": {
+						"variable": "coalCollected",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text",
+					"sid": 948244613733300,
+					"parameters": {
+						"text": "Coalcollected&\"/5\""
+					}
 				}
 			],
 			"sid": 999112406956514
@@ -417,32 +471,39 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-destroyed",
-					"objectClass": "coal",
-					"sid": 914095725133638
+					"id": "is-overlapping-another-object",
+					"objectClass": "player",
+					"sid": 712502024486302,
+					"parameters": {
+						"object": "diamond"
+					}
 				}
 			],
 			"actions": [
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 139359379419956,
+					"sid": 737795012001499,
 					"parameters": {
 						"variable": "coalCollected",
 						"value": "1"
 					}
 				},
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 886280973090604,
+					"id": "set-text",
+					"objectClass": "Text",
+					"sid": 279382064540465,
 					"parameters": {
-						"type": "log",
-						"message": "\"CoalCollected : \" & coalCollected"
+						"text": "Coalcollected&\"/5\""
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "diamond",
+					"sid": 625282161773667
 				}
 			],
-			"sid": 468431478424223
+			"sid": 814790456029306
 		},
 		{
 			"eventType": "block",
@@ -450,9 +511,9 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 128494072916635,
+					"sid": 300807486349630,
 					"parameters": {
-						"variable": "coalCollected",
+						"variable": "coalcount",
 						"comparison": 0,
 						"value": "4"
 					}
@@ -467,6 +528,11 @@
 						"object": "coal",
 						"image-point-optional": "0"
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "coal",
+					"sid": 427056480812353
 				}
 			],
 			"sid": 359021205199924

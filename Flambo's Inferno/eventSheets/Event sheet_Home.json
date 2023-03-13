@@ -1,5 +1,5 @@
 {
-	"name": "Event sheet 1",
+	"name": "Event sheet_Home",
 	"events": [
 		{
 			"eventType": "variable",
@@ -174,36 +174,8 @@
 					],
 					"actions": [
 						{
-							"id": "tween-two-properties",
-							"objectClass": "cloud",
-							"sid": 629351293008911,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "-1224",
-								"end-y": "170",
-								"time": "0.5",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 170101616966354
-						},
-						{
-							"id": "set-position",
-							"objectClass": "cloud",
-							"sid": 955938497956381,
-							"parameters": {
-								"x": "2092",
-								"y": "170"
-							}
+							"callFunction": "moveCloud",
+							"sid": 238519196587993
 						},
 						{
 							"id": "move-to-top",
@@ -445,36 +417,8 @@
 					],
 					"actions": [
 						{
-							"id": "tween-two-properties",
-							"objectClass": "cloud",
-							"sid": 847113771437099,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "-1224",
-								"end-y": "170",
-								"time": "0.5",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 611777614395739
-						},
-						{
-							"id": "set-position",
-							"objectClass": "cloud",
-							"sid": 424096023369802,
-							"parameters": {
-								"x": "2092",
-								"y": "170"
-							}
+							"callFunction": "moveCloud",
+							"sid": 927612239847579
 						},
 						{
 							"id": "move-to-top",
@@ -542,6 +486,11 @@
 							"id": "move-to-top",
 							"objectClass": "label",
 							"sid": 198570705080058
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "cloud",
+							"sid": 170130403521506
 						}
 					],
 					"sid": 263913359638391
@@ -576,6 +525,10 @@
 						}
 					],
 					"actions": [
+						{
+							"callFunction": "moveCloud",
+							"sid": 880746120427325
+						},
 						{
 							"id": "log",
 							"objectClass": "Browser",
@@ -645,27 +598,8 @@
 							}
 						},
 						{
-							"id": "tween-two-properties",
-							"objectClass": "cloud",
-							"sid": 765437919147084,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "-1224",
-								"end-y": "170",
-								"time": "0.5",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 862504611611329
+							"callFunction": "moveCloud",
+							"sid": 451049464257842
 						},
 						{
 							"id": "move-to-top",
@@ -691,15 +625,6 @@
 							"id": "move-to-top",
 							"objectClass": "notSound",
 							"sid": 689671822072948
-						},
-						{
-							"id": "set-position",
-							"objectClass": "cloud",
-							"sid": 258089452998659,
-							"parameters": {
-								"x": "2092",
-								"y": "170"
-							}
 						},
 						{
 							"id": "move-to-top",
@@ -763,27 +688,8 @@
 					],
 					"actions": [
 						{
-							"id": "tween-two-properties",
-							"objectClass": "cloud",
-							"sid": 470237854397898,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "-1224",
-								"end-y": "170",
-								"time": "0.5",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 975976253393366
+							"callFunction": "moveCloud",
+							"sid": 560327739333492
 						},
 						{
 							"id": "wait",
@@ -809,15 +715,6 @@
 								"loop": "no",
 								"ping-pong": "no",
 								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "cloud",
-							"sid": 994342391271381,
-							"parameters": {
-								"x": "2092",
-								"y": "170"
 							}
 						},
 						{
@@ -896,6 +793,52 @@
 					"sid": 187994261486557
 				}
 			]
+		},
+		{
+			"functionName": "moveCloud",
+			"functionDescription": "Animates cloud object",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "cloud",
+					"sid": 360637284609408,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "position",
+						"end-x": "-1224",
+						"end-y": "170",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 896574246964451
+				},
+				{
+					"id": "set-position",
+					"objectClass": "cloud",
+					"sid": 763723678504938,
+					"parameters": {
+						"x": "2092",
+						"y": "170"
+					}
+				}
+			],
+			"sid": 542516395395456
 		}
 	],
 	"sid": 495140299658961
