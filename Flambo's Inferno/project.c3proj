@@ -197,14 +197,6 @@
 					}
 				},
 				{
-					"name": "firework_expl.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 426599094368428,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "jump.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 181396577133759,
@@ -229,17 +221,9 @@
 					}
 				},
 				{
-					"name": "oil.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 124003916763465,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "pick_up.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 521125966138678,
+					"sid": 165240041685037,
 					"file-info": {
 						"purpose": "none"
 					}

@@ -65,21 +65,39 @@
 							"parameters": {
 								"tag": "\"music\""
 							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 904396255738453,
-							"parameters": {
-								"audio-file": "music_in_game",
-								"loop": "not-looping",
-								"volume": "1",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
 						}
 					],
-					"sid": 512628575963275
+					"sid": 512628575963275,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 821582797318619,
+									"parameters": {
+										"variable": "audioflag"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 500323484882919,
+									"parameters": {
+										"audio-file": "music_in_game",
+										"loop": "not-looping",
+										"volume": "1",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								}
+							],
+							"sid": 716720742351020
+						}
+					]
 				}
 			],
 			"sid": 537807553832338
@@ -478,13 +496,13 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 583053308193971,
+							"sid": 118529737726360,
 							"parameters": {
 								"audio-file": "complete",
 								"loop": "not-looping",
 								"volume": "1",
 								"stereo-pan": "0",
-								"tag-optional": "\"music\""
+								"tag-optional": "\"effect\""
 							}
 						},
 						{

@@ -19,6 +19,11 @@
 					],
 					"actions": [
 						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 391080717810965
+						},
+						{
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 728731418165072,
