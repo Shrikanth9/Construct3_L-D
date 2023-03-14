@@ -1,0 +1,194 @@
+{
+	"name": "Event sheet_Home",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "ButtonEnum",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 896128672482179
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 485551373918680,
+					"parameters": {
+						"object": "play"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "play",
+					"sid": 638347113875426,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 358266132403564,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 898623225797928
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "play",
+							"sid": 583135782438144,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "0.6",
+								"end-y": "0.6",
+								"time": "0.1",
+								"ease": "easeinbounce",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 290856841095011,
+							"parameters": {
+								"seconds": "0.2"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "play",
+							"sid": 433739639156720,
+							"parameters": {
+								"scale": "0.8"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "play",
+							"sid": 906802782021205,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 946973812543021,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 761022124442764,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 454500974764607
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 813284028540095,
+					"parameters": {
+						"object": "help"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "help",
+					"sid": 253585107951512,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 435786638576291,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 697645712025465
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "help",
+							"sid": 294946845959431,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "0.8",
+								"end-y": "0.8",
+								"time": "0.1",
+								"ease": "easeinbounce",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 733195518971415,
+							"parameters": {
+								"seconds": "0.2"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "help",
+							"sid": 355823193047855,
+							"parameters": {
+								"scale": "1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "help",
+							"sid": 987010950550991,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 143632798111470
+				}
+			]
+		}
+	],
+	"sid": 544909903180192
+}
