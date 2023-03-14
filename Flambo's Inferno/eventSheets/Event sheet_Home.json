@@ -72,35 +72,821 @@
 			"sid": 733663975809096
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Setup - Home",
-			"description": "Initial setup",
-			"isActiveOnStart": true,
+			"eventType": "variable",
+			"name": "volume",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 251603581650319
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 524345838550774
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 432224789749518,
+					"parameters": {
+						"key": "\"levelComplete\"",
+						"value": "0"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 917542528893824,
+					"parameters": {
+						"type": "log",
+						"message": "\"Loader layout\""
+					}
+				}
+			],
+			"sid": 503534260398589
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 101739073087355
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 713851740944506,
+					"parameters": {
+						"variable": "helpflag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 539270138984699,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "adventureTime",
+					"sid": 666896950112459,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "size",
+						"end-x": "228",
+						"end-y": "120",
+						"time": "0.1",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 946211105183546,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 540523343872464,
+					"parameters": {
+						"variable": "playflag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 775954024704259,
+					"parameters": {
+						"variable": "helpflag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 740327452306863,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 209260980379659,
+					"parameters": {
+						"audio-file": "music_main_menu",
+						"loop": "not-looping",
+						"volume": "1",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "label2",
+					"sid": 871264397692245,
+					"parameters": {
+						"frame-number": "levelCompleted"
+					}
+				}
+			],
+			"sid": 448155743542956
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 221274584043833,
+					"parameters": {
+						"variable": "playflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 974111110381587,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 823358705412883
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 603865817109916,
+							"parameters": {
+								"object": "play"
+							}
 						}
 					],
 					"actions": [
 						{
+							"callFunction": "moveCloud",
+							"sid": 776344128108820
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "Intermediate",
+							"sid": 429636611512209
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "playnow",
+							"sid": 532400094539014
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 120741550545675,
+							"sid": 769803114980468,
+							"parameters": {
+								"variable": "playnowflag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "cloud",
+							"sid": 131717229209230
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 835236338015636,
 							"parameters": {
 								"variable": "helpflag",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "adventureTime",
+							"sid": 403499104561562,
+							"parameters": {
+								"width": "0",
+								"height": "0"
+							}
+						}
+					],
+					"sid": 209582446679709
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 777054896195451,
+							"parameters": {
+								"object": "music"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 203090250250284,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 133953385668438,
+									"parameters": {
+										"variable": "audioflag"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "notAudio",
+									"sid": 421421411479483,
+									"parameters": {
+										"object": "music",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 130875183588360,
+									"parameters": {
+										"variable": "audioflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 459837956566588,
+									"parameters": {
+										"tag": "\"music\""
+									}
+								}
+							],
+							"sid": 755869149080184
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 678598522558744
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "notAudio",
+									"sid": 568473537529424,
+									"parameters": {
+										"x": "724",
+										"y": "-40"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 910743407688416,
+									"parameters": {
+										"variable": "audioflag",
+										"value": "true"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 242209963670053,
+									"parameters": {
+										"audio-file": "music_main_menu",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								}
+							],
+							"sid": 815634972025258
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 707701549982094,
+							"parameters": {
+								"object": "sound"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 665851664023742,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 522646789374121,
+									"parameters": {
+										"variable": "soundflag"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 420223101467433,
+									"parameters": {
+										"variable": "volume",
+										"value": "-100"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "notSound",
+									"sid": 725631905098295,
+									"parameters": {
+										"object": "sound",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 748054718180174,
+									"parameters": {
+										"variable": "soundflag",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 150904409940978
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 958124179319327
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "notSound",
+									"sid": 411417475534422,
+									"parameters": {
+										"x": "724",
+										"y": "-40"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 812342129788544,
+									"parameters": {
+										"variable": "soundflag",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 282472494325059,
+									"parameters": {
+										"variable": "volume",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 988808097772159
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 615346578817200,
+					"parameters": {
+						"variable": "playnowflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 775834679235691,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 878815189010611,
+							"parameters": {
+								"object": "playnow"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "moveCloud",
+							"sid": 155594554186322
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "levelscreen",
+							"sid": 317560750771170
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "sound",
+							"sid": 934455916535226
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "music",
+							"sid": 335657559669175
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 959686286187569,
+							"parameters": {
+								"variable": "levelflag",
 								"value": "true"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "notSound",
+							"sid": 731301422776561
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "notAudio",
+							"sid": 847593106440344
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "menu",
+							"sid": 388365786141541
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "cloud",
+							"sid": 286742458422501
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 317449589819471,
+							"parameters": {
+								"variable": "menuflag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 595666935512698,
+							"parameters": {
+								"variable": "playnowflag",
+								"value": "false"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "label",
+							"sid": 321176773252549
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "label2",
+							"sid": 365959648821277
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "cloud",
+							"sid": 157284698304854
+						}
+					],
+					"sid": 390117560593243
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 727272685270287,
+					"parameters": {
+						"variable": "levelflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 829117103462370,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 552530161051018,
+							"parameters": {
+								"object": "label"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "moveCloud",
+							"sid": 125854408483744
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 699125286407618,
+							"parameters": {
+								"type": "log",
+								"message": "\"gameplay start\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 196213374347797,
+							"parameters": {
+								"variable": "levelflag",
+								"value": "false"
 							}
 						},
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 521254264281225,
+							"sid": 878974806643695,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 628977032465386,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 157532884123938
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 626216249923998,
+							"parameters": {
+								"object": "label2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 356915393060969,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "label2",
+									"sid": 527528280940962,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "moveCloud",
+									"sid": 279557783542771
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 288308284600141,
+									"parameters": {
+										"type": "log",
+										"message": "\"gameplay start\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 631957882491208,
+									"parameters": {
+										"variable": "levelflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 999615688179738,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 893709568470195,
+									"parameters": {
+										"layout": "Game2"
+									}
+								}
+							],
+							"sid": 871832975857697
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 417873872021653,
+					"parameters": {
+						"variable": "helpflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 868585731763729,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 531767783829345,
+							"parameters": {
+								"object": "helpBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "adventureTime",
+							"sid": 787415342510414,
+							"parameters": {
+								"width": "0",
+								"height": "0"
+							}
+						},
+						{
+							"callFunction": "moveCloud",
+							"sid": 151891903806774
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "help",
+							"sid": 170697540690016
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "music",
+							"sid": 457216298348940
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "sound",
+							"sid": 242446484877758
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "notAudio",
+							"sid": 959862673193183
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "notSound",
+							"sid": 736000854917292
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "menu",
+							"sid": 437308912311087
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "cloud",
+							"sid": 570467512574817
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 699806166498414,
+							"parameters": {
+								"variable": "helpflag",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 983279137093260,
+							"parameters": {
+								"variable": "menuflag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 445360355591135
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 117577396476157,
+					"parameters": {
+						"variable": "menuflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 942787062404461,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 614924292581813,
+							"parameters": {
+								"object": "menu"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "moveCloud",
+							"sid": 133881264186750
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 274090783133064,
 							"parameters": {
 								"seconds": "0.1"
 							}
@@ -108,7 +894,7 @@
 						{
 							"id": "tween-two-properties",
 							"objectClass": "adventureTime",
-							"sid": 257377909918577,
+							"sid": 423330091832206,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -124,17 +910,63 @@
 							}
 						},
 						{
-							"id": "wait",
+							"id": "move-to-top",
+							"objectClass": "HomeScreen",
+							"sid": 763500968180008
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "play",
+							"sid": 712962374787488
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "helpBtn",
+							"sid": 669205510173643
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "sound",
+							"sid": 955020393891487
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "music",
+							"sid": 122015484173222
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "notSound",
+							"sid": 195490981845215
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "notAudio",
+							"sid": 428918928211926
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "adventureTime",
+							"sid": 802042494962900
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "cloud",
+							"sid": 196358603098839
+						},
+						{
+							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 234936176370696,
+							"sid": 119622157499505,
 							"parameters": {
-								"seconds": "1.0"
+								"variable": "menuflag",
+								"value": "false"
 							}
 						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 470880013636896,
+							"sid": 363968995500503,
 							"parameters": {
 								"variable": "playflag",
 								"value": "true"
@@ -143,780 +975,62 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 180450253177613,
+							"sid": 759600653193017,
 							"parameters": {
 								"variable": "helpflag",
 								"value": "true"
 							}
-						},
-						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 375670085710820,
-							"parameters": {
-								"tag": "\"music\""
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 445748199621768,
-							"parameters": {
-								"audio-file": "music_main_menu",
-								"loop": "not-looping",
-								"volume": "1",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
 						}
 					],
-					"sid": 195003172916913
+					"sid": 625648646269014
 				}
-			],
-			"sid": 278472890819348
+			]
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Btn Events - Home",
-			"description": "All the button events",
-			"isActiveOnStart": true,
-			"children": [
+			"functionName": "moveCloud",
+			"functionDescription": "Animates cloud object",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 479161667353083,
-							"parameters": {
-								"variable": "playflag"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 906999525826024,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-touched-object",
-									"objectClass": "Touch",
-									"sid": 462150540021574,
-									"parameters": {
-										"object": "play"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "moveCloud",
-									"sid": 190743291573102
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "Intermediate",
-									"sid": 173316397188255
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "playnow",
-									"sid": 699714526512851
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 109150216093044,
-									"parameters": {
-										"variable": "playnowflag",
-										"value": "true"
-									}
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "cloud",
-									"sid": 507872719509477
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 483099309762014,
-									"parameters": {
-										"variable": "helpflag",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "adventureTime",
-									"sid": 169117291206463,
-									"parameters": {
-										"width": "0",
-										"height": "0"
-									}
-								}
-							],
-							"sid": 497460525998520
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-touched-object",
-									"objectClass": "Touch",
-									"sid": 903344991277347,
-									"parameters": {
-										"object": "music"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 706091725806744,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 376044431692338,
-											"parameters": {
-												"variable": "audioflag"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position-to-another-object",
-											"objectClass": "notAudio",
-											"sid": 407625108160354,
-											"parameters": {
-												"object": "music",
-												"image-point-optional": "0"
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 273335301908770,
-											"parameters": {
-												"variable": "audioflag",
-												"value": "false"
-											}
-										},
-										{
-											"id": "stop",
-											"objectClass": "Audio",
-											"sid": 230328020323326,
-											"parameters": {
-												"tag": "\"music\""
-											}
-										}
-									],
-									"sid": 840326683476090
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 810935954078096
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position",
-											"objectClass": "notAudio",
-											"sid": 598480173673760,
-											"parameters": {
-												"x": "724",
-												"y": "-40"
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 581168050000842,
-											"parameters": {
-												"variable": "audioflag",
-												"value": "true"
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 531485506869425,
-											"parameters": {
-												"audio-file": "music_main_menu",
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "\"music\""
-											}
-										}
-									],
-									"sid": 213283728481031
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-touched-object",
-									"objectClass": "Touch",
-									"sid": 101893892402861,
-									"parameters": {
-										"object": "sound"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 558566642963359,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 184662001086017,
-											"parameters": {
-												"variable": "soundflag"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position-to-another-object",
-											"objectClass": "notSound",
-											"sid": 245752024399140,
-											"parameters": {
-												"object": "sound",
-												"image-point-optional": "0"
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 991110052277209,
-											"parameters": {
-												"variable": "soundflag",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 223680956361073
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 582542660922620
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position",
-											"objectClass": "notSound",
-											"sid": 742719007249405,
-											"parameters": {
-												"x": "724",
-												"y": "-40"
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 358540876361414,
-											"parameters": {
-												"variable": "soundflag",
-												"value": "true"
-											}
-										}
-									],
-									"sid": 677715864727843
-								}
-							]
-						}
-					]
+					"id": "tween-two-properties",
+					"objectClass": "cloud",
+					"sid": 116543496045691,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "position",
+						"end-x": "-1224",
+						"end-y": "170",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 513184362194713,
-							"parameters": {
-								"variable": "playnowflag"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 689446592850379,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-touched-object",
-									"objectClass": "Touch",
-									"sid": 233452149452827,
-									"parameters": {
-										"object": "playnow"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "moveCloud",
-									"sid": 238385666501915
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "levelscreen",
-									"sid": 780345696515153
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "sound",
-									"sid": 825627488888891
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "music",
-									"sid": 821894211999091
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 370250489924494,
-									"parameters": {
-										"variable": "levelflag",
-										"value": "true"
-									}
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "notSound",
-									"sid": 248676314929209
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "notAudio",
-									"sid": 102255980780962
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "menu",
-									"sid": 105405038488154
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "cloud",
-									"sid": 302644190392758
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 138343565146419,
-									"parameters": {
-										"variable": "menuflag",
-										"value": "true"
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 311717833753364,
-									"parameters": {
-										"variable": "playnowflag",
-										"value": "false"
-									}
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "label",
-									"sid": 129261465729019
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "cloud",
-									"sid": 212126213779100
-								}
-							],
-							"sid": 378054938747515
-						}
-					]
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 473463581599559
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 543791112833701,
-							"parameters": {
-								"variable": "levelflag"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 556861105701079,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-touched-object",
-									"objectClass": "Touch",
-									"sid": 673701864129490,
-									"parameters": {
-										"object": "label"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "moveCloud",
-									"sid": 364600334384289
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 471415932110283,
-									"parameters": {
-										"type": "log",
-										"message": "\"gameplay start\""
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 144919221295645,
-									"parameters": {
-										"variable": "levelflag",
-										"value": "false"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 112572475121860,
-									"parameters": {
-										"seconds": "0.5"
-									}
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 548762730887667,
-									"parameters": {
-										"layout": "Game"
-									}
-								}
-							],
-							"sid": 544017401378157
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 220142859290756,
-							"parameters": {
-								"variable": "helpflag"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 709151071839600,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-touched-object",
-									"objectClass": "Touch",
-									"sid": 997973505235253,
-									"parameters": {
-										"object": "helpBtn"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-size",
-									"objectClass": "adventureTime",
-									"sid": 679894215759984,
-									"parameters": {
-										"width": "0",
-										"height": "0"
-									}
-								},
-								{
-									"callFunction": "moveCloud",
-									"sid": 549949195470304
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "help",
-									"sid": 625775925855157
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "music",
-									"sid": 360980931204415
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "sound",
-									"sid": 333318836600624
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "notAudio",
-									"sid": 547283493142617
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "notSound",
-									"sid": 359017960082540
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "menu",
-									"sid": 651840229361976
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "cloud",
-									"sid": 212194243294227
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 525785648726572,
-									"parameters": {
-										"variable": "helpflag",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 654593528689415,
-									"parameters": {
-										"variable": "menuflag",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 885634946980121
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 331682448402779,
-							"parameters": {
-								"variable": "menuflag"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 918179450119504,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-touched-object",
-									"objectClass": "Touch",
-									"sid": 633385376314314,
-									"parameters": {
-										"object": "menu"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "moveCloud",
-									"sid": 565251544144609
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 175131469163958,
-									"parameters": {
-										"seconds": "0.1"
-									}
-								},
-								{
-									"id": "tween-two-properties",
-									"objectClass": "adventureTime",
-									"sid": 176591865152338,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"\"",
-										"property": "size",
-										"end-x": "228",
-										"end-y": "120",
-										"time": "0.1",
-										"ease": "noease",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "HomeScreen",
-									"sid": 775000251388452
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "play",
-									"sid": 220098627312681
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "helpBtn",
-									"sid": 610739303528615
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "sound",
-									"sid": 269744580352725
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "music",
-									"sid": 499394753900859
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "notSound",
-									"sid": 909996169009565
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "notAudio",
-									"sid": 880161188484054
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "adventureTime",
-									"sid": 741101245056348
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "cloud",
-									"sid": 202257288609635
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 397763323650694,
-									"parameters": {
-										"variable": "menuflag",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 180462749879437,
-									"parameters": {
-										"variable": "playflag",
-										"value": "true"
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 311240644032477,
-									"parameters": {
-										"variable": "helpflag",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 850930519646937
-						}
-					]
+					"id": "set-position",
+					"objectClass": "cloud",
+					"sid": 199567828868055,
+					"parameters": {
+						"x": "2092",
+						"y": "170"
+					}
 				}
 			],
-			"sid": 858543796398100
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Functions - Home",
-			"description": "All the functions",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"functionName": "moveCloud",
-					"functionDescription": "Animates cloud object",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "tween-two-properties",
-							"objectClass": "cloud",
-							"sid": 286054747421590,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "-1224",
-								"end-y": "170",
-								"time": "0.5",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 927830113382809
-						},
-						{
-							"id": "set-position",
-							"objectClass": "cloud",
-							"sid": 553172359621100,
-							"parameters": {
-								"x": "2092",
-								"y": "170"
-							}
-						}
-					],
-					"sid": 781523235637998
-				}
-			],
-			"sid": 239400718714904
+			"sid": 640351839159766
 		}
 	],
 	"sid": 495140299658961

@@ -2,225 +2,318 @@
 	"name": "Event sheet_Result",
 	"events": [
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Setup",
-			"description": "Initial setup ",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 965701066166984
-						}
-					],
-					"actions": [
-						{
-							"id": "stop-all",
-							"objectClass": "Audio",
-							"sid": 391080717810965
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 728731418165072,
-							"parameters": {
-								"type": "log",
-								"message": "\"CoalCollected : \" & coalCollected"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "coalCount",
-							"sid": 111121827463230,
-							"parameters": {
-								"text": "Coalcollected&\"/5\""
-							}
-						}
-					],
-					"sid": 232135562532628,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 934048647838702,
-									"parameters": {
-										"variable": "coalCollected",
-										"comparison": 0,
-										"value": "5"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "fireBoyRes",
-									"sid": 120879760963236,
-									"parameters": {
-										"frame-number": "1"
-									}
-								}
-							],
-							"sid": 713241491180933
-						}
-					]
-				}
-			],
-			"sid": 863799197164860
+			"eventType": "variable",
+			"name": "levelCompleted",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 961459438261634
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Btn Events",
-			"description": "Button events",
-			"isActiveOnStart": true,
-			"children": [
+			"eventType": "block",
+			"conditions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-touched-object",
-							"objectClass": "Touch",
-							"sid": 766133643110142,
-							"parameters": {
-								"object": "retry"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "moveCloud-result",
-							"sid": 317193585819128
-						},
-						{
-							"id": "reset-global-variables",
-							"objectClass": "System",
-							"sid": 590971214818901
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 503293736529563,
-							"parameters": {
-								"seconds": "0.5"
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 163192479829431,
-							"parameters": {
-								"layout": "Game"
-							}
-						}
-					],
-					"sid": 447885777907394
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 382571188920014
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 381405827493645
+				}
+			],
+			"sid": 286391771493961
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 932348491176753
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 596948744145683
 				},
 				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 457139442466537,
+					"parameters": {
+						"type": "log",
+						"message": "\"CoalCollected : \" & coalCollected"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "coalCount",
+					"sid": 877476919758328,
+					"parameters": {
+						"text": "Coalcollected&\"/5\""
+					}
+				}
+			],
+			"sid": 742053957681084,
+			"children": [
+				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-touched-object",
-							"objectClass": "Touch",
-							"sid": 531470566124702,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 359151645551256,
 							"parameters": {
-								"object": "menu"
+								"variable": "coalCollected",
+								"comparison": 0,
+								"value": "5"
 							}
 						}
 					],
 					"actions": [
 						{
-							"callFunction": "moveCloud-result",
-							"sid": 130295723999567
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 668302928529920,
+							"id": "set-animation-frame",
+							"objectClass": "fireBoyRes",
+							"sid": 270634411143390,
 							"parameters": {
-								"seconds": "0.5"
+								"frame-number": "1"
 							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 261424583628403,
-							"parameters": {
-								"layout": "Home"
-							}
-						},
-						{
-							"id": "reset-global-variables",
-							"objectClass": "System",
-							"sid": 954343127782060
 						}
 					],
-					"sid": 102808292295196
+					"sid": 407444583820988
 				}
-			],
-			"sid": 146768994821946
+			]
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Functions - Result",
-			"description": "All the functions",
-			"isActiveOnStart": true,
-			"children": [
+			"eventType": "block",
+			"conditions": [
 				{
-					"functionName": "moveCloud-result",
-					"functionDescription": "Animates cloud object",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "tween-two-properties",
-							"objectClass": "cloud",
-							"sid": 883499085506458,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "-1224",
-								"end-y": "170",
-								"time": "0.5",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 443728369353918
-						},
-						{
-							"id": "set-position",
-							"objectClass": "cloud",
-							"sid": 576733638285260,
-							"parameters": {
-								"x": "2092",
-								"y": "170"
-							}
-						}
-					],
-					"sid": 335383908076667
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 514005359416456,
+					"parameters": {
+						"object": "retry"
+					}
 				}
 			],
-			"sid": 682938742515159
+			"actions": [
+				{
+					"callFunction": "moveCloud-result",
+					"sid": 293091297864794
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 982126265896274
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 515047980353994,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 790983099701761,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 961602337579349
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 302743212738371,
+					"parameters": {
+						"object": "menu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 188798761535836,
+					"parameters": {
+						"key": "\"levelComplete\""
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 112106247441214,
+					"parameters": {
+						"key": "\"levelComplete\"",
+						"value": "levelCompleted"
+					}
+				},
+				{
+					"callFunction": "moveCloud-result",
+					"sid": 431589150646945
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 953605460083163,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 442118464270397,
+					"parameters": {
+						"layout": "Home"
+					}
+				}
+			],
+			"sid": 563551505529527
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 114452310420628,
+					"parameters": {
+						"object": "continue"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 688491495466726,
+					"parameters": {
+						"key": "\"levelComplete\""
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 350878908150745,
+					"parameters": {
+						"key": "\"levelComplete\"",
+						"value": "levelCompleted"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 699698780939075,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 457088560137798,
+					"parameters": {
+						"layout": "Game2"
+					}
+				}
+			],
+			"sid": 463441157006476
+		},
+		{
+			"functionName": "moveCloud-result",
+			"functionDescription": "Animates cloud object",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "cloud",
+					"sid": 878066201490746,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "position",
+						"end-x": "-1224",
+						"end-y": "170",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 495813721574218
+				},
+				{
+					"id": "set-position",
+					"objectClass": "cloud",
+					"sid": 338855036588328,
+					"parameters": {
+						"x": "2092",
+						"y": "170"
+					}
+				}
+			],
+			"sid": 119950333738427
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 818637997460584,
+					"parameters": {
+						"key": "\"levelComplete\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 301430344600179,
+					"parameters": {
+						"variable": "levelCompleted",
+						"value": "LocalStorage.ItemValue + 1"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 769559019929263,
+					"parameters": {
+						"type": "log",
+						"message": "levelCompleted"
+					}
+				}
+			],
+			"sid": 966361665346041
 		}
 	],
 	"sid": 993585946501135

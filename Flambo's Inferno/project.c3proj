@@ -29,6 +29,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
@@ -139,7 +146,11 @@
 			"coalLabel",
 			"coalCount",
 			"Sprite6",
-			"Audio"
+			"Audio",
+			"label2",
+			"continue",
+			"Sprite2",
+			"LocalStorage"
 		],
 		"subfolders": []
 	},
@@ -153,7 +164,8 @@
 		"items": [
 			"Home",
 			"Game",
-			"Result"
+			"Result",
+			"Game2"
 		],
 		"subfolders": []
 	},

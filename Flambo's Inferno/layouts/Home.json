@@ -108,8 +108,37 @@
 					"world": {
 						"x": 184.20752424002552,
 						"y": 150.5558954680504,
-						"width": 62.76714298269607,
-						"height": 42.74003048520327,
+						"width": 46,
+						"height": 44,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "label2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 54,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 267,
+						"y": 152,
+						"width": 46,
+						"height": 44,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
