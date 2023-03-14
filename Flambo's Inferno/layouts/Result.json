@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Sprite",
+					"type": "levelbg",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",

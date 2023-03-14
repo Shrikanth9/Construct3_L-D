@@ -210,6 +210,14 @@
 					"parameters": {
 						"frame-number": "levelCompleted"
 					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "label3",
+					"sid": 544062515647914,
+					"parameters": {
+						"frame-number": "levelCompleted"
+					}
 				}
 			],
 			"sid": 448155743542956
@@ -601,6 +609,11 @@
 						},
 						{
 							"id": "move-to-top",
+							"objectClass": "label3",
+							"sid": 405447145130848
+						},
+						{
+							"id": "move-to-top",
 							"objectClass": "cloud",
 							"sid": 157284698304854
 						}
@@ -747,6 +760,78 @@
 								}
 							],
 							"sid": 871832975857697
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 542277921052262,
+							"parameters": {
+								"object": "label3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 856054627091928,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "label3",
+									"sid": 906140107815850,
+									"parameters": {
+										"comparison": 0,
+										"number": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "moveCloud",
+									"sid": 722205720609771
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 358627713900485,
+									"parameters": {
+										"type": "log",
+										"message": "\"gameplay start\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 661208947232461,
+									"parameters": {
+										"variable": "levelflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 515777916706801,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 646474016661973,
+									"parameters": {
+										"layout": "Game3"
+									}
+								}
+							],
+							"sid": 741530973968717
 						}
 					]
 				}

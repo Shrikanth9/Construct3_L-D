@@ -42,6 +42,16 @@
 			"sid": 648630112052057
 		},
 		{
+			"eventType": "variable",
+			"name": "doorFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 895107863612406
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -629,6 +639,119 @@
 				}
 			],
 			"sid": 482118854057866
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "player",
+					"sid": 683367597814672,
+					"parameters": {
+						"object": "door_key"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "door_key",
+					"sid": 791484375690830,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				}
+			],
+			"sid": 454665892687861,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-enabled",
+							"objectClass": "door_lock",
+							"sid": 574321077738566,
+							"behaviorType": "Solid"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "door_lock",
+							"sid": 472368660967534,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "door_lock",
+							"sid": 634364329319033,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 995441683322055
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 245474009691514
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "door_lock",
+							"sid": 258653153134975,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "door_lock",
+							"sid": 461405668638468,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 741137136367653
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 868802193889528,
+					"parameters": {
+						"first-value": "abs(door_key.X - player.X)",
+						"comparison": 5,
+						"second-value": "100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "door_key",
+					"sid": 710017495509693,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				}
+			],
+			"sid": 395202683023526
 		}
 	],
 	"sid": 522266694171192

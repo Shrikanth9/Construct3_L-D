@@ -15,24 +15,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-loader-layout-complete",
-					"objectClass": "System",
-					"sid": 382571188920014
-				}
-			],
-			"actions": [
-				{
-					"id": "reset-global-variables",
-					"objectClass": "System",
-					"sid": 381405827493645
-				}
-			],
-			"sid": 286391771493961
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 932348491176753
@@ -60,6 +42,16 @@
 					"parameters": {
 						"text": "Coalcollected&\"/5\""
 					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 657064639798638
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 959361871345091
 				}
 			],
 			"sid": 742053957681084,
@@ -106,13 +98,16 @@
 			],
 			"actions": [
 				{
-					"callFunction": "moveCloud-result",
-					"sid": 293091297864794
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 271779104204714,
+					"parameters": {
+						"key": "\"levelComplete\""
+					}
 				},
 				{
-					"id": "reset-global-variables",
-					"objectClass": "System",
-					"sid": 982126265896274
+					"callFunction": "moveCloud-result",
+					"sid": 293091297864794
 				},
 				{
 					"id": "wait",
@@ -123,11 +118,11 @@
 					}
 				},
 				{
-					"id": "go-to-layout",
+					"id": "go-to-layout-by-name",
 					"objectClass": "System",
-					"sid": 790983099701761,
+					"sid": 970613568177846,
 					"parameters": {
-						"layout": "Game"
+						"layout": "\"Game\"&(levelCompleted + 1)"
 					}
 				}
 			],
@@ -152,15 +147,6 @@
 					"sid": 188798761535836,
 					"parameters": {
 						"key": "\"levelComplete\""
-					}
-				},
-				{
-					"id": "set-item",
-					"objectClass": "LocalStorage",
-					"sid": 112106247441214,
-					"parameters": {
-						"key": "\"levelComplete\"",
-						"value": "levelCompleted"
 					}
 				},
 				{
@@ -202,34 +188,29 @@
 				{
 					"id": "get-item",
 					"objectClass": "LocalStorage",
-					"sid": 688491495466726,
+					"sid": 331025924569963,
 					"parameters": {
 						"key": "\"levelComplete\""
 					}
 				},
 				{
-					"id": "set-item",
-					"objectClass": "LocalStorage",
-					"sid": 350878908150745,
-					"parameters": {
-						"key": "\"levelComplete\"",
-						"value": "levelCompleted"
-					}
+					"callFunction": "moveCloud-result",
+					"sid": 998305402705571
 				},
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 699698780939075,
+					"sid": 561779339008903,
 					"parameters": {
 						"seconds": "0.5"
 					}
 				},
 				{
-					"id": "go-to-layout",
+					"id": "go-to-layout-by-name",
 					"objectClass": "System",
-					"sid": 457088560137798,
+					"sid": 197434370430242,
 					"parameters": {
-						"layout": "Game2"
+						"layout": "\"Game\"&(levelCompleted + 1)"
 					}
 				}
 			],
@@ -246,6 +227,11 @@
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [
+				{
+					"id": "move-to-top",
+					"objectClass": "cloud",
+					"sid": 144105477951805
+				},
 				{
 					"id": "tween-two-properties",
 					"objectClass": "cloud",
@@ -310,6 +296,15 @@
 					"parameters": {
 						"type": "log",
 						"message": "levelCompleted"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 667402618079211,
+					"parameters": {
+						"key": "\"levelComplete\"",
+						"value": "levelCompleted"
 					}
 				}
 			],

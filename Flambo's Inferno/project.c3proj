@@ -137,7 +137,7 @@
 			"coal",
 			"diamond",
 			"instructions",
-			"Sprite",
+			"levelbg",
 			"fireBoyRes",
 			"retry",
 			"levelHeader",
@@ -149,8 +149,12 @@
 			"Audio",
 			"label2",
 			"continue",
-			"Sprite2",
-			"LocalStorage"
+			"Instructions2",
+			"LocalStorage",
+			"door_lock",
+			"Instructions3",
+			"door_key",
+			"label3"
 		],
 		"subfolders": []
 	},
@@ -165,7 +169,8 @@
 			"Home",
 			"Game",
 			"Result",
-			"Game2"
+			"Game2",
+			"Game3"
 		],
 		"subfolders": []
 	},
@@ -173,7 +178,8 @@
 		"items": [
 			"Event sheet_Home",
 			"Event sheet_Game",
-			"Event sheet_Result"
+			"Event sheet_Result",
+			"Event sheet 1"
 		],
 		"subfolders": []
 	},
