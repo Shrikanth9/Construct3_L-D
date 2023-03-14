@@ -2,6 +2,16 @@
 	"name": "Event sheet_Game",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "pauseFlag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 715523625226924
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -30,25 +40,42 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 463577062640763,
+			"children": [
 				{
-					"id": "set-animation-frame",
-					"objectClass": "helpBtn",
-					"sid": 772983409668212,
-					"parameters": {
-						"frame-number": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "helpBtn",
-					"sid": 788720647801389,
-					"parameters": {
-						"scale": "0.7"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 251835104859163,
+							"parameters": {
+								"variable": "pauseFlag"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "helpBtn",
+							"sid": 598079420300621,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "helpBtn",
+							"sid": 305230818072472,
+							"parameters": {
+								"scale": "0.7"
+							}
+						}
+					],
+					"sid": 891320424333501
 				}
-			],
-			"sid": 463577062640763
+			]
 		},
 		{
 			"eventType": "block",
@@ -134,29 +161,55 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 499348263446119,
+			"children": [
 				{
-					"id": "set-animation-frame",
-					"objectClass": "pauseBtn",
-					"sid": 469665049564533,
-					"parameters": {
-						"frame-number": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "pauseBtn",
-					"sid": 556849390652533,
-					"parameters": {
-						"scale": "0.7"
-					}
-				},
-				{
-					"callFunction": "showPopUp",
-					"sid": 202250428578271
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 755608841914927,
+							"parameters": {
+								"variable": "pauseFlag"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "pauseBtn",
+							"sid": 853829623203168,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "pauseBtn",
+							"sid": 755308180165921,
+							"parameters": {
+								"scale": "0.7"
+							}
+						},
+						{
+							"callFunction": "showPopUp",
+							"sid": 599572814859648
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 762135238538616,
+							"parameters": {
+								"variable": "pauseFlag",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 736755300028705
 				}
-			],
-			"sid": 499348263446119
+			]
 		},
 		{
 			"eventType": "block",
@@ -170,17 +223,34 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 290633478174127,
+			"children": [
 				{
-					"id": "set-scale",
-					"objectClass": "submit",
-					"sid": 927674950025977,
-					"parameters": {
-						"scale": "0.7"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 198694642525035,
+							"parameters": {
+								"variable": "pauseFlag"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "submit",
+							"sid": 830464597810516,
+							"parameters": {
+								"scale": "0.7"
+							}
+						}
+					],
+					"sid": 479783638170202
 				}
-			],
-			"sid": 290633478174127
+			]
 		},
 		{
 			"functionName": "hidePopUp",
@@ -316,6 +386,15 @@
 				{
 					"callFunction": "hidePopUp",
 					"sid": 834167330856345
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 653567421598216,
+					"parameters": {
+						"variable": "pauseFlag",
+						"value": "true"
+					}
 				}
 			],
 			"sid": 663610468693506
