@@ -1,5 +1,370 @@
 {
 	"name": "Event sheet_Game",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 819872148067614
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "hidePopUp",
+					"sid": 447140610956763
+				}
+			],
+			"sid": 514829051777513
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 913118521612161,
+					"parameters": {
+						"object": "helpBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "helpBtn",
+					"sid": 772983409668212,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "helpBtn",
+					"sid": 788720647801389,
+					"parameters": {
+						"scale": "0.7"
+					}
+				}
+			],
+			"sid": 463577062640763
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 504987165536153
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "helpBtn",
+					"sid": 185018347972185,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "helpBtn",
+					"sid": 952769328708939,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "submit",
+					"sid": 510462039909543,
+					"parameters": {
+						"scale": "1"
+					}
+				}
+			],
+			"sid": 236508195072195,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "pauseBtn",
+							"sid": 300651266551759,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "pauseBtn",
+							"sid": 553313030319670,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "pauseBtn",
+							"sid": 720407910418618,
+							"parameters": {
+								"scale": "1"
+							}
+						}
+					],
+					"sid": 719677419127990
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 780555364847583,
+					"parameters": {
+						"object": "pauseBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "pauseBtn",
+					"sid": 469665049564533,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "pauseBtn",
+					"sid": 556849390652533,
+					"parameters": {
+						"scale": "0.7"
+					}
+				},
+				{
+					"callFunction": "showPopUp",
+					"sid": 202250428578271
+				}
+			],
+			"sid": 499348263446119
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 722339407901949,
+					"parameters": {
+						"object": "submit"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "submit",
+					"sid": 927674950025977,
+					"parameters": {
+						"scale": "0.7"
+					}
+				}
+			],
+			"sid": 290633478174127
+		},
+		{
+			"functionName": "hidePopUp",
+			"functionDescription": "hides the popUP",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "transparentBg",
+					"sid": 928795075412469,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "gamePause",
+					"sid": 758727429420692,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "resumeBtn",
+					"sid": 343700549849120,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "restartBtn",
+					"sid": 192146125842596,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "homeBtn",
+					"sid": 286191430115014,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				}
+			],
+			"sid": 611956143923731
+		},
+		{
+			"functionName": "showPopUp",
+			"functionDescription": "hides the popUP",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "transparentBg",
+					"sid": 603057209969873,
+					"parameters": {
+						"width": "1920",
+						"height": "1080"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "gamePause",
+					"sid": 108902602145074,
+					"parameters": {
+						"width": "619",
+						"height": "403"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "resumeBtn",
+					"sid": 791729224517649,
+					"parameters": {
+						"width": "274",
+						"height": "75"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "restartBtn",
+					"sid": 627405172610451,
+					"parameters": {
+						"width": "274",
+						"height": "75"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "homeBtn",
+					"sid": 746758131908861,
+					"parameters": {
+						"width": "274",
+						"height": "75"
+					}
+				}
+			],
+			"sid": 693984521555636
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 210646837370225,
+					"parameters": {
+						"object": "resumeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "hidePopUp",
+					"sid": 834167330856345
+				}
+			],
+			"sid": 663610468693506
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 578425498374839,
+					"parameters": {
+						"object": "restartBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 480590562930011
+				}
+			],
+			"sid": 682240669649601
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 186444550919158,
+					"parameters": {
+						"object": "homeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 722595573472599,
+					"parameters": {
+						"layout": "Home"
+					}
+				}
+			],
+			"sid": 936368631739485
+		}
+	],
 	"sid": 788737579436169
 }

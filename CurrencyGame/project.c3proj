@@ -49,7 +49,15 @@
 			"Sprite2",
 			"gameHeader",
 			"pauseBtn",
-			"helpBtn"
+			"helpBtn",
+			"table",
+			"Sprite4",
+			"submit",
+			"transparentBg",
+			"gamePause",
+			"resumeBtn",
+			"restartBtn",
+			"homeBtn"
 		],
 		"subfolders": []
 	},

@@ -1,0 +1,57 @@
+{
+	"name": "gamePause",
+	"plugin-id": "Sprite",
+	"sid": 254746376918885,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 619,
+						"height": 403,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1809887,
+						"collisionPoly": {
+							"points": [
+								0.030694668820678513,
+								0.04714640198511166,
+								0.5,
+								0,
+								0.9709208400646203,
+								0.04466501240694789,
+								1,
+								0.5,
+								0.9693053311793215,
+								0.9528535980148883,
+								0.5,
+								0.9950372208436724,
+								0.03231017770597738,
+								0.9503722084367245,
+								0.004846526655896607,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 473967684518297,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
