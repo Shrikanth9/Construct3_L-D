@@ -413,6 +413,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 876856374020315,
+					"parameters": {
+						"variable": "pauseFlag",
+						"value": "true"
+					}
+				},
+				{
 					"id": "restart-layout",
 					"objectClass": "System",
 					"sid": 480590562930011
@@ -433,6 +442,15 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 544312714255922,
+					"parameters": {
+						"variable": "pauseFlag",
+						"value": "true"
+					}
+				},
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",

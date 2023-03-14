@@ -69,7 +69,6 @@
 	},
 	"layouts": {
 		"items": [
-			"Loader",
 			"Home",
 			"Game"
 		],
@@ -235,5 +234,5 @@
 	},
 	"viewportWidth": 1920,
 	"viewportHeight": 1080,
-	"firstLayout": "Loader"
+	"firstLayout": null
 }
