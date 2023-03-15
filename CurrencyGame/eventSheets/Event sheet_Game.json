@@ -40,42 +40,25 @@
 					}
 				}
 			],
-			"actions": [],
-			"sid": 463577062640763,
-			"children": [
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 251835104859163,
-							"parameters": {
-								"variable": "pauseFlag"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "helpBtn",
-							"sid": 598079420300621,
-							"parameters": {
-								"frame-number": "1"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "helpBtn",
-							"sid": 305230818072472,
-							"parameters": {
-								"scale": "0.7"
-							}
-						}
-					],
-					"sid": 891320424333501
+					"id": "set-animation-frame",
+					"objectClass": "helpBtn",
+					"sid": 931362248458501,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "helpBtn",
+					"sid": 850703132125657,
+					"parameters": {
+						"scale": "0.7"
+					}
 				}
-			]
+			],
+			"sid": 463577062640763
 		},
 		{
 			"eventType": "block",
@@ -87,22 +70,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "set-animation-frame",
-					"objectClass": "helpBtn",
-					"sid": 185018347972185,
-					"parameters": {
-						"frame-number": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "helpBtn",
-					"sid": 952769328708939,
-					"parameters": {
-						"scale": "1"
-					}
-				},
 				{
 					"id": "set-scale",
 					"objectClass": "submit",
@@ -143,9 +110,46 @@
 							"parameters": {
 								"scale": "1"
 							}
+						},
+						{
+							"callFunction": "showPopUp",
+							"sid": 787964013875540
 						}
 					],
 					"sid": 719677419127990
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "helpBtn",
+							"sid": 705319276388275,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "helpBtn",
+							"sid": 659587930108220,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "helpBtn",
+							"sid": 580288838929234,
+							"parameters": {
+								"scale": "1"
+							}
+						}
+					],
+					"sid": 972197152396713
 				}
 			]
 		},
@@ -161,55 +165,25 @@
 					}
 				}
 			],
-			"actions": [],
-			"sid": 499348263446119,
-			"children": [
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 755608841914927,
-							"parameters": {
-								"variable": "pauseFlag"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "pauseBtn",
-							"sid": 853829623203168,
-							"parameters": {
-								"frame-number": "1"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "pauseBtn",
-							"sid": 755308180165921,
-							"parameters": {
-								"scale": "0.7"
-							}
-						},
-						{
-							"callFunction": "showPopUp",
-							"sid": 599572814859648
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 762135238538616,
-							"parameters": {
-								"variable": "pauseFlag",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 736755300028705
+					"id": "set-animation-frame",
+					"objectClass": "pauseBtn",
+					"sid": 110656136921254,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "pauseBtn",
+					"sid": 178693711166533,
+					"parameters": {
+						"scale": "0.7"
+					}
 				}
-			]
+			],
+			"sid": 499348263446119
 		},
 		{
 			"eventType": "block",
@@ -223,34 +197,17 @@
 					}
 				}
 			],
-			"actions": [],
-			"sid": 290633478174127,
-			"children": [
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 198694642525035,
-							"parameters": {
-								"variable": "pauseFlag"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-scale",
-							"objectClass": "submit",
-							"sid": 830464597810516,
-							"parameters": {
-								"scale": "0.7"
-							}
-						}
-					],
-					"sid": 479783638170202
+					"id": "set-scale",
+					"objectClass": "submit",
+					"sid": 628575947832837,
+					"parameters": {
+						"scale": "0.7"
+					}
 				}
-			]
+			],
+			"sid": 290633478174127
 		},
 		{
 			"functionName": "hidePopUp",
@@ -461,6 +418,166 @@
 				}
 			],
 			"sid": 936368631739485
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 516992256478639,
+					"parameters": {
+						"object": "gamePause"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 642889353846845,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restartBtn",
+					"sid": 959804763169155,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn",
+					"sid": 627339935465066,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 689956790298577
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 277432563097164,
+					"parameters": {
+						"object": "resumeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 157786190200569,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restartBtn",
+					"sid": 485318535397657,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn",
+					"sid": 197279339462103,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 426208561398384
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 817665428927142,
+					"parameters": {
+						"object": "restartBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 734215534223396,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restartBtn",
+					"sid": 621722732928626,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn",
+					"sid": 708204271723545,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 463057500263950
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 793737458280068,
+					"parameters": {
+						"object": "homeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 484955410741295,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restartBtn",
+					"sid": 294612258438285,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn",
+					"sid": 611788752646237,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 688963455265993
 		}
 	],
 	"sid": 788737579436169
