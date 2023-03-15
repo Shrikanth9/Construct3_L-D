@@ -65,7 +65,12 @@
 			"resumeBtn",
 			"restartBtn",
 			"homeBtn",
-			"Mouse"
+			"Mouse",
+			"twenty",
+			"ten",
+			"fifty",
+			"two",
+			"five"
 		],
 		"subfolders": []
 	},
