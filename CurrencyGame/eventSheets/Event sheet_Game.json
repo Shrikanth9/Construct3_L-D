@@ -212,6 +212,11 @@
 			],
 			"actions": [
 				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 227402621227313
+				},
+				{
 					"callFunction": "hidePopUp",
 					"sid": 447140610956763
 				},
