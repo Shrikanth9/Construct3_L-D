@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Sprite3",
+					"type": "help1",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -36,7 +36,7 @@
 					}
 				},
 				{
-					"type": "Sprite3",
+					"type": "help1",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -65,7 +65,7 @@
 					}
 				},
 				{
-					"type": "Sprite8",
+					"type": "help2",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -94,7 +94,7 @@
 					}
 				},
 				{
-					"type": "Text3",
+					"type": "Instructions",
 					"properties": {
 						"text": "NOTE THE PRICES ON THE ITEM SHOWN",
 						"enable-bbcode": true,
@@ -137,7 +137,7 @@
 					}
 				},
 				{
-					"type": "Text3",
+					"type": "Instructions",
 					"properties": {
 						"text": "TAP ON THE CURRENCIES TO MATCH THE TOTAL AMOUNT OF ITEMS",
 						"enable-bbcode": true,
@@ -465,7 +465,7 @@
 					}
 				},
 				{
-					"type": "Text3",
+					"type": "Instructions",
 					"properties": {
 						"text": "CLICK ON THE SUBMIT BUTTON ONCE THE CURRENCIES MATCH THE TOTAL AMOUNT OF ITEMS",
 						"enable-bbcode": true,

@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -99,17 +106,16 @@
 			"correct",
 			"wrong",
 			"Array",
-			"Text",
+			"roundText",
 			"score",
-			"Sprite3",
-			"Text2",
-			"Sprite5",
-			"Sprite6",
+			"help1",
 			"hand",
-			"Sprite8",
-			"Text3",
+			"help2",
+			"Instructions",
 			"Done",
-			"Sprite7"
+			"Sprite7",
+			"soundLogo",
+			"Audio"
 		],
 		"subfolders": []
 	},
@@ -141,7 +147,40 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "btnSelect.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 855880589831448,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "note.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 503006313874666,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "coin.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 659627758651780,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "submit.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 901732736083427,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

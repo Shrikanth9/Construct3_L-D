@@ -1133,7 +1133,7 @@
 					}
 				},
 				{
-					"type": "Text",
+					"type": "roundText",
 					"properties": {
 						"text": "Round 1/1",
 						"enable-bbcode": false,

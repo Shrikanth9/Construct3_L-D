@@ -2,16 +2,6 @@
 	"name": "Event sheet_Home",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "ButtonEnum",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 896128672482179
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -45,6 +35,18 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 956611106835489,
+							"parameters": {
+								"audio-file": "btnSelect",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "tween-two-properties",
 							"objectClass": "play",
@@ -142,6 +144,18 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 447647813662650,
+							"parameters": {
+								"audio-file": "btnSelect",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "tween-two-properties",
 							"objectClass": "help",
