@@ -3,16 +3,6 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "pauseFlag",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 715523625226924
-		},
-		{
-			"eventType": "variable",
 			"name": "twentyUID",
 			"type": "number",
 			"initialValue": "0",
@@ -82,6 +72,126 @@
 			"sid": 904317257168206
 		},
 		{
+			"eventType": "variable",
+			"name": "moneyCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 863407141986990
+		},
+		{
+			"eventType": "variable",
+			"name": "twentyCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 484093975554198
+		},
+		{
+			"eventType": "variable",
+			"name": "tenCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 365700398540203
+		},
+		{
+			"eventType": "variable",
+			"name": "fiftyCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 942633292590289
+		},
+		{
+			"eventType": "variable",
+			"name": "fiveCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 485334888024614
+		},
+		{
+			"eventType": "variable",
+			"name": "twoCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 531375221827500
+		},
+		{
+			"eventType": "variable",
+			"name": "expectedCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 749185648123594
+		},
+		{
+			"eventType": "variable",
+			"name": "randomPrice",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 954692506290917
+		},
+		{
+			"eventType": "variable",
+			"name": "hundredCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 664837584916593
+		},
+		{
+			"eventType": "variable",
+			"name": "tempIndex",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 183866609541580
+		},
+		{
+			"eventType": "variable",
+			"name": "temp",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 411094978308673
+		},
+		{
+			"eventType": "variable",
+			"name": "index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 355658072222363
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -100,7 +210,170 @@
 					"sid": 453371644787379
 				}
 			],
-			"sid": 514829051777513
+			"sid": 514829051777513,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 375772756462563,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "insert",
+							"objectClass": "Array",
+							"sid": 804841206938724,
+							"parameters": {
+								"value": "loopindex",
+								"index": "loopindex",
+								"axis": "x"
+							}
+						}
+					],
+					"sid": 899552331422444
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 355268221017141,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 681216111139101,
+							"parameters": {
+								"variable": "temp",
+								"value": "Array.At(loopindex)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 179359242213823,
+							"parameters": {
+								"variable": "tempIndex",
+								"value": "floor(random(0, 3.5))"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "Array",
+							"sid": 723765027512182,
+							"parameters": {
+								"x": "loopindex",
+								"value": "Array.At(tempIndex)"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "Array",
+							"sid": 820091693504429,
+							"parameters": {
+								"x": "tempIndex",
+								"value": "temp"
+							}
+						}
+					],
+					"sid": 365245929322621
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 475738053106441,
+							"parameters": {
+								"object": "price",
+								"expression": "0",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 738226389215079,
+							"parameters": {
+								"variable": "randomPrice",
+								"value": "floor(random(2,15)) * 5"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "price",
+							"sid": 888233450286737,
+							"parameters": {
+								"text": "\"Rs.\"&randomPrice"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 527169142839429,
+							"parameters": {
+								"variable": "expectedCount",
+								"value": "randomPrice"
+							}
+						}
+					],
+					"sid": 933632189757780
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 110173481836605,
+							"parameters": {
+								"object": "objects",
+								"expression": "0",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "objects",
+							"sid": 593050657361456,
+							"parameters": {
+								"frame-number": "Array.At(index)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 539446373137305,
+							"parameters": {
+								"variable": "index",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 818567386457462
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -417,15 +690,6 @@
 				{
 					"callFunction": "hidePopUp",
 					"sid": 834167330856345
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 653567421598216,
-					"parameters": {
-						"variable": "pauseFlag",
-						"value": "true"
-					}
 				}
 			],
 			"sid": 663610468693506
@@ -443,15 +707,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 876856374020315,
-					"parameters": {
-						"variable": "pauseFlag",
-						"value": "true"
-					}
-				},
 				{
 					"id": "restart-layout",
 					"objectClass": "System",
@@ -473,15 +728,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 544312714255922,
-					"parameters": {
-						"variable": "pauseFlag",
-						"value": "true"
-					}
-				},
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
@@ -659,6 +905,87 @@
 				{
 					"id": "on-touched-object",
 					"objectClass": "Touch",
+					"sid": 545379789747729,
+					"parameters": {
+						"object": "hundred"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 163240102546082,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "hundred",
+							"sid": 774328350555493,
+							"parameters": {
+								"unique-id": "twoUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 348619399410809,
+							"parameters": {
+								"variable": "hundredCount",
+								"value": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "hundred",
+							"sid": 895489954686103,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "1220",
+								"end-y": "328",
+								"time": "0.3",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 464904485821514,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "move-to-object",
+							"objectClass": "hundred",
+							"sid": 815817976666578,
+							"parameters": {
+								"where": "in-front",
+								"object": "submit"
+							}
+						},
+						{
+							"callFunction": "setUID",
+							"sid": 876145919710783
+						}
+					],
+					"sid": 403392769419722
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
 					"sid": 545123255083682,
 					"parameters": {
 						"object": "fifty"
@@ -682,9 +1009,18 @@
 					],
 					"actions": [
 						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 208500336154282,
+							"parameters": {
+								"variable": "fiftyCount",
+								"value": "1"
+							}
+						},
+						{
 							"id": "tween-two-properties",
 							"objectClass": "fifty",
-							"sid": 744225027158301,
+							"sid": 936690967151925,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -753,6 +1089,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 827355618732648,
+							"parameters": {
+								"variable": "twentyCount",
+								"value": "1"
+							}
+						},
 						{
 							"id": "tween-two-properties",
 							"objectClass": "twenty",
@@ -826,6 +1171,15 @@
 					],
 					"actions": [
 						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 832779161803342,
+							"parameters": {
+								"variable": "tenCount",
+								"value": "1"
+							}
+						},
+						{
 							"id": "tween-two-properties",
 							"objectClass": "ten",
 							"sid": 898507709168539,
@@ -898,6 +1252,15 @@
 					],
 					"actions": [
 						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 322210936910691,
+							"parameters": {
+								"variable": "fiveCount",
+								"value": "1"
+							}
+						},
+						{
 							"id": "tween-two-properties",
 							"objectClass": "five",
 							"sid": 404024590275132,
@@ -929,7 +1292,7 @@
 							"sid": 842296241704570,
 							"parameters": {
 								"where": "in-front",
-								"object": "two"
+								"object": "hundred"
 							}
 						},
 						{
@@ -947,69 +1310,121 @@
 				{
 					"id": "on-touched-object",
 					"objectClass": "Touch",
-					"sid": 445691223657549,
+					"sid": 549134076700271,
 					"parameters": {
-						"object": "two"
+						"object": "submit"
 					}
 				}
 			],
-			"actions": [],
-			"sid": 469183640481481,
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 700652795645419,
+					"parameters": {
+						"variable": "moneyCount",
+						"value": "(fiveCount * 5) + (tenCount * 10) + (twentyCount * 20) + (fiftyCount * 50) + (hundredCount * 100)"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 629349223986447,
+					"parameters": {
+						"type": "log",
+						"message": "moneyCount"
+					}
+				}
+			],
+			"sid": 574301129819535,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
-							"objectClass": "two",
-							"sid": 359624111544072,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 580704488000922,
 							"parameters": {
-								"unique-id": "twoUID"
+								"variable": "moneyCount",
+								"comparison": 0,
+								"value": "expectedCount"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "tween-two-properties",
-							"objectClass": "two",
-							"sid": 583686833464912,
-							"behaviorType": "Tween",
+							"id": "set-size",
+							"objectClass": "correct",
+							"sid": 178174306241168,
 							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "1235",
-								"end-y": "640",
-								"time": "0.3",
-								"ease": "noease",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
+								"width": "155",
+								"height": "155"
 							}
 						},
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 330206534223901,
+							"sid": 555730750276768,
 							"parameters": {
 								"seconds": "0.5"
 							}
 						},
 						{
-							"id": "move-to-object",
-							"objectClass": "two",
-							"sid": 665542787067945,
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 770717489435967
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 340585395649346,
 							"parameters": {
-								"where": "in-front",
-								"object": "submit"
+								"layout": "Home"
+							}
+						}
+					],
+					"sid": 441795934948110
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 770644686700538
+						}
+					],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "wrong",
+							"sid": 401224643318497,
+							"parameters": {
+								"width": "155",
+								"height": "155"
 							}
 						},
 						{
-							"callFunction": "setUID",
-							"sid": 534026738642246
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 705338230749237,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 732756730368846
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 575294260914515
 						}
 					],
-					"sid": 348077274552253
+					"sid": 889345751628890
 				}
 			]
 		},
@@ -1131,7 +1546,7 @@
 					"conditions": [
 						{
 							"id": "pick-topbottom",
-							"objectClass": "two",
+							"objectClass": "hundred",
 							"sid": 959537025360866,
 							"parameters": {
 								"which": "top"
@@ -1145,7 +1560,7 @@
 							"sid": 936568609794658,
 							"parameters": {
 								"variable": "twoUID",
-								"value": "two.UID"
+								"value": "hundred.UID"
 							}
 						}
 					],
