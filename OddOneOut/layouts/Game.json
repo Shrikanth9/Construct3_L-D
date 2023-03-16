@@ -1,12 +1,12 @@
 {
-	"name": "Layout 1",
+	"name": "Game",
 	"layers": [
 		{
 			"name": "Layer 0",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
-			"sid": 241190340502768,
+			"sid": 920528994058856,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -35,7 +35,7 @@
 			"global": false
 		}
 	],
-	"sid": 339862582809665,
+	"sid": 515959069875834,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1920,

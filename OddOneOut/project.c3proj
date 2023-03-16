@@ -5,10 +5,42 @@
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [],
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
 	"uniqueId": "dwzsvjisr4e",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"gameBG",
+			"gameTitle",
+			"playBtn",
+			"helpBtn",
+			"Touch",
+			"Instruction",
+			"helpScreen",
+			"doneBtn",
+			"hand"
+		],
 		"subfolders": []
 	},
 	"autosaveData": null,
@@ -19,12 +51,14 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Home",
+			"Game"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
+			"Event sheet_Home",
 			"Event sheet 1"
 		],
 		"subfolders": []
@@ -47,7 +81,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "Marvin397-font.ttf",
+					"type": "application/font-sfnt",
+					"sid": 742668774054421,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {

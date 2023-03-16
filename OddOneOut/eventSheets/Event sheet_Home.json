@@ -1,0 +1,211 @@
+{
+	"name": "Event sheet_Home",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 964120754431973,
+					"parameters": {
+						"object": "playBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "playBtn",
+					"sid": 146443412022611,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 824428603618328,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 857853037339517
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "playBtn",
+							"sid": 314367421146083,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 574251971563523,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 163645141597474,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 734028422896517
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 332180161277069,
+					"parameters": {
+						"object": "helpBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "helpBtn",
+					"sid": 413324275211481,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 669721941826018,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 878398320951512
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "helpBtn",
+							"sid": 965310260075120,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 849864894335932,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "helpScreen",
+							"sid": 362885051780787
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "doneBtn",
+							"sid": 582372062770720
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "hand",
+							"sid": 313322721070880
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "Instruction",
+							"sid": 984597064673213
+						}
+					],
+					"sid": 442713309013143
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 201488263424088,
+					"parameters": {
+						"object": "doneBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "doneBtn",
+					"sid": 467869990588395,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 738704394706376,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 338451521188335
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "doneBtn",
+							"sid": 553663071684421,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "helpScreen",
+							"sid": 458346327520996
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "doneBtn",
+							"sid": 572955116901993
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "hand",
+							"sid": 943702948166352
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Instruction",
+							"sid": 911221709032491
+						}
+					],
+					"sid": 940735885424379
+				}
+			]
+		}
+	],
+	"sid": 935581767518382
+}
