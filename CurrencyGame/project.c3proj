@@ -79,7 +79,7 @@
 			"pauseBtn",
 			"helpBtn",
 			"table",
-			"Sprite4",
+			"gameboard",
 			"submit",
 			"transparentBg",
 			"gamePause",
@@ -104,7 +104,12 @@
 			"Sprite3",
 			"Text2",
 			"Sprite5",
-			"Sprite6"
+			"Sprite6",
+			"hand",
+			"Sprite8",
+			"Text3",
+			"Done",
+			"Sprite7"
 		],
 		"subfolders": []
 	},
@@ -117,7 +122,8 @@
 	"layouts": {
 		"items": [
 			"Home",
-			"Game"
+			"Game",
+			"Help"
 		],
 		"subfolders": []
 	},
@@ -125,7 +131,7 @@
 		"items": [
 			"Event sheet_Home",
 			"Event sheet_Game",
-			"Event sheet 1"
+			"Event sheet_Help"
 		],
 		"subfolders": []
 	},

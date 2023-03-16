@@ -167,25 +167,52 @@
 							"parameters": {
 								"seconds": "0.2"
 							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "help",
-							"sid": 355823193047855,
-							"parameters": {
-								"scale": "1"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "help",
-							"sid": 987010950550991,
-							"parameters": {
-								"frame-number": "0"
-							}
 						}
 					],
-					"sid": 143632798111470
+					"sid": 143632798111470,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "help",
+									"sid": 239134605630031,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-scale",
+									"objectClass": "help",
+									"sid": 415001258711893,
+									"parameters": {
+										"scale": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "help",
+									"sid": 669581070360252,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 348618853035832,
+									"parameters": {
+										"layout": "Help"
+									}
+								}
+							],
+							"sid": 236791319511990
+						}
+					]
 				}
 			]
 		}

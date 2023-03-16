@@ -43,7 +43,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "twoUID",
+			"name": "hudredUID",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -192,6 +192,16 @@
 			"sid": 355658072222363
 		},
 		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 887366555181060
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -208,6 +218,14 @@
 				{
 					"callFunction": "setUID",
 					"sid": 453371644787379
+				},
+				{
+					"id": "set-text",
+					"objectClass": "score",
+					"sid": 118837627673391,
+					"parameters": {
+						"text": "\"SCORE :\"&score"
+					}
 				}
 			],
 			"sid": 514829051777513,
@@ -493,6 +511,14 @@
 							"sid": 580288838929234,
 							"parameters": {
 								"scale": "1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 597019536621071,
+							"parameters": {
+								"layout": "Help"
 							}
 						}
 					],
@@ -918,65 +944,102 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
-							"objectClass": "hundred",
-							"sid": 774328350555493,
-							"parameters": {
-								"unique-id": "twoUID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 348619399410809,
+							"sid": 672739919100079,
 							"parameters": {
 								"variable": "hundredCount",
-								"value": "1"
+								"comparison": 1,
+								"value": "3"
 							}
-						},
-						{
-							"id": "tween-two-properties",
-							"objectClass": "hundred",
-							"sid": 895489954686103,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "1220",
-								"end-y": "328",
-								"time": "0.3",
-								"ease": "noease",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 464904485821514,
-							"parameters": {
-								"seconds": "0.5"
-							}
-						},
-						{
-							"id": "move-to-object",
-							"objectClass": "hundred",
-							"sid": 815817976666578,
-							"parameters": {
-								"where": "in-front",
-								"object": "submit"
-							}
-						},
-						{
-							"callFunction": "setUID",
-							"sid": 876145919710783
 						}
 					],
-					"sid": 403392769419722
+					"actions": [],
+					"sid": 930297696913335,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "hundred",
+									"sid": 750316590432166,
+									"parameters": {
+										"unique-id": "hudredUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 308285830372374,
+									"parameters": {
+										"variable": "xPos",
+										"value": "1220 + hundredCount * 10"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 370151525738506,
+									"parameters": {
+										"variable": "yPos",
+										"value": "328 + hundredCount * 20"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 803605455914693,
+									"parameters": {
+										"variable": "hundredCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "hundred",
+									"sid": 870394370896563,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "xPos",
+										"end-y": "yPos",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 969569194695477,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "hundred",
+									"sid": 518736153787927,
+									"parameters": {
+										"where": "in-front",
+										"object": "submit"
+									}
+								},
+								{
+									"callFunction": "setUID",
+									"sid": 300926211327830
+								}
+							],
+							"sid": 936664613171668
+						}
+					]
 				}
 			]
 		},
@@ -999,65 +1062,102 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
-							"objectClass": "fifty",
-							"sid": 874329963663843,
-							"parameters": {
-								"unique-id": "fiftyUID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 208500336154282,
+							"sid": 184566993355754,
 							"parameters": {
 								"variable": "fiftyCount",
-								"value": "1"
+								"comparison": 1,
+								"value": "3"
 							}
-						},
-						{
-							"id": "tween-two-properties",
-							"objectClass": "fifty",
-							"sid": 936690967151925,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "988",
-								"end-y": "332",
-								"time": "0.3",
-								"ease": "noease",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 256612585948035,
-							"parameters": {
-								"seconds": "0.5"
-							}
-						},
-						{
-							"id": "move-to-object",
-							"objectClass": "fifty",
-							"sid": 665066262498630,
-							"parameters": {
-								"where": "in-front",
-								"object": "twenty"
-							}
-						},
-						{
-							"callFunction": "setUID",
-							"sid": 335064344327592
 						}
 					],
-					"sid": 245370348888894
+					"actions": [],
+					"sid": 755360390654794,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "fifty",
+									"sid": 392000091485329,
+									"parameters": {
+										"unique-id": "fiftyUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 667023360510596,
+									"parameters": {
+										"variable": "xPos",
+										"value": "988 + fiftyCount * 10"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 215776510326431,
+									"parameters": {
+										"variable": "yPos",
+										"value": "332 + fiftyCount * 20"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 599376335359847,
+									"parameters": {
+										"variable": "fiftyCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "fifty",
+									"sid": 730774115723931,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "xPos",
+										"end-y": "yPos",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 715309859831875,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "fifty",
+									"sid": 976243496319742,
+									"parameters": {
+										"where": "in-front",
+										"object": "twenty"
+									}
+								},
+								{
+									"callFunction": "setUID",
+									"sid": 755535159378898
+								}
+							],
+							"sid": 989670812306787
+						}
+					]
 				}
 			]
 		},
@@ -1080,65 +1180,102 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
-							"objectClass": "twenty",
-							"sid": 523456391751413,
-							"parameters": {
-								"unique-id": "twentyUID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 827355618732648,
+							"sid": 975469950160107,
 							"parameters": {
 								"variable": "twentyCount",
-								"value": "1"
+								"comparison": 1,
+								"value": "3"
 							}
-						},
-						{
-							"id": "tween-two-properties",
-							"objectClass": "twenty",
-							"sid": 938255519989070,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "982",
-								"end-y": "476",
-								"time": "0.3",
-								"ease": "noease",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 364750729302975,
-							"parameters": {
-								"seconds": "0.5"
-							}
-						},
-						{
-							"id": "move-to-object",
-							"objectClass": "twenty",
-							"sid": 867130497465916,
-							"parameters": {
-								"where": "in-front",
-								"object": "ten"
-							}
-						},
-						{
-							"callFunction": "setUID",
-							"sid": 437743916262160
 						}
 					],
-					"sid": 891312605365575
+					"actions": [],
+					"sid": 944885586290267,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "twenty",
+									"sid": 112498364337618,
+									"parameters": {
+										"unique-id": "twentyUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 173066545450767,
+									"parameters": {
+										"variable": "xPos",
+										"value": "982+ twentyCount* 10"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 625918000815341,
+									"parameters": {
+										"variable": "yPos",
+										"value": "476+ twentyCount * 20"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 430984776402466,
+									"parameters": {
+										"variable": "twentyCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "twenty",
+									"sid": 667718105594751,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "xPos",
+										"end-y": "yPos",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 898151634349066,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "twenty",
+									"sid": 912087790146758,
+									"parameters": {
+										"where": "in-front",
+										"object": "ten"
+									}
+								},
+								{
+									"callFunction": "setUID",
+									"sid": 860181828009778
+								}
+							],
+							"sid": 291087219429058
+						}
+					]
 				}
 			]
 		},
@@ -1161,65 +1298,102 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
-							"objectClass": "ten",
-							"sid": 199559911021006,
-							"parameters": {
-								"unique-id": "tenUID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 832779161803342,
+							"sid": 514188178782282,
 							"parameters": {
 								"variable": "tenCount",
-								"value": "1"
+								"comparison": 1,
+								"value": "3"
 							}
-						},
-						{
-							"id": "tween-two-properties",
-							"objectClass": "ten",
-							"sid": 898507709168539,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "1233",
-								"end-y": "481",
-								"time": "0.3",
-								"ease": "noease",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 138852128016044,
-							"parameters": {
-								"seconds": "0.5"
-							}
-						},
-						{
-							"id": "move-to-object",
-							"objectClass": "ten",
-							"sid": 721557271374155,
-							"parameters": {
-								"where": "in-front",
-								"object": "five"
-							}
-						},
-						{
-							"callFunction": "setUID",
-							"sid": 357872630782531
 						}
 					],
-					"sid": 915970672951299
+					"actions": [],
+					"sid": 108310051973714,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ten",
+									"sid": 115799615769978,
+									"parameters": {
+										"unique-id": "tenUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 608793297568746,
+									"parameters": {
+										"variable": "xPos",
+										"value": "1233 + tenCount * 10"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 287901896180665,
+									"parameters": {
+										"variable": "yPos",
+										"value": "481 + tenCount * 20"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 671677892375536,
+									"parameters": {
+										"variable": "tenCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "ten",
+									"sid": 323073102888299,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "1233",
+										"end-y": "481",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 253411168385037,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "ten",
+									"sid": 682937607327755,
+									"parameters": {
+										"where": "in-front",
+										"object": "five"
+									}
+								},
+								{
+									"callFunction": "setUID",
+									"sid": 160826333554408
+								}
+							],
+							"sid": 525399591453333
+						}
+					]
 				}
 			]
 		},
@@ -1242,65 +1416,102 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
-							"objectClass": "five",
-							"sid": 109828854637769,
-							"parameters": {
-								"unique-id": "fiveUID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 322210936910691,
+							"sid": 470894641700185,
 							"parameters": {
 								"variable": "fiveCount",
-								"value": "1"
+								"comparison": 1,
+								"value": "3"
 							}
-						},
-						{
-							"id": "tween-two-properties",
-							"objectClass": "five",
-							"sid": 404024590275132,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "position",
-								"end-x": "1000",
-								"end-y": "640",
-								"time": "0.3",
-								"ease": "noease",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 913559561035676,
-							"parameters": {
-								"seconds": "0.5"
-							}
-						},
-						{
-							"id": "move-to-object",
-							"objectClass": "five",
-							"sid": 842296241704570,
-							"parameters": {
-								"where": "in-front",
-								"object": "hundred"
-							}
-						},
-						{
-							"callFunction": "setUID",
-							"sid": 186241397146817
 						}
 					],
-					"sid": 325086502431823
+					"actions": [],
+					"sid": 201223596405790,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "five",
+									"sid": 222726874426796,
+									"parameters": {
+										"unique-id": "fiveUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 671934516656591,
+									"parameters": {
+										"variable": "xPos",
+										"value": "1000 + fiveCount * 10"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 937421219756728,
+									"parameters": {
+										"variable": "yPos",
+										"value": "640 + fiveCount * 20"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 370036164791755,
+									"parameters": {
+										"variable": "fiveCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "five",
+									"sid": 552419315102517,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "xPos",
+										"end-y": "yPos",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 894028074324306,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "five",
+									"sid": 283913193084232,
+									"parameters": {
+										"where": "in-front",
+										"object": "hundred"
+									}
+								},
+								{
+									"callFunction": "setUID",
+									"sid": 865753811017473
+								}
+							],
+							"sid": 536679720663563
+						}
+					]
 				}
 			]
 		},
@@ -1354,6 +1565,23 @@
 					],
 					"actions": [
 						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 404837815793447,
+							"parameters": {
+								"variable": "score",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "score",
+							"sid": 262657643896961,
+							"parameters": {
+								"text": "\"SCORE :\"&score"
+							}
+						},
+						{
 							"id": "set-size",
 							"objectClass": "correct",
 							"sid": 178174306241168,
@@ -1371,16 +1599,11 @@
 							}
 						},
 						{
-							"id": "reset-global-variables",
-							"objectClass": "System",
-							"sid": 770717489435967
-						},
-						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 340585395649346,
+							"sid": 737010468271564,
 							"parameters": {
-								"layout": "Home"
+								"layout": "Game"
 							}
 						}
 					],
@@ -1559,7 +1782,7 @@
 							"objectClass": "System",
 							"sid": 936568609794658,
 							"parameters": {
-								"variable": "twoUID",
+								"variable": "hudredUID",
 								"value": "hundred.UID"
 							}
 						}

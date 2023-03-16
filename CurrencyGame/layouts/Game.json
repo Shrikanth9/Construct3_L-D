@@ -181,7 +181,7 @@
 					}
 				},
 				{
-					"type": "Sprite4",
+					"type": "gameboard",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1133,6 +1133,92 @@
 					}
 				},
 				{
+					"type": "Text",
+					"properties": {
+						"text": "Round 1/1",
+						"enable-bbcode": false,
+						"font": "Marvin397-font",
+						"size": 40,
+						"line-height": 40,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0.5725490196078431,
+							0.3058823529411765,
+							0.14901960784313725,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 52,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 586,
+						"y": 166,
+						"width": 310,
+						"height": 58,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "score",
+					"properties": {
+						"text": "Score : 0",
+						"enable-bbcode": false,
+						"font": "Marvin397-font",
+						"size": 40,
+						"line-height": 40,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0.5725490196078431,
+							0.3058823529411765,
+							0.14901960784313725,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 53,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1162,
+						"y": 159,
+						"width": 331,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "transparentBg",
 					"properties": {
 						"initially-visible": true,
@@ -1323,222 +1409,6 @@
 						"y": 569,
 						"width": 0,
 						"height": 0,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Text",
-					"properties": {
-						"text": "Round 1/1",
-						"enable-bbcode": false,
-						"font": "Marvin397-font",
-						"size": 40,
-						"line-height": 40,
-						"bold": true,
-						"italic": false,
-						"color": [
-							0.5725490196078431,
-							0.3058823529411765,
-							0.14901960784313725,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 52,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 586,
-						"y": 166,
-						"width": 310,
-						"height": 58,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "score",
-					"properties": {
-						"text": "Score : 0",
-						"enable-bbcode": true,
-						"font": "Marvin397-font",
-						"size": 40,
-						"line-height": 40,
-						"bold": true,
-						"italic": false,
-						"color": [
-							0.5725490196078431,
-							0.3058823529411765,
-							0.14901960784313725,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 53,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1162,
-						"y": 159,
-						"width": 272,
-						"height": 68,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Sprite3",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 54,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": -334,
-						"y": 483,
-						"width": 520,
-						"height": 438,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Text2",
-					"properties": {
-						"text": "Note the prices on the item shown",
-						"enable-bbcode": true,
-						"font": "Marvin397-font",
-						"size": 50,
-						"line-height": 0,
-						"bold": true,
-						"italic": false,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 55,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": -929,
-						"y": 818,
-						"width": 812,
-						"height": 173,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Sprite5",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 56,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": -974,
-						"y": 259,
-						"width": 262,
-						"height": 92,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Sprite6",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 57,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": -493,
-						"y": -116,
-						"width": 262,
-						"height": 92,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
