@@ -39,7 +39,9 @@
 			"Instruction",
 			"helpScreen",
 			"doneBtn",
-			"hand"
+			"hand",
+			"header",
+			"progress"
 		],
 		"subfolders": []
 	},
