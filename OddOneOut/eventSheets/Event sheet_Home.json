@@ -200,6 +200,15 @@
 							"id": "move-to-bottom",
 							"objectClass": "Instruction",
 							"sid": 911221709032491
+						},
+						{
+							"id": "resume-tweens",
+							"objectClass": "progress",
+							"sid": 222901684584382,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"progress\""
+							}
 						}
 					],
 					"sid": 940735885424379

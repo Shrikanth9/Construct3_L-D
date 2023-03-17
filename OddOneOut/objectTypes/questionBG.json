@@ -1,14 +1,14 @@
 {
-	"name": "progress",
+	"name": "questionBG",
 	"plugin-id": "Sprite",
-	"sid": 154731045100518,
+	"sid": 350846967288507,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Tween",
 			"name": "Tween",
-			"sid": 783926724843930
+			"sid": 773634530173648
 		}
 	],
 	"effectTypes": [],
@@ -17,39 +17,39 @@
 			{
 				"frames": [
 					{
-						"width": 1280,
-						"height": 80,
-						"originX": 0,
+						"width": 500,
+						"height": 113,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1309371,
+						"imageSpriteId": 2896673,
 						"collisionPoly": {
 							"points": [
-								0,
-								1,
-								0,
+								0.0125,
+								0.054945054945054944,
 								0.5,
 								0,
-								0,
-								0.5,
-								0,
-								1,
-								0,
+								0.9875,
+								0.054945054945054944,
 								1,
 								0.5,
-								1,
-								1,
+								0.9875,
+								0.945054945054945,
 								0.5,
-								1
+								0.989010989010989,
+								0.0125,
+								0.945054945054945,
+								0,
+								0.5
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 561500416737458,
+				"sid": 990675749955409,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

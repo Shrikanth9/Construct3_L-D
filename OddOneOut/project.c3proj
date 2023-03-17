@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -26,6 +33,13 @@
 			"name": "Touch",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "dwzsvjisr4e",
@@ -41,7 +55,24 @@
 			"doneBtn",
 			"hand",
 			"header",
-			"progress"
+			"progress",
+			"Browser",
+			"questionBG",
+			"question",
+			"pauseBtn",
+			"questionMark",
+			"roundText",
+			"score",
+			"transparentBG",
+			"gamePause",
+			"resumeBtn",
+			"restartBtn",
+			"homeBtn",
+			"gameOver",
+			"scoreGameOver",
+			"highscore",
+			"homeBtn2",
+			"replayBtn"
 		],
 		"subfolders": []
 	},
@@ -61,7 +92,7 @@
 	"eventSheets": {
 		"items": [
 			"Event sheet_Home",
-			"Event sheet 1"
+			"Event sheet_Game"
 		],
 		"subfolders": []
 	},
