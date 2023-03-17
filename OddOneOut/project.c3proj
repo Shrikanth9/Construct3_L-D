@@ -8,8 +8,29 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -72,7 +93,10 @@
 			"scoreGameOver",
 			"highscore",
 			"homeBtn2",
-			"replayBtn"
+			"replayBtn",
+			"JSON",
+			"AJAX",
+			"Dictionary"
 		],
 		"subfolders": []
 	},
@@ -188,7 +212,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "questions.json",
+					"type": "application/json",
+					"sid": 478863657705984,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},

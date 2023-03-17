@@ -2,140 +2,184 @@
 	"name": "Event sheet_Home",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "touchflag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 831529443689029
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-touching-object",
-					"objectClass": "Touch",
-					"sid": 964120754431973,
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 433069167738437,
 					"parameters": {
-						"object": "playBtn"
+						"variable": "touchflag"
 					}
-				}
-			],
-			"actions": [
+				},
 				{
-					"id": "set-animation-frame",
-					"objectClass": "playBtn",
-					"sid": 146443412022611,
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 364745922040063,
 					"parameters": {
-						"frame-number": "1"
+						"variable": "touchflag"
 					}
 				}
 			],
-			"sid": 824428603618328,
+			"actions": [],
+			"sid": 904098963060406,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-any-touch-end",
+							"id": "is-touching-object",
 							"objectClass": "Touch",
-							"sid": 857853037339517
+							"sid": 104290641316350,
+							"parameters": {
+								"object": "playBtn"
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-animation-frame",
 							"objectClass": "playBtn",
-							"sid": 314367421146083,
+							"sid": 339982625462435,
 							"parameters": {
-								"frame-number": "0"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 574251971563523,
-							"parameters": {
-								"seconds": "0.1"
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 163645141597474,
-							"parameters": {
-								"layout": "Game"
+								"frame-number": "1"
 							}
 						}
 					],
-					"sid": 734028422896517
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-touching-object",
-					"objectClass": "Touch",
-					"sid": 332180161277069,
-					"parameters": {
-						"object": "helpBtn"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation-frame",
-					"objectClass": "helpBtn",
-					"sid": 413324275211481,
-					"parameters": {
-						"frame-number": "1"
-					}
-				}
-			],
-			"sid": 669721941826018,
-			"children": [
+					"sid": 677843278307490,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 931289670444196
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "playBtn",
+									"sid": 667068761042839,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 133490428359133,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 783474401950272,
+									"parameters": {
+										"layout": "Game"
+									}
+								}
+							],
+							"sid": 576182090248048
+						}
+					]
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-any-touch-end",
+							"id": "is-touching-object",
 							"objectClass": "Touch",
-							"sid": 878398320951512
+							"sid": 642799199384032,
+							"parameters": {
+								"object": "helpBtn"
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-animation-frame",
 							"objectClass": "helpBtn",
-							"sid": 965310260075120,
+							"sid": 522725436290156,
 							"parameters": {
-								"frame-number": "0"
+								"frame-number": "1"
 							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 849864894335932,
-							"parameters": {
-								"seconds": "0.1"
-							}
-						},
-						{
-							"id": "move-to-top",
-							"objectClass": "helpScreen",
-							"sid": 362885051780787
-						},
-						{
-							"id": "move-to-top",
-							"objectClass": "doneBtn",
-							"sid": 582372062770720
-						},
-						{
-							"id": "move-to-top",
-							"objectClass": "hand",
-							"sid": 313322721070880
-						},
-						{
-							"id": "move-to-top",
-							"objectClass": "Instruction",
-							"sid": 984597064673213
 						}
 					],
-					"sid": 442713309013143
+					"sid": 210545556975485,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 622248407057168
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "helpBtn",
+									"sid": 796705291915442,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 791848936984877,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "helpScreen",
+									"sid": 991032729730391
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "doneBtn",
+									"sid": 344608666286895
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "hand",
+									"sid": 594483306053062
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "Instruction",
+									"sid": 789276300674916
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 563721979086612,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 441067718420471
+						}
+					]
 				}
 			]
 		},
@@ -158,6 +202,15 @@
 					"sid": 467869990588395,
 					"parameters": {
 						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 737626747467137,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "true"
 					}
 				}
 			],

@@ -9,11 +9,51 @@
 			"eventType": "variable",
 			"name": "timer",
 			"type": "number",
-			"initialValue": "5",
+			"initialValue": "20",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 197114633128814
+		},
+		{
+			"eventType": "variable",
+			"name": "roundCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 118707406000047
+		},
+		{
+			"eventType": "variable",
+			"name": "randomIndex",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 175698180425103
+		},
+		{
+			"eventType": "variable",
+			"name": "iterator",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 422961235141291
+		},
+		{
+			"eventType": "variable",
+			"name": "ansUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 555296398254610
 		},
 		{
 			"eventType": "block",
@@ -87,9 +127,46 @@
 					"parameters": {
 						"scale": "0"
 					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 791436109138129,
+					"parameters": {
+						"tag": "\"json\"",
+						"file": "questions.json"
+					}
 				}
 			],
 			"sid": 638308306856133
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 845883594169305,
+					"parameters": {
+						"tag": "\"json\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "JSON",
+					"sid": 700810994447810,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"callFunction": "generateQuestion",
+					"sid": 846747874577638
+				}
+			],
+			"sid": 557074353647718
 		},
 		{
 			"eventType": "block",
@@ -154,186 +231,18 @@
 					"parameters": {
 						"scale": "1"
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 781090925383997,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "false"
+					}
 				}
 			],
 			"sid": 283052589216654
-		},
-		{
-			"functionName": "hidePopUp",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-scale",
-					"objectClass": "transparentBG",
-					"sid": 341793940824544,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "gamePause",
-					"sid": 573426039781027,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "resumeBtn",
-					"sid": 444392047455656,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "restartBtn",
-					"sid": 552150083241519,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "homeBtn",
-					"sid": 778184954132008,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "gamePause",
-					"sid": 994097336674876,
-					"parameters": {
-						"scale": "0"
-					}
-				}
-			],
-			"sid": 379159430552066
-		},
-		{
-			"functionName": "showPopUp",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-scale",
-					"objectClass": "transparentBG",
-					"sid": 406171461185849,
-					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "gamePause",
-					"sid": 831228727009536,
-					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "resumeBtn",
-					"sid": 872500399576533,
-					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "restartBtn",
-					"sid": 218053059866059,
-					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "homeBtn",
-					"sid": 801349265734247,
-					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "gamePause",
-					"sid": 353662312642799,
-					"parameters": {
-						"scale": "1"
-					}
-				}
-			],
-			"sid": 717597337726519
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 567932734598104,
-					"parameters": {
-						"object": "pauseBtn"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation-frame",
-					"objectClass": "pauseBtn",
-					"sid": 574599283614818,
-					"parameters": {
-						"frame-number": "1"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 371103579610634,
-					"parameters": {
-						"seconds": "0.2"
-					}
-				},
-				{
-					"callFunction": "showPopUp",
-					"sid": 523682668653197
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "pauseBtn",
-					"sid": 347569580991334,
-					"parameters": {
-						"frame-number": "0"
-					}
-				},
-				{
-					"id": "pause-tweens",
-					"objectClass": "progress",
-					"sid": 990402577554249,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"progress\""
-					}
-				}
-			],
-			"sid": 346299969370835
 		},
 		{
 			"eventType": "block",
@@ -384,6 +293,15 @@
 					"parameters": {
 						"tags": "\"progress\""
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 305818074336274,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "true"
+					}
 				}
 			],
 			"sid": 106086282228509
@@ -394,17 +312,26 @@
 				{
 					"id": "on-touched-object",
 					"objectClass": "Touch",
-					"sid": 626152246633699,
+					"sid": 963455887814990,
 					"parameters": {
-						"object": "questionMark"
+						"object": "restartBtn"
 					}
 				}
 			],
 			"actions": [
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 198928317998772,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "true"
+					}
+				},
+				{
 					"id": "set-animation-frame",
-					"objectClass": "questionMark",
-					"sid": 578041975334287,
+					"objectClass": "restartBtn",
+					"sid": 159266022389638,
 					"parameters": {
 						"frame-number": "1"
 					}
@@ -412,66 +339,100 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 774860668743461,
+					"sid": 118189694411267,
 					"parameters": {
 						"seconds": "0.2"
 					}
 				},
 				{
+					"callFunction": "hidePopUp",
+					"sid": 442889177918147
+				},
+				{
 					"id": "set-animation-frame",
-					"objectClass": "helpBtn",
-					"sid": 116113844607749,
+					"objectClass": "restartBtn",
+					"sid": 997552014062386,
 					"parameters": {
 						"frame-number": "0"
+					}
+				},
+				{
+					"id": "stop-tweens",
+					"objectClass": "progress",
+					"sid": 833161429754663,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"progress\""
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 261490184798688
+				}
+			],
+			"sid": 156482673418177
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 247549130649005,
+					"parameters": {
+						"object": "homeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 739515508059245,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn",
+					"sid": 615881823941915,
+					"parameters": {
+						"frame-number": "1"
 					}
 				},
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 499025398713668,
+					"sid": 496622352577237,
 					"parameters": {
-						"seconds": "0.1"
+						"seconds": "0.2"
 					}
 				},
 				{
-					"id": "move-to-top",
-					"objectClass": "helpScreen",
-					"sid": 911274724822455
-				},
-				{
-					"id": "move-to-top",
-					"objectClass": "doneBtn",
-					"sid": 848512031488152
-				},
-				{
-					"id": "move-to-top",
-					"objectClass": "hand",
-					"sid": 468863707215713
-				},
-				{
-					"id": "move-to-top",
-					"objectClass": "Instruction",
-					"sid": 416591374015689
+					"callFunction": "hidePopUp",
+					"sid": 837849830908967
 				},
 				{
 					"id": "set-animation-frame",
-					"objectClass": "questionMark",
-					"sid": 922377132142675,
+					"objectClass": "homeBtn",
+					"sid": 799587413254623,
 					"parameters": {
 						"frame-number": "0"
 					}
 				},
 				{
-					"id": "pause-tweens",
-					"objectClass": "progress",
-					"sid": 142963968462504,
-					"behaviorType": "Tween",
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 602079733659183,
 					"parameters": {
-						"tags": "\"progress\""
+						"layout": "Home"
 					}
 				}
 			],
-			"sid": 174054551627071
+			"sid": 604895721908464
 		},
 		{
 			"eventType": "block",
@@ -507,6 +468,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 587305003408729,
+							"parameters": {
+								"variable": "touchflag",
+								"value": "true"
+							}
+						},
 						{
 							"id": "set-scale",
 							"objectClass": "homeBtn2",
@@ -571,6 +541,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 601126036884605,
+							"parameters": {
+								"variable": "touchflag",
+								"value": "true"
+							}
+						},
+						{
 							"id": "set-scale",
 							"objectClass": "replayBtn",
 							"sid": 105770085204770,
@@ -603,6 +582,397 @@
 					"sid": 557603689270181
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 939377497305498,
+					"parameters": {
+						"variable": "touchflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 870590756126133,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 418584700062695,
+							"parameters": {
+								"object": "questionBG"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 729424465664133,
+							"parameters": {
+								"type": "log",
+								"message": "questionBG.UID"
+							}
+						}
+					],
+					"sid": 833525222069824
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 998977986260063,
+							"parameters": {
+								"object": "questionMark"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 555800327721363,
+							"parameters": {
+								"variable": "touchflag",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "questionMark",
+							"sid": 374334088908144,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 760006873795800,
+							"parameters": {
+								"seconds": "0.2"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "helpBtn",
+							"sid": 311146668006508,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 138177485409169,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "helpScreen",
+							"sid": 513651517756726
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "doneBtn",
+							"sid": 342258045690606
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "hand",
+							"sid": 130618907935557
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "Instruction",
+							"sid": 270695405422904
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "questionMark",
+							"sid": 366477158676398,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "pause-tweens",
+							"objectClass": "progress",
+							"sid": 906931790796417,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"progress\""
+							}
+						}
+					],
+					"sid": 356922922350939
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 621026841882595,
+							"parameters": {
+								"object": "pauseBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 492599198650203,
+							"parameters": {
+								"variable": "touchflag",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "pauseBtn",
+							"sid": 402746100280897,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 471069453374485,
+							"parameters": {
+								"seconds": "0.2"
+							}
+						},
+						{
+							"callFunction": "showPopUp",
+							"sid": 478610049957023
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "pauseBtn",
+							"sid": 575515303508828,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "pause-tweens",
+							"objectClass": "progress",
+							"sid": 447436961487835,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"progress\""
+							}
+						}
+					],
+					"sid": 766078321748264
+				}
+			]
+		},
+		{
+			"functionName": "generateQuestion",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 116958844120656,
+					"parameters": {
+						"variable": "randomIndex",
+						"value": "floor(random(0,25))"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 561658630226685,
+					"parameters": {
+						"variable": "iterator",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 374629332168676,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 433844222863087,
+							"parameters": {
+								"object": "question",
+								"expression": "0",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "question",
+							"sid": 478344356827387,
+							"parameters": {
+								"text": "JSON.Get(\"questions\"&\".\"&randomIndex&\".\"&\"q\"&iterator)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 213413744918918,
+							"parameters": {
+								"variable": "iterator",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 779386768309106
+				}
+			]
+		},
+		{
+			"functionName": "hidePopUp",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "transparentBG",
+					"sid": 164995708456811,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "gamePause",
+					"sid": 794084704718510,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "resumeBtn",
+					"sid": 795108723371258,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "restartBtn",
+					"sid": 101287788880148,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "homeBtn",
+					"sid": 973781239288480,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "gamePause",
+					"sid": 802201294897467,
+					"parameters": {
+						"scale": "0"
+					}
+				}
+			],
+			"sid": 846951065181778
+		},
+		{
+			"functionName": "showPopUp",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "transparentBG",
+					"sid": 283504908791411,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "gamePause",
+					"sid": 896906971531270,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "resumeBtn",
+					"sid": 246827168783204,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "restartBtn",
+					"sid": 301180413439754,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "homeBtn",
+					"sid": 848660027492072,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "gamePause",
+					"sid": 165357499540783,
+					"parameters": {
+						"scale": "1"
+					}
+				}
+			],
+			"sid": 805543172178561
 		}
 	],
 	"sid": 332558947455922
