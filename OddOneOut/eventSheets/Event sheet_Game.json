@@ -56,6 +56,16 @@
 			"sid": 555296398254610
 		},
 		{
+			"eventType": "variable",
+			"name": "actualansUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 907609207383176
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -612,12 +622,12 @@
 					],
 					"actions": [
 						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 729424465664133,
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 811598262174933,
 							"parameters": {
-								"type": "log",
-								"message": "questionBG.UID"
+								"variable": "ansUID",
+								"value": "questionBG.UID"
 							}
 						}
 					],
@@ -808,6 +818,15 @@
 					"parameters": {
 						"variable": "iterator",
 						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 402607232223587,
+					"parameters": {
+						"variable": "actualansUID",
+						"value": "JSON.Get(\"questions\"&\".\"&randomIndex&\".\"&\"ansUID\")"
 					}
 				}
 			],
