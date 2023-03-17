@@ -496,7 +496,7 @@
 				{
 					"type": "roundText",
 					"properties": {
-						"text": "ROUND 1/15",
+						"text": "ROUND : 1/15",
 						"enable-bbcode": true,
 						"font": "Marvin397-font",
 						"size": 40,
@@ -522,7 +522,7 @@
 					"world": {
 						"x": 504,
 						"y": 37,
-						"width": 341,
+						"width": 471,
 						"height": 67,
 						"originX": 0,
 						"originY": 0,
@@ -565,7 +565,7 @@
 					"world": {
 						"x": 1316,
 						"y": 36,
-						"width": 341,
+						"width": 383,
 						"height": 67,
 						"originX": 0,
 						"originY": 0,

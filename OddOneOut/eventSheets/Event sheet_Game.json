@@ -66,6 +66,26 @@
 			"sid": 907609207383176
 		},
 		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 887701845737636
+		},
+		{
+			"eventType": "variable",
+			"name": "gameOverFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 553398386054621
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -193,62 +213,80 @@
 			],
 			"actions": [
 				{
-					"id": "set-scale",
-					"objectClass": "transparentBG",
-					"sid": 983604198313857,
+					"id": "set-width",
+					"objectClass": "progress",
+					"sid": 458847234969929,
 					"parameters": {
-						"scale": "1"
+						"width": "0"
 					}
 				},
 				{
-					"id": "set-scale",
-					"objectClass": "gameOver",
-					"sid": 827429141272956,
+					"id": "stop-tweens",
+					"objectClass": "progress",
+					"sid": 383760934008827,
+					"behaviorType": "Tween",
 					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "homeBtn2",
-					"sid": 954205846422268,
-					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "scoreGameOver",
-					"sid": 138390608866975,
-					"parameters": {
-						"width": "558",
-						"height": "110"
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "highscore",
-					"sid": 284169407130259,
-					"parameters": {
-						"width": "613",
-						"height": "82"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "replayBtn",
-					"sid": 984449847045079,
-					"parameters": {
-						"scale": "1"
+						"tags": "\"progress\""
 					}
 				},
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 781090925383997,
+					"sid": 696889582801538,
 					"parameters": {
 						"variable": "touchflag",
 						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 416381316620996,
+					"parameters": {
+						"variable": "ansUID",
+						"value": "questionBG.UID"
+					}
+				},
+				{
+					"callFunction": "checkAnswer",
+					"sid": 338721809232600
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 808713844980957,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"callFunction": "generateQuestion",
+					"sid": 424805971435154
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 627395591823027,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "progress",
+					"sid": 162346607066799,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"progress\"",
+						"property": "offsetWidth",
+						"end-value": "LayoutWidth",
+						"time": "timer",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
@@ -622,6 +660,32 @@
 					],
 					"actions": [
 						{
+							"id": "set-width",
+							"objectClass": "progress",
+							"sid": 299017225123095,
+							"parameters": {
+								"width": "0"
+							}
+						},
+						{
+							"id": "stop-tweens",
+							"objectClass": "progress",
+							"sid": 823220938001955,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"progress\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 441787458905738,
+							"parameters": {
+								"variable": "touchflag",
+								"value": "false"
+							}
+						},
+						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 811598262174933,
@@ -629,9 +693,134 @@
 								"variable": "ansUID",
 								"value": "questionBG.UID"
 							}
+						},
+						{
+							"callFunction": "checkAnswer",
+							"sid": 646789772832968
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 669302506451612,
+							"parameters": {
+								"seconds": "1"
+							}
 						}
 					],
-					"sid": 833525222069824
+					"sid": 833525222069824,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 190212819643836,
+									"parameters": {
+										"variable": "roundCount",
+										"comparison": 2,
+										"value": "15"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "generateQuestion",
+									"sid": 601242139106872
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 605721289794614,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "true"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "progress",
+									"sid": 693491094003606,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"progress\"",
+										"property": "offsetWidth",
+										"end-value": "LayoutWidth",
+										"time": "timer",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 210522116167188
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 384285674922198
+								}
+							],
+							"actions": [
+								{
+									"id": "set-scale",
+									"objectClass": "transparentBG",
+									"sid": 983604198313857,
+									"parameters": {
+										"scale": "1"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "gameOver",
+									"sid": 827429141272956,
+									"parameters": {
+										"scale": "1"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "homeBtn2",
+									"sid": 954205846422268,
+									"parameters": {
+										"scale": "1"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "scoreGameOver",
+									"sid": 138390608866975,
+									"parameters": {
+										"width": "558",
+										"height": "110"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "highscore",
+									"sid": 284169407130259,
+									"parameters": {
+										"width": "613",
+										"height": "82"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "replayBtn",
+									"sid": 984449847045079,
+									"parameters": {
+										"scale": "1"
+									}
+								}
+							],
+							"sid": 450412001030186
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -803,6 +992,31 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 153265024292668,
+					"parameters": {
+						"variable": "roundCount",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "roundText",
+					"sid": 133329653178210,
+					"parameters": {
+						"text": "\"ROUND : \"&roundCount&\"/15\""
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "questionBG",
+					"sid": 720047775953582,
+					"parameters": {
+						"color": "rgbEx(255, 255, 255)"
+					}
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
 					"sid": 116958844120656,
@@ -827,6 +1041,50 @@
 					"parameters": {
 						"variable": "actualansUID",
 						"value": "JSON.Get(\"questions\"&\".\"&randomIndex&\".\"&\"ansUID\")"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "questionBG",
+					"sid": 846527238071762,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "1.1",
+						"end-y": "1.1",
+						"time": "0.2",
+						"ease": "easeinback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 656660802663457,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "questionBG",
+					"sid": 251319380653066,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "1",
+						"end-y": "1",
+						"time": "0.2",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
@@ -992,6 +1250,106 @@
 				}
 			],
 			"sid": 805543172178561
+		},
+		{
+			"functionName": "checkAnswer",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 467615181545280,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "questionBG",
+							"sid": 491676801114757,
+							"parameters": {
+								"unique-id": "ansUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "questionBG",
+							"sid": 907828401969314,
+							"parameters": {
+								"color": "rgbEx(255, 0, 0)"
+							}
+						}
+					],
+					"sid": 355479136325042
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "questionBG",
+							"sid": 918352677252044,
+							"parameters": {
+								"unique-id": "actualansUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "questionBG",
+							"sid": 178463880998959,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						}
+					],
+					"sid": 944398654567085,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 607404188582458,
+									"parameters": {
+										"first-value": "ansUID",
+										"comparison": 0,
+										"second-value": "actualansUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 984881163815509,
+									"parameters": {
+										"variable": "score",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "score",
+									"sid": 736955724198006,
+									"parameters": {
+										"text": "\"SCORE : \"&score"
+									}
+								}
+							],
+							"sid": 365717604381004
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 332558947455922
