@@ -5,10 +5,56 @@
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [],
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
 	"uniqueId": "7hwpsqbhvke",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"homeScreen",
+			"gameTitle",
+			"LocalStorage",
+			"Audio",
+			"Browser",
+			"soundIcon",
+			"Touch",
+			"playBtn",
+			"help"
+		],
 		"subfolders": []
 	},
 	"autosaveData": null,
@@ -19,13 +65,13 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Home"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Event sheet_Home"
 		],
 		"subfolders": []
 	},
@@ -35,7 +81,96 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "0b1c5533-517c-49cd-a399-140d21510a34 (1).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 216155463562262,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "5ecf7819-745b-44f2-9b74-a0ee73949a5e.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 429574444307283,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "game.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 459338470745370,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "tap.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 876316005101011,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "7fad6fe0-7d0e-4d8d-97fc-761f3f564305.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 286620204819552,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "398b58be-febf-4ed4-afb0-9f7a4f595df1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 845379742333847,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "90940ca4-e3ee-44c3-9ceb-24b4191b947d.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 815319135949205,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bd02be32-a04a-43e7-875a-63fb51484328.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 487015607171051,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bf683c5e-02f1-44d5-8698-e07b55eaa6aa.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 931464217989801,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "c41e1de8-fd6f-4027-b1bd-b906ae607037.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 174275769236586,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "c528e25c-b03a-4228-a8de-1d835cd5c0e2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 560783748714319,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
