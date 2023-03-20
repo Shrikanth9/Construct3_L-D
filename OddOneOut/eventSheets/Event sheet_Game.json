@@ -96,6 +96,31 @@
 			],
 			"actions": [
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 149779430147481,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "false"
+					}
+				},
+				{
+					"callFunction": "setArray",
+					"sid": 777576539560844
+				},
+				{
+					"callFunction": "shuffleArray",
+					"sid": 922722726075326
+				},
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 773722207550135,
+					"parameters": {
+						"key": "\"highscore\""
+					}
+				},
+				{
 					"id": "tween-one-property",
 					"objectClass": "progress",
 					"sid": 290754360390949,
@@ -189,6 +214,15 @@
 					"sid": 700810994447810,
 					"parameters": {
 						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 767249943432492,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "true"
 					}
 				},
 				{
@@ -414,6 +448,11 @@
 					}
 				},
 				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 634918973963030
+				},
+				{
 					"id": "restart-layout",
 					"objectClass": "System",
 					"sid": 261490184798688
@@ -470,6 +509,11 @@
 					"parameters": {
 						"frame-number": "0"
 					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 811044734818686
 				},
 				{
 					"id": "go-to-layout",
@@ -532,6 +576,11 @@
 							"parameters": {
 								"scale": "1"
 							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 620934328175274
 						},
 						{
 							"id": "wait",
@@ -608,7 +657,7 @@
 						{
 							"id": "reset-global-variables",
 							"objectClass": "System",
-							"sid": 720970897671565
+							"sid": 136446593660243
 						},
 						{
 							"id": "wait",
@@ -715,7 +764,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 190212819643836,
+									"sid": 515413305918465,
 									"parameters": {
 										"variable": "roundCount",
 										"comparison": 2,
@@ -794,18 +843,18 @@
 								{
 									"id": "set-size",
 									"objectClass": "scoreGameOver",
-									"sid": 138390608866975,
+									"sid": 369826402236894,
 									"parameters": {
-										"width": "558",
+										"width": "655",
 										"height": "110"
 									}
 								},
 								{
 									"id": "set-size",
 									"objectClass": "highscore",
-									"sid": 284169407130259,
+									"sid": 565592621667550,
 									"parameters": {
-										"width": "613",
+										"width": "676",
 										"height": "82"
 									}
 								},
@@ -816,9 +865,62 @@
 									"parameters": {
 										"scale": "1"
 									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "scoreGameOver",
+									"sid": 123467018096639,
+									"parameters": {
+										"text": "\"SCORE : \"&score"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "highscore",
+									"sid": 188821956036559,
+									"parameters": {
+										"text": "\"HIGH SCORE :\"&highscore"
+									}
 								}
 							],
-							"sid": 450412001030186
+							"sid": 450412001030186,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 792138711491612,
+											"parameters": {
+												"first-value": "highscore",
+												"comparison": 2,
+												"second-value": "score"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "highscore",
+											"sid": 181075527454081,
+											"parameters": {
+												"text": "\"HIGH SCORE :\"&score"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 127466596060831,
+											"parameters": {
+												"key": "\"highscore\"",
+												"value": "score"
+											}
+										}
+									],
+									"sid": 109990798068725
+								}
+							]
 						}
 					]
 				},
@@ -981,6 +1083,31 @@
 			]
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 531616481296738,
+					"parameters": {
+						"key": "\"highscore\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 838418767114220,
+					"parameters": {
+						"variable": "highscore",
+						"value": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 204143958450975
+		},
+		{
 			"functionName": "generateQuestion",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -992,9 +1119,38 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "set-visible",
+					"objectClass": "question",
+					"sid": 328022915663587,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"callFunction": "Playanimation",
+					"sid": 638933510333924
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 284052997926526,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 191569624932033,
+					"parameters": {
+						"variable": "randomIndex",
+						"value": "questions.At(roundCount)"
+					}
+				},
+				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 153265024292668,
+					"sid": 971330404617568,
 					"parameters": {
 						"variable": "roundCount",
 						"value": "1"
@@ -1003,7 +1159,7 @@
 				{
 					"id": "set-text",
 					"objectClass": "roundText",
-					"sid": 133329653178210,
+					"sid": 917886419367057,
 					"parameters": {
 						"text": "\"ROUND : \"&roundCount&\"/15\""
 					}
@@ -1011,7 +1167,7 @@
 				{
 					"id": "set-default-color",
 					"objectClass": "questionBG",
-					"sid": 720047775953582,
+					"sid": 670276771023489,
 					"parameters": {
 						"color": "rgbEx(255, 255, 255)"
 					}
@@ -1019,16 +1175,7 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 116958844120656,
-					"parameters": {
-						"variable": "randomIndex",
-						"value": "floor(random(0,25))"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 561658630226685,
+					"sid": 595548298260512,
 					"parameters": {
 						"variable": "iterator",
 						"value": "1"
@@ -1037,7 +1184,7 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 402607232223587,
+					"sid": 196511545045871,
 					"parameters": {
 						"variable": "actualansUID",
 						"value": "JSON.Get(\"questions\"&\".\"&randomIndex&\".\"&\"ansUID\")"
@@ -1046,7 +1193,7 @@
 				{
 					"id": "tween-two-properties",
 					"objectClass": "questionBG",
-					"sid": 846527238071762,
+					"sid": 976533135234362,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
@@ -1054,7 +1201,7 @@
 						"end-x": "1.1",
 						"end-y": "1.1",
 						"time": "0.2",
-						"ease": "easeinback",
+						"ease": "noease",
 						"destroy-on-complete": "no",
 						"loop": "no",
 						"ping-pong": "no",
@@ -1064,7 +1211,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 656660802663457,
+					"sid": 310048562488933,
 					"parameters": {
 						"seconds": "0.2"
 					}
@@ -1072,7 +1219,7 @@
 				{
 					"id": "tween-two-properties",
 					"objectClass": "questionBG",
-					"sid": 251319380653066,
+					"sid": 659065399790392,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
@@ -1088,7 +1235,7 @@
 					}
 				}
 			],
-			"sid": 374629332168676,
+			"sid": 784503864471701,
 			"children": [
 				{
 					"eventType": "block",
@@ -1096,7 +1243,7 @@
 						{
 							"id": "for-each-ordered",
 							"objectClass": "System",
-							"sid": 433844222863087,
+							"sid": 246701510537609,
 							"parameters": {
 								"object": "question",
 								"expression": "0",
@@ -1108,7 +1255,7 @@
 						{
 							"id": "set-text",
 							"objectClass": "question",
-							"sid": 478344356827387,
+							"sid": 593390451900681,
 							"parameters": {
 								"text": "JSON.Get(\"questions\"&\".\"&randomIndex&\".\"&\"q\"&iterator)"
 							}
@@ -1116,16 +1263,311 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 213413744918918,
+							"sid": 942039523940505,
 							"parameters": {
 								"variable": "iterator",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "question",
+							"sid": 949106098099163,
+							"parameters": {
+								"visibility": "visible"
+							}
 						}
 					],
-					"sid": 779386768309106
+					"sid": 713659004316207
 				}
 			]
+		},
+		{
+			"functionName": "setArray",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 240009738400868,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 540076254824907,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-at-x",
+							"objectClass": "questions",
+							"sid": 658225178856797,
+							"parameters": {
+								"x": "loopindex",
+								"value": "loopindex"
+							}
+						}
+					],
+					"sid": 269682279167822
+				}
+			]
+		},
+		{
+			"functionName": "shuffleArray",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 118235931872318,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 769037896190839,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 294972725474100,
+							"parameters": {
+								"variable": "temp",
+								"value": "questions.At(loopindex)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 213497636680705,
+							"parameters": {
+								"variable": "tempIndex",
+								"value": "floor(random(0,26))"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "questions",
+							"sid": 611464780516371,
+							"parameters": {
+								"x": "loopindex",
+								"value": "questions.At(tempIndex)"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "questions",
+							"sid": 507354593368877,
+							"parameters": {
+								"x": "tempIndex",
+								"value": "temp"
+							}
+						}
+					],
+					"sid": 809866197219381
+				}
+			]
+		},
+		{
+			"functionName": "checkAnswer",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 199766519021789,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "questionBG",
+							"sid": 713734094069802,
+							"parameters": {
+								"unique-id": "ansUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "questionBG",
+							"sid": 847052879510023,
+							"parameters": {
+								"color": "rgbEx(255, 0, 0)"
+							}
+						}
+					],
+					"sid": 177579927271951
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "questionBG",
+							"sid": 581051059541820,
+							"parameters": {
+								"unique-id": "actualansUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "questionBG",
+							"sid": 141643754459040,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "questionBG",
+							"sid": 414279175058019,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "1.2",
+								"end-y": "1.2",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 246826766043884,
+							"parameters": {
+								"seconds": "0.2"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "questionBG",
+							"sid": 737392142946735,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "1",
+								"end-y": "1",
+								"time": "0.2",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 559138343074632,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 236434837701044,
+									"parameters": {
+										"first-value": "ansUID",
+										"comparison": 0,
+										"second-value": "actualansUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 973927479078413,
+									"parameters": {
+										"variable": "score",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "score",
+									"sid": 880258906418612,
+									"parameters": {
+										"text": "\"SCORE : \"&score"
+									}
+								}
+							],
+							"sid": 700332180246945
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "Playanimation",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "questionBG",
+					"sid": 896524961933093,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "0",
+						"end-y": "0",
+						"time": "0.3",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 586315947199808
 		},
 		{
 			"functionName": "hidePopUp",
@@ -1141,7 +1583,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "transparentBG",
-					"sid": 164995708456811,
+					"sid": 388828459219609,
 					"parameters": {
 						"scale": "0"
 					}
@@ -1149,7 +1591,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "gamePause",
-					"sid": 794084704718510,
+					"sid": 499508196208774,
 					"parameters": {
 						"scale": "0"
 					}
@@ -1157,7 +1599,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "resumeBtn",
-					"sid": 795108723371258,
+					"sid": 381141090307267,
 					"parameters": {
 						"scale": "0"
 					}
@@ -1165,7 +1607,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "restartBtn",
-					"sid": 101287788880148,
+					"sid": 758041577942978,
 					"parameters": {
 						"scale": "0"
 					}
@@ -1173,7 +1615,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "homeBtn",
-					"sid": 973781239288480,
+					"sid": 944745342644943,
 					"parameters": {
 						"scale": "0"
 					}
@@ -1181,13 +1623,13 @@
 				{
 					"id": "set-scale",
 					"objectClass": "gamePause",
-					"sid": 802201294897467,
+					"sid": 736330422701347,
 					"parameters": {
 						"scale": "0"
 					}
 				}
 			],
-			"sid": 846951065181778
+			"sid": 664802559514632
 		},
 		{
 			"functionName": "showPopUp",
@@ -1203,7 +1645,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "transparentBG",
-					"sid": 283504908791411,
+					"sid": 130004052565055,
 					"parameters": {
 						"scale": "1"
 					}
@@ -1211,7 +1653,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "gamePause",
-					"sid": 896906971531270,
+					"sid": 125926756777639,
 					"parameters": {
 						"scale": "1"
 					}
@@ -1219,7 +1661,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "resumeBtn",
-					"sid": 246827168783204,
+					"sid": 193729550014931,
 					"parameters": {
 						"scale": "1"
 					}
@@ -1227,7 +1669,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "restartBtn",
-					"sid": 301180413439754,
+					"sid": 833713860028634,
 					"parameters": {
 						"scale": "1"
 					}
@@ -1235,7 +1677,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "homeBtn",
-					"sid": 848660027492072,
+					"sid": 414600408426280,
 					"parameters": {
 						"scale": "1"
 					}
@@ -1243,113 +1685,13 @@
 				{
 					"id": "set-scale",
 					"objectClass": "gamePause",
-					"sid": 165357499540783,
+					"sid": 652548427563115,
 					"parameters": {
 						"scale": "1"
 					}
 				}
 			],
-			"sid": 805543172178561
-		},
-		{
-			"functionName": "checkAnswer",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 467615181545280,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "questionBG",
-							"sid": 491676801114757,
-							"parameters": {
-								"unique-id": "ansUID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-default-color",
-							"objectClass": "questionBG",
-							"sid": 907828401969314,
-							"parameters": {
-								"color": "rgbEx(255, 0, 0)"
-							}
-						}
-					],
-					"sid": 355479136325042
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "questionBG",
-							"sid": 918352677252044,
-							"parameters": {
-								"unique-id": "actualansUID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-default-color",
-							"objectClass": "questionBG",
-							"sid": 178463880998959,
-							"parameters": {
-								"color": "rgbEx(0, 255, 0)"
-							}
-						}
-					],
-					"sid": 944398654567085,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 607404188582458,
-									"parameters": {
-										"first-value": "ansUID",
-										"comparison": 0,
-										"second-value": "actualansUID"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 984881163815509,
-									"parameters": {
-										"variable": "score",
-										"value": "100"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "score",
-									"sid": 736955724198006,
-									"parameters": {
-										"text": "\"SCORE : \"&score"
-									}
-								}
-							],
-							"sid": 365717604381004
-						}
-					]
-				}
-			]
+			"sid": 427450557432332
 		}
 	],
 	"sid": 332558947455922

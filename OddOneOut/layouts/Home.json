@@ -295,6 +295,16 @@
 			"properties": {},
 			"uid": 39,
 			"instanceVariables": {}
+		},
+		{
+			"type": "questions",
+			"properties": {
+				"width": 30,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 40,
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],

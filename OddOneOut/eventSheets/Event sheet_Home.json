@@ -12,20 +12,64 @@
 			"sid": 831529443689029
 		},
 		{
+			"eventType": "variable",
+			"name": "temp",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 765479469660928
+		},
+		{
+			"eventType": "variable",
+			"name": "tempIndex",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 615667216145757
+		},
+		{
+			"eventType": "variable",
+			"name": "highscore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 998808874144215
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 206208562562018
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 749245913798925,
+					"parameters": {
+						"key": "\"highscore\"",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 804656603214011
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 433069167738437,
-					"parameters": {
-						"variable": "touchflag"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 364745922040063,
 					"parameters": {
 						"variable": "touchflag"
 					}
