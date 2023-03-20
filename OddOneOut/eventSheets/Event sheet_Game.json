@@ -769,6 +769,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 792148156549514,
+							"parameters": {
+								"variable": "touchflag",
+								"value": "false"
+							}
+						},
+						{
 							"id": "set-width",
 							"objectClass": "progress",
 							"sid": 299017225123095,
@@ -783,15 +792,6 @@
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"progress\""
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 441787458905738,
-							"parameters": {
-								"variable": "touchflag",
-								"value": "false"
 							}
 						},
 						{
@@ -838,20 +838,20 @@
 									"sid": 601242139106872
 								},
 								{
-									"id": "set-boolean-eventvar",
+									"id": "wait",
 									"objectClass": "System",
-									"sid": 605721289794614,
+									"sid": 491527244024453,
 									"parameters": {
-										"variable": "touchflag",
-										"value": "true"
+										"seconds": "1.0"
 									}
 								},
 								{
-									"id": "wait",
+									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 228985570783992,
+									"sid": 380395382765837,
 									"parameters": {
-										"seconds": "1"
+										"variable": "touchflag",
+										"value": "true"
 									}
 								},
 								{
