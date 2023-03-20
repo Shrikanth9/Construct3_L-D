@@ -2,10 +2,6 @@
 	"name": "Event sheet_Game",
 	"events": [
 		{
-			"eventType": "include",
-			"includeSheet": "Event sheet_Home"
-		},
-		{
 			"eventType": "variable",
 			"name": "weighAngle",
 			"type": "number",
@@ -46,8 +42,22 @@
 			],
 			"actions": [
 				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 672758028538249,
+					"parameters": {
+						"tag": "\"json\"",
+						"file": "weights.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 221789460674673
+				},
+				{
 					"callFunction": "hidePopUp",
-					"sid": 230867097610672
+					"sid": 385950191832498
 				}
 			],
 			"sid": 927887340557042
@@ -188,15 +198,6 @@
 							"sid": 399371094194452,
 							"parameters": {
 								"frame-number": "0"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 808506661711221,
-							"parameters": {
-								"variable": "touchflag",
-								"value": "false"
 							}
 						}
 					],
@@ -827,6 +828,30 @@
 				}
 			],
 			"sid": 569445833267942
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 943560535858140,
+					"parameters": {
+						"tag": "\"json\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "JSON",
+					"sid": 715427104178616,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 956049220625295
 		}
 	],
 	"sid": 139042347289088
