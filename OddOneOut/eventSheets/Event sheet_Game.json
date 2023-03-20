@@ -340,6 +340,18 @@
 			],
 			"actions": [
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 119038858757429,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "volume",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
 					"id": "set-animation-frame",
 					"objectClass": "resumeBtn",
 					"sid": 642213891792037,
@@ -401,6 +413,18 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 467454520309866,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "volume",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
@@ -473,6 +497,18 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 901986767956937,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "volume",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
@@ -561,6 +597,18 @@
 					],
 					"actions": [
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 238361920282586,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 587305003408729,
@@ -637,6 +685,18 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 961756178802276,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -938,6 +998,18 @@
 					],
 					"actions": [
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 166802243439866,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 555800327721363,
@@ -1031,6 +1103,18 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 878726877010008,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -1529,9 +1613,46 @@
 									"parameters": {
 										"text": "\"SCORE : \"&score"
 									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 585589606669574,
+									"parameters": {
+										"audio-file": "correct",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
 								}
 							],
 							"sid": 700332180246945
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 395643983763764
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 120984208814167,
+									"parameters": {
+										"audio-file": "wrong",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 433018592614658
 						}
 					]
 				}

@@ -22,6 +22,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -112,7 +119,9 @@
 			"AJAX",
 			"Dictionary",
 			"questions",
-			"LocalStorage"
+			"LocalStorage",
+			"Audio",
+			"soundIcon"
 		],
 		"subfolders": []
 	},
@@ -142,7 +151,32 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "correct.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 602311643797326,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "tap.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 260525073947947,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "wrong.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 791936016709575,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
