@@ -22,6 +22,16 @@
 			"sid": 890541963185740
 		},
 		{
+			"eventType": "variable",
+			"name": "touchflag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 998805798981284
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -54,6 +64,14 @@
 			],
 			"actions": [
 				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 690850648888883,
+					"parameters": {
+						"tag": "\"game\""
+					}
+				},
+				{
 					"id": "get-item",
 					"objectClass": "LocalStorage",
 					"sid": 873565330717140,
@@ -80,40 +98,6 @@
 				}
 			],
 			"sid": 988518479548188
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-get",
-					"objectClass": "LocalStorage",
-					"sid": 585950090224471,
-					"parameters": {
-						"key": "\"volume\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 203103520870378,
-					"parameters": {
-						"variable": "volume",
-						"value": "int(LocalStorage.ItemValue)"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 483125251637972,
-					"parameters": {
-						"type": "log",
-						"message": "volume"
-					}
-				}
-			],
-			"sid": 764102326841512
 		},
 		{
 			"eventType": "block",
@@ -327,6 +311,14 @@
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
 							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 555586174482793,
+							"parameters": {
+								"layout": "Game"
+							}
 						}
 					],
 					"sid": 106506961782493
@@ -369,6 +361,40 @@
 					"sid": 988005289577443
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 430702938638698,
+					"parameters": {
+						"key": "\"volume\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 722174430739154,
+					"parameters": {
+						"variable": "volume",
+						"value": "int(LocalStorage.ItemValue)"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 686708082672321,
+					"parameters": {
+						"type": "log",
+						"message": "volume"
+					}
+				}
+			],
+			"sid": 942904641747291
 		}
 	],
 	"sid": 404051493854497

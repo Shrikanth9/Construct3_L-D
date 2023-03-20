@@ -36,8 +36,50 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Touch",
 			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -53,7 +95,30 @@
 			"soundIcon",
 			"Touch",
 			"playBtn",
-			"help"
+			"help",
+			"gameBg",
+			"footer",
+			"header",
+			"racks",
+			"1kg",
+			"plank",
+			"holder",
+			"weightChecker",
+			"optionBg",
+			"pauseBtn",
+			"helpBtn",
+			"roundText",
+			"scoreText",
+			"pauseScreen",
+			"resumeBtn",
+			"restartBtn",
+			"homeBtn",
+			"semiLayer",
+			"gameOverScreen",
+			"scoreTextGameOver",
+			"highScore",
+			"homeBtn2",
+			"replayBtn"
 		],
 		"subfolders": []
 	},
@@ -65,13 +130,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Home"
+			"Home",
+			"Game"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet_Home"
+			"Event sheet_Home",
+			"Event sheet_Game"
 		],
 		"subfolders": []
 	},
@@ -182,7 +249,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "Marvin397-font.ttf",
+					"type": "application/font-sfnt",
+					"sid": 403633477004598,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {

@@ -1,0 +1,57 @@
+{
+	"name": "plank",
+	"plugin-id": "Sprite",
+	"sid": 841035454312683,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1180,
+						"height": 143,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 700727,
+						"collisionPoly": {
+							"points": [
+								0.005932203389830509,
+								0.04895104895104895,
+								0.5,
+								0,
+								0.9949152542372881,
+								0.04195804195804196,
+								0.964406779661017,
+								0.5,
+								0.9601694915254237,
+								0.6713286713286714,
+								0.5,
+								1,
+								0.03220338983050847,
+								0.7342657342657343,
+								0.0288135593220339,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 860946480881170,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
