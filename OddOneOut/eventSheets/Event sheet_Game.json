@@ -810,7 +810,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 669302506451612,
+							"sid": 491134024864427,
 							"parameters": {
 								"seconds": "1"
 							}
@@ -844,6 +844,14 @@
 									"parameters": {
 										"variable": "touchflag",
 										"value": "true"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 228985570783992,
+									"parameters": {
+										"seconds": "1"
 									}
 								},
 								{
@@ -1217,9 +1225,9 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 284052997926526,
+					"sid": 340637602244353,
 					"parameters": {
-						"seconds": "0.3"
+						"seconds": "0.5"
 					}
 				},
 				{

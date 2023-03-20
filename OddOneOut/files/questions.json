@@ -26,9 +26,6 @@
            { "q1":"SCARPEL : SURGEON", "q2":"CHISEL : SOLDIER","q3":"AWL : COBBLER","q4":"KNIFE : CHEF","ansUID" : 16},
            { "q1":"SPRINTING", "q2":"JOGGING", "q3":"JUMPING", "q4":"EXCERCISING", "ansUID": 18},
            { "q1":"TREE : STEM", "q2":"FACE : EYE","q3":"CHAIR : SOFA","q4":"PLANT : FLOWER","ansUID" : 17}
-           
-
-
     ]
 }
 
