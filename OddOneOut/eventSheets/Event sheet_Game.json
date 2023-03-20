@@ -275,10 +275,10 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 416381316620996,
+					"sid": 979418557690359,
 					"parameters": {
 						"variable": "ansUID",
-						"value": "questionBG.UID"
+						"value": "0"
 					}
 				},
 				{

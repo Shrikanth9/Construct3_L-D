@@ -15,7 +15,7 @@
            { "q1":"TELESCOPE", "q2":"TRANSISTOR", "q3":"TAPE RECORDER", "q4":"TELEPHONE", "ansUID": 15},
            { "q1":"VALLEY", "q2":"RIVER", "q3":"TOWER", "q4":"SEA", "ansUID": 17},
            { "q1":"COTTON", "q2":"JUTE", "q3":"SILK", "q4":"NYLON", "ansUID": 18},
-           { "q1":"645", "q2":"842", "q3":"964", "q4":"340", "ansUID": 17},
+           { "q1":"645", "q2":"842", "q3":"964", "q4":"340", "ansUID": 15},
            { "q1":"CEMENT", "q2":"PASTE", "q3":"OIL", "q4":"GLUE", "ansUID": 17},
            { "q1":"TEMPLE", "q2":"MOSQUE", "q3":"MONASTERY", "q4":"CHURCH", "ansUID": 17},
            { "q1":"PEN", "q2":"SHARPNER", "q3":"PENCIL", "q4":"PAPER", "ansUID": 16},
