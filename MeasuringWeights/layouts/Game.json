@@ -912,15 +912,37 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 1000,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": "stone"
+							}
 						}
 					},
 					"world": {
-						"x": 1544,
-						"y": 218,
+						"x": 1539,
+						"y": 301,
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -958,6 +980,28 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": "stone"
+							}
 						}
 					},
 					"world": {
@@ -966,7 +1010,7 @@
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -1004,6 +1048,28 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": "stone"
+							}
 						}
 					},
 					"world": {
@@ -1012,7 +1078,7 @@
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -1050,6 +1116,28 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": "stone"
+							}
 						}
 					},
 					"world": {
@@ -1058,7 +1146,7 @@
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -1096,6 +1184,28 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": "stone"
+							}
 						}
 					},
 					"world": {
@@ -1104,7 +1214,7 @@
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -1142,6 +1252,28 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": "stone"
+							}
 						}
 					},
 					"world": {
@@ -1150,7 +1282,7 @@
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -1188,6 +1320,28 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": "stone"
+							}
 						}
 					},
 					"world": {
@@ -1196,7 +1350,63 @@
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "objects",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 47,
+					"instanceVariables": {},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 1,
+								"wait-time": 0,
+								"fade-out-time": 0,
+								"destroy": false,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 319,
+						"y": 466,
+						"width": 148,
+						"height": 133,
+						"originX": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,

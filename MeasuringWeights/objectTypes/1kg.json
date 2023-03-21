@@ -14,6 +14,21 @@
 			"behaviorId": "Fade",
 			"name": "Fade",
 			"sid": 604507776472142
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 613027331372100
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 763848642689101
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 789555083530383
 		}
 	],
 	"effectTypes": [],
@@ -25,7 +40,7 @@
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,

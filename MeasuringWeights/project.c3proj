@@ -64,6 +64,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "DragnDrop",
 			"name": "Drag & Drop",
 			"author": "Scirra",
@@ -73,6 +80,13 @@
 			"type": "behavior",
 			"id": "Fade",
 			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -127,7 +141,8 @@
 			"homeBtn2",
 			"replayBtn",
 			"JSON",
-			"AJAX"
+			"AJAX",
+			"objects"
 		],
 		"subfolders": []
 	},
