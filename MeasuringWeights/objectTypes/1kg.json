@@ -29,6 +29,11 @@
 			"behaviorId": "solid",
 			"name": "Solid",
 			"sid": 789555083530383
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 163997156976544
 		}
 	],
 	"effectTypes": [],
@@ -72,7 +77,7 @@
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -104,7 +109,7 @@
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -136,7 +141,7 @@
 						"width": 150,
 						"height": 158,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,

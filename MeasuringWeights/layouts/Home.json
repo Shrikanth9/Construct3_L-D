@@ -188,6 +188,72 @@
 			"properties": {},
 			"uid": 45,
 			"instanceVariables": {}
+		},
+		{
+			"type": "xPos",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 40,
+			"instanceVariables": {}
+		},
+		{
+			"type": "yPos",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 41,
+			"instanceVariables": {}
+		},
+		{
+			"type": "framesArray",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 49,
+			"instanceVariables": {}
+		},
+		{
+			"type": "Dictionary",
+			"properties": {},
+			"uid": 50,
+			"instanceVariables": {}
+		},
+		{
+			"type": "ObjectWeights",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 51,
+			"instanceVariables": {}
+		},
+		{
+			"type": "kgsums",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 52,
+			"instanceVariables": {}
+		},
+		{
+			"type": "option",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 54,
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],

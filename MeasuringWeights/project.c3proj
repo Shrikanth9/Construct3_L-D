@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Audio",
 			"name": "Audio",
 			"author": "Scirra",
@@ -24,6 +31,13 @@
 			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -99,6 +113,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -142,7 +163,15 @@
 			"replayBtn",
 			"JSON",
 			"AJAX",
-			"objects"
+			"objects",
+			"xPos",
+			"yPos",
+			"framesArray",
+			"Dictionary",
+			"ObjectWeights",
+			"kgsums",
+			"options",
+			"option"
 		],
 		"subfolders": []
 	},
