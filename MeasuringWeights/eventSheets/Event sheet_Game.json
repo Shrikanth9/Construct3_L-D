@@ -162,6 +162,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 337157464048870,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "false"
+					}
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
 					"sid": 443199694305528,
@@ -201,15 +210,6 @@
 					"behaviorType": "DragDrop",
 					"parameters": {
 						"state": "disabled"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 996546890658352,
-					"parameters": {
-						"variable": "touchflag",
-						"value": "false"
 					}
 				},
 				{
@@ -254,74 +254,11 @@
 					"sid": 203978268642691
 				},
 				{
-					"id": "set-at-x",
-					"objectClass": "xPos",
-					"sid": 856854758803431,
-					"parameters": {
-						"x": "0",
-						"value": "1539"
-					}
-				},
-				{
-					"id": "set-at-x",
-					"objectClass": "xPos",
-					"sid": 984166533188107,
-					"parameters": {
-						"x": "1",
-						"value": "1809"
-					}
-				},
-				{
-					"id": "set-at-x",
-					"objectClass": "yPos",
-					"sid": 204213288061401,
-					"parameters": {
-						"x": "0",
-						"value": "300"
-					}
-				},
-				{
-					"id": "set-at-x",
-					"objectClass": "yPos",
-					"sid": 702131129683967,
-					"parameters": {
-						"x": "1",
-						"value": "500"
-					}
-				},
-				{
-					"id": "set-at-x",
-					"objectClass": "yPos",
-					"sid": 154666642762046,
-					"parameters": {
-						"x": "1",
-						"value": "700"
-					}
-				},
-				{
 					"id": "set-animation-frame",
 					"objectClass": "objects",
 					"sid": 945857980228881,
 					"parameters": {
 						"frame-number": "roundCount"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 421080195472410,
-					"parameters": {
-						"variable": "objectWeight",
-						"value": "ObjectWeights.at(randomIndex)"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 984317252132911,
-					"parameters": {
-						"type": "log",
-						"message": "objectWeight"
 					}
 				},
 				{
@@ -334,20 +271,29 @@
 					}
 				},
 				{
-					"id": "set-boolean-eventvar",
+					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 468333477701967,
+					"sid": 767694726970487,
 					"parameters": {
-						"variable": "collisionFlag",
-						"value": "true"
+						"variable": "objectWeight",
+						"value": "ObjectWeights.at(randomIndex)"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 437038310912920,
+					"parameters": {
+						"type": "log",
+						"message": "objectWeight"
 					}
 				},
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 622120849491583,
+					"sid": 468333477701967,
 					"parameters": {
-						"variable": "touchflag",
+						"variable": "collisionFlag",
 						"value": "true"
 					}
 				},
@@ -362,6 +308,15 @@
 				{
 					"callFunction": "hidePopUp",
 					"sid": 946177223984284
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 891716874034059,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "true"
+					}
 				},
 				{
 					"id": "set-eventvar-value",
@@ -390,6 +345,226 @@
 			"actions": [],
 			"sid": 582758732908075,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 918312248910690,
+							"parameters": {
+								"object": "optionBg"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 967478982071186,
+							"parameters": {
+								"variable": "touchflag",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 324583525776247,
+							"parameters": {
+								"variable": "ansUID",
+								"value": "optionBg.UID"
+							}
+						},
+						{
+							"callFunction": "checkAnswer",
+							"sid": 100529979807704
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 656992263977393
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 725929005984259,
+							"parameters": {
+								"variable": "ansUID",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 391339311534114,
+							"parameters": {
+								"variable": "kg",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 772464478828272,
+							"parameters": {
+								"variable": "Kgsums",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 280164544688396,
+							"parameters": {
+								"variable": "objectPlaced",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 716107083016431,
+							"parameters": {
+								"variable": "objectWeight",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 625941627394693,
+							"parameters": {
+								"variable": "weighAngle",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 877838245036700,
+							"parameters": {
+								"variable": "weighDirection",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 862270693481181,
+							"parameters": {
+								"variable": "roundCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 752519643016567,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 161245283795678,
+									"parameters": {
+										"variable": "roundCount",
+										"comparison": 0,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 623003250309283,
+									"parameters": {
+										"variable": "touchflag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "gameOverScreen",
+									"sid": 822770573748237,
+									"parameters": {
+										"scale": "1"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "semiLayer",
+									"sid": 708349532437035,
+									"parameters": {
+										"scale": "1"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "scoreTextGameOver",
+									"sid": 111405315818122,
+									"parameters": {
+										"width": "476",
+										"height": "75"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "highScore",
+									"sid": 957679024047206,
+									"parameters": {
+										"width": "665",
+										"height": "65"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "replayBtn",
+									"sid": 260186537592218,
+									"parameters": {
+										"scale": "1"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "homeBtn2",
+									"sid": 787538580491131,
+									"parameters": {
+										"scale": "1"
+									}
+								}
+							],
+							"sid": 757304930246027
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 672122252149762
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 753922934114787,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 472596265537884
+								}
+							],
+							"sid": 844268538569140
+						}
+					]
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -1199,6 +1374,11 @@
 					}
 				},
 				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 214231306771447
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 182481387331489,
@@ -1992,9 +2172,21 @@
 							],
 							"actions": [
 								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 276948233439329,
+									"parameters": {
+										"audio-file": "correct",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
 									"id": "set-default-color",
 									"objectClass": "optionBg",
-									"sid": 964204810979392,
+									"sid": 107264390385627,
 									"parameters": {
 										"color": "rgbEx(0, 255, 0)"
 									}
@@ -2002,7 +2194,7 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 886645847979017,
+									"sid": 217226261364231,
 									"parameters": {
 										"variable": "score",
 										"value": "100"
@@ -2011,7 +2203,7 @@
 								{
 									"id": "set-text",
 									"objectClass": "scoreText",
-									"sid": 560809492991907,
+									"sid": 320476631443421,
 									"parameters": {
 										"text": "\"SCORE : \"&score"
 									}
@@ -2019,7 +2211,7 @@
 								{
 									"id": "set-text",
 									"objectClass": "scoreTextGameOver",
-									"sid": 830940767633375,
+									"sid": 844617053270074,
 									"parameters": {
 										"text": "\"SCORE : \"&score"
 									}
@@ -2028,226 +2220,6 @@
 							"sid": 930294508277628
 						}
 					]
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 361389769910519,
-					"parameters": {
-						"object": "optionBg"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 892797071630158,
-					"parameters": {
-						"variable": "touchflag",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 472415656215159,
-					"parameters": {
-						"variable": "ansUID",
-						"value": "optionBg.UID"
-					}
-				},
-				{
-					"callFunction": "checkAnswer",
-					"sid": 237200583049954
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 417277718530968
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 564012097399543,
-					"parameters": {
-						"variable": "ansUID",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 479852747045830,
-					"parameters": {
-						"variable": "kg",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 966312416485545,
-					"parameters": {
-						"variable": "Kgsums",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 277115453082242,
-					"parameters": {
-						"variable": "objectPlaced",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 645477665964754,
-					"parameters": {
-						"variable": "objectWeight",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 850388428058537,
-					"parameters": {
-						"variable": "weighAngle",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 163652937397215,
-					"parameters": {
-						"variable": "weighDirection",
-						"value": "0"
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 567644579766398,
-					"parameters": {
-						"variable": "roundCount",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 676899862126074,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 645929717094982,
-							"parameters": {
-								"variable": "roundCount",
-								"comparison": 0,
-								"value": "10"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 134223690970196,
-							"parameters": {
-								"variable": "touchflag",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "gameOverScreen",
-							"sid": 647007125960791,
-							"parameters": {
-								"scale": "1"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "semiLayer",
-							"sid": 527602670137602,
-							"parameters": {
-								"scale": "1"
-							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "scoreTextGameOver",
-							"sid": 138108363671077,
-							"parameters": {
-								"width": "476",
-								"height": "75"
-							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "highScore",
-							"sid": 185719587322859,
-							"parameters": {
-								"width": "665",
-								"height": "65"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "replayBtn",
-							"sid": 156603595959628,
-							"parameters": {
-								"scale": "1"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "homeBtn2",
-							"sid": 492872793839401,
-							"parameters": {
-								"scale": "1"
-							}
-						}
-					],
-					"sid": 630047002299123
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 877198173934201
-						}
-					],
-					"actions": [
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 346010435444463,
-							"parameters": {
-								"seconds": "1"
-							}
-						},
-						{
-							"id": "restart-layout",
-							"objectClass": "System",
-							"sid": 929457582795014
-						}
-					],
-					"sid": 278440565661026
 				}
 			]
 		}

@@ -184,7 +184,8 @@
 	"layouts": {
 		"items": [
 			"Home",
-			"Game"
+			"Game",
+			"Help"
 		],
 		"subfolders": []
 	},
@@ -243,7 +244,7 @@
 					}
 				},
 				{
-					"name": "398b58be-febf-4ed4-afb0-9f7a4f595df1.webm",
+					"name": "correct.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 845379742333847,
 					"file-info": {
