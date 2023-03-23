@@ -152,6 +152,16 @@
 			"sid": 670130542246884
 		},
 		{
+			"eventType": "variable",
+			"name": "stoneUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 635345679445458
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -639,6 +649,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 826180371524961,
+							"parameters": {
+								"variable": "collisionFlag",
+								"value": "false"
+							}
+						},
+						{
 							"id": "set-enabled",
 							"objectClass": "1kg",
 							"sid": 282064398132629,
@@ -656,21 +675,21 @@
 							}
 						},
 						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 908965381812402,
-							"parameters": {
-								"variable": "collisionFlag",
-								"value": "false"
-							}
-						},
-						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 703767402676317,
 							"parameters": {
 								"variable": "kg",
 								"value": "JSON.Get(\"kgs\"&\".\"&1kg.AnimationFrame)"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "1kg",
+							"sid": 139405353196888,
+							"parameters": {
+								"x": "lerp(Touch.X, 1kg.X, 0.5)",
+								"y": "lerp(Touch.y, 1kg.Y, 0.5)"
 							}
 						}
 					],
@@ -745,6 +764,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 645440627613758,
+							"parameters": {
+								"variable": "collisionFlag",
+								"value": "true"
+							}
+						},
+						{
 							"id": "set-enabled",
 							"objectClass": "1kg",
 							"sid": 281266906827876,
@@ -761,18 +789,24 @@
 							"parameters": {
 								"angle": "90"
 							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 323616856750352,
-							"parameters": {
-								"variable": "collisionFlag",
-								"value": "true"
-							}
 						}
 					],
-					"sid": 436331594906949
+					"sid": 436331594906949,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-dragging",
+									"objectClass": "1kg",
+									"sid": 458683605788212,
+									"behaviorType": "DragDrop"
+								}
+							],
+							"actions": [],
+							"sid": 251879203703103
+						}
+					]
 				}
 			]
 		},
@@ -875,6 +909,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 947914130673770,
+							"parameters": {
+								"variable": "stoneUID",
+								"value": "1kg.UID"
+							}
+						},
+						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
 							"sid": 254757486847403,
@@ -935,6 +978,15 @@
 						{
 							"callFunction": "MeasureWeight",
 							"sid": 863392956820433
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 393469771153963,
+							"parameters": {
+								"type": "log",
+								"message": "\"collided\""
+							}
 						}
 					],
 					"sid": 740202989608258
@@ -962,17 +1014,22 @@
 							}
 						},
 						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 126915593037424,
+							"id": "set-position",
+							"objectClass": "1kg",
+							"sid": 757139448272211,
 							"parameters": {
-								"variable": "collisionFlag",
-								"value": "false"
+								"x": "JSON.Get(\"stonePositions.\"&1kg.UID&\".0\")",
+								"y": "JSON.Get(\"stonePositions.\"&1kg.UID&\".1\")"
 							}
 						},
 						{
-							"callFunction": "setToDefaultPos",
-							"sid": 855843039478960
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 178082462539614,
+							"parameters": {
+								"type": "log",
+								"message": "\"collided\""
+							}
 						}
 					],
 					"sid": 566123973112986
@@ -1932,77 +1989,6 @@
 				}
 			],
 			"sid": 189462986208934
-		},
-		{
-			"functionName": "setToDefaultPos",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 349982518163744,
-					"parameters": {
-						"variable": "iterator",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 817762516549502,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each-ordered",
-							"objectClass": "System",
-							"sid": 250657984110414,
-							"parameters": {
-								"object": "1kg",
-								"expression": "0",
-								"order": "ascending"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 522175514367017,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 121919628104112,
-									"parameters": {
-										"first-value": "JSON.Get(\"stones.\"&loopindex&\".uid\")",
-										"comparison": 0,
-										"second-value": "1kg.UID"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "1kg",
-									"sid": 391258871760549,
-									"parameters": {
-										"x": "JSON.Get(\"stones.\"&loopindex&\".positions.0\")",
-										"y": "JSON.Get(\"stones.\"&loopindex&\".positions.1\")"
-									}
-								}
-							],
-							"sid": 220781439807130
-						}
-					]
-				}
-			]
 		},
 		{
 			"functionName": "checkAnswer",

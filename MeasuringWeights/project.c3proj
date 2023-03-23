@@ -29,6 +29,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
@@ -103,13 +110,6 @@
 			"name": "Bound to layout",
 			"author": "Scirra",
 			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "solid",
-			"name": "Solid",
-			"author": "Scirra",
-			"bundled": false
 		}
 	],
 	"uniqueId": "7hwpsqbhvke",
@@ -126,7 +126,6 @@
 			"gameBg",
 			"footer",
 			"header",
-			"racks",
 			"1kg",
 			"plank",
 			"holder",
@@ -153,7 +152,8 @@
 			"ObjectWeights",
 			"kgsums",
 			"options",
-			"option"
+			"option",
+			"Browser"
 		],
 		"subfolders": []
 	},
