@@ -113,16 +113,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ansUID",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 392302040979588
-		},
-		{
-			"eventType": "variable",
 			"name": "actualansUID",
 			"type": "number",
 			"initialValue": "0",
@@ -161,6 +151,22 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 884101124726783,
+					"parameters": {
+						"key": "\"highscore\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "highScore",
+					"sid": 266829428250834,
+					"parameters": {
+						"text": "\"HIGH SCORE : \"&highScore"
+					}
+				},
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
@@ -280,15 +286,6 @@
 					}
 				},
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 437038310912920,
-					"parameters": {
-						"type": "log",
-						"message": "objectWeight"
-					}
-				},
-				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 468333477701967,
@@ -368,12 +365,11 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 324583525776247,
+							"id": "set-default-color",
+							"objectClass": "optionBg",
+							"sid": 448862832961915,
 							"parameters": {
-								"variable": "ansUID",
-								"value": "optionBg.UID"
+								"color": "rgbEx(255, 0, 0)"
 							}
 						},
 						{
@@ -384,15 +380,6 @@
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
 							"sid": 656992263977393
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 725929005984259,
-							"parameters": {
-								"variable": "ansUID",
-								"value": "0"
-							}
 						},
 						{
 							"id": "set-eventvar-value",
@@ -466,7 +453,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 161245283795678,
+									"sid": 156244794689449,
 									"parameters": {
 										"variable": "roundCount",
 										"comparison": 0,
@@ -482,6 +469,14 @@
 									"parameters": {
 										"variable": "touchflag",
 										"value": "false"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 634234884778344,
+									"parameters": {
+										"seconds": "1"
 									}
 								},
 								{
@@ -638,58 +633,6 @@
 						}
 					],
 					"sid": 403701113736074
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-touched-object",
-							"objectClass": "Touch",
-							"sid": 248211303492113,
-							"parameters": {
-								"object": "helpBtn"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "helpBtn",
-							"sid": 426939535040487,
-							"parameters": {
-								"frame-number": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 430339659599972,
-							"parameters": {
-								"seconds": "0.2"
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 330357050671124,
-							"parameters": {
-								"audio-file": "tap",
-								"loop": "not-looping",
-								"volume": "volume",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "helpBtn",
-							"sid": 399371094194452,
-							"parameters": {
-								"frame-number": "0"
-							}
-						}
-					],
-					"sid": 196368946844417
 				}
 			]
 		},
@@ -738,15 +681,6 @@
 						"variable": "kg",
 						"value": "JSON.Get(\"kgs\"&\".\"&1kg.AnimationFrame)"
 					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 411736467014086,
-					"parameters": {
-						"type": "log",
-						"message": "kg"
-					}
 				}
 			],
 			"sid": 341627530590775,
@@ -793,24 +727,6 @@
 							"parameters": {
 								"variable": "weighDirection",
 								"value": "-1"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 988476163380930,
-							"parameters": {
-								"type": "log",
-								"message": "\"weighangle when stone remove:\"&weighAngle"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 648425466064397,
-							"parameters": {
-								"type": "log",
-								"message": "\"weighdirection when stone remove:\"&weighDirection"
 							}
 						},
 						{
@@ -1024,24 +940,6 @@
 							}
 						},
 						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 278020300674817,
-							"parameters": {
-								"type": "log",
-								"message": "\"weighangle on collision:\"&weighAngle"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 781079557135669,
-							"parameters": {
-								"type": "log",
-								"message": "\"weighdirection on collision:\"&weighDirection"
-							}
-						},
-						{
 							"callFunction": "MeasureWeight",
 							"sid": 863392956820433
 						}
@@ -1110,23 +1008,23 @@
 					}
 				},
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 696147684513354,
-					"parameters": {
-						"seconds": "0.2"
-					}
-				},
-				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 205970563811149,
+					"sid": 564455435060998,
 					"parameters": {
 						"audio-file": "tap",
 						"loop": "not-looping",
 						"volume": "volume",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 696147684513354,
+					"parameters": {
+						"seconds": "0.2"
 					}
 				},
 				{
@@ -1175,23 +1073,23 @@
 					}
 				},
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 797219250856310,
-					"parameters": {
-						"seconds": "0.2"
-					}
-				},
-				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 602346167063493,
+					"sid": 144944220834760,
 					"parameters": {
 						"audio-file": "tap",
 						"loop": "not-looping",
 						"volume": "volume",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 797219250856310,
+					"parameters": {
+						"seconds": "0.2"
 					}
 				},
 				{
@@ -1242,23 +1140,23 @@
 					}
 				},
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 801069680090764,
-					"parameters": {
-						"seconds": "0.2"
-					}
-				},
-				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 619701742535008,
+					"sid": 404745456318097,
 					"parameters": {
 						"audio-file": "tap",
 						"loop": "not-looping",
 						"volume": "volume",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 801069680090764,
+					"parameters": {
+						"seconds": "0.2"
 					}
 				},
 				{
@@ -1309,9 +1207,16 @@
 					}
 				},
 				{
-					"id": "reset-global-variables",
-					"objectClass": "System",
-					"sid": 788182883036054
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 104628327103804,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "volume",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				},
 				{
 					"id": "wait",
@@ -1322,24 +1227,17 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 700449451637719,
-					"parameters": {
-						"audio-file": "tap",
-						"loop": "not-looping",
-						"volume": "volume",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				},
-				{
 					"id": "set-animation-frame",
 					"objectClass": "homeBtn",
 					"sid": 894509003128209,
 					"parameters": {
 						"frame-number": "0"
 					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 297632451209507
 				},
 				{
 					"id": "go-to-layout",
@@ -1374,9 +1272,16 @@
 					}
 				},
 				{
-					"id": "reset-global-variables",
-					"objectClass": "System",
-					"sid": 214231306771447
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 882881490242790,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "volume",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				},
 				{
 					"id": "wait",
@@ -1387,24 +1292,17 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 552266149679005,
-					"parameters": {
-						"audio-file": "tap",
-						"loop": "not-looping",
-						"volume": "volume",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				},
-				{
 					"id": "set-animation-frame",
 					"objectClass": "homeBtn2",
 					"sid": 909186070438720,
 					"parameters": {
 						"frame-number": "0"
 					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 336958737980049
 				},
 				{
 					"id": "go-to-layout",
@@ -2123,30 +2021,6 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "optionBg",
-							"sid": 331415823272182,
-							"parameters": {
-								"unique-id": "ansUID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-default-color",
-							"objectClass": "optionBg",
-							"sid": 129793534127476,
-							"parameters": {
-								"color": "rgbEx(255, 0, 0)"
-							}
-						}
-					],
-					"sid": 745011136954049
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "optionBg",
 							"sid": 841089520655578,
 							"parameters": {
 								"unique-id": "actualansUID"
@@ -2217,7 +2091,78 @@
 									}
 								}
 							],
-							"sid": 930294508277628
+							"sid": 930294508277628,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 566583841012095,
+											"parameters": {
+												"first-value": "score",
+												"comparison": 4,
+												"second-value": "highScore"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "highScore",
+											"sid": 868686383035508,
+											"parameters": {
+												"text": "\"HIGH SCORE : \"&score"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 950121400943053,
+											"parameters": {
+												"variable": "highScore",
+												"value": "score"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 141587161094180,
+											"parameters": {
+												"key": "\"highscore\"",
+												"value": "highScore"
+											}
+										}
+									],
+									"sid": 500250788218133
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 690072074576629
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 716687075783287,
+									"parameters": {
+										"audio-file": "wrong",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 640548824189669
 						}
 					]
 				}

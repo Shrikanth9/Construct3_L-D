@@ -5,21 +5,11 @@
 			"eventType": "variable",
 			"name": "volume",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "1",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 934480293231566
-		},
-		{
-			"eventType": "variable",
-			"name": "soundflag",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 890541963185740
 		},
 		{
 			"eventType": "variable",
@@ -30,6 +20,26 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 998805798981284
+		},
+		{
+			"eventType": "variable",
+			"name": "soundFlag",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 671404017513255
+		},
+		{
+			"eventType": "variable",
+			"name": "highScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 462869922692068
 		},
 		{
 			"eventType": "block",
@@ -48,6 +58,24 @@
 					"parameters": {
 						"key": "\"volume\"",
 						"value": "volume"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 626286592200407,
+					"parameters": {
+						"key": "\"soundFlag\"",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 166096657463992,
+					"parameters": {
+						"key": "\"highscore\"",
+						"value": "highScore"
 					}
 				}
 			],
@@ -74,15 +102,39 @@
 				{
 					"id": "get-item",
 					"objectClass": "LocalStorage",
+					"sid": 204105289952218,
+					"parameters": {
+						"key": "\"highscore\""
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
 					"sid": 873565330717140,
 					"parameters": {
 						"key": "\"volume\""
 					}
 				},
 				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 298286950749270,
+					"parameters": {
+						"key": "\"soundFlag\""
+					}
+				},
+				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 645788061006784
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "soundIcon",
+					"sid": 880892598874230,
+					"parameters": {
+						"frame-number": "soundFlag"
+					}
 				},
 				{
 					"id": "play",
@@ -111,27 +163,20 @@
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "toggle-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 804788216660681,
-					"parameters": {
-						"variable": "soundflag"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 297261430850759,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 664744527876441,
+							"sid": 332177323307401,
 							"parameters": {
-								"variable": "soundflag"
+								"variable": "soundFlag",
+								"comparison": 0,
+								"value": "1"
 							}
 						}
 					],
@@ -147,19 +192,57 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 635241221664529,
+							"sid": 692458602380930,
 							"parameters": {
 								"variable": "volume",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 813172832666068,
+							"parameters": {
+								"variable": "soundFlag",
 								"value": "0"
 							}
 						},
 						{
-							"id": "set-paused",
-							"objectClass": "Audio",
-							"sid": 664278044881456,
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 141204823750460,
 							"parameters": {
-								"tag": "\"game\"",
-								"state": "resume"
+								"key": "\"volume\"",
+								"value": "volume"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 901983909048990,
+							"parameters": {
+								"key": "\"soundFlag\"",
+								"value": "soundFlag"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 587727428952382,
+							"parameters": {
+								"tag": "\"game\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 691258729279095,
+							"parameters": {
+								"audio-file": "game",
+								"loop": "looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"game\""
 							}
 						}
 					],
@@ -212,6 +295,33 @@
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 712519597309962,
+							"parameters": {
+								"variable": "soundFlag",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 539847027559628,
+							"parameters": {
+								"key": "\"volume\"",
+								"value": "volume"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 809098349845277,
+							"parameters": {
+								"key": "\"soundFlag\"",
+								"value": "soundFlag"
+							}
 						}
 					],
 					"sid": 327873002259307
@@ -241,30 +351,6 @@
 				}
 			],
 			"sid": 290025765599636
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-touching-object",
-					"objectClass": "Touch",
-					"sid": 739911366201452,
-					"parameters": {
-						"object": "help"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation-frame",
-					"objectClass": "help",
-					"sid": 889563510510130,
-					"parameters": {
-						"frame-number": "1"
-					}
-				}
-			],
-			"sid": 631171360185730
 		},
 		{
 			"eventType": "block",
@@ -322,43 +408,6 @@
 						}
 					],
 					"sid": 106506961782493
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "help",
-							"sid": 243695601899077,
-							"parameters": {
-								"comparison": 0,
-								"number": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "help",
-							"sid": 700508010373290,
-							"parameters": {
-								"frame-number": "0"
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 587716057609148,
-							"parameters": {
-								"audio-file": "tap",
-								"loop": "not-looping",
-								"volume": "volume",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						}
-					],
-					"sid": 988005289577443
 				}
 			]
 		},
@@ -383,18 +432,68 @@
 						"variable": "volume",
 						"value": "int(LocalStorage.ItemValue)"
 					}
+				}
+			],
+			"sid": 942904641747291
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 275751425289575,
+					"parameters": {
+						"key": "\"soundFlag\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 466573222289447,
+					"parameters": {
+						"variable": "soundFlag",
+						"value": "int(LocalStorage.ItemValue)"
+					}
+				}
+			],
+			"sid": 794901044605127
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 854299623842361,
+					"parameters": {
+						"key": "\"highscore\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 900802690446013,
+					"parameters": {
+						"variable": "highScore",
+						"value": "int(LocalStorage.ItemValue)"
+					}
 				},
 				{
 					"id": "log",
 					"objectClass": "Browser",
-					"sid": 686708082672321,
+					"sid": 153859373648619,
 					"parameters": {
 						"type": "log",
-						"message": "volume"
+						"message": "highScore"
 					}
 				}
 			],
-			"sid": 942904641747291
+			"sid": 397228568817368
 		}
 	],
 	"sid": 404051493854497
