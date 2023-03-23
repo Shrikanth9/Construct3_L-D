@@ -29,20 +29,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Browser",
-			"name": "Browser",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Dictionary",
-			"name": "Dictionary",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
@@ -133,7 +119,6 @@
 			"gameTitle",
 			"LocalStorage",
 			"Audio",
-			"Browser",
 			"soundIcon",
 			"Touch",
 			"playBtn",
@@ -164,10 +149,7 @@
 			"JSON",
 			"AJAX",
 			"objects",
-			"xPos",
-			"yPos",
 			"framesArray",
-			"Dictionary",
 			"ObjectWeights",
 			"kgsums",
 			"options",
@@ -204,14 +186,6 @@
 		"sound": {
 			"items": [
 				{
-					"name": "0b1c5533-517c-49cd-a399-140d21510a34 (1).webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 216155463562262,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "wrong.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 429574444307283,
@@ -236,57 +210,9 @@
 					}
 				},
 				{
-					"name": "7fad6fe0-7d0e-4d8d-97fc-761f3f564305.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 286620204819552,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "correct.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 845379742333847,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "90940ca4-e3ee-44c3-9ceb-24b4191b947d.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 815319135949205,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "bd02be32-a04a-43e7-875a-63fb51484328.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 487015607171051,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "bf683c5e-02f1-44d5-8698-e07b55eaa6aa.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 931464217989801,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "c41e1de8-fd6f-4027-b1bd-b906ae607037.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 174275769236586,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "c528e25c-b03a-4228-a8de-1d835cd5c0e2.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 560783748714319,
 					"file-info": {
 						"purpose": "none"
 					}

@@ -161,26 +161,6 @@
 			"instanceVariables": {}
 		},
 		{
-			"type": "xPos",
-			"properties": {
-				"width": 10,
-				"height": 1,
-				"depth": 1
-			},
-			"uid": 40,
-			"instanceVariables": {}
-		},
-		{
-			"type": "yPos",
-			"properties": {
-				"width": 10,
-				"height": 1,
-				"depth": 1
-			},
-			"uid": 41,
-			"instanceVariables": {}
-		},
-		{
 			"type": "framesArray",
 			"properties": {
 				"width": 10,
@@ -188,12 +168,6 @@
 				"depth": 1
 			},
 			"uid": 49,
-			"instanceVariables": {}
-		},
-		{
-			"type": "Dictionary",
-			"properties": {},
-			"uid": 50,
 			"instanceVariables": {}
 		},
 		{
