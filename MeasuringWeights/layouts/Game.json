@@ -634,8 +634,8 @@
 						},
 						"Bullet": {
 							"properties": {
-								"speed": 1000,
-								"acceleration": 0,
+								"speed": 10000,
+								"acceleration": 10000,
 								"gravity": 0,
 								"bounce-off-solids": false,
 								"set-angle": false,
@@ -701,8 +701,8 @@
 						},
 						"Bullet": {
 							"properties": {
-								"speed": 1000,
-								"acceleration": 0,
+								"speed": 10000,
+								"acceleration": 10000,
 								"gravity": 0,
 								"bounce-off-solids": false,
 								"set-angle": false,
@@ -768,8 +768,8 @@
 						},
 						"Bullet": {
 							"properties": {
-								"speed": 1000,
-								"acceleration": 0,
+								"speed": 10000,
+								"acceleration": 10000,
 								"gravity": 0,
 								"bounce-off-solids": false,
 								"set-angle": false,
@@ -835,8 +835,8 @@
 						},
 						"Bullet": {
 							"properties": {
-								"speed": 1000,
-								"acceleration": 0,
+								"speed": 10000,
+								"acceleration": 10000,
 								"gravity": 0,
 								"bounce-off-solids": false,
 								"set-angle": false,
@@ -902,8 +902,8 @@
 						},
 						"Bullet": {
 							"properties": {
-								"speed": 1000,
-								"acceleration": 0,
+								"speed": 10000,
+								"acceleration": 10000,
 								"gravity": 0,
 								"bounce-off-solids": false,
 								"set-angle": false,
@@ -969,8 +969,8 @@
 						},
 						"Bullet": {
 							"properties": {
-								"speed": 1000,
-								"acceleration": 0,
+								"speed": 10000,
+								"acceleration": 10000,
 								"gravity": 0,
 								"bounce-off-solids": false,
 								"set-angle": false,
