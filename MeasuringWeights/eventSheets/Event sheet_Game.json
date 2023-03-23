@@ -334,6 +334,177 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-drag-start",
+					"objectClass": "1kg",
+					"sid": 730093895684181,
+					"behaviorType": "DragDrop"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 489771219183138,
+					"parameters": {
+						"variable": "collisionFlag",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "1kg",
+					"sid": 911769026677864,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "1kg",
+					"sid": 243031454964240,
+					"parameters": {
+						"angle": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 836691958978996,
+					"parameters": {
+						"variable": "kg",
+						"value": "JSON.Get(\"kgs\"&\".\"&1kg.AnimationFrame)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "1kg",
+					"sid": 362288025810688,
+					"parameters": {
+						"x": "lerp(Touch.X, 1kg.X, 0.5)",
+						"y": "lerp(Touch.y, 1kg.Y, 0.5)"
+					}
+				}
+			],
+			"sid": 758944893903219,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-pinned",
+							"objectClass": "1kg",
+							"sid": 740138657405873,
+							"behaviorType": "Pin"
+						}
+					],
+					"actions": [
+						{
+							"id": "unpin",
+							"objectClass": "1kg",
+							"sid": 728907711984235,
+							"behaviorType": "Pin"
+						},
+						{
+							"id": "stop-tweens",
+							"objectClass": "weightChecker",
+							"sid": 605048948725736,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"1\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 455038898179581,
+							"parameters": {
+								"variable": "weighAngle",
+								"value": "weighAngle - (kg *30/Kgsums)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 593448369448060,
+							"parameters": {
+								"variable": "weighDirection",
+								"value": "-1"
+							}
+						},
+						{
+							"callFunction": "MeasureWeight",
+							"sid": 812178853449827
+						},
+						{
+							"callFunction": "setStones",
+							"sid": 926366397779221
+						}
+					],
+					"sid": 655925503065456
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-drop",
+					"objectClass": "1kg",
+					"sid": 383489003560423,
+					"behaviorType": "DragDrop"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 711527584788741,
+					"parameters": {
+						"variable": "collisionFlag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "1kg",
+					"sid": 658234077805191,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "1kg",
+					"sid": 900550687763417,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "90"
+					}
+				}
+			],
+			"sid": 789928886972327,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-dragging",
+							"objectClass": "1kg",
+							"sid": 186709874591127,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [],
+					"sid": 991946837663315
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 106666956268427,
@@ -636,177 +807,6 @@
 						}
 					],
 					"sid": 403701113736074
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-drag-start",
-							"objectClass": "1kg",
-							"sid": 755524134016967,
-							"behaviorType": "DragDrop"
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 826180371524961,
-							"parameters": {
-								"variable": "collisionFlag",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "1kg",
-							"sid": 282064398132629,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"state": "disabled"
-							}
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "1kg",
-							"sid": 443044693710361,
-							"parameters": {
-								"angle": "0"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 703767402676317,
-							"parameters": {
-								"variable": "kg",
-								"value": "JSON.Get(\"kgs\"&\".\"&1kg.AnimationFrame)"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "1kg",
-							"sid": 139405353196888,
-							"parameters": {
-								"x": "lerp(Touch.X, 1kg.X, 0.5)",
-								"y": "lerp(Touch.y, 1kg.Y, 0.5)"
-							}
-						}
-					],
-					"sid": 441270844033785,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-pinned",
-									"objectClass": "1kg",
-									"sid": 802822327874744,
-									"behaviorType": "Pin"
-								}
-							],
-							"actions": [
-								{
-									"id": "unpin",
-									"objectClass": "1kg",
-									"sid": 154796923551903,
-									"behaviorType": "Pin"
-								},
-								{
-									"id": "stop-tweens",
-									"objectClass": "weightChecker",
-									"sid": 812269417630943,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"1\""
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 864821633842592,
-									"parameters": {
-										"variable": "weighAngle",
-										"value": "weighAngle - (kg *30/Kgsums)"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 229895906755969,
-									"parameters": {
-										"variable": "weighDirection",
-										"value": "-1"
-									}
-								},
-								{
-									"callFunction": "MeasureWeight",
-									"sid": 744722669174353
-								},
-								{
-									"callFunction": "setStones",
-									"sid": 814840837476496
-								}
-							],
-							"sid": 143688539463161
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-drop",
-							"objectClass": "1kg",
-							"sid": 863643135496587,
-							"behaviorType": "DragDrop"
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 645440627613758,
-							"parameters": {
-								"variable": "collisionFlag",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "1kg",
-							"sid": 281266906827876,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"state": "enabled"
-							}
-						},
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "1kg",
-							"sid": 401398697888783,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"angle": "90"
-							}
-						}
-					],
-					"sid": 436331594906949,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-dragging",
-									"objectClass": "1kg",
-									"sid": 458683605788212,
-									"behaviorType": "DragDrop"
-								}
-							],
-							"actions": [],
-							"sid": 251879203703103
-						}
-					]
 				}
 			]
 		},
