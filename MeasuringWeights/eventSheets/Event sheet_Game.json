@@ -142,6 +142,16 @@
 			"sid": 203675408320867
 		},
 		{
+			"eventType": "variable",
+			"name": "highScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 670130542246884
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -157,14 +167,6 @@
 					"sid": 884101124726783,
 					"parameters": {
 						"key": "\"highscore\""
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "highScore",
-					"sid": 266829428250834,
-					"parameters": {
-						"text": "\"HIGH SCORE : \"&highScore"
 					}
 				},
 				{
@@ -453,7 +455,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 156244794689449,
+									"sid": 136943985284974,
 									"parameters": {
 										"variable": "roundCount",
 										"comparison": 0,
@@ -2105,6 +2107,16 @@
 												"comparison": 4,
 												"second-value": "highScore"
 											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 885205115276931,
+											"parameters": {
+												"variable": "highScore",
+												"comparison": 2,
+												"value": "score"
+											}
 										}
 									],
 									"actions": [
@@ -2132,6 +2144,24 @@
 											"parameters": {
 												"key": "\"highscore\"",
 												"value": "highScore"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 893474264492876,
+											"parameters": {
+												"variable": "highScore",
+												"value": "score"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 897985194436923,
+											"parameters": {
+												"key": "\"highscore\"",
+												"value": "score"
 											}
 										}
 									],
@@ -2167,6 +2197,39 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 992286692295437,
+					"parameters": {
+						"key": "\"highscore\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 854673972222064,
+					"parameters": {
+						"variable": "highScore",
+						"value": "int(LocalStorage.ItemValue)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "highScore",
+					"sid": 516233643974100,
+					"parameters": {
+						"text": "\"HIGH SCORE : \"&highScore"
+					}
+				}
+			],
+			"sid": 445639961673749
 		}
 	],
 	"sid": 139042347289088

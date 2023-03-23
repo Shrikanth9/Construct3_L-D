@@ -32,16 +32,6 @@
 			"sid": 671404017513255
 		},
 		{
-			"eventType": "variable",
-			"name": "highScore",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 462869922692068
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -97,14 +87,6 @@
 					"sid": 690850648888883,
 					"parameters": {
 						"tag": "\"game\""
-					}
-				},
-				{
-					"id": "get-item",
-					"objectClass": "LocalStorage",
-					"sid": 204105289952218,
-					"parameters": {
-						"key": "\"highscore\""
 					}
 				},
 				{
@@ -460,40 +442,6 @@
 				}
 			],
 			"sid": 794901044605127
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-get",
-					"objectClass": "LocalStorage",
-					"sid": 854299623842361,
-					"parameters": {
-						"key": "\"highscore\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 900802690446013,
-					"parameters": {
-						"variable": "highScore",
-						"value": "int(LocalStorage.ItemValue)"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 153859373648619,
-					"parameters": {
-						"type": "log",
-						"message": "highScore"
-					}
-				}
-			],
-			"sid": 397228568817368
 		}
 	],
 	"sid": 404051493854497
