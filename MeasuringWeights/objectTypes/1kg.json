@@ -26,11 +26,6 @@
 			"sid": 763848642689101
 		},
 		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 789555083530383
-		},
-		{
 			"behaviorId": "bound",
 			"name": "BoundToLayout",
 			"sid": 163997156976544

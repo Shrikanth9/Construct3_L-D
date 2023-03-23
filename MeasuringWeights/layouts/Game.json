@@ -111,14 +111,7 @@
 					},
 					"uid": 14,
 					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": 1690,
 						"y": 310,
@@ -147,14 +140,7 @@
 					},
 					"uid": 15,
 					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": 1690,
 						"y": 510,
@@ -183,14 +169,7 @@
 					},
 					"uid": 16,
 					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": 1690,
 						"y": 710,
@@ -682,12 +661,6 @@
 								"destroy": false
 							}
 						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": "stone"
-							}
-						},
 						"BoundToLayout": {
 							"properties": {
 								"bound-by": "edge"
@@ -753,12 +726,6 @@
 						"Pin": {
 							"properties": {
 								"destroy": false
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": "stone"
 							}
 						},
 						"BoundToLayout": {
@@ -828,12 +795,6 @@
 								"destroy": false
 							}
 						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": "stone"
-							}
-						},
 						"BoundToLayout": {
 							"properties": {
 								"bound-by": "edge"
@@ -899,12 +860,6 @@
 						"Pin": {
 							"properties": {
 								"destroy": false
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": "stone"
 							}
 						},
 						"BoundToLayout": {
@@ -974,12 +929,6 @@
 								"destroy": false
 							}
 						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": "stone"
-							}
-						},
 						"BoundToLayout": {
 							"properties": {
 								"bound-by": "edge"
@@ -1045,12 +994,6 @@
 						"Pin": {
 							"properties": {
 								"destroy": false
-							}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": "stone"
 							}
 						},
 						"BoundToLayout": {

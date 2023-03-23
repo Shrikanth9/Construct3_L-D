@@ -316,15 +316,6 @@
 						"variable": "touchflag",
 						"value": "true"
 					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 862765641184701,
-					"parameters": {
-						"variable": "actualansUID",
-						"value": "JSON.Get(\"ansUID.\"&randomIndex)"
-					}
 				}
 			],
 			"sid": 927887340557042
@@ -635,155 +626,155 @@
 						}
 					],
 					"sid": 403701113736074
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-drag-start",
-					"objectClass": "1kg",
-					"sid": 642624767982864,
-					"behaviorType": "DragDrop"
-				}
-			],
-			"actions": [
-				{
-					"id": "set-enabled",
-					"objectClass": "1kg",
-					"sid": 973455844037037,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"state": "disabled"
-					}
 				},
-				{
-					"id": "set-angle",
-					"objectClass": "1kg",
-					"sid": 695280523819854,
-					"parameters": {
-						"angle": "0"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 416995540856197,
-					"parameters": {
-						"variable": "collisionFlag",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 830258218089339,
-					"parameters": {
-						"variable": "kg",
-						"value": "JSON.Get(\"kgs\"&\".\"&1kg.AnimationFrame)"
-					}
-				}
-			],
-			"sid": 341627530590775,
-			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-pinned",
+							"id": "on-drag-start",
 							"objectClass": "1kg",
-							"sid": 405478016737086,
-							"behaviorType": "Pin"
+							"sid": 755524134016967,
+							"behaviorType": "DragDrop"
 						}
 					],
 					"actions": [
 						{
-							"id": "unpin",
+							"id": "set-enabled",
 							"objectClass": "1kg",
-							"sid": 277600713448951,
-							"behaviorType": "Pin"
+							"sid": 282064398132629,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "disabled"
+							}
 						},
 						{
-							"id": "stop-tweens",
-							"objectClass": "weightChecker",
-							"sid": 736056576643621,
-							"behaviorType": "Tween",
+							"id": "set-angle",
+							"objectClass": "1kg",
+							"sid": 443044693710361,
 							"parameters": {
-								"tags": "\"1\""
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 908965381812402,
+							"parameters": {
+								"variable": "collisionFlag",
+								"value": "false"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 176804105265016,
+							"sid": 703767402676317,
 							"parameters": {
-								"variable": "weighAngle",
-								"value": "weighAngle - (kg *30/Kgsums)"
+								"variable": "kg",
+								"value": "JSON.Get(\"kgs\"&\".\"&1kg.AnimationFrame)"
 							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 513116995602720,
-							"parameters": {
-								"variable": "weighDirection",
-								"value": "-1"
-							}
-						},
-						{
-							"callFunction": "MeasureWeight",
-							"sid": 162590796883456
-						},
-						{
-							"callFunction": "setStones",
-							"sid": 868943771598460
 						}
 					],
-					"sid": 273077088140683
+					"sid": 441270844033785,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-pinned",
+									"objectClass": "1kg",
+									"sid": 802822327874744,
+									"behaviorType": "Pin"
+								}
+							],
+							"actions": [
+								{
+									"id": "unpin",
+									"objectClass": "1kg",
+									"sid": 154796923551903,
+									"behaviorType": "Pin"
+								},
+								{
+									"id": "stop-tweens",
+									"objectClass": "weightChecker",
+									"sid": 812269417630943,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"1\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 864821633842592,
+									"parameters": {
+										"variable": "weighAngle",
+										"value": "weighAngle - (kg *30/Kgsums)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 229895906755969,
+									"parameters": {
+										"variable": "weighDirection",
+										"value": "-1"
+									}
+								},
+								{
+									"callFunction": "MeasureWeight",
+									"sid": 744722669174353
+								},
+								{
+									"callFunction": "setStones",
+									"sid": 814840837476496
+								}
+							],
+							"sid": 143688539463161
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-drop",
+							"objectClass": "1kg",
+							"sid": 863643135496587,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "1kg",
+							"sid": 281266906827876,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "1kg",
+							"sid": 401398697888783,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 323616856750352,
+							"parameters": {
+								"variable": "collisionFlag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 436331594906949
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-drop",
-					"objectClass": "1kg",
-					"sid": 608429604333041,
-					"behaviorType": "DragDrop"
-				}
-			],
-			"actions": [
-				{
-					"id": "set-enabled",
-					"objectClass": "1kg",
-					"sid": 440040176718084,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"state": "enabled"
-					}
-				},
-				{
-					"id": "set-angle-of-motion",
-					"objectClass": "1kg",
-					"sid": 622123911157904,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"angle": "90"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 461369808800178,
-					"parameters": {
-						"variable": "collisionFlag",
-						"value": "true"
-					}
-				}
-			],
-			"sid": 700699321149513
 		},
 		{
 			"eventType": "block",
@@ -954,9 +945,9 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "1kg",
-							"sid": 322016976062937,
+							"sid": 442050000547375,
 							"parameters": {
-								"object": "plank"
+								"object": "footer"
 							}
 						}
 					],
@@ -1336,6 +1327,15 @@
 					"sid": 545429851618529,
 					"parameters": {
 						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 862765641184701,
+					"parameters": {
+						"variable": "actualansUID",
+						"value": "JSON.Get(\"ansUID.\"&randomIndex)"
 					}
 				}
 			],
@@ -2038,9 +2038,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 460501337442307,
+									"sid": 274201239040405,
 									"parameters": {
-										"first-value": "floor(weighAngle)",
+										"first-value": "round(weighAngle)",
 										"comparison": 0,
 										"second-value": "0"
 									}
@@ -2106,16 +2106,6 @@
 												"first-value": "score",
 												"comparison": 4,
 												"second-value": "highScore"
-											}
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 885205115276931,
-											"parameters": {
-												"variable": "highScore",
-												"comparison": 2,
-												"value": "score"
 											}
 										}
 									],
