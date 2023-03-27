@@ -23,6 +23,11 @@
 			"actions": [
 				{
 					"id": "move-to-bottom",
+					"objectClass": "gameBG",
+					"sid": 849647644043637
+				},
+				{
+					"id": "move-to-bottom",
 					"objectClass": "helpScreen",
 					"sid": 737876477543947
 				},
@@ -113,6 +118,15 @@
 							"parameters": {
 								"variable": "touchFlag",
 								"value": "true"
+							}
+						},
+						{
+							"id": "resume-tweens",
+							"objectClass": "Progress",
+							"sid": 799439145729773,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"progress\""
 							}
 						}
 					],
@@ -258,82 +272,6 @@
 								}
 							],
 							"sid": 187211428278942
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 104603919042422,
-							"parameters": {
-								"object": "help"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "helpBtn",
-							"sid": 381414397591494,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 679181214688129,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-any-touch-end",
-									"objectClass": "Touch",
-									"sid": 552488654574950
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "help",
-									"sid": 991361837713398,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "helpScreen",
-									"sid": 994994301913903
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "hand",
-									"sid": 964454946204503
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "doneBtn",
-									"sid": 576160493553921
-								},
-								{
-									"id": "move-to-bottom",
-									"objectClass": "Instruction",
-									"sid": 992397254465584
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 561939861098865,
-									"parameters": {
-										"variable": "touchFlag",
-										"value": "false"
-									}
-								}
-							],
-							"sid": 258105274862389
 						}
 					]
 				}

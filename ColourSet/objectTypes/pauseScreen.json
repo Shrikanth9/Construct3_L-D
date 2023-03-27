@@ -1,7 +1,7 @@
 {
-	"name": "gameHeader",
+	"name": "pauseScreen",
 	"plugin-id": "Sprite",
-	"sid": 723136792743361,
+	"sid": 267065480734345,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,31 +11,31 @@
 			{
 				"frames": [
 					{
-						"width": 1280,
-						"height": 84,
+						"width": 1034,
+						"height": 623,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3238733,
+						"imageSpriteId": 6317420,
 						"collisionPoly": {
 							"points": [
-								0,
-								0,
+								0.024883359253499222,
+								0.041237113402061855,
 								0.5,
-								0,
-								1,
-								0,
-								1,
+								0.002577319587628866,
+								0.9844479004665629,
+								0.02577319587628866,
+								0.9626749611197511,
+								0.5,
+								0.9284603421461898,
+								0.8814432989690721,
 								0.5,
 								1,
-								1,
-								0.5,
-								1,
-								0,
-								1,
-								0,
+								0.08398133748055987,
+								0.8608247422680413,
+								0.05443234836702955,
 								0.5
 							]
 						},
@@ -43,7 +43,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 843075133871909,
+				"sid": 652076979816547,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

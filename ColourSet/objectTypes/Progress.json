@@ -1,49 +1,47 @@
 {
-	"name": "gameHeader",
+	"name": "Progress",
 	"plugin-id": "Sprite",
-	"sid": 723136792743361,
+	"sid": 588876098957110,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 361760895081731
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 1280,
-						"height": 84,
-						"originX": 0.5,
+						"width": 1282,
+						"height": 70,
+						"originX": 0.00078003120124805,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3238733,
+						"imageSpriteId": 5800065,
 						"collisionPoly": {
 							"points": [
-								0,
-								0,
-								0.5,
-								0,
-								1,
-								0,
-								1,
-								0.5,
-								1,
-								1,
-								0.5,
-								1,
-								0,
-								1,
-								0,
-								0.5
+								0.00078003120124805,
+								0.020102651839178788,
+								0.999219968798752,
+								0.020102651839178788,
+								0.999219968798752,
+								0.9798973481608211,
+								0.00078003120124805,
+								0.9798973481608211
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 843075133871909,
+				"sid": 812231268051422,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

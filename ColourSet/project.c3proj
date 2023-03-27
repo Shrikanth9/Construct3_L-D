@@ -8,6 +8,27 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -24,6 +45,27 @@
 			"type": "plugin",
 			"id": "Touch",
 			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -45,6 +87,20 @@
 			"tile",
 			"heart",
 			"Instruction",
+			"pauseScreen",
+			"Sprite2",
+			"resumeBtn",
+			"homeBtn",
+			"restartBtn",
+			"Progress",
+			"Browser",
+			"gameOverScreen",
+			"homeBtn2",
+			"replayBtn",
+			"scoreGameOver",
+			"scoreText",
+			"AJAX",
+			"JSON",
 			"Sprite"
 		],
 		"subfolders": []
@@ -89,9 +145,9 @@
 		"font": {
 			"items": [
 				{
-					"name": "Marvin397-font.ttf",
+					"name": "Roboto-Bold.ttf",
 					"type": "application/font-sfnt",
-					"sid": 406550686316834,
+					"sid": 848823715400857,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -161,7 +217,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "leveldata.json",
+					"type": "application/json",
+					"sid": 437104394116256,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},
