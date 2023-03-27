@@ -1,0 +1,344 @@
+{
+	"name": "Event sheet_Home",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "touchFlag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 897485992392545
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 645052700941350
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-bottom",
+					"objectClass": "helpScreen",
+					"sid": 737876477543947
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "hand",
+					"sid": 216689976912807
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "doneBtn",
+					"sid": 646266864791567
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "Instruction",
+					"sid": 658418486489376
+				}
+			],
+			"sid": 291176406063906
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 827184680183021,
+					"parameters": {
+						"object": "doneBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "doneBtn",
+					"sid": 619893034493432,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 566438751942146,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 909936850379023
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "doneBtn",
+							"sid": 503444982643552,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "helpScreen",
+							"sid": 156061782855941
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "hand",
+							"sid": 530749440586174
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "doneBtn",
+							"sid": 609150260740717
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Instruction",
+							"sid": 475280086891293
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 864087508561746,
+							"parameters": {
+								"variable": "touchFlag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 670578559225400
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 999888642719067,
+					"parameters": {
+						"variable": "touchFlag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 834263337869669,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 380595315222498,
+							"parameters": {
+								"object": "playBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "playBtn",
+							"sid": 676014281478190,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 549008900054114,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 160470700250201
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "playBtn",
+									"sid": 457234871121891,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 952294243547980,
+									"parameters": {
+										"layout": "Game"
+									}
+								}
+							],
+							"sid": 945426565997961
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 595299089163775,
+							"parameters": {
+								"object": "helpBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "helpBtn",
+							"sid": 356790015177517,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 420056970976921,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 724542180227924
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "helpBtn",
+									"sid": 515715970543945,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "helpScreen",
+									"sid": 154176860890526
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "hand",
+									"sid": 907963540282349
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "doneBtn",
+									"sid": 599719535861442
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 258281099264800,
+									"parameters": {
+										"variable": "touchFlag",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 187211428278942
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 104603919042422,
+							"parameters": {
+								"object": "help"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "helpBtn",
+							"sid": 381414397591494,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 679181214688129,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 552488654574950
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "help",
+									"sid": 991361837713398,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "helpScreen",
+									"sid": 994994301913903
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "hand",
+									"sid": 964454946204503
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "doneBtn",
+									"sid": 576160493553921
+								},
+								{
+									"id": "move-to-bottom",
+									"objectClass": "Instruction",
+									"sid": 992397254465584
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 561939861098865,
+									"parameters": {
+										"variable": "touchFlag",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 258105274862389
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 537314195899552
+}

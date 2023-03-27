@@ -1,0 +1,57 @@
+{
+	"name": "tile",
+	"plugin-id": "Sprite",
+	"sid": 399370080662799,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 103,
+						"height": 100,
+						"originX": 0.5097087378640777,
+						"originY": 0.49,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6678248,
+						"collisionPoly": {
+							"points": [
+								0.06796116504854369,
+								0.05,
+								0.5097087378640777,
+								0.01,
+								0.9514563106796117,
+								0.05,
+								0.9902912621359223,
+								0.49,
+								0.9611650485436893,
+								0.94,
+								0.5097087378640777,
+								0.99,
+								0.06796116504854369,
+								0.93,
+								0.038834951456310676,
+								0.49
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 707597744424933,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
