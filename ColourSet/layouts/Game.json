@@ -71,9 +71,9 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "countDownHeader",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -91,9 +91,6 @@
 								"enabled": true,
 								"live-preview": false
 							}
-						},
-						"Timer": {
-							"properties": {}
 						}
 					},
 					"world": {
@@ -107,7 +104,7 @@
 							1,
 							1,
 							1,
-							1
+							0.6
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -161,6 +158,49 @@
 						"height": 108.93497384380451,
 						"originX": 0.5217391304347826,
 						"originY": 0.4928571428571429,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "scoreText",
+					"properties": {
+						"text": "SCORE : 0",
+						"enable-bbcode": true,
+						"font": "Roboto-Bold",
+						"size": 50,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 31,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1320,
+						"y": 27,
+						"width": 432,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -608,49 +648,6 @@
 						"y": 519,
 						"width": 0,
 						"height": 0,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "scoreText",
-					"properties": {
-						"text": "SCORE : 0",
-						"enable-bbcode": true,
-						"font": "Roboto-Bold",
-						"size": 50,
-						"line-height": 0,
-						"bold": true,
-						"italic": false,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 31,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1320,
-						"y": 27,
-						"width": 432,
-						"height": 96,
 						"originX": 0,
 						"originY": 0,
 						"color": [

@@ -1,5 +1,5 @@
 {
-	"name": "Sprite",
+	"name": "countDownHeader",
 	"plugin-id": "Sprite",
 	"sid": 436797081557003,
 	"isGlobal": false,
@@ -8,12 +8,7 @@
 		{
 			"behaviorId": "Fade",
 			"name": "Fade",
-			"sid": 466740980904064
-		},
-		{
-			"behaviorId": "Timer",
-			"name": "Timer",
-			"sid": 645384550948307
+			"sid": 559656634595376
 		}
 	],
 	"effectTypes": [],
@@ -36,11 +31,11 @@
 				],
 				"sid": 910067269704646,
 				"name": "Animation 1",
-				"isLooping": true,
+				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 3
+				"speed": 5
 			}
 		],
 		"subfolders": []

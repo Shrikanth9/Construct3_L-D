@@ -13,13 +13,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "countDown",
-			"type": "boolean",
-			"initialValue": "false",
+			"name": "coutDown",
+			"type": "number",
+			"initialValue": "60",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 336497070357745
+			"sid": 431675009689521
 		},
 		{
 			"eventType": "include",
@@ -35,6 +35,15 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 739827817094684,
+					"parameters": {
+						"variable": "touchFlag",
+						"value": "false"
+					}
+				},
 				{
 					"callFunction": "hidePopUp",
 					"sid": 846411704835439
@@ -52,6 +61,15 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 677246205213666
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 512291061828871,
+					"parameters": {
+						"variable": "touchFlag",
+						"value": "true"
+					}
 				},
 				{
 					"id": "tween-one-property",
@@ -74,147 +92,6 @@
 			"sid": 821169109035793
 		},
 		{
-			"functionName": "hidePopUp",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-scale",
-					"objectClass": "Sprite2",
-					"sid": 608530653763504,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "pauseScreen",
-					"sid": 230791401605683,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "resumeBtn",
-					"sid": 605382481764775,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "restartBtn",
-					"sid": 105017474824013,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "homeBtn",
-					"sid": 854298148635164,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "gameOverScreen",
-					"sid": 515595807183931,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "homeBtn2",
-					"sid": 425177585782658,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "replayBtn",
-					"sid": 322700197648944,
-					"parameters": {
-						"scale": "0"
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "scoreGameOver",
-					"sid": 829282814007636,
-					"parameters": {
-						"width": "0",
-						"height": "0"
-					}
-				}
-			],
-			"sid": 288365448808255
-		},
-		{
-			"functionName": "showPopUp",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-scale",
-					"objectClass": "Sprite2",
-					"sid": 609923533558827,
-					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "pauseScreen",
-					"sid": 657905884369030,
-					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "resumeBtn",
-					"sid": 754612264166592,
-					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "restartBtn",
-					"sid": 770496818778745,
-					"parameters": {
-						"scale": "1"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "homeBtn",
-					"sid": 218005425600004,
-					"parameters": {
-						"scale": "1"
-					}
-				}
-			],
-			"sid": 791745361298406
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -229,6 +106,65 @@
 			"actions": [],
 			"sid": 229238481766407,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 552385719069843,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 414330754577061,
+							"parameters": {
+								"variable": "coutDown",
+								"value": "-1"
+							}
+						}
+					],
+					"sid": 858759160466027,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 386383285973108,
+									"parameters": {
+										"variable": "coutDown",
+										"comparison": 2,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "countDownHeader",
+									"sid": 753843303771087,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "start-fade",
+									"objectClass": "countDownHeader",
+									"sid": 396688665539628,
+									"behaviorType": "Fade"
+								}
+							],
+							"sid": 195746356809155
+						}
+					]
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -283,283 +219,18 @@
 									"parameters": {
 										"tags": "\"progress\""
 									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 517641269797336,
+									"parameters": {
+										"variable": "touchFlag",
+										"value": "false"
+									}
 								}
 							],
 							"sid": 125086149230098
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 725405645859461,
-							"parameters": {
-								"object": "resumeBtn"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "resumeBtn",
-							"sid": 958944470599629,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 709412313656318,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-any-touch-end",
-									"objectClass": "Touch",
-									"sid": 636773248121604
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "resumeBtn",
-									"sid": 296779992084930,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"callFunction": "hidePopUp",
-									"sid": 106033608582758
-								},
-								{
-									"id": "resume-tweens",
-									"objectClass": "Progress",
-									"sid": 570623310404492,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"progress\""
-									}
-								}
-							],
-							"sid": 285800969763554
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 244689932454820,
-							"parameters": {
-								"object": "restartBtn"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "restartBtn",
-							"sid": 883959960819309,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 397580286507143,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-any-touch-end",
-									"objectClass": "Touch",
-									"sid": 342190334045009
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "restartBtn",
-									"sid": 966021218676292,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "restart-layout",
-									"objectClass": "System",
-									"sid": 975140802808501
-								}
-							],
-							"sid": 290841221433340
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 574998769559823,
-							"parameters": {
-								"object": "replayBtn"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "replayBtn",
-							"sid": 419230179724720,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 509853394283265,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-any-touch-end",
-									"objectClass": "Touch",
-									"sid": 192126582152993
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "replayBtn",
-									"sid": 531515326941150,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "restart-layout",
-									"objectClass": "System",
-									"sid": 198458858944644
-								}
-							],
-							"sid": 811738141862421
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 898872299855058,
-							"parameters": {
-								"object": "homeBtn"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "homeBtn",
-							"sid": 210273870297209,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 767508510612610,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-any-touch-end",
-									"objectClass": "Touch",
-									"sid": 820345182151510
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "homeBtn",
-									"sid": 655441234096708,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 290404203141842,
-									"parameters": {
-										"layout": "Home"
-									}
-								}
-							],
-							"sid": 970627209123867
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 316904841295890,
-							"parameters": {
-								"object": "homeBtn2"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "homeBtn2",
-							"sid": 653833798051395,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 109536676538781,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-any-touch-end",
-									"objectClass": "Touch",
-									"sid": 122542616113447
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "homeBtn2",
-									"sid": 862885441753577,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 420670360648212,
-									"parameters": {
-										"layout": "Home"
-									}
-								}
-							],
-							"sid": 759474893098904
 						}
 					]
 				},
@@ -654,6 +325,309 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 795707592868820,
+					"parameters": {
+						"object": "resumeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 906160952018881,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 786069202860906,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 306284696837812
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "resumeBtn",
+							"sid": 571921084861024,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"callFunction": "hidePopUp",
+							"sid": 914453950566058
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 198121277854978,
+							"parameters": {
+								"variable": "touchFlag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "resume-tweens",
+							"objectClass": "Progress",
+							"sid": 744288426425302,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"progress\""
+							}
+						}
+					],
+					"sid": 421443059422520
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 329156454794623,
+					"parameters": {
+						"object": "restartBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restartBtn",
+					"sid": 565395834162216,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 222317270318039,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 411670001934998
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "restartBtn",
+							"sid": 351497771884250,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 435329638555155
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 988393478097182
+						}
+					],
+					"sid": 915777513717587
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 480538024238487,
+					"parameters": {
+						"object": "homeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn",
+					"sid": 271508115836307,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 326631097354541,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 300217030551337
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "homeBtn",
+							"sid": 358212969862469,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 760926111929364
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 563776700056518,
+							"parameters": {
+								"layout": "Home"
+							}
+						}
+					],
+					"sid": 545752671492368
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 988233467623845,
+					"parameters": {
+						"object": "replayBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "replayBtn",
+					"sid": 389809139019572,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 828858798314527,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 318961266829876
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "replayBtn",
+							"sid": 551740391796192,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 618867996399929
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 570933909928279
+						}
+					],
+					"sid": 258684585688108
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 116208804119721,
+					"parameters": {
+						"object": "homeBtn2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn2",
+					"sid": 680463446686461,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 272244294833086,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 448882703008952
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "homeBtn2",
+							"sid": 631481754992100,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 908621776508833
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 124770827630607,
+							"parameters": {
+								"layout": "Home"
+							}
+						}
+					],
+					"sid": 879328461116053
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-tweens-finished",
 					"objectClass": "Progress",
 					"sid": 653378809242820,
@@ -696,6 +670,23 @@
 						"width": "432",
 						"height": "96"
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 330072617535728,
+					"parameters": {
+						"variable": "touchFlag",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "countDownHeader",
+					"sid": 804994437358856,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 831681181149847
@@ -725,41 +716,145 @@
 			"sid": 871484709395682
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"functionName": "showPopUp",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
 				{
-					"id": "is-timer-running",
-					"objectClass": "Sprite",
-					"sid": 180388564322398,
-					"behaviorType": "Timer",
+					"id": "set-scale",
+					"objectClass": "Sprite2",
+					"sid": 127702506693982,
 					"parameters": {
-						"tag": "\"\""
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "pauseScreen",
+					"sid": 473362283853622,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "resumeBtn",
+					"sid": 344388888028983,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "restartBtn",
+					"sid": 311968946153097,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "homeBtn",
+					"sid": 410469429170465,
+					"parameters": {
+						"scale": "1"
 					}
 				}
 			],
-			"actions": [],
-			"sid": 109367931356464,
-			"children": [
+			"sid": 923481821324774
+		},
+		{
+			"functionName": "hidePopUp",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 871344872496698
-						}
-					],
-					"actions": [
-						{
-							"id": "start-fade",
-							"objectClass": "Sprite",
-							"sid": 889750698885094,
-							"behaviorType": "Fade"
-						}
-					],
-					"sid": 815799319839680
+					"id": "set-scale",
+					"objectClass": "Sprite2",
+					"sid": 922030189947162,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "pauseScreen",
+					"sid": 596558465579459,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "resumeBtn",
+					"sid": 168361520501244,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "restartBtn",
+					"sid": 582464388692923,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "homeBtn",
+					"sid": 742383948721277,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "gameOverScreen",
+					"sid": 708678352611548,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "homeBtn2",
+					"sid": 744751352280166,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "replayBtn",
+					"sid": 447898722669339,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "scoreGameOver",
+					"sid": 589927261404335,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
 				}
-			]
+			],
+			"sid": 694610805670046
 		}
 	],
 	"sid": 398342859470307
