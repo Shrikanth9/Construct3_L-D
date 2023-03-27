@@ -2,6 +2,10 @@
 	"name": "Event sheet_Game",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "Event sheet_Home"
+		},
+		{
 			"eventType": "variable",
 			"name": "timer",
 			"type": "number",
@@ -22,8 +26,124 @@
 			"sid": 431675009689521
 		},
 		{
-			"eventType": "include",
-			"includeSheet": "Event sheet_Home"
+			"eventType": "variable",
+			"name": "tile",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 699407279081088
+		},
+		{
+			"eventType": "variable",
+			"name": "iterator",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 417248329788464
+		},
+		{
+			"eventType": "variable",
+			"name": "red",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 275879541451698
+		},
+		{
+			"eventType": "variable",
+			"name": "green",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 118863342552156
+		},
+		{
+			"eventType": "variable",
+			"name": "blue",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 420081885520365
+		},
+		{
+			"eventType": "variable",
+			"name": "levelCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 676683709218048
+		},
+		{
+			"eventType": "variable",
+			"name": "level",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 201911730582243
+		},
+		{
+			"eventType": "variable",
+			"name": "answer",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 953759454700971
+		},
+		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 327895795661448
+		},
+		{
+			"eventType": "variable",
+			"name": "livesUID",
+			"type": "number",
+			"initialValue": "19",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 388978310853855
+		},
+		{
+			"eventType": "variable",
+			"name": "tileSelect",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 325968633188176
+		},
+		{
+			"eventType": "variable",
+			"name": "highscore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 947906150175566
 		},
 		{
 			"eventType": "block",
@@ -35,6 +155,22 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 729233972515442,
+					"parameters": {
+						"key": "\"highscore\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "scoreText",
+					"sid": 994485313795137,
+					"parameters": {
+						"text": "\"SCORE : \"&score"
+					}
+				},
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
@@ -56,270 +192,9 @@
 						"tag": "\"\"",
 						"file": "leveldata.json"
 					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 677246205213666
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 512291061828871,
-					"parameters": {
-						"variable": "touchFlag",
-						"value": "true"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "Progress",
-					"sid": 846992542030718,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"progress\"",
-						"property": "offsetWidth",
-						"end-value": "2070",
-						"time": "timer",
-						"ease": "noease",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
 				}
 			],
 			"sid": 821169109035793
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 961632133359970,
-					"parameters": {
-						"variable": "touchFlag"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 229238481766407,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 552385719069843,
-							"parameters": {
-								"interval-seconds": "1.0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 414330754577061,
-							"parameters": {
-								"variable": "coutDown",
-								"value": "-1"
-							}
-						}
-					],
-					"sid": 858759160466027,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 386383285973108,
-									"parameters": {
-										"variable": "coutDown",
-										"comparison": 2,
-										"value": "5"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "countDownHeader",
-									"sid": 753843303771087,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "start-fade",
-									"objectClass": "countDownHeader",
-									"sid": 396688665539628,
-									"behaviorType": "Fade"
-								}
-							],
-							"sid": 195746356809155
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 944427687605526,
-							"parameters": {
-								"object": "pauseBtn"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "pauseBtn",
-							"sid": 780357387426546,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 526314047046049,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-any-touch-end",
-									"objectClass": "Touch",
-									"sid": 518191011604930
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "pauseBtn",
-									"sid": 896772752383970,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"callFunction": "showPopUp",
-									"sid": 700445109782757
-								},
-								{
-									"id": "pause-tweens",
-									"objectClass": "Progress",
-									"sid": 283014300337417,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"progress\""
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 517641269797336,
-									"parameters": {
-										"variable": "touchFlag",
-										"value": "false"
-									}
-								}
-							],
-							"sid": 125086149230098
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 833596787818644,
-							"parameters": {
-								"object": "help"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "helpBtn",
-							"sid": 735359474072713,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 299866076256822,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-any-touch-end",
-									"objectClass": "Touch",
-									"sid": 932978833748492
-								}
-							],
-							"actions": [
-								{
-									"id": "pause-tweens",
-									"objectClass": "Progress",
-									"sid": 251693965257293,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"progress\""
-									}
-								},
-								{
-									"id": "set-animation-frame",
-									"objectClass": "help",
-									"sid": 422046829402302,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "helpScreen",
-									"sid": 214103887066630
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "hand",
-									"sid": 771230613819634
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "doneBtn",
-									"sid": 831098444984156
-								},
-								{
-									"id": "move-to-bottom",
-									"objectClass": "Instruction",
-									"sid": 481982305885489
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 888293008275454,
-									"parameters": {
-										"variable": "touchFlag",
-										"value": "false"
-									}
-								}
-							],
-							"sid": 768196222579052
-						}
-					]
-				}
-			]
 		},
 		{
 			"eventType": "block",
@@ -384,6 +259,18 @@
 							"parameters": {
 								"tags": "\"progress\""
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 314361191432172,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 421443059422520
@@ -424,6 +311,18 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 990885027517727,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "set-animation-frame",
 							"objectClass": "restartBtn",
@@ -481,6 +380,18 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 831909599972642,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "set-animation-frame",
 							"objectClass": "homeBtn",
@@ -542,6 +453,18 @@
 					],
 					"actions": [
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 269874320182190,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "set-animation-frame",
 							"objectClass": "replayBtn",
 							"sid": 551740391796192,
@@ -598,6 +521,18 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 381287504528544,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "set-animation-frame",
 							"objectClass": "homeBtn2",
@@ -672,6 +607,31 @@
 					}
 				},
 				{
+					"id": "set-size",
+					"objectClass": "highScoreText",
+					"sid": 180051408413025,
+					"parameters": {
+						"width": "688",
+						"height": "96"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "scoreGameOver",
+					"sid": 833428442389917,
+					"parameters": {
+						"text": "\"SCORE : \"&score"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "highScoreText",
+					"sid": 269018100718464,
+					"parameters": {
+						"text": "\"HIGH SCORE : \"&highscore"
+					}
+				},
+				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 330072617535728,
@@ -689,7 +649,53 @@
 					}
 				}
 			],
-			"sid": 831681181149847
+			"sid": 831681181149847,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 977012427201526,
+							"parameters": {
+								"first-value": "highscore",
+								"comparison": 2,
+								"second-value": "score"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "highScoreText",
+							"sid": 420653431244261,
+							"parameters": {
+								"text": "\"HIGH SCORE : \"&score"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 693834886300124,
+							"parameters": {
+								"variable": "highscore",
+								"value": "score"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 885914383845937,
+							"parameters": {
+								"key": "\"highscore\"",
+								"value": "score"
+							}
+						}
+					],
+					"sid": 429362186575051
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -711,6 +717,52 @@
 					"parameters": {
 						"data": "AJAX.LastData"
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 512291061828871,
+					"parameters": {
+						"variable": "touchFlag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Progress",
+					"sid": 846992542030718,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"progress\"",
+						"property": "offsetWidth",
+						"end-value": "2070",
+						"time": "timer",
+						"ease": "noease",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "tile3",
+					"sid": 415273298950081,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "tile4",
+					"sid": 533266933985389,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"callFunction": "selectLevel",
+					"sid": 663723420933815
 				}
 			],
 			"sid": 871484709395682
@@ -852,9 +904,668 @@
 						"width": "0",
 						"height": "0"
 					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "correctwrong",
+					"sid": 984599589479988,
+					"parameters": {
+						"scale": "0"
+					}
 				}
 			],
 			"sid": 694610805670046
+		},
+		{
+			"functionName": "3x3",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "correctwrong",
+					"sid": 276861807394163,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "0",
+						"end-y": "0",
+						"time": "0.1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 952439156421172,
+					"parameters": {
+						"variable": "level",
+						"value": "floor(random(0,4))"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 409181808302008,
+					"parameters": {
+						"variable": "answer",
+						"value": "JSON.Get(\"levels.0.\"&level&\".10\")"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 632877416255688,
+					"parameters": {
+						"variable": "iterator",
+						"value": "0"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 720780202008967,
+					"parameters": {
+						"type": "log",
+						"message": "answer"
+					}
+				}
+			],
+			"sid": 834170764642410,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 936927454322450,
+							"parameters": {
+								"object": "tile3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "tile3",
+							"sid": 414302152591880,
+							"parameters": {
+								"x": "700 + 200 * (iterator % 3)",
+								"y": "330 + 200* (int(iterator/ 3))"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "tile3",
+							"sid": 139958748322945,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "1",
+								"end-y": "1",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 916564210322364,
+							"parameters": {
+								"variable": "red",
+								"value": "JSON.Get(\"colors.\"&JSON.Get(\"levels.0.\"&level&\".\"&(iterator + 1))&\".0\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 568903403502521,
+							"parameters": {
+								"variable": "green",
+								"value": "JSON.Get(\"colors.\"&JSON.Get(\"levels.0.\"&level&\".\"&(iterator + 1))&\".1\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 803412231413806,
+							"parameters": {
+								"variable": "blue",
+								"value": "JSON.Get(\"colors.\"&JSON.Get(\"levels.0.\"&level&\".\"&(iterator + 1))&\".2\")"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "tile3",
+							"sid": 924447004179696,
+							"parameters": {
+								"color": "rgbEx(red, green, blue)"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "Dictionary",
+							"sid": 880868081487532,
+							"parameters": {
+								"key": "str(tile3.UID)",
+								"value": "JSON.Get(\"colors.\"&JSON.Get(\"levels.0.\"&level&\".\"&(iterator + 1))&\".3\")"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 489925284403685,
+							"parameters": {
+								"variable": "iterator",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 372078151287352
+				}
+			]
+		},
+		{
+			"functionName": "4x4",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "correctwrong",
+					"sid": 850064826700219,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "0",
+						"end-y": "0",
+						"time": "0.1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 404504414859585,
+					"parameters": {
+						"variable": "level",
+						"value": "floor(random(0,4))"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 324037201581349,
+					"parameters": {
+						"variable": "answer",
+						"value": "JSON.Get(\"levels.1.\"&level&\".17\")"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 526584296618040,
+					"parameters": {
+						"variable": "iterator",
+						"value": "0"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 166944066018918,
+					"parameters": {
+						"type": "log",
+						"message": "answer"
+					}
+				}
+			],
+			"sid": 948382935471440,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 470237689648343,
+							"parameters": {
+								"object": "tile4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "tile4",
+							"sid": 316333542859085,
+							"parameters": {
+								"x": "700 + 160 * (iterator % 4)",
+								"y": "330 + 160 * (int(iterator/ 4))"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "tile4",
+							"sid": 727009219985585,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "1",
+								"end-y": "1",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 664754062626929,
+							"parameters": {
+								"variable": "red",
+								"value": "JSON.Get(\"colors.\"&JSON.Get(\"levels.1.\"&level&\".\"&(iterator + 1))&\".0\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 814756314040501,
+							"parameters": {
+								"variable": "green",
+								"value": "JSON.Get(\"colors.\"&JSON.Get(\"levels.1.\"&level&\".\"&(iterator + 1))&\".1\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 537092542377498,
+							"parameters": {
+								"variable": "blue",
+								"value": "JSON.Get(\"colors.\"&JSON.Get(\"levels.1.\"&level&\".\"&(iterator + 1))&\".2\")"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "tile4",
+							"sid": 928589808772548,
+							"parameters": {
+								"color": "rgbEx(red, green, blue)"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "Dictionary",
+							"sid": 766825454317346,
+							"parameters": {
+								"key": "str(tile4.UID)",
+								"value": "JSON.Get(\"colors.\"&JSON.Get(\"levels.1.\"&level&\".\"&(iterator + 1))&\".3\")"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 999327464614660,
+							"parameters": {
+								"variable": "iterator",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 346230249118688
+				}
+			]
+		},
+		{
+			"functionName": "reset",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "clear",
+					"objectClass": "Dictionary",
+					"sid": 381408863146178
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "tile4",
+					"sid": 309860392893983,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "0",
+						"end-y": "0",
+						"time": "0.1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "tile3",
+					"sid": 265336176277765,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "0",
+						"end-y": "0",
+						"time": "0.1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 130564110153584
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 190393967339310,
+					"parameters": {
+						"variable": "livesUID",
+						"comparison": 2,
+						"value": "14"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "scoreGameOver",
+					"sid": 808792131892035,
+					"parameters": {
+						"text": "\"SCORE : \"&score"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "highScoreText",
+					"sid": 932530233030685,
+					"parameters": {
+						"text": "\"HIGH SCORE : \"&highscore"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "gameOverScreen",
+					"sid": 745059030301623,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "homeBtn2",
+					"sid": 828921302825612,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "replayBtn",
+					"sid": 966336954066782,
+					"parameters": {
+						"scale": "1"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "scoreGameOver",
+					"sid": 844549111592375,
+					"parameters": {
+						"width": "432",
+						"height": "96"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "highScoreText",
+					"sid": 427114112064196,
+					"parameters": {
+						"width": "688",
+						"height": "96"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 660267463913951,
+					"parameters": {
+						"variable": "touchFlag",
+						"value": "false"
+					}
+				},
+				{
+					"id": "stop-tweens",
+					"objectClass": "Progress",
+					"sid": 439925258666159,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"progress\""
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "Progress",
+					"sid": 728507970672916,
+					"parameters": {
+						"width": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 133058138995971,
+					"parameters": {
+						"variable": "livesUID",
+						"value": "19"
+					}
+				}
+			],
+			"sid": 252409593250712,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 195170404715712,
+							"parameters": {
+								"first-value": "highscore",
+								"comparison": 2,
+								"second-value": "score"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "highScoreText",
+							"sid": 577267031039861,
+							"parameters": {
+								"text": "\"HIGH SCORE : \"&score"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 212114385880477,
+							"parameters": {
+								"variable": "highscore",
+								"value": "score"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 992666210454398,
+							"parameters": {
+								"key": "\"highscore\"",
+								"value": "score"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 851600458418250,
+							"parameters": {
+								"type": "log",
+								"message": "\"game finished with \"&score"
+							}
+						}
+					],
+					"sid": 257113936960168
+				}
+			]
+		},
+		{
+			"functionName": "selectLevel",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 464178479716928,
+					"parameters": {
+						"variable": "touchFlag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 517532001333105,
+					"parameters": {
+						"variable": "tileSelect",
+						"value": "floor(random(0,2))"
+					}
+				}
+			],
+			"sid": 856001628672065,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 734234859655303,
+							"parameters": {
+								"variable": "tileSelect",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "4x4",
+							"sid": 464185639822900
+						}
+					],
+					"sid": 777438678989966
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 430085362755954
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "3x3",
+							"sid": 876040447724258
+						}
+					],
+					"sid": 552277891182906
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 189951664039062,
+					"parameters": {
+						"key": "\"highscore\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 369100771993248,
+					"parameters": {
+						"variable": "highscore",
+						"value": "int(LocalStorage.ItemValue)"
+					}
+				}
+			],
+			"sid": 168897987970818
 		}
 	],
 	"sid": 398342859470307

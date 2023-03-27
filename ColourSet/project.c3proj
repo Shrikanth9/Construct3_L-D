@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -22,8 +29,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -77,7 +98,7 @@
 			"gameHeader",
 			"pauseBtn",
 			"help",
-			"tile",
+			"tile3",
 			"heart",
 			"Instruction",
 			"pauseScreen",
@@ -94,7 +115,13 @@
 			"scoreText",
 			"AJAX",
 			"JSON",
-			"countDownHeader"
+			"countDownHeader",
+			"tile4",
+			"Dictionary",
+			"correctwrong",
+			"Audio",
+			"highScoreText",
+			"LocalStorage"
 		],
 		"subfolders": []
 	},
@@ -124,7 +151,40 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "wrong.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 930962584087971,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "tap.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 148809116606375,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "correct.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 350998500676253,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "countdown.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 590471302117082,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
@@ -138,9 +198,9 @@
 		"font": {
 			"items": [
 				{
-					"name": "Roboto-Bold.ttf",
+					"name": "Marvin397-font.ttf",
 					"type": "application/font-sfnt",
-					"sid": 848823715400857,
+					"sid": 204448744959762,
 					"file-info": {
 						"purpose": "none"
 					}

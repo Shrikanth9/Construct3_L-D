@@ -1,24 +1,30 @@
 {
-	"name": "tile",
+	"name": "tile3",
 	"plugin-id": "Sprite",
 	"sid": 399370080662799,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 467120614175163
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 103,
-						"height": 100,
-						"originX": 0.5097087378640777,
-						"originY": 0.49,
+						"width": 195,
+						"height": 195,
+						"originX": 0.5,
+						"originY": 0,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6678248,
+						"imageSpriteId": 8543637,
 						"collisionPoly": {
 							"points": [
 								0.06796116504854369,

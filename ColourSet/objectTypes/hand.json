@@ -2,7 +2,7 @@
 	"name": "hand",
 	"plugin-id": "Sprite",
 	"sid": 577999106872162,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
