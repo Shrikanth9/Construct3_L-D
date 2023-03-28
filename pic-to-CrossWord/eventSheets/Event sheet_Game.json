@@ -1,5 +1,172 @@
 {
 	"name": "Event sheet_Game",
-	"events": [],
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "dragFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 548440306638765
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 819036820100457
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "dragAlphabet",
+					"sid": 504827608950408,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "dragTile",
+					"sid": 523648253864257,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 602899508687515
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 859701787452549,
+					"parameters": {
+						"variable": "dragFlag"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "dragTile",
+					"sid": 952181557037151,
+					"parameters": {
+						"x": "Touch.X",
+						"y": "Touch.Y - 200"
+					}
+				}
+			],
+			"sid": 929818618021777
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 966632003076022,
+					"parameters": {
+						"object": "alphabets"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-child",
+					"objectClass": "dragTile",
+					"sid": 161130508005406,
+					"parameters": {
+						"child": "dragAlphabet",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": true,
+						"transform-h": true,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "dragAlphabet",
+					"sid": 352522996391825,
+					"parameters": {
+						"text": "alphabets.Text"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "dragAlphabet",
+					"sid": 283740702278237,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "dragTile",
+					"sid": 685729717336784,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 121611156974180,
+					"parameters": {
+						"variable": "dragFlag",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 972936796439536
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 525866311898404
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 181405843271925,
+					"parameters": {
+						"variable": "dragFlag",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "dragAlphabet",
+					"sid": 620508611362352,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "dragTile",
+					"sid": 501058018354047,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 526411725957119
+		}
+	],
 	"sid": 124482044317374
 }
