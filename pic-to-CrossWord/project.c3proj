@@ -12,12 +12,22 @@
 			"name": "Sprite",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "1mlts2wief5",
 	"objectTypes": {
 		"items": [
-			"gameBG"
+			"gameBG",
+			"footer",
+			"alphabetsBG",
+			"alphabets"
 		],
 		"subfolders": []
 	},
@@ -57,7 +67,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "Marvin397-font.ttf",
+					"type": "application/font-sfnt",
+					"sid": 370824351357745,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
