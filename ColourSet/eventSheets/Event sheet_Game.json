@@ -948,10 +948,10 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 952439156421172,
+					"sid": 123642609806029,
 					"parameters": {
 						"variable": "level",
-						"value": "floor(random(0,4))"
+						"value": "floor(random(0,10))"
 					}
 				},
 				{
@@ -1114,10 +1114,10 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 404504414859585,
+					"sid": 825277349482841,
 					"parameters": {
 						"variable": "level",
-						"value": "floor(random(0,4))"
+						"value": "floor(random(0,10))"
 					}
 				},
 				{
