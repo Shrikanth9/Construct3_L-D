@@ -1,0 +1,15 @@
+{
+	"name": "options",
+	"plugin-id": "Text",
+	"sid": 299012671634293,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 778118919428281
+		}
+	],
+	"effectTypes": []
+}

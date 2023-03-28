@@ -1,0 +1,100 @@
+{
+	"name": "weightChecker",
+	"plugin-id": "Sprite",
+	"sid": 525230245199387,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 580994488495534
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 742,
+						"height": 112,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2033969,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0.10714285714285714,
+								1,
+								0,
+								0.8557951482479784,
+								0.5,
+								0.8867924528301887,
+								0.25,
+								0.5,
+								0.9821428571428571,
+								0.11320754716981132,
+								0.25,
+								0.14420485175202155,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.16576819407008087,
+								"y": 0.017857142857142856
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.7142857142857143,
+								"y": 0
+							},
+							{
+								"name": "Image Point 3",
+								"x": 0.889487870619946,
+								"y": 0
+							},
+							{
+								"name": "Image Point 4",
+								"x": 0.7142857142857143,
+								"y": -1.0714285714285714
+							},
+							{
+								"name": "Image Point 5",
+								"x": 0.889487870619946,
+								"y": -1.0714285714285714
+							},
+							{
+								"name": "Image Point 6",
+								"x": 0.7142857142857143,
+								"y": -2.142857142857143
+							},
+							{
+								"name": "Image Point 7",
+								"x": 0.889487870619946,
+								"y": -2.142857142857143
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 764643995440377,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

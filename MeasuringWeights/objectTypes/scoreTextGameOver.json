@@ -1,0 +1,9 @@
+{
+	"name": "scoreTextGameOver",
+	"plugin-id": "Text",
+	"sid": 155486011216330,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

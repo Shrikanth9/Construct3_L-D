@@ -1,0 +1,57 @@
+{
+	"name": "gameOverScreen",
+	"plugin-id": "Sprite",
+	"sid": 418841195837495,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 850,
+						"height": 502,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4412029,
+						"collisionPoly": {
+							"points": [
+								0.04122137404580153,
+								0.05921052631578947,
+								0.5,
+								0,
+								0.9603053435114504,
+								0.05701754385964912,
+								1,
+								0.5,
+								0.9603053435114504,
+								0.9429824561403509,
+								0.5,
+								1,
+								0.03969465648854962,
+								0.9429824561403509,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 451600533816636,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
