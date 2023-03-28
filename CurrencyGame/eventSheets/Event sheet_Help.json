@@ -1,0 +1,42 @@
+{
+	"name": "Event sheet_Help",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 587830733745500,
+					"parameters": {
+						"object": "Done"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 368905652384923,
+					"parameters": {
+						"audio-file": "btnSelect",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 141773330710815,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 544127268496083
+		}
+	],
+	"sid": 663710707614652
+}

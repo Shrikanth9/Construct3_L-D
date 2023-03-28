@@ -1,0 +1,1933 @@
+{
+	"name": "Event sheet_Game",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "twentyUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 449242122785579
+		},
+		{
+			"eventType": "variable",
+			"name": "tenUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 944758723880278
+		},
+		{
+			"eventType": "variable",
+			"name": "fiftyUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 298178009516770
+		},
+		{
+			"eventType": "variable",
+			"name": "fiveUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 373404066066795
+		},
+		{
+			"eventType": "variable",
+			"name": "hudredUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 337623505633074
+		},
+		{
+			"eventType": "variable",
+			"name": "xPos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 269734162772810
+		},
+		{
+			"eventType": "variable",
+			"name": "yPos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 904317257168206
+		},
+		{
+			"eventType": "variable",
+			"name": "moneyCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 863407141986990
+		},
+		{
+			"eventType": "variable",
+			"name": "twentyCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 484093975554198
+		},
+		{
+			"eventType": "variable",
+			"name": "tenCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 365700398540203
+		},
+		{
+			"eventType": "variable",
+			"name": "fiftyCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 942633292590289
+		},
+		{
+			"eventType": "variable",
+			"name": "fiveCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 485334888024614
+		},
+		{
+			"eventType": "variable",
+			"name": "twoCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 531375221827500
+		},
+		{
+			"eventType": "variable",
+			"name": "expectedCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 749185648123594
+		},
+		{
+			"eventType": "variable",
+			"name": "randomPrice",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 954692506290917
+		},
+		{
+			"eventType": "variable",
+			"name": "hundredCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 664837584916593
+		},
+		{
+			"eventType": "variable",
+			"name": "tempIndex",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 183866609541580
+		},
+		{
+			"eventType": "variable",
+			"name": "temp",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 411094978308673
+		},
+		{
+			"eventType": "variable",
+			"name": "index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 355658072222363
+		},
+		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 887366555181060
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 819872148067614
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 227402621227313
+				},
+				{
+					"callFunction": "hidePopUp",
+					"sid": 447140610956763
+				},
+				{
+					"callFunction": "setUID",
+					"sid": 453371644787379
+				},
+				{
+					"id": "set-text",
+					"objectClass": "score",
+					"sid": 118837627673391,
+					"parameters": {
+						"text": "\"SCORE :\"&score"
+					}
+				}
+			],
+			"sid": 514829051777513,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 375772756462563,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "insert",
+							"objectClass": "Array",
+							"sid": 804841206938724,
+							"parameters": {
+								"value": "loopindex",
+								"index": "loopindex",
+								"axis": "x"
+							}
+						}
+					],
+					"sid": 899552331422444
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 355268221017141,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 681216111139101,
+							"parameters": {
+								"variable": "temp",
+								"value": "Array.At(loopindex)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 179359242213823,
+							"parameters": {
+								"variable": "tempIndex",
+								"value": "floor(random(0, 3.5))"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "Array",
+							"sid": 723765027512182,
+							"parameters": {
+								"x": "loopindex",
+								"value": "Array.At(tempIndex)"
+							}
+						},
+						{
+							"id": "set-at-x",
+							"objectClass": "Array",
+							"sid": 820091693504429,
+							"parameters": {
+								"x": "tempIndex",
+								"value": "temp"
+							}
+						}
+					],
+					"sid": 365245929322621
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 475738053106441,
+							"parameters": {
+								"object": "price",
+								"expression": "0",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 738226389215079,
+							"parameters": {
+								"variable": "randomPrice",
+								"value": "floor(random(2,15)) * 5"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "price",
+							"sid": 888233450286737,
+							"parameters": {
+								"text": "\"Rs.\"&randomPrice"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 527169142839429,
+							"parameters": {
+								"variable": "expectedCount",
+								"value": "randomPrice"
+							}
+						}
+					],
+					"sid": 933632189757780
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 110173481836605,
+							"parameters": {
+								"object": "objects",
+								"expression": "0",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "objects",
+							"sid": 593050657361456,
+							"parameters": {
+								"frame-number": "Array.At(index)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 539446373137305,
+							"parameters": {
+								"variable": "index",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 818567386457462
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 913118521612161,
+					"parameters": {
+						"object": "helpBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "helpBtn",
+					"sid": 931362248458501,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "helpBtn",
+					"sid": 850703132125657,
+					"parameters": {
+						"scale": "0.7"
+					}
+				}
+			],
+			"sid": 463577062640763
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 504987165536153
+				}
+			],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "submit",
+					"sid": 510462039909543,
+					"parameters": {
+						"scale": "1"
+					}
+				}
+			],
+			"sid": 236508195072195,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "pauseBtn",
+							"sid": 300651266551759,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 416089636223593,
+							"parameters": {
+								"audio-file": "btnSelect",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "pauseBtn",
+							"sid": 553313030319670,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "pauseBtn",
+							"sid": 720407910418618,
+							"parameters": {
+								"scale": "1"
+							}
+						},
+						{
+							"callFunction": "showPopUp",
+							"sid": 787964013875540
+						}
+					],
+					"sid": 719677419127990
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "helpBtn",
+							"sid": 705319276388275,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 753802227017570,
+							"parameters": {
+								"audio-file": "btnSelect",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "helpBtn",
+							"sid": 659587930108220,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "helpBtn",
+							"sid": 580288838929234,
+							"parameters": {
+								"scale": "1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 597019536621071,
+							"parameters": {
+								"layout": "Help"
+							}
+						}
+					],
+					"sid": 972197152396713
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 780555364847583,
+					"parameters": {
+						"object": "pauseBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "pauseBtn",
+					"sid": 110656136921254,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "pauseBtn",
+					"sid": 178693711166533,
+					"parameters": {
+						"scale": "0.7"
+					}
+				}
+			],
+			"sid": 499348263446119
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 722339407901949,
+					"parameters": {
+						"object": "submit"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "submit",
+					"sid": 628575947832837,
+					"parameters": {
+						"scale": "0.7"
+					}
+				}
+			],
+			"sid": 290633478174127
+		},
+		{
+			"functionName": "hidePopUp",
+			"functionDescription": "hides the popUP",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "transparentBg",
+					"sid": 928795075412469,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "gamePause",
+					"sid": 758727429420692,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "resumeBtn",
+					"sid": 343700549849120,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "restartBtn",
+					"sid": 192146125842596,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "homeBtn",
+					"sid": 286191430115014,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				}
+			],
+			"sid": 611956143923731
+		},
+		{
+			"functionName": "showPopUp",
+			"functionDescription": "hides the popUP",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "transparentBg",
+					"sid": 603057209969873,
+					"parameters": {
+						"width": "1920",
+						"height": "1080"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "gamePause",
+					"sid": 108902602145074,
+					"parameters": {
+						"width": "619",
+						"height": "403"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "resumeBtn",
+					"sid": 791729224517649,
+					"parameters": {
+						"width": "274",
+						"height": "75"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "restartBtn",
+					"sid": 627405172610451,
+					"parameters": {
+						"width": "274",
+						"height": "75"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "homeBtn",
+					"sid": 746758131908861,
+					"parameters": {
+						"width": "274",
+						"height": "75"
+					}
+				}
+			],
+			"sid": 693984521555636
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 210646837370225,
+					"parameters": {
+						"object": "resumeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 478687493773213,
+					"parameters": {
+						"audio-file": "btnSelect",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"callFunction": "hidePopUp",
+					"sid": 834167330856345
+				}
+			],
+			"sid": 663610468693506
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 578425498374839,
+					"parameters": {
+						"object": "restartBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 149622592645846,
+					"parameters": {
+						"audio-file": "btnSelect",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 480590562930011
+				}
+			],
+			"sid": 682240669649601
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 186444550919158,
+					"parameters": {
+						"object": "homeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 172992762125281,
+					"parameters": {
+						"audio-file": "btnSelect",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 722595573472599,
+					"parameters": {
+						"layout": "Home"
+					}
+				}
+			],
+			"sid": 936368631739485
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 516992256478639,
+					"parameters": {
+						"object": "gamePause"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 642889353846845,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restartBtn",
+					"sid": 959804763169155,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn",
+					"sid": 627339935465066,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 689956790298577
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 277432563097164,
+					"parameters": {
+						"object": "resumeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 157786190200569,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restartBtn",
+					"sid": 485318535397657,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn",
+					"sid": 197279339462103,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 426208561398384
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 817665428927142,
+					"parameters": {
+						"object": "restartBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 734215534223396,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restartBtn",
+					"sid": 621722732928626,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn",
+					"sid": 708204271723545,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 463057500263950
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 793737458280068,
+					"parameters": {
+						"object": "homeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 484955410741295,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restartBtn",
+					"sid": 294612258438285,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "homeBtn",
+					"sid": 611788752646237,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 688963455265993
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 545379789747729,
+					"parameters": {
+						"object": "hundred"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 163240102546082,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 672739919100079,
+							"parameters": {
+								"variable": "hundredCount",
+								"comparison": 1,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 930297696913335,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "hundred",
+									"sid": 750316590432166,
+									"parameters": {
+										"unique-id": "hudredUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 308285830372374,
+									"parameters": {
+										"variable": "xPos",
+										"value": "1220 + hundredCount * 10"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 370151525738506,
+									"parameters": {
+										"variable": "yPos",
+										"value": "328 + hundredCount * 20"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 803605455914693,
+									"parameters": {
+										"variable": "hundredCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "hundred",
+									"sid": 870394370896563,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "xPos",
+										"end-y": "yPos",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 969569194695477,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 119666721777356,
+									"parameters": {
+										"audio-file": "note",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "hundred",
+									"sid": 518736153787927,
+									"parameters": {
+										"where": "in-front",
+										"object": "submit"
+									}
+								},
+								{
+									"callFunction": "setUID",
+									"sid": 300926211327830
+								}
+							],
+							"sid": 936664613171668
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 545123255083682,
+					"parameters": {
+						"object": "fifty"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 672024119992122,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 184566993355754,
+							"parameters": {
+								"variable": "fiftyCount",
+								"comparison": 1,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 755360390654794,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "fifty",
+									"sid": 392000091485329,
+									"parameters": {
+										"unique-id": "fiftyUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 667023360510596,
+									"parameters": {
+										"variable": "xPos",
+										"value": "988 + fiftyCount * 10"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 215776510326431,
+									"parameters": {
+										"variable": "yPos",
+										"value": "332 + fiftyCount * 20"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 599376335359847,
+									"parameters": {
+										"variable": "fiftyCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "fifty",
+									"sid": 730774115723931,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "xPos",
+										"end-y": "yPos",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 715309859831875,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 580893261608753,
+									"parameters": {
+										"audio-file": "note",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "fifty",
+									"sid": 976243496319742,
+									"parameters": {
+										"where": "in-front",
+										"object": "twenty"
+									}
+								},
+								{
+									"callFunction": "setUID",
+									"sid": 755535159378898
+								}
+							],
+							"sid": 989670812306787
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 149613242825410,
+					"parameters": {
+						"object": "twenty"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 937441677214201,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 975469950160107,
+							"parameters": {
+								"variable": "twentyCount",
+								"comparison": 1,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 944885586290267,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "twenty",
+									"sid": 112498364337618,
+									"parameters": {
+										"unique-id": "twentyUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 173066545450767,
+									"parameters": {
+										"variable": "xPos",
+										"value": "982+ twentyCount* 10"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 625918000815341,
+									"parameters": {
+										"variable": "yPos",
+										"value": "476+ twentyCount * 20"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 430984776402466,
+									"parameters": {
+										"variable": "twentyCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "twenty",
+									"sid": 667718105594751,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "xPos",
+										"end-y": "yPos",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 898151634349066,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 474331402869098,
+									"parameters": {
+										"audio-file": "note",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "twenty",
+									"sid": 912087790146758,
+									"parameters": {
+										"where": "in-front",
+										"object": "ten"
+									}
+								},
+								{
+									"callFunction": "setUID",
+									"sid": 860181828009778
+								}
+							],
+							"sid": 291087219429058
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 198129992267689,
+					"parameters": {
+						"object": "ten"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 385764400103638,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 514188178782282,
+							"parameters": {
+								"variable": "tenCount",
+								"comparison": 1,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 108310051973714,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ten",
+									"sid": 115799615769978,
+									"parameters": {
+										"unique-id": "tenUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 608793297568746,
+									"parameters": {
+										"variable": "xPos",
+										"value": "1233 + tenCount * 10"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 287901896180665,
+									"parameters": {
+										"variable": "yPos",
+										"value": "481 + tenCount * 20"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 671677892375536,
+									"parameters": {
+										"variable": "tenCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "ten",
+									"sid": 323073102888299,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "1233",
+										"end-y": "481",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 253411168385037,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 178298084263265,
+									"parameters": {
+										"audio-file": "note",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "ten",
+									"sid": 682937607327755,
+									"parameters": {
+										"where": "in-front",
+										"object": "five"
+									}
+								},
+								{
+									"callFunction": "setUID",
+									"sid": 160826333554408
+								}
+							],
+							"sid": 525399591453333
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 157858545897615,
+					"parameters": {
+						"object": "five"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 664969997334542,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 470894641700185,
+							"parameters": {
+								"variable": "fiveCount",
+								"comparison": 1,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 201223596405790,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "five",
+									"sid": 222726874426796,
+									"parameters": {
+										"unique-id": "fiveUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 671934516656591,
+									"parameters": {
+										"variable": "xPos",
+										"value": "1000 + fiveCount * 10"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 937421219756728,
+									"parameters": {
+										"variable": "yPos",
+										"value": "640 + fiveCount * 20"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 370036164791755,
+									"parameters": {
+										"variable": "fiveCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "five",
+									"sid": 552419315102517,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "xPos",
+										"end-y": "yPos",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 894028074324306,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 700797790850871,
+									"parameters": {
+										"audio-file": "coin",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "five",
+									"sid": 283913193084232,
+									"parameters": {
+										"where": "in-front",
+										"object": "hundred"
+									}
+								},
+								{
+									"callFunction": "setUID",
+									"sid": 865753811017473
+								}
+							],
+							"sid": 536679720663563
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 549134076700271,
+					"parameters": {
+						"object": "submit"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 520626416149571,
+					"parameters": {
+						"audio-file": "submit",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 700652795645419,
+					"parameters": {
+						"variable": "moneyCount",
+						"value": "(fiveCount * 5) + (tenCount * 10) + (twentyCount * 20) + (fiftyCount * 50) + (hundredCount * 100)"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 629349223986447,
+					"parameters": {
+						"type": "log",
+						"message": "moneyCount"
+					}
+				}
+			],
+			"sid": 574301129819535,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 580704488000922,
+							"parameters": {
+								"variable": "moneyCount",
+								"comparison": 0,
+								"value": "expectedCount"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 404837815793447,
+							"parameters": {
+								"variable": "score",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "score",
+							"sid": 262657643896961,
+							"parameters": {
+								"text": "\"SCORE :\"&score"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "correct",
+							"sid": 178174306241168,
+							"parameters": {
+								"width": "155",
+								"height": "155"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 555730750276768,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 737010468271564,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 441795934948110
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 770644686700538
+						}
+					],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "wrong",
+							"sid": 401224643318497,
+							"parameters": {
+								"width": "155",
+								"height": "155"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 705338230749237,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 732756730368846
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 575294260914515
+						}
+					],
+					"sid": 889345751628890
+				}
+			]
+		},
+		{
+			"functionName": "setUID",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 229700976097586,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-topbottom",
+							"objectClass": "ten",
+							"sid": 952745258932746,
+							"parameters": {
+								"which": "top"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 934575892300445,
+							"parameters": {
+								"variable": "tenUID",
+								"value": "ten.UID"
+							}
+						}
+					],
+					"sid": 326865524697912
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-topbottom",
+							"objectClass": "twenty",
+							"sid": 483671087743263,
+							"parameters": {
+								"which": "top"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 317750580775362,
+							"parameters": {
+								"variable": "twentyUID",
+								"value": "twenty.UID"
+							}
+						}
+					],
+					"sid": 676301004528575
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-topbottom",
+							"objectClass": "fifty",
+							"sid": 315402002235856,
+							"parameters": {
+								"which": "top"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 957990878277080,
+							"parameters": {
+								"variable": "fiftyUID",
+								"value": "fifty.UID"
+							}
+						}
+					],
+					"sid": 225367759523456
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-topbottom",
+							"objectClass": "five",
+							"sid": 826730805210614,
+							"parameters": {
+								"which": "top"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 323120071865699,
+							"parameters": {
+								"variable": "fiveUID",
+								"value": "five.UID"
+							}
+						}
+					],
+					"sid": 329955984936101
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-topbottom",
+							"objectClass": "hundred",
+							"sid": 959537025360866,
+							"parameters": {
+								"which": "top"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 936568609794658,
+							"parameters": {
+								"variable": "hudredUID",
+								"value": "hundred.UID"
+							}
+						}
+					],
+					"sid": 940314306511315
+				}
+			]
+		}
+	],
+	"sid": 788737579436169
+}

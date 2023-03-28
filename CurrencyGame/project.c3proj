@@ -1,0 +1,340 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 32703,
+	"name": "CurrencyGame",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "klr7aqrocv5",
+	"objectTypes": {
+		"items": [
+			"splash",
+			"bg",
+			"purpleBg",
+			"currencyTransparent",
+			"play",
+			"help",
+			"Touch",
+			"Sprite",
+			"Sprite2",
+			"gameHeader",
+			"pauseBtn",
+			"helpBtn",
+			"table",
+			"gameboard",
+			"submit",
+			"transparentBg",
+			"gamePause",
+			"resumeBtn",
+			"restartBtn",
+			"homeBtn",
+			"Mouse",
+			"twenty",
+			"ten",
+			"fifty",
+			"hundred",
+			"five",
+			"objects",
+			"priceBG",
+			"price",
+			"Browser",
+			"correct",
+			"wrong",
+			"Array",
+			"roundText",
+			"score",
+			"help1",
+			"hand",
+			"help2",
+			"Instructions",
+			"Done",
+			"Sprite7",
+			"soundLogo",
+			"Audio"
+		],
+		"subfolders": []
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Home",
+			"Game",
+			"Help"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"Event sheet_Home",
+			"Event sheet_Game",
+			"Event sheet_Help"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "btnSelect.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 855880589831448,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "note.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 503006313874666,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "coin.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 659627758651780,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "submit.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 901732736083427,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "Marvin397-font.ttf",
+					"type": "application/font-sfnt",
+					"sid": 841127177948516,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 247195646779000,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 812298985735939,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 452405935972600,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 818748616361542,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 121294175031266,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 476726628691077,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 942504523054416,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": true,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": false,
+		"exportFileStructure": "folders"
+	},
+	"viewportWidth": 1920,
+	"viewportHeight": 1080,
+	"firstLayout": null
+}
