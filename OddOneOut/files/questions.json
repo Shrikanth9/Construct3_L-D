@@ -1,0 +1,33 @@
+{
+    "questions" : [
+           { "q1":"WARM","q2":"HOT", "q3":"COOL","q4":"HUMID","ansUID":17},
+           { "q1":"ICE CUBE : COLD", "q2":"IRON : HARD","q3":"PURSE : MONEY","q4":"MARBLE : SMOOTH","ansUID" : 17},
+           { "q1":"ICE CREAM", "q2" : "HEAT", "q3" : "FIRE", "q4" : "SUN", "ansUID" : 15},
+           { "q1":"LION", "q2":"HEN", "q3":"CHEETAH", "q4":"TIGER", "ansUID": 16},
+           { "q1":"HOUSE", "q2":"WALL", "q3":"ROOF", "q4":"BEAM", "ansUID": 15},
+           { "q1":"POTATO", "q2":"PEAS", "q3":"TOMATO", "q4":"CUCUMBER", "ansUID": 15},
+           { "q1":"ABBC", "q2":"PQQR", "q3":"HIIJ", "q4":"WYYZ", "ansUID": 18},
+           { "q1":"13,50,37", "q2":"23,39,40", "q3":"18,38,44", "q4":"74,10,16", "ansUID": 16},
+           { "q1":"CRY", "q2":"SOB", "q3":"WEEP", "q4":"LAUGH", "ansUID": 18},
+           { "q1":"GOAT", "q2":"DOG", "q3":"SHEEP", "q4":"COW", "ansUID": 16},
+           { "q1":"ALMOND", "q2":"TURMERIC", "q3":"PEPPER", "q4":"CHILLIES", "ansUID": 15},
+           { "q1":"PAINTER", "q2":"CANVAS", "q3":"COLOR", "q4":"BRUSH", "ansUID": 15},
+           { "q1":"TELESCOPE", "q2":"TRANSISTOR", "q3":"TAPE RECORDER", "q4":"TELEPHONE", "ansUID": 15},
+           { "q1":"VALLEY", "q2":"RIVER", "q3":"TOWER", "q4":"SEA", "ansUID": 17},
+           { "q1":"COTTON", "q2":"JUTE", "q3":"SILK", "q4":"NYLON", "ansUID": 18},
+           { "q1":"645", "q2":"842", "q3":"964", "q4":"340", "ansUID": 15},
+           { "q1":"CEMENT", "q2":"PASTE", "q3":"OIL", "q4":"GLUE", "ansUID": 17},
+           { "q1":"TEMPLE", "q2":"MOSQUE", "q3":"MONASTERY", "q4":"CHURCH", "ansUID": 17},
+           { "q1":"PEN", "q2":"SHARPNER", "q3":"PENCIL", "q4":"PAPER", "ansUID": 16},
+           { "q1":"SHIRT : DRESS", "q2":"BOY : GIRL","q3":"MANGO : FRUIT","q4":"TABLE : FURNITURE","ansUID" : 16},
+           { "q1":"WHEAT", "q2":"PADDY", "q3":"JOWAR", "q4":"MUSTARD", "ansUID": 17},
+           { "q1":"137", "q2":"177", "q3":"121", "q4":"183", "ansUID": 17},
+           { "q1":"CALENDAR", "q2":"DAY", "q3":"DATE", "q4":"MONTH", "ansUID": 15},
+           { "q1":"SCARPEL : SURGEON", "q2":"CHISEL : SOLDIER","q3":"AWL : COBBLER","q4":"KNIFE : CHEF","ansUID" : 16},
+           { "q1":"SPRINTING", "q2":"JOGGING", "q3":"JUMPING", "q4":"EXCERCISING", "ansUID": 18},
+           { "q1":"TREE : STEM", "q2":"FACE : EYE","q3":"CHAIR : SOFA","q4":"PLANT : FLOWER","ansUID" : 17}
+    ]
+}
+
+
+
