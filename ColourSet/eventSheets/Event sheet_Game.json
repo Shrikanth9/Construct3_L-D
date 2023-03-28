@@ -971,15 +971,6 @@
 						"variable": "iterator",
 						"value": "0"
 					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 720780202008967,
-					"parameters": {
-						"type": "log",
-						"message": "answer"
-					}
 				}
 			],
 			"sid": 834170764642410,
@@ -1136,15 +1127,6 @@
 					"parameters": {
 						"variable": "iterator",
 						"value": "0"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 166944066018918,
-					"parameters": {
-						"type": "log",
-						"message": "answer"
 					}
 				}
 			],
@@ -1361,9 +1343,9 @@
 				{
 					"id": "set-size",
 					"objectClass": "scoreGameOver",
-					"sid": 844549111592375,
+					"sid": 618969264706932,
 					"parameters": {
-						"width": "432",
+						"width": "494",
 						"height": "96"
 					}
 				},
