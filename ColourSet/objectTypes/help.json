@@ -1,0 +1,89 @@
+{
+	"name": "help",
+	"plugin-id": "Sprite",
+	"sid": 847758223689569,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 75,
+						"height": 71,
+						"originX": 0.5217391304347826,
+						"originY": 0.4928571428571429,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 501610,
+						"collisionPoly": {
+							"points": [
+								0.17391304347826086,
+								0.15714285714285714,
+								0.5217391304347826,
+								0.014285714285714285,
+								0.8405797101449275,
+								0.18571428571428572,
+								0.9565217391304348,
+								0.4928571428571429,
+								0.8405797101449275,
+								0.8,
+								0.5217391304347826,
+								0.9428571428571428,
+								0.17391304347826086,
+								0.8285714285714286,
+								0.043478260869565216,
+								0.4928571428571429
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 70,
+						"height": 70,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4392606,
+						"collisionPoly": {
+							"points": [
+								0.011904761904761904,
+								0.011111111111111112,
+								0.5,
+								0.011111111111111112,
+								0.9880952380952381,
+								0.011111111111111112,
+								0.9880952380952381,
+								0.5,
+								0.9880952380952381,
+								0.9888888888888889,
+								0.5,
+								0.9888888888888889,
+								0.011904761904761904,
+								0.9888888888888889,
+								0.011904761904761904,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 785949013937917,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,1122 @@
+{
+	"name": "Event sheet_Home",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "touchFlag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 897485992392545
+		},
+		{
+			"eventType": "variable",
+			"name": "volume",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 744270205883015
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 645052700941350
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-bottom",
+					"objectClass": "gameBG",
+					"sid": 849647644043637
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "helpScreen",
+					"sid": 737876477543947
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "hand",
+					"sid": 216689976912807
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "doneBtn",
+					"sid": 646266864791567
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "Instruction",
+					"sid": 658418486489376
+				}
+			],
+			"sid": 291176406063906
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 827184680183021,
+					"parameters": {
+						"object": "doneBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "doneBtn",
+					"sid": 619893034493432,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 566438751942146,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 909936850379023
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "doneBtn",
+							"sid": 503444982643552,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "helpScreen",
+							"sid": 156061782855941
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "hand",
+							"sid": 530749440586174
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "doneBtn",
+							"sid": 609150260740717
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Instruction",
+							"sid": 475280086891293
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 864087508561746,
+							"parameters": {
+								"variable": "touchFlag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "resume-tweens",
+							"objectClass": "Progress",
+							"sid": 799439145729773,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"progress\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 599678266890501,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 670578559225400
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 999888642719067,
+					"parameters": {
+						"variable": "touchFlag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 834263337869669,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 380595315222498,
+							"parameters": {
+								"object": "playBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "playBtn",
+							"sid": 676014281478190,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 549008900054114,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 160470700250201
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "playBtn",
+									"sid": 457234871121891,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 952294243547980,
+									"parameters": {
+										"layout": "Game"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 248064448493498,
+									"parameters": {
+										"audio-file": "tap",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 945426565997961
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 595299089163775,
+							"parameters": {
+								"object": "helpBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "helpBtn",
+							"sid": 356790015177517,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 420056970976921,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 724542180227924
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "helpBtn",
+									"sid": 515715970543945,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "helpScreen",
+									"sid": 154176860890526
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "hand",
+									"sid": 907963540282349
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "doneBtn",
+									"sid": 599719535861442
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "Instruction",
+									"sid": 461744393250646
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 258281099264800,
+									"parameters": {
+										"variable": "touchFlag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 701146956197826,
+									"parameters": {
+										"audio-file": "tap",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 187211428278942
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 678466377824226,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 795222656994201,
+							"parameters": {
+								"variable": "coutDown",
+								"value": "-1"
+							}
+						}
+					],
+					"sid": 340907536481140,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 610502541935648,
+									"parameters": {
+										"variable": "coutDown",
+										"comparison": 2,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "countDownHeader",
+									"sid": 712409399469157,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "start-fade",
+									"objectClass": "countDownHeader",
+									"sid": 195637253663541,
+									"behaviorType": "Fade"
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 902042267422685,
+									"parameters": {
+										"audio-file": "countdown",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 672266431917227
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 509309384201867,
+							"parameters": {
+								"object": "tile4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 484182025505375,
+							"parameters": {
+								"variable": "touchFlag",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 736333463021599,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "Dictionary",
+									"sid": 725901076983995,
+									"parameters": {
+										"key": "str(tile4.UID)",
+										"comparison": 0,
+										"value": "answer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 761101445575238,
+									"parameters": {
+										"audio-file": "correct",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "correctwrong",
+									"sid": 525558372823216,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "correctwrong",
+									"sid": 283157798350917,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "1",
+										"end-y": "1",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 166267824925368,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "correctwrong",
+									"sid": 488452990088962,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 200762550285750,
+									"parameters": {
+										"variable": "score",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "scoreText",
+									"sid": 690075191855586,
+									"parameters": {
+										"text": "\"SCORE : \"&score"
+									}
+								},
+								{
+									"callFunction": "reset",
+									"sid": 807928141251161
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 307316021741711,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"callFunction": "selectLevel",
+									"sid": 152383384431829
+								}
+							],
+							"sid": 358233632286364
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 390596119011490
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 200304464284793,
+									"parameters": {
+										"audio-file": "wrong",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "correctwrong",
+									"sid": 276688390796808,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "correctwrong",
+									"sid": 829928180080840,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "1",
+										"end-y": "1",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 297897508572622,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "correctwrong",
+									"sid": 189630043894261,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"callFunction": "reset",
+									"sid": 253383157440955
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 684659923572084,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"callFunction": "selectLevel",
+									"sid": 118054176487563
+								}
+							],
+							"sid": 570023394862414,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "heart",
+											"sid": 264072584507565,
+											"parameters": {
+												"unique-id": "livesUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "heart",
+											"sid": 894532412226282,
+											"parameters": {
+												"frame-number": "1"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 246596061886425,
+											"parameters": {
+												"variable": "livesUID",
+												"value": "-1"
+											}
+										}
+									],
+									"sid": 452349178835752
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 724049046831536,
+							"parameters": {
+								"object": "tile3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 796281463424456,
+							"parameters": {
+								"variable": "touchFlag",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 270911568374890,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "Dictionary",
+									"sid": 450678262425867,
+									"parameters": {
+										"key": "str(tile3.UID)",
+										"comparison": 0,
+										"value": "answer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 341708855719494,
+									"parameters": {
+										"audio-file": "correct",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "correctwrong",
+									"sid": 740697785517700,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "correctwrong",
+									"sid": 936370001402579,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "1",
+										"end-y": "1",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 671290979353142,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "correctwrong",
+									"sid": 101421233087873,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 763461751355402,
+									"parameters": {
+										"variable": "score",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "scoreText",
+									"sid": 971919208661210,
+									"parameters": {
+										"text": "\"SCORE : \"&score"
+									}
+								},
+								{
+									"callFunction": "reset",
+									"sid": 558567002662825
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 229253849089033,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"callFunction": "selectLevel",
+									"sid": 841331531247557
+								}
+							],
+							"sid": 918143588856855
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 872077327416966
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 308129857524158,
+									"parameters": {
+										"audio-file": "wrong",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "correctwrong",
+									"sid": 485217495771506,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "correctwrong",
+									"sid": 669161952707714,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "1",
+										"end-y": "1",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 200119645741926,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "correctwrong",
+									"sid": 235092599073388,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"callFunction": "reset",
+									"sid": 242645389058508
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 317691685328737,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"callFunction": "selectLevel",
+									"sid": 118605181000354
+								}
+							],
+							"sid": 921530013931111,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "heart",
+											"sid": 934143541857307,
+											"parameters": {
+												"unique-id": "livesUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "heart",
+											"sid": 991652004747396,
+											"parameters": {
+												"frame-number": "1"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 818733226618546,
+											"parameters": {
+												"variable": "livesUID",
+												"value": "-1"
+											}
+										}
+									],
+									"sid": 690357038548441
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 607412125210847,
+							"parameters": {
+								"object": "pauseBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "pauseBtn",
+							"sid": 851821553931139,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 128384418531246,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 389928766985181
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "pauseBtn",
+									"sid": 211946490853000,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"callFunction": "showPopUp",
+									"sid": 491518565786680
+								},
+								{
+									"id": "pause-tweens",
+									"objectClass": "Progress",
+									"sid": 565480363007428,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"progress\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 961975021995798,
+									"parameters": {
+										"variable": "touchFlag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 969933758998434,
+									"parameters": {
+										"audio-file": "tap",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 380422215617815
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 327709707495174,
+							"parameters": {
+								"object": "help"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "help",
+							"sid": 513095204204676,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 557853572987234,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 522489680201216
+								}
+							],
+							"actions": [
+								{
+									"id": "pause-tweens",
+									"objectClass": "Progress",
+									"sid": 348255314621957,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"progress\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "help",
+									"sid": 933603200070225,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "helpScreen",
+									"sid": 440238041423897
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "hand",
+									"sid": 621908094134720
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "doneBtn",
+									"sid": 331154289799456
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "Instruction",
+									"sid": 495571931096621
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 791515040639479,
+									"parameters": {
+										"variable": "touchFlag",
+										"value": "false"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 901571628144266,
+									"parameters": {
+										"audio-file": "tap",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 153857705275826
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 537314195899552
+}

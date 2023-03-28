@@ -1,0 +1,57 @@
+{
+	"name": "gameBG",
+	"plugin-id": "Sprite",
+	"sid": 404545683299079,
+	"isGlobal": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1280,
+						"height": 717,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6193215,
+						"collisionPoly": {
+							"points": [
+								0.00234375,
+								0.0041841004184100415,
+								0.5,
+								0.001394700139470014,
+								0.99921875,
+								0.001394700139470014,
+								1,
+								0.5,
+								1,
+								1,
+								0.5,
+								1,
+								0.00234375,
+								0.99581589958159,
+								0.00234375,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 354713285371891,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

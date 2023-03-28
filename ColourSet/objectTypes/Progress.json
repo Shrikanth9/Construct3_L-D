@@ -1,0 +1,55 @@
+{
+	"name": "Progress",
+	"plugin-id": "Sprite",
+	"sid": 588876098957110,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 361760895081731
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1282,
+						"height": 70,
+						"originX": 0.00078003120124805,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5800065,
+						"collisionPoly": {
+							"points": [
+								0.00078003120124805,
+								0.020102651839178788,
+								0.999219968798752,
+								0.020102651839178788,
+								0.999219968798752,
+								0.9798973481608211,
+								0.00078003120124805,
+								0.9798973481608211
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 812231268051422,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
