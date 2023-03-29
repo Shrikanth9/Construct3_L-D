@@ -53,9 +53,15 @@
 			"dragTile",
 			"dragAlphabet",
 			"blocks",
-			"Text",
 			"blockAlphabets",
-			"Browser"
+			"Browser",
+			"arrow",
+			"Object1",
+			"Object2",
+			"Object3",
+			"Object4",
+			"arrowSmall",
+			"Sprite2"
 		],
 		"subfolders": []
 	},

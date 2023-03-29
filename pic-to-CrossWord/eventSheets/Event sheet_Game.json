@@ -22,6 +22,16 @@
 			"sid": 241754076969848
 		},
 		{
+			"eventType": "variable",
+			"name": "uidDiff",
+			"type": "number",
+			"initialValue": "24",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 113786347379039
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -180,9 +190,9 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "blocks",
-							"sid": 247277669681501,
+							"sid": 382367681551451,
 							"parameters": {
-								"unique-id": "blockAlphabets.UID - 23"
+								"unique-id": "blockAlphabets.UID - uidDiff"
 							}
 						}
 					],
@@ -313,9 +323,9 @@
 										{
 											"id": "pick-by-unique-id",
 											"objectClass": "blockAlphabets",
-											"sid": 403120830855688,
+											"sid": 859954718830466,
 											"parameters": {
-												"unique-id": "blocks.UID + 23"
+												"unique-id": "blocks.UID + uidDiff"
 											}
 										}
 									],
