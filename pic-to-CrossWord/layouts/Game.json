@@ -1947,7 +1947,8 @@
 					},
 					"uid": 59,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -1978,7 +1979,8 @@
 					},
 					"uid": 60,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2009,7 +2011,8 @@
 					},
 					"uid": 61,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2040,7 +2043,8 @@
 					},
 					"uid": 62,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2071,7 +2075,8 @@
 					},
 					"uid": 63,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2102,7 +2107,8 @@
 					},
 					"uid": 64,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2133,7 +2139,8 @@
 					},
 					"uid": 65,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2164,7 +2171,8 @@
 					},
 					"uid": 66,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2195,7 +2203,8 @@
 					},
 					"uid": 67,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2226,7 +2235,8 @@
 					},
 					"uid": 68,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2257,7 +2267,8 @@
 					},
 					"uid": 69,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2288,7 +2299,8 @@
 					},
 					"uid": 70,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2319,7 +2331,8 @@
 					},
 					"uid": 71,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2350,7 +2363,8 @@
 					},
 					"uid": 72,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2381,7 +2395,8 @@
 					},
 					"uid": 73,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2412,7 +2427,8 @@
 					},
 					"uid": 74,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2443,7 +2459,8 @@
 					},
 					"uid": 75,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2474,7 +2491,8 @@
 					},
 					"uid": 76,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2505,7 +2523,8 @@
 					},
 					"uid": 77,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2536,7 +2555,8 @@
 					},
 					"uid": 78,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2567,7 +2587,8 @@
 					},
 					"uid": 79,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2598,7 +2619,8 @@
 					},
 					"uid": 80,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2629,7 +2651,8 @@
 					},
 					"uid": 81,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -2660,7 +2683,8 @@
 					},
 					"uid": 82,
 					"instanceVariables": {
-						"notFilled": true
+						"notFilled": true,
+						"alphabet": "\" \""
 					},
 					"behaviors": {},
 					"world": {
@@ -4023,7 +4047,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "Object5",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -4111,7 +4135,14 @@
 		}
 	],
 	"sid": 429960820696854,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "JSON",
+			"properties": {},
+			"uid": 119,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 1920,
 	"height": 1080,

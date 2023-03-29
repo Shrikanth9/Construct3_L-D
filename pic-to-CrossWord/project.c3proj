@@ -8,8 +8,22 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -61,7 +75,9 @@
 			"Object3",
 			"Object4",
 			"arrowSmall",
-			"Sprite2"
+			"Object5",
+			"AJAX",
+			"JSON"
 		],
 		"subfolders": []
 	},
@@ -85,7 +101,16 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 581905504228051,
+					"script-info": {
+						"purpose": "main"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {
@@ -175,7 +200,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "crossword.json",
+					"type": "application/json",
+					"sid": 919695398133825,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},

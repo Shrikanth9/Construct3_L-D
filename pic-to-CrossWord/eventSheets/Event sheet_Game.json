@@ -42,6 +42,20 @@
 			],
 			"actions": [
 				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 989194106856070,
+					"parameters": {
+						"tag": "\"json\"",
+						"file": "crossword.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 700777777159915
+				},
+				{
 					"id": "set-visible",
 					"objectClass": "dragAlphabet",
 					"sid": 504827608950408,
@@ -205,6 +219,15 @@
 								"instance-variable": "notFilled",
 								"value": "true"
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "blocks",
+							"sid": 804520157598450,
+							"parameters": {
+								"instance-variable": "alphabet",
+								"value": "\" \""
+							}
 						}
 					],
 					"sid": 653025738683699
@@ -339,6 +362,15 @@
 											}
 										},
 										{
+											"id": "set-instvar-value",
+											"objectClass": "blocks",
+											"sid": 725168705246518,
+											"parameters": {
+												"instance-variable": "alphabet",
+												"value": "dragAlphabet.Text"
+											}
+										},
+										{
 											"id": "set-position",
 											"objectClass": "blockAlphabets",
 											"sid": 466202111941433,
@@ -364,6 +396,30 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 474887885349157,
+					"parameters": {
+						"tag": "\"json\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "JSON",
+					"sid": 559457045373510,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 894453592907860
 		}
 	],
 	"sid": 124482044317374
