@@ -37,7 +37,8 @@
 			"alphabets",
 			"Touch",
 			"dragTile",
-			"dragAlphabet"
+			"dragAlphabet",
+			"blocks"
 		],
 		"subfolders": []
 	},

@@ -56,10 +56,10 @@
 				{
 					"id": "set-position",
 					"objectClass": "dragTile",
-					"sid": 952181557037151,
+					"sid": 293330870706213,
 					"parameters": {
 						"x": "Touch.X",
-						"y": "Touch.Y - 200"
+						"y": "Touch.Y - 150"
 					}
 				}
 			],
