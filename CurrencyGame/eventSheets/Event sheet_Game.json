@@ -1455,13 +1455,13 @@
 								{
 									"id": "tween-two-properties",
 									"objectClass": "ten",
-									"sid": 323073102888299,
+									"sid": 352419685600248,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"\"",
 										"property": "position",
-										"end-x": "1233",
-										"end-y": "481",
+										"end-x": "xPos",
+										"end-y": "yPos",
 										"time": "0.3",
 										"ease": "noease",
 										"destroy-on-complete": "no",
