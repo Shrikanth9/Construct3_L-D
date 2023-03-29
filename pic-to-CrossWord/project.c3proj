@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -26,6 +33,13 @@
 			"name": "Touch",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "1mlts2wief5",
@@ -38,7 +52,10 @@
 			"Touch",
 			"dragTile",
 			"dragAlphabet",
-			"blocks"
+			"blocks",
+			"Text",
+			"blockAlphabets",
+			"Browser"
 		],
 		"subfolders": []
 	},

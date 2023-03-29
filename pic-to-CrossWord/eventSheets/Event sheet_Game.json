@@ -12,6 +12,16 @@
 			"sid": 548440306638765
 		},
 		{
+			"eventType": "variable",
+			"name": "compareFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 241754076969848
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -36,6 +46,21 @@
 					"parameters": {
 						"visibility": "invisible"
 					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "dragTile",
+					"sid": 185881143570343,
+					"parameters": {
+						"child": "dragAlphabet",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": true,
+						"transform-h": true,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
 				}
 			],
 			"sid": 602899508687515
@@ -56,10 +81,10 @@
 				{
 					"id": "set-position",
 					"objectClass": "dragTile",
-					"sid": 293330870706213,
+					"sid": 399787992025135,
 					"parameters": {
 						"x": "Touch.X",
-						"y": "Touch.Y - 150"
+						"y": "Touch.Y - 200"
 					}
 				}
 			],
@@ -79,27 +104,22 @@
 			],
 			"actions": [
 				{
-					"id": "add-child",
-					"objectClass": "dragTile",
-					"sid": 161130508005406,
-					"parameters": {
-						"child": "dragAlphabet",
-						"transform-x": true,
-						"transform-y": true,
-						"transform-w": true,
-						"transform-h": true,
-						"transform-a": true,
-						"transform-z-elevation": true,
-						"destroy-with-parent": false
-					}
-				},
-				{
 					"id": "set-text",
 					"objectClass": "dragAlphabet",
 					"sid": 352522996391825,
 					"parameters": {
 						"text": "alphabets.Text"
 					}
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "dragTile",
+					"sid": 178262415039524
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "dragAlphabet",
+					"sid": 597151039291676
 				},
 				{
 					"id": "set-visible",
@@ -128,6 +148,58 @@
 				}
 			],
 			"sid": 972936796439536
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 322255285891060,
+					"parameters": {
+						"object": "blockAlphabets"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "blockAlphabets",
+					"sid": 790041420847791,
+					"parameters": {
+						"x": "50",
+						"y": "-50"
+					}
+				}
+			],
+			"sid": 960859685045501,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "blocks",
+							"sid": 247277669681501,
+							"parameters": {
+								"unique-id": "blockAlphabets.UID - 23"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "blocks",
+							"sid": 842160680267594,
+							"parameters": {
+								"instance-variable": "notFilled",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 653025738683699
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -163,9 +235,125 @@
 					"parameters": {
 						"visibility": "invisible"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "dragTile",
+					"sid": 868626372894517,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"callFunction": "PlacingAlphabets",
+					"sid": 354218058422752
+				},
+				{
+					"id": "set-position",
+					"objectClass": "dragTile",
+					"sid": 119527293111833,
+					"parameters": {
+						"x": "50",
+						"y": "-50"
+					}
 				}
 			],
 			"sid": 526411725957119
+		},
+		{
+			"functionName": "PlacingAlphabets",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 808770864345647,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "blocks",
+							"sid": 690720734704392,
+							"parameters": {
+								"which": "nearest",
+								"x": "dragTile.X",
+								"y": "dragTile.Y"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 628683361582009,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 214595127582769,
+									"parameters": {
+										"first-value": "distance(blocks.X, blocks.Y, dragTile.X, dragTile.Y)",
+										"comparison": 2,
+										"second-value": "20"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 344320739019651,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "blockAlphabets",
+											"sid": 403120830855688,
+											"parameters": {
+												"unique-id": "blocks.UID + 23"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "blockAlphabets",
+											"sid": 376988514004625,
+											"parameters": {
+												"text": "dragAlphabet.Text"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "blockAlphabets",
+											"sid": 466202111941433,
+											"parameters": {
+												"x": "blocks.X",
+												"y": "blocks.Y"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "blocks",
+											"sid": 208180046324802,
+											"parameters": {
+												"instance-variable": "notFilled",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 791587526356917
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 124482044317374
