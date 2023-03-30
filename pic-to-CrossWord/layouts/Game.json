@@ -1980,7 +1980,7 @@
 					"uid": 60,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2012,7 +2012,7 @@
 					"uid": 61,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2044,7 +2044,7 @@
 					"uid": 62,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2076,7 +2076,7 @@
 					"uid": 63,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2108,7 +2108,7 @@
 					"uid": 64,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2140,7 +2140,7 @@
 					"uid": 65,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2172,7 +2172,7 @@
 					"uid": 66,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2204,7 +2204,7 @@
 					"uid": 67,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2236,7 +2236,7 @@
 					"uid": 68,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2268,7 +2268,7 @@
 					"uid": 69,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2300,7 +2300,7 @@
 					"uid": 70,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2332,7 +2332,7 @@
 					"uid": 71,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2364,7 +2364,7 @@
 					"uid": 72,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2396,7 +2396,7 @@
 					"uid": 73,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2428,7 +2428,7 @@
 					"uid": 74,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2460,7 +2460,7 @@
 					"uid": 75,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2492,7 +2492,7 @@
 					"uid": 76,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2524,7 +2524,7 @@
 					"uid": 77,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2556,7 +2556,7 @@
 					"uid": 78,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2588,7 +2588,7 @@
 					"uid": 79,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2620,7 +2620,7 @@
 					"uid": 80,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2652,7 +2652,7 @@
 					"uid": 81,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -2684,7 +2684,7 @@
 					"uid": 82,
 					"instanceVariables": {
 						"notFilled": true,
-						"alphabet": "\" \""
+						"alphabet": "\"\""
 					},
 					"behaviors": {},
 					"world": {
@@ -3854,7 +3854,13 @@
 					},
 					"uid": 108,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 977,
 						"y": 364,
@@ -3883,7 +3889,13 @@
 					},
 					"uid": 109,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 1306,
 						"y": 625,
@@ -3912,7 +3924,13 @@
 					},
 					"uid": 110,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 451,
 						"y": 412,
@@ -3941,7 +3959,13 @@
 					},
 					"uid": 111,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 450,
 						"y": 121,
@@ -4057,7 +4081,13 @@
 					},
 					"uid": 115,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 1325,
 						"y": 129,
@@ -4140,6 +4170,36 @@
 			"type": "JSON",
 			"properties": {},
 			"uid": 119,
+			"instanceVariables": {}
+		},
+		{
+			"type": "lettersArr",
+			"properties": {
+				"width": 25,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 120,
+			"instanceVariables": {}
+		},
+		{
+			"type": "ObjectMatchedCount",
+			"properties": {
+				"width": 5,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 121,
+			"instanceVariables": {}
+		},
+		{
+			"type": "objFlags",
+			"properties": {
+				"width": 5,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 122,
 			"instanceVariables": {}
 		}
 	],

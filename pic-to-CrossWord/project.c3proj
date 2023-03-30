@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -50,6 +57,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "bound",
 			"name": "Bound to layout",
 			"author": "Scirra",
@@ -77,7 +91,10 @@
 			"arrowSmall",
 			"Object5",
 			"AJAX",
-			"JSON"
+			"JSON",
+			"lettersArr",
+			"ObjectMatchedCount",
+			"objFlags"
 		],
 		"subfolders": []
 	},
