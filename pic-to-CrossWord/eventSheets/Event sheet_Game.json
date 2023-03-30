@@ -102,6 +102,16 @@
 			"sid": 828447999895068
 		},
 		{
+			"eventType": "variable",
+			"name": "level",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 506704912819502
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -600,11 +610,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 326147541607663,
+							"sid": 165667333989053,
 							"parameters": {
 								"name": "\"Object1\"",
 								"start-index": "1",
-								"end-index": "JSON.Get(\"object1.0\")"
+								"end-index": "JSON.Get(\"object1.\"&level&\".0\")"
 							}
 						}
 					],
@@ -632,11 +642,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 175097653825284,
+											"sid": 349929711268556,
 											"parameters": {
-												"first-value": "lettersArr.At(JSON.Get(\"object1.\"&loopindex))",
+												"first-value": "lettersArr.At(JSON.Get(\"object1.\"&level&\".\"&loopindex))",
 												"comparison": 0,
-												"second-value": "JSON.Get(\"wordsArr.\"&JSON.Get(\"object1.\"&loopindex))"
+												"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object1.\"&level&\".\"&loopindex))"
 											}
 										}
 									],
@@ -659,9 +669,9 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 531378059655836,
+													"sid": 268822414251348,
 													"parameters": {
-														"first-value": "JSON.Get(\"object1.0\")",
+														"first-value": "JSON.Get(\"object1.\"&level&\".0\")",
 														"comparison": 0,
 														"second-value": "ObjectMatchedCount.At(0)"
 													}
@@ -710,11 +720,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 709132891412550,
+							"sid": 437776285651671,
 							"parameters": {
-								"name": "\"Object2\"",
+								"name": "\"Object2.\"&level",
 								"start-index": "1",
-								"end-index": "JSON.Get(\"object2.0\")"
+								"end-index": "JSON.Get(\"object2.\"&level&\".0\")"
 							}
 						}
 					],
@@ -742,11 +752,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 251177370442938,
+											"sid": 386139321282832,
 											"parameters": {
-												"first-value": "lettersArr.At(JSON.Get(\"object2.\"&loopindex))",
+												"first-value": "lettersArr.At(JSON.Get(\"object2.\"&level&\".\"&loopindex))",
 												"comparison": 0,
-												"second-value": "JSON.Get(\"wordsArr.\"&JSON.Get(\"object2.\"&loopindex))"
+												"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object2.\"&level&\".\"&loopindex))"
 											}
 										}
 									],
@@ -769,9 +779,9 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 364212409685993,
+													"sid": 896808348979623,
 													"parameters": {
-														"first-value": "JSON.Get(\"object2.0\")",
+														"first-value": "JSON.Get(\"object2.\"&level&\".0\")",
 														"comparison": 0,
 														"second-value": "ObjectMatchedCount.At(1)"
 													}
@@ -820,11 +830,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 197511987566458,
+							"sid": 752653749325802,
 							"parameters": {
 								"name": "\"Object3\"",
 								"start-index": "1",
-								"end-index": "JSON.Get(\"object3.0\")"
+								"end-index": "JSON.Get(\"object3.\"&level&\".0\")"
 							}
 						}
 					],
@@ -852,11 +862,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 486590439117846,
+											"sid": 979628137786734,
 											"parameters": {
-												"first-value": "lettersArr.At(JSON.Get(\"object3.\"&loopindex))",
+												"first-value": "lettersArr.At(JSON.Get(\"object3.\"&level&\".\"&loopindex))",
 												"comparison": 0,
-												"second-value": "JSON.Get(\"wordsArr.\"&JSON.Get(\"object3.\"&loopindex))"
+												"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object3.\"&level&\".\"&loopindex))"
 											}
 										}
 									],
@@ -879,9 +889,9 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 206186103151836,
+													"sid": 811935636985851,
 													"parameters": {
-														"first-value": "JSON.Get(\"object3.0\")",
+														"first-value": "JSON.Get(\"object3.\"&level&\".0\")",
 														"comparison": 0,
 														"second-value": "ObjectMatchedCount.At(2)"
 													}
@@ -930,11 +940,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 316153433597479,
+							"sid": 594520255883581,
 							"parameters": {
 								"name": "\"Object4\"",
 								"start-index": "1",
-								"end-index": "JSON.Get(\"object4.0\")"
+								"end-index": "JSON.Get(\"object4.\"&level&\".0\")"
 							}
 						}
 					],
@@ -962,11 +972,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 200313064142121,
+											"sid": 939251899768273,
 											"parameters": {
-												"first-value": "lettersArr.At(JSON.Get(\"object4.\"&loopindex))",
+												"first-value": "lettersArr.At(JSON.Get(\"object4.\"&level&\".\"&loopindex))",
 												"comparison": 0,
-												"second-value": "JSON.Get(\"wordsArr.\"&JSON.Get(\"object4.\"&loopindex))"
+												"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object4.\"&level&\".\"&loopindex))"
 											}
 										}
 									],
@@ -989,9 +999,9 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 876080509931162,
+													"sid": 875453157127444,
 													"parameters": {
-														"first-value": "JSON.Get(\"object4.0\")",
+														"first-value": "JSON.Get(\"object4.\"&level&\".0\")",
 														"comparison": 0,
 														"second-value": "ObjectMatchedCount.At(3)"
 													}
@@ -1040,11 +1050,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 686742443224300,
+							"sid": 380374073111837,
 							"parameters": {
 								"name": "\"Object5\"",
 								"start-index": "1",
-								"end-index": "JSON.Get(\"object5.0\")"
+								"end-index": "JSON.Get(\"object5.\"&level&\".0\")"
 							}
 						}
 					],
@@ -1072,11 +1082,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 828504700253938,
+											"sid": 345151362892397,
 											"parameters": {
-												"first-value": "lettersArr.At(JSON.Get(\"object5.\"&loopindex))",
+												"first-value": "lettersArr.At(JSON.Get(\"object5.\"&level&\".\"&loopindex))",
 												"comparison": 0,
-												"second-value": "JSON.Get(\"wordsArr.\"&JSON.Get(\"object5.\"&loopindex))"
+												"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object5.\"&level&\".\"&loopindex))"
 											}
 										}
 									],
@@ -1099,9 +1109,9 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 190061595499454,
+													"sid": 544599711053625,
 													"parameters": {
-														"first-value": "JSON.Get(\"object5.0\")",
+														"first-value": "JSON.Get(\"object5.\"&level&\".0\")",
 														"comparison": 0,
 														"second-value": "ObjectMatchedCount.At(4)"
 													}
@@ -1165,11 +1175,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 403940317362076,
+							"sid": 484243277619953,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "1",
-								"end-index": "JSON.get(\"object1.0\")"
+								"end-index": "JSON.get(\"object1.\"&level&\".0\")"
 							}
 						}
 					],
@@ -1182,9 +1192,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 964623734433817,
+									"sid": 283845879178665,
 									"parameters": {
-										"first-value": "lettersArr.At(JSON.Get(\"object1.\"&loopindex))",
+										"first-value": "lettersArr.At(JSON.Get(\"object1.\"&level&\".\"&loopindex))",
 										"comparison": 0,
 										"second-value": "\"\""
 									}
@@ -1211,11 +1221,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 497283679005365,
+							"sid": 130438640365859,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "1",
-								"end-index": "JSON.get(\"object2.0\")"
+								"end-index": "JSON.get(\"object2.\"&level&\".0\")"
 							}
 						}
 					],
@@ -1228,9 +1238,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 689793731691334,
+									"sid": 680945381922439,
 									"parameters": {
-										"first-value": "lettersArr.At(JSON.Get(\"object2.\"&loopindex))",
+										"first-value": "lettersArr.At(JSON.Get(\"object2.\"&level&\".\"&loopindex))",
 										"comparison": 0,
 										"second-value": "\"\""
 									}
@@ -1257,11 +1267,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 487031804763685,
+							"sid": 942375616577438,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "1",
-								"end-index": "JSON.get(\"object3.0\")"
+								"end-index": "JSON.get(\"object3.\"&level&\".0\")"
 							}
 						}
 					],
@@ -1274,9 +1284,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 215824554495306,
+									"sid": 904034568421410,
 									"parameters": {
-										"first-value": "lettersArr.At(JSON.Get(\"object3.\"&loopindex))",
+										"first-value": "lettersArr.At(JSON.Get(\"object3.\"&level&\".\"&loopindex))",
 										"comparison": 0,
 										"second-value": "\"\""
 									}
@@ -1303,11 +1313,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 377687193718896,
+							"sid": 869006288653638,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "1",
-								"end-index": "JSON.get(\"object4.0\")"
+								"end-index": "JSON.get(\"object4.\"&level&\".0\")"
 							}
 						}
 					],
@@ -1320,9 +1330,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 626176496197819,
+									"sid": 130738306512677,
 									"parameters": {
-										"first-value": "lettersArr.At(JSON.Get(\"object4.\"&loopindex))",
+										"first-value": "lettersArr.At(JSON.Get(\"object4.\"&level&\".\"&loopindex))",
 										"comparison": 0,
 										"second-value": "\"\""
 									}
@@ -1349,11 +1359,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 815567605166738,
+							"sid": 939701903635560,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "1",
-								"end-index": "JSON.get(\"object5.0\")"
+								"end-index": "JSON.get(\"object5.\"&level&\".0\")"
 							}
 						}
 					],
@@ -1366,9 +1376,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 967280892313189,
+									"sid": 988425733397537,
 									"parameters": {
-										"first-value": "lettersArr.At(JSON.Get(\"object5.\"&loopindex))",
+										"first-value": "lettersArr.At(JSON.Get(\"object5.\"&level&\".\"&loopindex))",
 										"comparison": 0,
 										"second-value": "\"\""
 									}
