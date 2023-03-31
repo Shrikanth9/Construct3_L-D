@@ -62,6 +62,16 @@
 			"sid": 506704912819502
 		},
 		{
+			"eventType": "variable",
+			"name": "iterator",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 729414436385273
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -141,13 +151,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "for",
+							"id": "for-each-ordered",
 							"objectClass": "System",
-							"sid": 897832069441300,
+							"sid": 575039811454549,
 							"parameters": {
-								"name": "\"\"",
-								"start-index": "0",
-								"end-index": "5"
+								"object": "Object",
+								"expression": "0",
+								"order": "ascending"
 							}
 						}
 					],
@@ -159,6 +169,32 @@
 							"parameters": {
 								"x": "loopindex",
 								"value": "1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Object",
+							"sid": 201246510015287,
+							"parameters": {
+								"frame-number": "loopindex"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Object",
+							"sid": 918127141295836,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "1",
+								"end-y": "1",
+								"time": "0.5 * (loopindex + 1)",
+								"ease": "easeinquint",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],
@@ -578,20 +614,28 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 145139761142034,
+					"parameters": {
+						"variable": "iterator",
+						"value": "-1"
+					}
+				}
+			],
 			"sid": 222676206472471,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "for",
+							"id": "for-each",
 							"objectClass": "System",
-							"sid": 670502896774843,
+							"sid": 834701718549455,
 							"parameters": {
-								"name": "\"\"",
-								"start-index": "1",
-								"end-index": "5"
+								"object": "Object"
 							}
 						}
 					],
@@ -599,48 +643,40 @@
 						{
 							"id": "set-at-x",
 							"objectClass": "ObjectMatchedCount",
-							"sid": 411336016758677,
+							"sid": 866309787710822,
 							"parameters": {
-								"x": "loopindex - 1",
+								"x": "loopindex",
 								"value": "0"
 							}
-						}
-					],
-					"sid": 594440785178883
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+						},
 						{
-							"id": "for",
+							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 165667333989053,
+							"sid": 921727469227511,
 							"parameters": {
-								"name": "\"Object1\"",
-								"start-index": "1",
-								"end-index": "JSON.Get(\"object1.\"&level&\".0\")"
+								"variable": "iterator",
+								"value": "1"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 679238837940308,
+					"sid": 208835950755907,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
+									"id": "for",
 									"objectClass": "System",
-									"sid": 531580747945556,
+									"sid": 443567146052245,
 									"parameters": {
-										"first-value": "objFlags.At(0)",
-										"comparison": 0,
-										"second-value": "1"
+										"name": "\"Object\"",
+										"start-index": "1",
+										"end-index": "JSON.Get(\"object\"&iterator&\".\"&level&\".0\")"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 690316948821218,
+							"sid": 990892025768939,
 							"children": [
 								{
 									"eventType": "block",
@@ -648,26 +684,16 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 349929711268556,
+											"sid": 442207428343568,
 											"parameters": {
-												"first-value": "lettersArr.At(JSON.Get(\"object1.\"&level&\".\"&loopindex))",
+												"first-value": "objFlags.At(iterator)",
 												"comparison": 0,
-												"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object1.\"&level&\".\"&loopindex))"
+												"second-value": "1"
 											}
 										}
 									],
-									"actions": [
-										{
-											"id": "set-at-x",
-											"objectClass": "ObjectMatchedCount",
-											"sid": 123969224495734,
-											"parameters": {
-												"x": "0",
-												"value": "ObjectMatchedCount.At(0) + 1"
-											}
-										}
-									],
-									"sid": 557005250396609,
+									"actions": [],
+									"sid": 512135975051439,
 									"children": [
 										{
 											"eventType": "block",
@@ -675,492 +701,73 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 268822414251348,
+													"sid": 443584756453918,
 													"parameters": {
-														"first-value": "JSON.Get(\"object1.\"&level&\".0\")",
+														"first-value": "lettersArr.At(JSON.Get(\"object\"&iterator&\".\"&level&\".\"&loopindex(\"Object\")))",
 														"comparison": 0,
-														"second-value": "ObjectMatchedCount.At(0)"
+														"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object\"&iterator&\".\"&level&\".\"&loopindex(\"Object\")))"
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "tween-two-properties",
-													"objectClass": "Object1",
-													"sid": 562802184993389,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "scale",
-														"end-x": "1.3",
-														"end-y": "1.3",
-														"time": "0.3",
-														"ease": "noease",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "yes",
-														"repeat-count": "1"
-													}
-												},
-												{
 													"id": "set-at-x",
-													"objectClass": "objFlags",
-													"sid": 530841679931411,
+													"objectClass": "ObjectMatchedCount",
+													"sid": 346469179581535,
 													"parameters": {
-														"x": "0",
-														"value": "0"
+														"x": "iterator",
+														"value": "ObjectMatchedCount.At(iterator) + 1"
 													}
 												}
 											],
-											"sid": 812794359595123
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 437776285651671,
-							"parameters": {
-								"name": "\"Object2.\"&level",
-								"start-index": "1",
-								"end-index": "JSON.Get(\"object2.\"&level&\".0\")"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 952110856704899,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 372574627627291,
-									"parameters": {
-										"first-value": "objFlags.At(1)",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 925720713609523,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 386139321282832,
-											"parameters": {
-												"first-value": "lettersArr.At(JSON.Get(\"object2.\"&level&\".\"&loopindex))",
-												"comparison": 0,
-												"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object2.\"&level&\".\"&loopindex))"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-at-x",
-											"objectClass": "ObjectMatchedCount",
-											"sid": 283166019569641,
-											"parameters": {
-												"x": "1",
-												"value": "ObjectMatchedCount.At(1) + 1"
-											}
-										}
-									],
-									"sid": 690760372528485,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
+											"sid": 233678953651272,
+											"children": [
 												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 896808348979623,
-													"parameters": {
-														"first-value": "JSON.Get(\"object2.\"&level&\".0\")",
-														"comparison": 0,
-														"second-value": "ObjectMatchedCount.At(1)"
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 411766089300990,
+															"parameters": {
+																"first-value": "JSON.Get(\"object\"&iterator&\".\"&level&\".0\")",
+																"comparison": 0,
+																"second-value": "ObjectMatchedCount.At(iterator)"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "tween-two-properties",
+															"objectClass": "Object",
+															"sid": 555533748775272,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "scale",
+																"end-x": "1.3",
+																"end-y": "1.3",
+																"time": "0.3",
+																"ease": "noease",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "yes",
+																"repeat-count": "1"
+															}
+														},
+														{
+															"id": "set-at-x",
+															"objectClass": "objFlags",
+															"sid": 970282289564347,
+															"parameters": {
+																"x": "iterator",
+																"value": "0"
+															}
+														}
+													],
+													"sid": 365340936627018
 												}
-											],
-											"actions": [
-												{
-													"id": "tween-two-properties",
-													"objectClass": "Object2",
-													"sid": 143693157070088,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "scale",
-														"end-x": "1.3",
-														"end-y": "1.3",
-														"time": "0.3",
-														"ease": "noease",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "yes",
-														"repeat-count": "1"
-													}
-												},
-												{
-													"id": "set-at-x",
-													"objectClass": "objFlags",
-													"sid": 539785374622421,
-													"parameters": {
-														"x": "1",
-														"value": "0"
-													}
-												}
-											],
-											"sid": 103965892653479
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 752653749325802,
-							"parameters": {
-								"name": "\"Object3\"",
-								"start-index": "1",
-								"end-index": "JSON.Get(\"object3.\"&level&\".0\")"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 214394130428151,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 290724742576503,
-									"parameters": {
-										"first-value": "objFlags.At(2)",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 408391228194318,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 979628137786734,
-											"parameters": {
-												"first-value": "lettersArr.At(JSON.Get(\"object3.\"&level&\".\"&loopindex))",
-												"comparison": 0,
-												"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object3.\"&level&\".\"&loopindex))"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-at-x",
-											"objectClass": "ObjectMatchedCount",
-											"sid": 265685152073700,
-											"parameters": {
-												"x": "2",
-												"value": "ObjectMatchedCount.At(2) + 1"
-											}
-										}
-									],
-									"sid": 966090175631622,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 811935636985851,
-													"parameters": {
-														"first-value": "JSON.Get(\"object3.\"&level&\".0\")",
-														"comparison": 0,
-														"second-value": "ObjectMatchedCount.At(2)"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "tween-two-properties",
-													"objectClass": "Object3",
-													"sid": 800464115997727,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "scale",
-														"end-x": "1.3",
-														"end-y": "1.3",
-														"time": "0.3",
-														"ease": "noease",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "yes",
-														"repeat-count": "1"
-													}
-												},
-												{
-													"id": "set-at-x",
-													"objectClass": "objFlags",
-													"sid": 704778967012980,
-													"parameters": {
-														"x": "2",
-														"value": "0"
-													}
-												}
-											],
-											"sid": 911648238120361
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 594520255883581,
-							"parameters": {
-								"name": "\"Object4\"",
-								"start-index": "1",
-								"end-index": "JSON.Get(\"object4.\"&level&\".0\")"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 387571279128831,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 156813734700142,
-									"parameters": {
-										"first-value": "objFlags.At(3)",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 591870189032484,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 939251899768273,
-											"parameters": {
-												"first-value": "lettersArr.At(JSON.Get(\"object4.\"&level&\".\"&loopindex))",
-												"comparison": 0,
-												"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object4.\"&level&\".\"&loopindex))"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-at-x",
-											"objectClass": "ObjectMatchedCount",
-											"sid": 542430990749886,
-											"parameters": {
-												"x": "3",
-												"value": "ObjectMatchedCount.At(3) + 1"
-											}
-										}
-									],
-									"sid": 715796889929511,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 875453157127444,
-													"parameters": {
-														"first-value": "JSON.Get(\"object4.\"&level&\".0\")",
-														"comparison": 0,
-														"second-value": "ObjectMatchedCount.At(3)"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "tween-two-properties",
-													"objectClass": "Object4",
-													"sid": 388961120545779,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "scale",
-														"end-x": "1.3",
-														"end-y": "1.3",
-														"time": "0.3",
-														"ease": "noease",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "yes",
-														"repeat-count": "1"
-													}
-												},
-												{
-													"id": "set-at-x",
-													"objectClass": "objFlags",
-													"sid": 805171106492067,
-													"parameters": {
-														"x": "3",
-														"value": "0"
-													}
-												}
-											],
-											"sid": 944890064793828
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 380374073111837,
-							"parameters": {
-								"name": "\"Object5\"",
-								"start-index": "1",
-								"end-index": "JSON.Get(\"object5.\"&level&\".0\")"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 548338701236741,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 988472491250372,
-									"parameters": {
-										"first-value": "objFlags.At(4)",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 486430576692036,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 345151362892397,
-											"parameters": {
-												"first-value": "lettersArr.At(JSON.Get(\"object5.\"&level&\".\"&loopindex))",
-												"comparison": 0,
-												"second-value": "JSON.Get(\"wordsArr.\"&level&\".\"&JSON.Get(\"object5.\"&level&\".\"&loopindex))"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-at-x",
-											"objectClass": "ObjectMatchedCount",
-											"sid": 609467788793440,
-											"parameters": {
-												"x": "4",
-												"value": "ObjectMatchedCount.At(4) + 1"
-											}
-										}
-									],
-									"sid": 203595315348425,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 544599711053625,
-													"parameters": {
-														"first-value": "JSON.Get(\"object5.\"&level&\".0\")",
-														"comparison": 0,
-														"second-value": "ObjectMatchedCount.At(4)"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "tween-two-properties",
-													"objectClass": "Object5",
-													"sid": 162566590327575,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "scale",
-														"end-x": "1.3",
-														"end-y": "1.3",
-														"time": "0.3",
-														"ease": "noease",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "yes",
-														"repeat-count": "1"
-													}
-												},
-												{
-													"id": "set-at-x",
-													"objectClass": "objFlags",
-													"sid": 503898875268470,
-													"parameters": {
-														"x": "4",
-														"value": "0"
-													}
-												}
-											],
-											"sid": 736682744029708
+											]
 										}
 									]
 								}
