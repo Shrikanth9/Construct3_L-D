@@ -145,150 +145,7 @@
 					}
 				}
 			],
-			"sid": 602899508687515,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 620846977837452,
-							"parameters": {
-								"name": "\"\"",
-								"start-index": "0",
-								"end-index": "JSON.ArraySize(\"blockPositions.\"&level)"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 799366371501767,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "blocks",
-									"sid": 280611282577372,
-									"parameters": {
-										"unique-id": "initialBlocksUID + loopindex"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "blocks",
-									"sid": 436873717338042,
-									"parameters": {
-										"x": "JSON.Get(\"blockPositions.\"&level&\".\"&loopindex&\".0\")",
-										"y": "JSON.Get(\"blockPositions.\"&level&\".\"&loopindex&\".1\")"
-									}
-								}
-							],
-							"sid": 983767587743225
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 430218469235944,
-							"parameters": {
-								"name": "\"\"",
-								"start-index": "0",
-								"end-index": "JSON.ArraySize(\"arrowSmallPositionsAndAngles.\"&level)"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 580027199466146,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "arrowSmall",
-									"sid": 164933548478482,
-									"parameters": {
-										"unique-id": "arrowSmall.UID + loopindex"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "arrowSmall",
-									"sid": 917854843524275,
-									"parameters": {
-										"x": "JSON.Get(\"arrowSmallPositionsAndAngles\"&level&\".\"&loopindex&\".0\")",
-										"y": "JSON.Get(\"arrowSmallPositionsAndAngles.\"&level&\".\"&loopindex&\".1\")"
-									}
-								}
-							],
-							"sid": 383390265862648
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each-ordered",
-							"objectClass": "System",
-							"sid": 575039811454549,
-							"parameters": {
-								"object": "Object",
-								"expression": "0",
-								"order": "ascending"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-at-x",
-							"objectClass": "objFlags",
-							"sid": 222729256055593,
-							"parameters": {
-								"x": "loopindex",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Object",
-							"sid": 201246510015287,
-							"parameters": {
-								"frame-number": "loopindex"
-							}
-						},
-						{
-							"id": "tween-two-properties",
-							"objectClass": "Object",
-							"sid": 918127141295836,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "scale",
-								"end-x": "1",
-								"end-y": "1",
-								"time": "0.5 * (loopindex + 1)",
-								"ease": "easeinquint",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						}
-					],
-					"sid": 674428216605695
-				}
-			]
+			"sid": 602899508687515
 		},
 		{
 			"eventType": "block",
@@ -863,7 +720,210 @@
 					}
 				}
 			],
-			"sid": 530631582443477
+			"sid": 530631582443477,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 422370767257856,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "JSON.ArraySize(\"blockPositions.\"&level)"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 857388061020515,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "blocks",
+									"sid": 711189708740967,
+									"parameters": {
+										"unique-id": "initialBlocksUID + loopindex"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "blocks",
+									"sid": 323878522261059,
+									"parameters": {
+										"x": "JSON.Get(\"blockPositions.\"&level&\".\"&loopindex&\".0\")",
+										"y": "JSON.Get(\"blockPositions.\"&level&\".\"&loopindex&\".1\")"
+									}
+								}
+							],
+							"sid": 685874075974722
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 896618296863256,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "JSON.ArraySize(\"arrowSmallPositionsAndAngles.\"&level) - 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 146128940956856,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "arrowSmall",
+									"sid": 383405210332106,
+									"parameters": {
+										"unique-id": "arrowSmall.UID + loopindex"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "arrowSmall",
+									"sid": 237879991678380,
+									"parameters": {
+										"x": "JSON.Get(\"arrowSmallPositionsAndAngles.\"&level&\".\"&loopindex&\".0\")",
+										"y": "JSON.Get(\"arrowSmallPositionsAndAngles.\"&level&\".\"&loopindex&\".1\")"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "arrowSmall",
+									"sid": 605110549833209,
+									"parameters": {
+										"angle": "JSON.Get(\"arrowSmallPositionsAndAngles.\"&level&\".\"&loopindex&\".2\")"
+									}
+								}
+							],
+							"sid": 369425986825823
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 423215270596351,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "JSON.ArraySize(\"arrowPositionsAndAngles.\"&level) - 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 930795274187457,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "arrow",
+									"sid": 305957064695371,
+									"parameters": {
+										"unique-id": "arrow.UID + loopindex"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "arrow",
+									"sid": 988673815444340,
+									"parameters": {
+										"x": "JSON.Get(\"arrowPositionsAndAngles.\"&level&\".\"&loopindex&\".0\")",
+										"y": "JSON.Get(\"arrowPositionsAndAngles.\"&level&\".\"&loopindex&\".1\")"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "arrow",
+									"sid": 903301435479767,
+									"parameters": {
+										"angle": "JSON.Get(\"arrowPositionsAndAngles.\"&level&\".\"&loopindex&\".2\")"
+									}
+								}
+							],
+							"sid": 762827426790128
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 271338387030241,
+							"parameters": {
+								"object": "Object",
+								"expression": "0",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-at-x",
+							"objectClass": "objFlags",
+							"sid": 244572617814429,
+							"parameters": {
+								"x": "loopindex",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Object",
+							"sid": 448724959184927,
+							"parameters": {
+								"frame-number": "loopindex"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Object",
+							"sid": 931776685415729,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "1",
+								"end-y": "1",
+								"time": "0.5 * (loopindex + 1)",
+								"ease": "easeinquint",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 750423646128310
+				}
+			]
 		}
 	],
 	"sid": 124482044317374
