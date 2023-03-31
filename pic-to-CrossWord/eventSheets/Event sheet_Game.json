@@ -53,56 +53,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "flag",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 803659660954061
-		},
-		{
-			"eventType": "variable",
-			"name": "flag2",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 715096849366128
-		},
-		{
-			"eventType": "variable",
-			"name": "flag3",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 241926933718218
-		},
-		{
-			"eventType": "variable",
-			"name": "flag4",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 104746673121849
-		},
-		{
-			"eventType": "variable",
-			"name": "flag5",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 828447999895068
-		},
-		{
-			"eventType": "variable",
 			"name": "level",
 			"type": "number",
 			"initialValue": "0",
@@ -185,7 +135,36 @@
 					}
 				}
 			],
-			"sid": 602899508687515
+			"sid": 602899508687515,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 897832069441300,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-at-x",
+							"objectClass": "objFlags",
+							"sid": 222729256055593,
+							"parameters": {
+								"x": "loopindex",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 674428216605695
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -344,13 +323,38 @@
 								"instance-variable": "alphabet",
 								"value": "\"\""
 							}
-						},
-						{
-							"callFunction": "isNotFilled",
-							"sid": 256950798924327
 						}
 					],
-					"sid": 653025738683699
+					"sid": 653025738683699,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 427615540758467,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "JSON.ArraySize(\"belongTo.\"&level&\".\"&index) - 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-x",
+									"objectClass": "objFlags",
+									"sid": 103859720309774,
+									"parameters": {
+										"x": "JSON.Get(\"belongTo.\"&level&\".\"&index&\".\"&loopindex) - 1",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 883983419161380
+						}
+					]
 				}
 			]
 		},
@@ -625,11 +629,13 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-boolean-eventvar",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 802661331139539,
+									"sid": 531580747945556,
 									"parameters": {
-										"variable": "flag"
+										"first-value": "objFlags.At(0)",
+										"comparison": 0,
+										"second-value": "1"
 									}
 								}
 							],
@@ -697,12 +703,12 @@
 													}
 												},
 												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 783874464645614,
+													"id": "set-at-x",
+													"objectClass": "objFlags",
+													"sid": 530841679931411,
 													"parameters": {
-														"variable": "flag",
-														"value": "false"
+														"x": "0",
+														"value": "0"
 													}
 												}
 											],
@@ -735,11 +741,13 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-boolean-eventvar",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 555663188899981,
+									"sid": 372574627627291,
 									"parameters": {
-										"variable": "flag2"
+										"first-value": "objFlags.At(1)",
+										"comparison": 0,
+										"second-value": "1"
 									}
 								}
 							],
@@ -807,12 +815,12 @@
 													}
 												},
 												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 840299706500643,
+													"id": "set-at-x",
+													"objectClass": "objFlags",
+													"sid": 539785374622421,
 													"parameters": {
-														"variable": "flag2",
-														"value": "false"
+														"x": "1",
+														"value": "0"
 													}
 												}
 											],
@@ -845,11 +853,13 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-boolean-eventvar",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 610455517971916,
+									"sid": 290724742576503,
 									"parameters": {
-										"variable": "flag3"
+										"first-value": "objFlags.At(2)",
+										"comparison": 0,
+										"second-value": "1"
 									}
 								}
 							],
@@ -917,12 +927,12 @@
 													}
 												},
 												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 351826135969410,
+													"id": "set-at-x",
+													"objectClass": "objFlags",
+													"sid": 704778967012980,
 													"parameters": {
-														"variable": "flag3",
-														"value": "false"
+														"x": "2",
+														"value": "0"
 													}
 												}
 											],
@@ -955,11 +965,13 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-boolean-eventvar",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 907467488424044,
+									"sid": 156813734700142,
 									"parameters": {
-										"variable": "flag4"
+										"first-value": "objFlags.At(3)",
+										"comparison": 0,
+										"second-value": "1"
 									}
 								}
 							],
@@ -1027,12 +1039,12 @@
 													}
 												},
 												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 897307573619838,
+													"id": "set-at-x",
+													"objectClass": "objFlags",
+													"sid": 805171106492067,
 													"parameters": {
-														"variable": "flag4",
-														"value": "false"
+														"x": "3",
+														"value": "0"
 													}
 												}
 											],
@@ -1065,11 +1077,13 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-boolean-eventvar",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 819655048226224,
+									"sid": 988472491250372,
 									"parameters": {
-										"variable": "flag5"
+										"first-value": "objFlags.At(4)",
+										"comparison": 0,
+										"second-value": "1"
 									}
 								}
 							],
@@ -1137,12 +1151,12 @@
 													}
 												},
 												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 874519176801018,
+													"id": "set-at-x",
+													"objectClass": "objFlags",
+													"sid": 503898875268470,
 													"parameters": {
-														"variable": "flag5",
-														"value": "false"
+														"x": "4",
+														"value": "0"
 													}
 												}
 											],
@@ -1151,251 +1165,6 @@
 									]
 								}
 							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"functionName": "isNotFilled",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 668541996398434,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 484243277619953,
-							"parameters": {
-								"name": "\"\"",
-								"start-index": "1",
-								"end-index": "JSON.get(\"object1.\"&level&\".0\")"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 559807073298005,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 283845879178665,
-									"parameters": {
-										"first-value": "lettersArr.At(JSON.Get(\"object1.\"&level&\".\"&loopindex))",
-										"comparison": 0,
-										"second-value": "\"\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 606992925642987,
-									"parameters": {
-										"variable": "flag",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 695779846112663
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 130438640365859,
-							"parameters": {
-								"name": "\"\"",
-								"start-index": "1",
-								"end-index": "JSON.get(\"object2.\"&level&\".0\")"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 391346630121914,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 680945381922439,
-									"parameters": {
-										"first-value": "lettersArr.At(JSON.Get(\"object2.\"&level&\".\"&loopindex))",
-										"comparison": 0,
-										"second-value": "\"\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 211131210052603,
-									"parameters": {
-										"variable": "flag2",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 949018526583104
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 942375616577438,
-							"parameters": {
-								"name": "\"\"",
-								"start-index": "1",
-								"end-index": "JSON.get(\"object3.\"&level&\".0\")"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 731467475051256,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 904034568421410,
-									"parameters": {
-										"first-value": "lettersArr.At(JSON.Get(\"object3.\"&level&\".\"&loopindex))",
-										"comparison": 0,
-										"second-value": "\"\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 734160008905781,
-									"parameters": {
-										"variable": "flag3",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 209705839348451
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 869006288653638,
-							"parameters": {
-								"name": "\"\"",
-								"start-index": "1",
-								"end-index": "JSON.get(\"object4.\"&level&\".0\")"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 743952021145319,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 130738306512677,
-									"parameters": {
-										"first-value": "lettersArr.At(JSON.Get(\"object4.\"&level&\".\"&loopindex))",
-										"comparison": 0,
-										"second-value": "\"\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 751307958357847,
-									"parameters": {
-										"variable": "flag4",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 552729452047107
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 939701903635560,
-							"parameters": {
-								"name": "\"\"",
-								"start-index": "1",
-								"end-index": "JSON.get(\"object5.\"&level&\".0\")"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 892132693075958,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 988425733397537,
-									"parameters": {
-										"first-value": "lettersArr.At(JSON.Get(\"object5.\"&level&\".\"&loopindex))",
-										"comparison": 0,
-										"second-value": "\"\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 645956229799742,
-									"parameters": {
-										"variable": "flag5",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 378039157441578
 						}
 					]
 				}
