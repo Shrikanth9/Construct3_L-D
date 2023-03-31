@@ -90,7 +90,13 @@
 			"JSON",
 			"lettersArr",
 			"ObjectMatchedCount",
-			"objFlags"
+			"objFlags",
+			"HomeBG",
+			"gameTitle",
+			"play",
+			"Sprite",
+			"LevelBG",
+			"level1"
 		],
 		"subfolders": []
 	},
@@ -102,28 +108,23 @@
 	},
 	"layouts": {
 		"items": [
-			"Game"
+			"Home",
+			"Game",
+			"Intermediate"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet_Game"
+			"Event sheet_Game",
+			"Event sheet_Home",
+			"Event sheet_Intermediate"
 		],
 		"subfolders": []
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [
-				{
-					"name": "main.js",
-					"type": "application/javascript",
-					"sid": 581905504228051,
-					"script-info": {
-						"purpose": "main"
-					}
-				}
-			],
+			"items": [],
 			"subfolders": []
 		},
 		"sound": {

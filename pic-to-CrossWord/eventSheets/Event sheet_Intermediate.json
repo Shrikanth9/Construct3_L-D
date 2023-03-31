@@ -1,0 +1,136 @@
+{
+	"name": "Event sheet_Intermediate",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-touch",
+					"objectClass": "Touch",
+					"sid": 488650512822127
+				}
+			],
+			"actions": [],
+			"sid": 252033994538157,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 233573803554491,
+							"parameters": {
+								"object": "LevelBG"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LevelBG",
+							"sid": 232561438291294,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "level1",
+							"sid": 673906008815680,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 896703964809629
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 410655457831205
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LevelBG",
+							"sid": 543188887066114,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "level1",
+							"sid": 790495971355436,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 353539748804408
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 777940873479387
+				}
+			],
+			"actions": [],
+			"sid": 303015318049110,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "LevelBG",
+							"sid": 698982783832667,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "level1",
+							"sid": 841376327735504,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "LevelBG",
+							"sid": 608320763993474,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 690416925850408,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 207765824977372
+				}
+			]
+		}
+	],
+	"sid": 603419249078564
+}

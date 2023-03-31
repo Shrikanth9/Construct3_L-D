@@ -1,0 +1,122 @@
+{
+	"name": "Event sheet_Home",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "touchflag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 421697609249142
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-touch",
+					"objectClass": "Touch",
+					"sid": 529374929649560
+				}
+			],
+			"actions": [],
+			"sid": 525618653762882,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 596944902241348,
+							"parameters": {
+								"object": "play"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "play",
+							"sid": 614416514576256,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 172442247859049
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 404419851313164
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "play",
+							"sid": 591413797349938,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 798504463288454
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 425122024969089
+				}
+			],
+			"actions": [],
+			"sid": 607408705975143,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "play",
+							"sid": 605139943116638,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "play",
+							"sid": 855967851531574,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 943162805205793,
+							"parameters": {
+								"layout": "Intermediate"
+							}
+						}
+					],
+					"sid": 873002131094829
+				}
+			]
+		}
+	],
+	"sid": 887496002353309
+}
