@@ -55,7 +55,7 @@
 			"eventType": "variable",
 			"name": "level",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -72,6 +72,16 @@
 			"sid": 729414436385273
 		},
 		{
+			"eventType": "variable",
+			"name": "matchCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 275303336969823
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -81,6 +91,48 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 897584264006835,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "blocks",
+					"sid": 394969157113605,
+					"parameters": {
+						"x": "50",
+						"y": "-50"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "back",
+					"sid": 567992982204736,
+					"parameters": {
+						"frame-number": "2 * level"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "footer",
+					"sid": 711536292931243,
+					"parameters": {
+						"frame-number": "level"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "gameBG",
+					"sid": 563263794105173,
+					"parameters": {
+						"frame-number": "level"
+					}
+				},
 				{
 					"id": "add-child",
 					"objectClass": "dragTile",
@@ -94,6 +146,59 @@
 						"transform-a": true,
 						"transform-z-elevation": true,
 						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "levelComplete",
+					"sid": 135362251554160,
+					"parameters": {
+						"child": "home",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": true,
+						"transform-h": true,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "levelComplete",
+					"sid": 662192022359825,
+					"parameters": {
+						"child": "next",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": true,
+						"transform-h": true,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "levelComplete",
+					"sid": 146637334044704,
+					"parameters": {
+						"child": "Sprite2",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": true,
+						"transform-h": true,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "levelComplete",
+					"sid": 966469807727794,
+					"parameters": {
+						"scale": "0"
 					}
 				},
 				{
@@ -176,164 +281,341 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
+					"id": "is-in-touch",
 					"objectClass": "Touch",
-					"sid": 966632003076022,
-					"parameters": {
-						"object": "alphabets"
-					}
+					"sid": 314080789788158
 				}
 			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "dragAlphabet",
-					"sid": 352522996391825,
-					"parameters": {
-						"text": "alphabets.Text"
-					}
-				},
-				{
-					"id": "move-to-top",
-					"objectClass": "dragTile",
-					"sid": 178262415039524
-				},
-				{
-					"id": "move-to-top",
-					"objectClass": "dragAlphabet",
-					"sid": 597151039291676
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "dragAlphabet",
-					"sid": 283740702278237,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "dragTile",
-					"sid": 685729717336784,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 121611156974180,
-					"parameters": {
-						"variable": "dragFlag",
-						"value": "true"
-					}
-				}
-			],
-			"sid": 972936796439536
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 322255285891060,
-					"parameters": {
-						"object": "blockAlphabets"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position",
-					"objectClass": "blockAlphabets",
-					"sid": 790041420847791,
-					"parameters": {
-						"x": "50",
-						"y": "-50"
-					}
-				}
-			],
-			"sid": 960859685045501,
+			"actions": [],
+			"sid": 677461938637437,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
-							"objectClass": "blocks",
-							"sid": 382367681551451,
-							"parameters": {
-								"unique-id": "blockAlphabets.UID - uidDiff"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
+							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 871309309668697,
+							"sid": 328345768046711,
 							"parameters": {
-								"variable": "index",
-								"value": "blocks.UID - initialBlocksUID"
-							}
-						},
-						{
-							"id": "set-at-x",
-							"objectClass": "lettersArr",
-							"sid": 120738984972307,
-							"parameters": {
-								"x": "index",
-								"value": "\"\""
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "blocks",
-							"sid": 842160680267594,
-							"parameters": {
-								"instance-variable": "notFilled",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "blocks",
-							"sid": 936401319314491,
-							"parameters": {
-								"instance-variable": "alphabet",
-								"value": "\"\""
+								"variable": "touchflag"
 							}
 						}
 					],
-					"sid": 653025738683699,
+					"actions": [],
+					"sid": 707757752550462,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "for",
-									"objectClass": "System",
-									"sid": 427615540758467,
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 975560575856154,
 									"parameters": {
-										"name": "\"\"",
-										"start-index": "0",
-										"end-index": "JSON.ArraySize(\"belongTo.\"&level&\".\"&index) - 1"
+										"object": "back"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-at-x",
-									"objectClass": "objFlags",
-									"sid": 103859720309774,
+									"id": "set-animation-frame",
+									"objectClass": "back",
+									"sid": 901581245054770,
 									"parameters": {
-										"x": "JSON.Get(\"belongTo.\"&level&\".\"&index&\".\"&loopindex) - 1",
-										"value": "1"
+										"frame-number": "2 * level + 1"
 									}
 								}
 							],
-							"sid": 883983419161380
+							"sid": 602338038010133
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 753611465046741
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "back",
+									"sid": 122281405257812,
+									"parameters": {
+										"frame-number": "2 * level"
+									}
+								}
+							],
+							"sid": 516799324399843
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 116331177972846,
+							"parameters": {
+								"object": "home"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "home",
+							"sid": 235215110181751,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 160182638366759
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 338587317425516
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "home",
+							"sid": 855656685677421,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 787607966683556
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 889535181001183,
+							"parameters": {
+								"object": "next"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "next",
+							"sid": 557854478626534,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 119325639755606
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 980012070987082
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "next",
+							"sid": 557271124071426,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 784523622060667
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 155518340025466,
+					"parameters": {
+						"variable": "touchflag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 499562102116102,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 198119030121906,
+							"parameters": {
+								"object": "alphabets"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "dragAlphabet",
+							"sid": 221492345902626,
+							"parameters": {
+								"text": "alphabets.Text"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "dragTile",
+							"sid": 495965468328243
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "dragAlphabet",
+							"sid": 606831615296580
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "dragAlphabet",
+							"sid": 216413950164091,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "dragTile",
+							"sid": 595184408617627,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 152167988323472,
+							"parameters": {
+								"variable": "dragFlag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 600918183007795
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 747931894318320,
+							"parameters": {
+								"object": "blockAlphabets"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "blockAlphabets",
+							"sid": 768005418146673,
+							"parameters": {
+								"x": "50",
+								"y": "-50"
+							}
+						}
+					],
+					"sid": 176398888397193,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "blocks",
+									"sid": 753522656687331,
+									"parameters": {
+										"unique-id": "blockAlphabets.UID - uidDiff"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 240862495804893,
+									"parameters": {
+										"audio-file": "remove",
+										"loop": "not-looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 311386478266969,
+									"parameters": {
+										"variable": "index",
+										"value": "blocks.UID - initialBlocksUID"
+									}
+								},
+								{
+									"id": "set-at-x",
+									"objectClass": "lettersArr",
+									"sid": 111043108165945,
+									"parameters": {
+										"x": "index",
+										"value": "\"\""
+									}
+								}
+							],
+							"sid": 940420553843253,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 595032976667779,
+											"parameters": {
+												"name": "\"\"",
+												"start-index": "0",
+												"end-index": "JSON.ArraySize(\"belongTo.\"&level&\".\"&index) - 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-at-x",
+											"objectClass": "objFlags",
+											"sid": 122704476120097,
+											"parameters": {
+												"x": "JSON.Get(\"belongTo.\"&level&\".\"&index&\".\"&loopindex) - 1",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 164763923124862
+								}
+							]
 						}
 					]
 				}
@@ -345,14 +627,14 @@
 				{
 					"id": "on-any-touch-end",
 					"objectClass": "Touch",
-					"sid": 525866311898404
+					"sid": 243946149431060
 				}
 			],
 			"actions": [
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 181405843271925,
+					"sid": 879639290546581,
 					"parameters": {
 						"variable": "dragFlag",
 						"value": "false"
@@ -361,7 +643,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "dragAlphabet",
-					"sid": 620508611362352,
+					"sid": 803104490663914,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -369,7 +651,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "dragTile",
-					"sid": 501058018354047,
+					"sid": 755809597294535,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -377,26 +659,205 @@
 				{
 					"id": "set-visible",
 					"objectClass": "dragTile",
-					"sid": 868626372894517,
+					"sid": 604076756230631,
 					"parameters": {
 						"visibility": "invisible"
 					}
 				},
 				{
 					"callFunction": "PlacingAlphabets",
-					"sid": 354218058422752
+					"sid": 928690715373108
 				},
 				{
 					"id": "set-position",
 					"objectClass": "dragTile",
-					"sid": 119527293111833,
+					"sid": 262003522928427,
 					"parameters": {
 						"x": "50",
 						"y": "-50"
 					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 892509103766654,
+					"parameters": {
+						"type": "log",
+						"message": "matchCount"
+					}
 				}
 			],
-			"sid": 526411725957119
+			"sid": 714572833145067,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "back",
+							"sid": 691206195704757,
+							"parameters": {
+								"comparison": 0,
+								"number": "2 * level + 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 873688482807368,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "back",
+							"sid": 346415328399166,
+							"parameters": {
+								"frame-number": "2 * level"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 445530033144651,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 550492398188969,
+							"parameters": {
+								"layout": "Home"
+							}
+						}
+					],
+					"sid": 563734045470534
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "home",
+							"sid": 822678082625773,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 233671732263437,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "home",
+							"sid": 808914086286695,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 623770990839844,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 835165432643202,
+							"parameters": {
+								"layout": "Home"
+							}
+						}
+					],
+					"sid": 533805398314461
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "next",
+							"sid": 510056403936054,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 118483623418891,
+							"parameters": {
+								"audio-file": "tap",
+								"loop": "not-looping",
+								"volume": "volume",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 982257205760643,
+							"parameters": {
+								"variable": "level",
+								"value": "(level + 1) % 2"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "next",
+							"sid": 311744467928252,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 559436835375454,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 369100518035159,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 894761076773063
+				}
+			]
 		},
 		{
 			"functionName": "PlacingAlphabets",
@@ -469,20 +930,23 @@
 									],
 									"actions": [
 										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 329284824914820,
+											"parameters": {
+												"audio-file": "place",
+												"loop": "not-looping",
+												"volume": "volume",
+												"stereo-pan": "0",
+												"tag-optional": "\"place\""
+											}
+										},
+										{
 											"id": "set-text",
 											"objectClass": "blockAlphabets",
 											"sid": 994415669523139,
 											"parameters": {
 												"text": "dragAlphabet.Text"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "blocks",
-											"sid": 962012763355022,
-											"parameters": {
-												"instance-variable": "alphabet",
-												"value": "dragAlphabet.Text"
 											}
 										},
 										{
@@ -492,15 +956,6 @@
 											"parameters": {
 												"x": "blocks.X",
 												"y": "blocks.Y"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "blocks",
-											"sid": 518166274501414,
-											"parameters": {
-												"instance-variable": "notFilled",
-												"value": "false"
 											}
 										},
 										{
@@ -659,6 +1114,26 @@
 													],
 													"actions": [
 														{
+															"id": "stop",
+															"objectClass": "Audio",
+															"sid": 809606505229315,
+															"parameters": {
+																"tag": "\"place\""
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 993753152942875,
+															"parameters": {
+																"audio-file": "match",
+																"loop": "not-looping",
+																"volume": "volume",
+																"stereo-pan": "0",
+																"tag-optional": "\"match\""
+															}
+														},
+														{
 															"id": "tween-two-properties",
 															"objectClass": "Object",
 															"sid": 555533748775272,
@@ -683,6 +1158,15 @@
 															"parameters": {
 																"x": "iterator",
 																"value": "0"
+															}
+														},
+														{
+															"id": "add-to-eventvar",
+															"objectClass": "System",
+															"sid": 263400881898755,
+															"parameters": {
+																"variable": "matchCount",
+																"value": "1"
 															}
 														}
 													],
@@ -728,11 +1212,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 422370767257856,
+							"sid": 190654822537210,
 							"parameters": {
 								"name": "\"\"",
 								"start-index": "0",
-								"end-index": "JSON.ArraySize(\"blockPositions.\"&level)"
+								"end-index": "JSON.ArraySize(\"blockPositions.\"&level) - 1"
 							}
 						}
 					],
@@ -763,110 +1247,6 @@
 								}
 							],
 							"sid": 685874075974722
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 896618296863256,
-							"parameters": {
-								"name": "\"\"",
-								"start-index": "0",
-								"end-index": "JSON.ArraySize(\"arrowSmallPositionsAndAngles.\"&level) - 1"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 146128940956856,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "arrowSmall",
-									"sid": 383405210332106,
-									"parameters": {
-										"unique-id": "arrowSmall.UID + loopindex"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "arrowSmall",
-									"sid": 237879991678380,
-									"parameters": {
-										"x": "JSON.Get(\"arrowSmallPositionsAndAngles.\"&level&\".\"&loopindex&\".0\")",
-										"y": "JSON.Get(\"arrowSmallPositionsAndAngles.\"&level&\".\"&loopindex&\".1\")"
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "arrowSmall",
-									"sid": 605110549833209,
-									"parameters": {
-										"angle": "JSON.Get(\"arrowSmallPositionsAndAngles.\"&level&\".\"&loopindex&\".2\")"
-									}
-								}
-							],
-							"sid": 369425986825823
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 423215270596351,
-							"parameters": {
-								"name": "\"\"",
-								"start-index": "0",
-								"end-index": "JSON.ArraySize(\"arrowPositionsAndAngles.\"&level) - 1"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 930795274187457,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "arrow",
-									"sid": 305957064695371,
-									"parameters": {
-										"unique-id": "arrow.UID + loopindex"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "arrow",
-									"sid": 988673815444340,
-									"parameters": {
-										"x": "JSON.Get(\"arrowPositionsAndAngles.\"&level&\".\"&loopindex&\".0\")",
-										"y": "JSON.Get(\"arrowPositionsAndAngles.\"&level&\".\"&loopindex&\".1\")"
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "arrow",
-									"sid": 903301435479767,
-									"parameters": {
-										"angle": "JSON.Get(\"arrowPositionsAndAngles.\"&level&\".\"&loopindex&\".2\")"
-									}
-								}
-							],
-							"sid": 762827426790128
 						}
 					]
 				},

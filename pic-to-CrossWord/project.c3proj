@@ -22,6 +22,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -83,9 +90,7 @@
 			"blocks",
 			"blockAlphabets",
 			"Browser",
-			"arrow",
 			"Object",
-			"arrowSmall",
 			"AJAX",
 			"JSON",
 			"lettersArr",
@@ -95,8 +100,15 @@
 			"gameTitle",
 			"play",
 			"Sprite",
-			"LevelBG",
-			"level1"
+			"LevelBG1",
+			"level1",
+			"Sound",
+			"Audio",
+			"back",
+			"levelComplete",
+			"Sprite2",
+			"home",
+			"next"
 		],
 		"subfolders": []
 	},
@@ -109,16 +121,14 @@
 	"layouts": {
 		"items": [
 			"Home",
-			"Game",
-			"Intermediate"
+			"Game"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
 			"Event sheet_Game",
-			"Event sheet_Home",
-			"Event sheet_Intermediate"
+			"Event sheet_Home"
 		],
 		"subfolders": []
 	},
@@ -128,7 +138,64 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "game.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 125930473071491,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "match.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 591532309367423,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "remove.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 210221598579837,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "tap.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 282086194006380,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "place.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 740415267195285,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "levelcomplete.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 226757992461516,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ba95dabe-ea34-49d0-9a85-5345dc268b1e.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 636039544375159,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

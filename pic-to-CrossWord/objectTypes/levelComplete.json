@@ -1,41 +1,47 @@
 {
-	"name": "arrowSmall",
+	"name": "levelComplete",
 	"plugin-id": "Sprite",
-	"sid": 708135670796561,
+	"sid": 326018808430800,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 571344831630825
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 80,
-						"height": 28,
+						"width": 732,
+						"height": 589,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1182579,
+						"imageSpriteId": 1495992,
 						"collisionPoly": {
 							"points": [
-								0.09999999999999998,
-								0.2857142857142857,
+								0.015195719349650997,
+								0.01888062759791581,
 								0.5,
-								0.0714285714285714,
-								0.85,
-								0.4285714285714286,
-								0.9,
+								0.001697792869269949,
+								0.984804280650349,
+								0.01888062759791581,
+								0.9986338797814208,
 								0.5,
-								0.8,
-								0.4285714285714286,
+								0.984804280650349,
+								0.9811193724020841,
 								0.5,
-								0.2142857142857143,
-								0.125,
-								0.6428571428571429,
-								0.050000000000000044,
+								0.99830220713073,
+								0.015195719349650997,
+								0.9811193724020841,
+								0.001366120218579235,
 								0.5
 							]
 						},
@@ -43,7 +49,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 282112767484424,
+				"sid": 491863391505780,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
