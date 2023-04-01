@@ -55,7 +55,7 @@
 			"eventType": "variable",
 			"name": "level",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "1",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -895,11 +895,20 @@
 							}
 						},
 						{
+							"id": "set-position",
+							"objectClass": "Object",
+							"sid": 440591643539314,
+							"parameters": {
+								"x": "JSON.Get(\"ObjectPositions.\"&level&\".\"&loopindex&\".0\")",
+								"y": "JSON.Get(\"ObjectPositions.\"&level&\".\"&loopindex&\".1\")"
+							}
+						},
+						{
 							"id": "set-animation-frame",
 							"objectClass": "Object",
-							"sid": 448724959184927,
+							"sid": 289960521400515,
 							"parameters": {
-								"frame-number": "loopindex"
+								"frame-number": "loopindex + (level * 5)"
 							}
 						},
 						{
