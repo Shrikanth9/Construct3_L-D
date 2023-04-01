@@ -99,14 +99,11 @@
 			"HomeBG",
 			"gameTitle",
 			"play",
-			"Sprite",
-			"LevelBG1",
-			"level1",
 			"Sound",
 			"Audio",
 			"back",
 			"levelComplete",
-			"Sprite2",
+			"star",
 			"home",
 			"next"
 		],
@@ -188,7 +185,7 @@
 					}
 				},
 				{
-					"name": "ba95dabe-ea34-49d0-9a85-5345dc268b1e.webm",
+					"name": "gamecomplete.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 636039544375159,
 					"file-info": {

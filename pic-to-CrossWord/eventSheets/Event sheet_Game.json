@@ -183,7 +183,7 @@
 					"objectClass": "levelComplete",
 					"sid": 146637334044704,
 					"parameters": {
-						"child": "Sprite2",
+						"child": "star",
 						"transform-x": true,
 						"transform-y": true,
 						"transform-w": true,
@@ -602,18 +602,46 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 164763923124862,
+									"children": [
 										{
-											"id": "set-at-x",
-											"objectClass": "objFlags",
-											"sid": 122704476120097,
-											"parameters": {
-												"x": "JSON.Get(\"belongTo.\"&level&\".\"&index&\".\"&loopindex) - 1",
-												"value": "1"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 210690613962307,
+													"parameters": {
+														"first-value": "objFlags.At(JSON.Get(\"belongTo.\"&level&\".\"&index&\".\"&loopindex) - 1)",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-at-x",
+													"objectClass": "objFlags",
+													"sid": 814568912486601,
+													"parameters": {
+														"x": "JSON.Get(\"belongTo.\"&level&\".\"&index&\".\"&loopindex) - 1",
+														"value": "1"
+													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 757184300494863,
+													"parameters": {
+														"variable": "matchCount",
+														"value": "-1"
+													}
+												}
+											],
+											"sid": 228800891167522
 										}
-									],
-									"sid": 164763923124862
+									]
 								}
 							]
 						}
@@ -1313,6 +1341,71 @@
 					"sid": 750423646128310
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 186209402731765,
+					"parameters": {
+						"variable": "matchCount",
+						"comparison": 0,
+						"value": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 869523574306819,
+					"parameters": {
+						"variable": "matchCount",
+						"value": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 349216210314237,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "levelComplete",
+					"sid": 427503945195810,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "1",
+						"end-y": "1",
+						"time": "0.4",
+						"ease": "easeoutbounce",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 443319205921717,
+					"parameters": {
+						"audio-file": "levelcomplete",
+						"loop": "not-looping",
+						"volume": "volume",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 794594804444859
 		}
 	],
 	"sid": 124482044317374
