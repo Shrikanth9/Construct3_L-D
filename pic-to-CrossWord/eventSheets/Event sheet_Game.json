@@ -82,6 +82,16 @@
 			"sid": 275303336969823
 		},
 		{
+			"eventType": "variable",
+			"name": "levelCount",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 353859026123972
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -860,10 +870,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 982257205760643,
+							"sid": 408578836705602,
 							"parameters": {
 								"variable": "level",
-								"value": "(level + 1) % 2"
+								"value": "(level + 1) % levelCount"
 							}
 						},
 						{
@@ -1356,11 +1366,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 202717144401683,
+					"sid": 481896431106588,
 					"parameters": {
 						"variable": "matchCount",
 						"comparison": 0,
-						"value": "1"
+						"value": "5"
 					}
 				}
 			],
