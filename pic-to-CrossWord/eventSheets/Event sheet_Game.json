@@ -202,6 +202,14 @@
 					}
 				},
 				{
+					"id": "set-scale",
+					"objectClass": "semilayer",
+					"sid": 244438595384136,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
 					"sid": 340153604136610,
@@ -1348,11 +1356,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 186209402731765,
+					"sid": 202717144401683,
 					"parameters": {
 						"variable": "matchCount",
 						"comparison": 0,
-						"value": "5"
+						"value": "1"
 					}
 				}
 			],
@@ -1372,6 +1380,14 @@
 					"sid": 349216210314237,
 					"parameters": {
 						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "semilayer",
+					"sid": 704184466897638,
+					"parameters": {
+						"scale": "1"
 					}
 				},
 				{

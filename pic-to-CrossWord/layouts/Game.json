@@ -3947,6 +3947,35 @@
 					}
 				},
 				{
+					"type": "semilayer",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 107,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 540,
+						"width": 1920,
+						"height": 1080,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.7
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "levelComplete",
 					"properties": {
 						"initially-visible": true,
@@ -3997,7 +4026,7 @@
 						"x": 980,
 						"y": 408,
 						"width": 231.10844015550603,
-						"height": 248.80095232052085,
+						"height": 248.80095232052082,
 						"originX": 0.5,
 						"originY": 0.44666666666666666,
 						"color": [
