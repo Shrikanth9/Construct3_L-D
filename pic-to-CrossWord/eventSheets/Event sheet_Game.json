@@ -722,15 +722,6 @@
 						"x": "50",
 						"y": "-50"
 					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 892509103766654,
-					"parameters": {
-						"type": "log",
-						"message": "matchCount"
-					}
 				}
 			],
 			"sid": 714572833145067,
@@ -1162,6 +1153,14 @@
 														{
 															"id": "stop",
 															"objectClass": "Audio",
+															"sid": 444476061190321,
+															"parameters": {
+																"tag": "\"match\""
+															}
+														},
+														{
+															"id": "stop",
+															"objectClass": "Audio",
 															"sid": 809606505229315,
 															"parameters": {
 																"tag": "\"place\""
@@ -1382,6 +1381,14 @@
 					"parameters": {
 						"variable": "matchCount",
 						"value": "0"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 245046182173886,
+					"parameters": {
+						"tag": "\"match\""
 					}
 				},
 				{

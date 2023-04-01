@@ -236,6 +236,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 703677598661162,
+							"parameters": {
+								"variable": "level",
+								"value": "floor(random(0,3))"
+							}
+						},
+						{
 							"id": "play",
 							"objectClass": "Audio",
 							"sid": 971821673340795,
