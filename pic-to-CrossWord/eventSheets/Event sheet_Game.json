@@ -1365,15 +1365,24 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 481896431106588,
+					"sid": 840266260405966,
 					"parameters": {
 						"variable": "matchCount",
 						"comparison": 0,
-						"value": "5"
+						"value": "1"
 					}
 				}
 			],
 			"actions": [
+				{
+					"id": "set-paused",
+					"objectClass": "Audio",
+					"sid": 400509230720485,
+					"parameters": {
+						"tag": "\"game\"",
+						"state": "pause"
+					}
+				},
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
@@ -1435,6 +1444,23 @@
 						"volume": "volume",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 102538805092825,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "set-paused",
+					"objectClass": "Audio",
+					"sid": 591399147120202,
+					"parameters": {
+						"tag": "\"game\"",
+						"state": "resume"
 					}
 				}
 			],
