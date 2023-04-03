@@ -104,10 +104,19 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 897584264006835,
+					"sid": 278937965446050,
 					"parameters": {
 						"variable": "touchflag",
-						"value": "true"
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 529071512011600,
+					"parameters": {
+						"variable": "matchCount",
+						"value": "0"
 					}
 				},
 				{
@@ -249,7 +258,11 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 700777777159915
+					"sid": 453086022569828
+				},
+				{
+					"callFunction": "resetArr",
+					"sid": 612735182561775
 				},
 				{
 					"id": "set-visible",
@@ -286,10 +299,10 @@
 				{
 					"id": "set-position",
 					"objectClass": "dragTile",
-					"sid": 601495302891854,
+					"sid": 984424990726050,
 					"parameters": {
 						"x": "Touch.X",
-						"y": "Touch.Y - 200"
+						"y": "Touch.Y"
 					}
 				}
 			],
@@ -715,6 +728,10 @@
 					"sid": 928690715373108
 				},
 				{
+					"callFunction": "resetArr",
+					"sid": 122171351083822
+				},
+				{
 					"id": "set-position",
 					"objectClass": "dragTile",
 					"sid": 262003522928427,
@@ -1054,15 +1071,6 @@
 					],
 					"actions": [
 						{
-							"id": "set-at-x",
-							"objectClass": "ObjectMatchedCount",
-							"sid": 866309787710822,
-							"parameters": {
-								"x": "loopindex",
-								"value": "0"
-							}
-						},
-						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
 							"sid": 921727469227511,
@@ -1151,6 +1159,15 @@
 													],
 													"actions": [
 														{
+															"id": "set-at-x",
+															"objectClass": "objFlags",
+															"sid": 613426242240558,
+															"parameters": {
+																"x": "iterator",
+																"value": "0"
+															}
+														},
+														{
 															"id": "stop",
 															"objectClass": "Audio",
 															"sid": 444476061190321,
@@ -1194,15 +1211,6 @@
 																"loop": "no",
 																"ping-pong": "yes",
 																"repeat-count": "1"
-															}
-														},
-														{
-															"id": "set-at-x",
-															"objectClass": "objFlags",
-															"sid": 970282289564347,
-															"parameters": {
-																"x": "iterator",
-																"value": "0"
 															}
 														},
 														{
@@ -1365,11 +1373,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 840266260405966,
+					"sid": 505627742385585,
 					"parameters": {
 						"variable": "matchCount",
 						"comparison": 0,
-						"value": "1"
+						"value": "5"
 					}
 				}
 			],
@@ -1465,6 +1473,58 @@
 				}
 			],
 			"sid": 794594804444859
+		},
+		{
+			"functionName": "resetArr",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 959645921688857,
+					"parameters": {
+						"variable": "touchflag",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 655884666192986,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 678963202314994,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-at-x",
+							"objectClass": "ObjectMatchedCount",
+							"sid": 737724613017261,
+							"parameters": {
+								"x": "loopindex",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 258987264583602
+				}
+			]
 		}
 	],
 	"sid": 124482044317374
