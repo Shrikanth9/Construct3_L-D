@@ -279,6 +279,15 @@
 					"parameters": {
 						"visibility": "invisible"
 					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 427518295692769,
+					"parameters": {
+						"type": "log",
+						"message": "Browser.Platform"
+					}
 				}
 			],
 			"sid": 602899508687515
@@ -317,7 +326,18 @@
 					"sid": 314080789788158
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 784642625157137,
+					"disabled": true,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "auto"
+					}
+				}
+			],
 			"sid": 677461938637437,
 			"children": [
 				{
@@ -959,7 +979,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 717643789552819,
+									"sid": 509904054733269,
 									"parameters": {
 										"first-value": "distance(blocks.X, blocks.Y, dragTile.X, dragTile.Y)",
 										"comparison": 2,
