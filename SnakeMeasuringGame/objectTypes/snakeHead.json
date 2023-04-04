@@ -1,0 +1,63 @@
+{
+	"name": "snakeHead",
+	"plugin-id": "Sprite",
+	"sid": 187789858596858,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 288544526920447
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 44,
+						"height": 47,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5257279,
+						"collisionPoly": {
+							"points": [
+								0.7727272727272727,
+								0.7872340425531915,
+								0.5,
+								0.9148936170212766,
+								0.09090909090909094,
+								0.9148936170212766,
+								0,
+								0.5,
+								0.09090909090909094,
+								0.08510638297872342,
+								0.5,
+								0.08510638297872342,
+								0.7727272727272727,
+								0.21276595744680848,
+								1,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 575358204708079,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

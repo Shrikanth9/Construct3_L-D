@@ -1,0 +1,640 @@
+{
+	"name": "Event sheet_Game",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "moveFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 825500020629528
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 893745880685789
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 927878555025258,
+					"parameters": {
+						"layer": "\"PopUps\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 997290742898457,
+					"parameters": {
+						"layer": "\"PopUps\"",
+						"interactive": false
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "snakeHead",
+					"sid": 406908384922229,
+					"parameters": {
+						"child": "snakeBody",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": true,
+						"transform-h": true,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
+				}
+			],
+			"sid": 302832562199889
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 655741356849627,
+					"parameters": {
+						"variable": "touchFlag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 814587940885443,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 463883815922608,
+							"parameters": {
+								"object": "PauseBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "PauseBtn",
+							"sid": 659531828752776,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 240762445843408
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 181138590126928
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "PauseBtn",
+							"sid": 570823943119126,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 346814598002046
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 903404848335645,
+							"parameters": {
+								"object": "rightBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "rightBtn",
+							"sid": 176132237426561,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "snakeHead",
+							"sid": 374504787366554,
+							"parameters": {
+								"angle": "0"
+							}
+						}
+					],
+					"sid": 794862664842912
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 933362071491882,
+							"parameters": {
+								"object": "leftBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "leftBtn",
+							"sid": 243301444250296,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "snakeHead",
+							"sid": 985870216813019,
+							"parameters": {
+								"angle": "180"
+							}
+						}
+					],
+					"sid": 899045693261934
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 659899745900829,
+							"parameters": {
+								"object": "upBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "upBtn",
+							"sid": 633091083604099,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "snakeHead",
+							"sid": 430263069282943,
+							"parameters": {
+								"angle": "-90"
+							}
+						}
+					],
+					"sid": 348671754236721
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 285670914869331,
+							"parameters": {
+								"object": "downBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "downBtn",
+							"sid": 778635539757179,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "snakeHead",
+							"sid": 337093893012148,
+							"parameters": {
+								"angle": "90"
+							}
+						}
+					],
+					"sid": 207229559172954
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 189191624337661
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "leftBtn",
+					"sid": 423885432224812,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "rightBtn",
+					"sid": 860160820988871,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "upBtn",
+					"sid": 970271893086259,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "downBtn",
+					"sid": 400156559535439,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 596896926004892,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "resumeBtn",
+							"sid": 495108065599108,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 697569514811309,
+							"parameters": {
+								"layer": "\"PopUps\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 765343424748161,
+							"parameters": {
+								"layer": "\"PopUps\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 312674807020937,
+							"parameters": {
+								"variable": "touchFlag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 418818480218862,
+							"parameters": {
+								"variable": "moveFlag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "resumeBtn",
+							"sid": 617523512795480,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 828600162641819
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "restart",
+							"sid": 742821691242193,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 787683844529929,
+							"parameters": {
+								"variable": "touchFlag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "restart",
+							"sid": 278395760801234,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 789427973066588,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 319791565449058
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Home",
+							"sid": 498162305080970,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 352042619441760,
+							"parameters": {
+								"variable": "touchFlag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Home",
+							"sid": 225610532864343,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 680472359243572,
+							"parameters": {
+								"layout": "Home"
+							}
+						}
+					],
+					"sid": 846255511683546
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "PauseBtn",
+							"sid": 351732922328726,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 917126775157885,
+							"parameters": {
+								"layer": "\"PopUps\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 119002716327513,
+							"parameters": {
+								"layer": "\"PopUps\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 272694957124859,
+							"parameters": {
+								"variable": "touchFlag",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "PauseBtn",
+							"sid": 423004746038233,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 901114738717554,
+							"parameters": {
+								"variable": "moveFlag",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 338189392752358
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 411177753752227,
+					"parameters": {
+						"object": "resumeBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 762924552293923,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 260915273081451
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 839417793313285
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "resumeBtn",
+					"sid": 244621967960322,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 677561380751839
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 924930290039012,
+					"parameters": {
+						"object": "restart"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restart",
+					"sid": 699290602090073,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 795009097620672
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 159623478498567
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "restart",
+					"sid": 912766138476935,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 927164867743859
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 717577508151249,
+					"parameters": {
+						"object": "Home"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Home",
+					"sid": 146936741127846,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 344877244652524
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 465511144617324
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Home",
+					"sid": 667916710478290,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 340652000208557
+		}
+	],
+	"sid": 979658121935842
+}
