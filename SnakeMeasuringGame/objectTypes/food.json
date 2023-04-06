@@ -1,19 +1,14 @@
 {
-	"name": "snakeBody",
+	"name": "food",
 	"plugin-id": "Sprite",
-	"sid": 983891029498556,
+	"sid": 894792633758225,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Pin",
 			"name": "Pin",
-			"sid": 447913141854021
-		},
-		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 492282494403388
+			"sid": 593964467014184
 		}
 	],
 	"effectTypes": [],
@@ -22,14 +17,14 @@
 			{
 				"frames": [
 					{
-						"width": 918,
-						"height": 918,
+						"width": 40,
+						"height": 40,
 						"originX": 0.49945533769063183,
 						"originY": 0.49945533769063183,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3952245,
+						"imageSpriteId": 7664677,
 						"collisionPoly": {
 							"points": [
 								0.053081880900508374,
@@ -54,7 +49,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 429021267456318,
+				"sid": 921809703127535,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

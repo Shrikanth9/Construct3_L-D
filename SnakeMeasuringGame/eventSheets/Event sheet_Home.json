@@ -12,6 +12,16 @@
 			"sid": 460745156013482
 		},
 		{
+			"eventType": "variable",
+			"name": "gameOverFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 177706256583190
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

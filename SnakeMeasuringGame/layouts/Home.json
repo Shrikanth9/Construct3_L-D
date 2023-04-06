@@ -153,7 +153,18 @@
 		}
 	],
 	"sid": 785643818540876,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "PosArray",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 19,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 1920,
 	"height": 1080,

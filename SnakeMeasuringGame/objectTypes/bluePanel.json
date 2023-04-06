@@ -1,0 +1,57 @@
+{
+	"name": "bluePanel",
+	"plugin-id": "Sprite",
+	"sid": 477518664333746,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 248,
+						"height": 105,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2918727,
+						"collisionPoly": {
+							"points": [
+								0.028901734104046242,
+								0.0684931506849315,
+								0.5,
+								0,
+								0.9710982658959537,
+								0.0684931506849315,
+								1,
+								0.5,
+								0.9710982658959537,
+								0.9315068493150684,
+								0.5,
+								1,
+								0.028901734104046242,
+								0.9315068493150684,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 466514145855475,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
