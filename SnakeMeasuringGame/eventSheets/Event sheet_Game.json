@@ -132,6 +132,16 @@
 			"sid": 395948708623712
 		},
 		{
+			"eventType": "variable",
+			"name": "ans",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 773464910565881
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -141,6 +151,23 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "bluePanel",
+					"sid": 815345938326467,
+					"parameters": {
+						"scale": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Option",
+					"sid": 981053646167823,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
@@ -943,6 +970,24 @@
 							"parameters": {
 								"visibility": "visible"
 							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "bluePanel",
+							"sid": 741105402691581,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "1",
+								"end-y": "1",
+								"time": "0.5",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
 						}
 					],
 					"sid": 959873985820236,
@@ -961,16 +1006,60 @@
 							],
 							"actions": [
 								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 999673374857851,
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 184691469732684,
 									"parameters": {
-										"type": "log",
-										"message": "\"ans is : \"&((snakeBody.X * 6)/1920 - error)"
+										"variable": "ans",
+										"value": "(snakeBody.X * 6)/1920 - error"
 									}
 								}
 							],
 							"sid": 889222356323122
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 491975627820255,
+									"parameters": {
+										"object": "Option",
+										"expression": "0",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Option",
+									"sid": 987128486774001,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "size",
+										"end-x": "248",
+										"end-y": "105",
+										"time": "0.5",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Option",
+									"sid": 510448975415601,
+									"parameters": {
+										"text": "floor(ans * 10)/10&\" in\""
+									}
+								}
+							],
+							"sid": 946859015136843
 						}
 					]
 				}
