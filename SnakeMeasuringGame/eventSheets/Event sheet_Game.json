@@ -142,6 +142,36 @@
 			"sid": 773464910565881
 		},
 		{
+			"eventType": "variable",
+			"name": "crctAnswerIndex",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 619839133356284
+		},
+		{
+			"eventType": "variable",
+			"name": "initialBluePanelUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 965607075782518
+		},
+		{
+			"eventType": "variable",
+			"name": "timerFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 932848002989628
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -303,6 +333,15 @@
 					"sid": 375810097562314,
 					"parameters": {
 						"color": "rgbEx(red, green, blue)"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 940673099671627,
+					"parameters": {
+						"variable": "initialBluePanelUID",
+						"value": "bluePanel.UID"
 					}
 				}
 			],
@@ -472,6 +511,16 @@
 							"parameters": {
 								"frame-number": "0"
 							}
+						},
+						{
+							"id": "pause-resume-timer",
+							"objectClass": "Timer",
+							"sid": 202050745889596,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"\"",
+								"state": "resumed"
+							}
 						}
 					],
 					"sid": 828600162641819
@@ -490,6 +539,11 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 820885489026126
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -532,6 +586,11 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 520282302182346
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -615,6 +674,25 @@
 							"sid": 901114738717554,
 							"parameters": {
 								"variable": "moveFlag",
+								"value": "false"
+							}
+						},
+						{
+							"id": "pause-resume-timer",
+							"objectClass": "Timer",
+							"sid": 479641766660407,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"\"",
+								"state": "paused"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 257580258919151,
+							"parameters": {
+								"variable": "timerFlag",
 								"value": "false"
 							}
 						}
@@ -1013,6 +1091,19 @@
 										"variable": "ans",
 										"value": "(snakeBody.X * 6)/1920 - error"
 									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 752292677311925,
+									"parameters": {
+										"variable": "ans",
+										"value": "floor(ans * 10)/10"
+									}
+								},
+								{
+									"callFunction": "setOptions",
+									"sid": 659278370871692
 								}
 							],
 							"sid": 889222356323122
@@ -1049,14 +1140,6 @@
 										"ping-pong": "no",
 										"repeat-count": "1"
 									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "Option",
-									"sid": 510448975415601,
-									"parameters": {
-										"text": "floor(ans * 10)/10&\" in\""
-									}
 								}
 							],
 							"sid": 946859015136843
@@ -1066,59 +1149,24 @@
 			]
 		},
 		{
-			"functionName": "setTimer",
-			"functionCopyPicked": false,
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 588960876009046,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-timer-running",
-							"objectClass": "Timer",
-							"sid": 934569653850061,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"\""
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "start-timer",
-							"objectClass": "Timer",
-							"sid": 591156927564183,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "Timer",
-								"type": "once",
-								"tag": "\"\""
-							}
-						}
-					],
-					"sid": 372754959620650
-				}
-			]
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-timer-running",
-					"objectClass": "Timer",
-					"sid": 633476769811839,
-					"behaviorType": "Timer",
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 488775528533921,
 					"parameters": {
-						"tag": "\"\""
+						"variable": "timerFlag"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 590197610910511,
+					"parameters": {
+						"first-value": "Timer",
+						"comparison": 1,
+						"second-value": "0"
 					}
 				}
 			],
@@ -1137,26 +1185,51 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 996214597810544,
-							"parameters": {
-								"variable": "Timer",
-								"value": "-1"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 527419805930086,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 861416842351251,
+									"parameters": {
+										"first-value": "Timer",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 589195183342436,
+									"parameters": {
+										"variable": "Timer",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Timer",
+									"sid": 764408455717619,
+									"parameters": {
+										"text": "\"00 : 0\"&Timer"
+									}
+								}
+							],
+							"sid": 318178889175045
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 940483712491991,
+									"sid": 808090524006709,
 									"parameters": {
 										"variable": "Timer",
 										"comparison": 5,
@@ -1175,27 +1248,6 @@
 								}
 							],
 							"sid": 241461936678096
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 920323283888726
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "Timer",
-									"sid": 164984957382908,
-									"parameters": {
-										"text": "\"00 : 0\"&Timer"
-									}
-								}
-							],
-							"sid": 786114945681705
 						}
 					]
 				}
@@ -1205,12 +1257,13 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-timer",
-					"objectClass": "Timer",
-					"sid": 741841779327577,
-					"behaviorType": "Timer",
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 186052043068696,
 					"parameters": {
-						"tag": "\"\""
+						"variable": "Timer",
+						"comparison": 0,
+						"value": "0"
 					}
 				}
 			],
@@ -1231,6 +1284,24 @@
 					"parameters": {
 						"variable": "directionFlag",
 						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 191880012288481,
+					"parameters": {
+						"variable": "timerFlag",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 537083792023420,
+					"parameters": {
+						"variable": "Timer",
+						"value": "25"
 					}
 				}
 			],
@@ -1308,8 +1379,22 @@
 							}
 						},
 						{
-							"callFunction": "setTimer",
-							"sid": 495542943082028
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 481791192812632,
+							"parameters": {
+								"variable": "moveFlag",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 603072232532630,
+							"parameters": {
+								"variable": "timerFlag",
+								"value": "true"
+							}
 						}
 					],
 					"sid": 925600898160191
@@ -1380,8 +1465,13 @@
 							}
 						},
 						{
-							"callFunction": "setTimer",
-							"sid": 671308999564875
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 567170911409038,
+							"parameters": {
+								"variable": "timerFlag",
+								"value": "true"
+							}
 						}
 					],
 					"sid": 382021440179985
@@ -1452,8 +1542,13 @@
 							}
 						},
 						{
-							"callFunction": "setTimer",
-							"sid": 674625570597753
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 126786655237537,
+							"parameters": {
+								"variable": "timerFlag",
+								"value": "true"
+							}
 						}
 					],
 					"sid": 842619030925177
@@ -1522,10 +1617,6 @@
 								"variable": "moveFlag",
 								"value": "true"
 							}
-						},
-						{
-							"callFunction": "setTimer",
-							"sid": 526054282055554
 						}
 					],
 					"sid": 204341901569820
@@ -1735,6 +1826,238 @@
 							"sid": 341665667715958
 						}
 					]
+				}
+			]
+		},
+		{
+			"functionName": "setOptions",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 971285677055364,
+					"parameters": {
+						"variable": "crctAnswerIndex",
+						"value": "floor(random(0,4))"
+					}
+				}
+			],
+			"sid": 465942731743511,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 328599207226174,
+							"parameters": {
+								"object": "Option",
+								"expression": "0",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 857768913886730,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 338525828384360,
+									"parameters": {
+										"first-value": "loopindex",
+										"comparison": 0,
+										"second-value": "crctAnswerIndex"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Option",
+									"sid": 759090811941136,
+									"parameters": {
+										"text": "ans&\" in\""
+									}
+								}
+							],
+							"sid": 562420951133717
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 820153445195156
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Option",
+									"sid": 305205544562775,
+									"parameters": {
+										"text": "ans + ((loopindex - crctAnswerIndex) * 0.1)&\" in\""
+									}
+								}
+							],
+							"sid": 413323422580387
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 507030368626123,
+					"parameters": {
+						"object": "bluePanel"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "rightWrong",
+					"sid": 353525084940808,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "1",
+						"end-y": "1",
+						"time": "0.3",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 357022713530440,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 978318795250087,
+							"parameters": {
+								"first-value": "bluePanel.UID - initialBluePanelUID",
+								"comparison": 0,
+								"second-value": "crctAnswerIndex"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "rightWrong",
+							"sid": 645506889380506,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "bluePanel",
+							"sid": 325781106918375,
+							"parameters": {
+								"color": "rgbEx(0, 255, 0)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 505876638894162,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 203863056991486
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 238517102221254,
+							"parameters": {
+								"layout": "Home"
+							}
+						}
+					],
+					"sid": 533479214465930
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 237802940313490
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "rightWrong",
+							"sid": 833459909173972,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "bluePanel",
+							"sid": 271315345470995,
+							"parameters": {
+								"color": "rgbEx(0, 0, 255)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 245210344209290,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 185061899506259
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 492645560877069,
+							"parameters": {
+								"layout": "Home"
+							}
+						}
+					],
+					"sid": 491212145070025
 				}
 			]
 		}
