@@ -893,6 +893,14 @@
 						"variable": "toggleY",
 						"value": "5"
 					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "snakeBody",
+					"sid": 480546379745323,
+					"parameters": {
+						"x": "snakeHead.X"
+					}
 				}
 			],
 			"sid": 165973278492016,
@@ -955,11 +963,11 @@
 							}
 						},
 						{
-							"id": "set-x",
+							"id": "set-y",
 							"objectClass": "snakeBody",
-							"sid": 501632543372557,
+							"sid": 291817684691362,
 							"parameters": {
-								"x": "snakeHead.X"
+								"y": "snakeHead.y"
 							}
 						}
 					],
