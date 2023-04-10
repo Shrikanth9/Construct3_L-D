@@ -22,6 +22,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -105,7 +112,8 @@
 			"question",
 			"bluePanel",
 			"Option",
-			"rightWrong"
+			"rightWrong",
+			"Keyboard"
 		],
 		"subfolders": []
 	},

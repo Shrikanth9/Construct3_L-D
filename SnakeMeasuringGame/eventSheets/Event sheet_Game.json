@@ -1332,6 +1332,14 @@
 							"parameters": {
 								"object": "rightBtn"
 							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 626414715084398,
+							"parameters": {
+								"key": 39
+							}
 						}
 					],
 					"actions": [
@@ -1397,7 +1405,8 @@
 							}
 						}
 					],
-					"sid": 925600898160191
+					"sid": 925600898160191,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -1408,6 +1417,14 @@
 							"sid": 184055585347026,
 							"parameters": {
 								"object": "leftBtn"
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 881538502096145,
+							"parameters": {
+								"key": 37
 							}
 						}
 					],
@@ -1474,7 +1491,8 @@
 							}
 						}
 					],
-					"sid": 382021440179985
+					"sid": 382021440179985,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -1485,6 +1503,14 @@
 							"sid": 893417926646034,
 							"parameters": {
 								"object": "upBtn"
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 208398991551009,
+							"parameters": {
+								"key": 38
 							}
 						}
 					],
@@ -1551,7 +1577,8 @@
 							}
 						}
 					],
-					"sid": 842619030925177
+					"sid": 842619030925177,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -1562,6 +1589,14 @@
 							"sid": 715786254521129,
 							"parameters": {
 								"object": "downBtn"
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 557000431616298,
+							"parameters": {
+								"key": 40
 							}
 						}
 					],
@@ -1617,9 +1652,19 @@
 								"variable": "moveFlag",
 								"value": "true"
 							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 969279281708886,
+							"parameters": {
+								"variable": "timerFlag",
+								"value": "true"
+							}
 						}
 					],
-					"sid": 204341901569820
+					"sid": 204341901569820,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
