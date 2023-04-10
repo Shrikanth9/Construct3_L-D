@@ -246,7 +246,7 @@
 				{
 					"id": "pin-to-object-distance",
 					"objectClass": "snakeBody",
-					"sid": 152116612753894,
+					"sid": 508830709011704,
 					"behaviorType": "Pin",
 					"parameters": {
 						"pin-to": "snakeHead",
@@ -511,16 +511,6 @@
 							"parameters": {
 								"frame-number": "0"
 							}
-						},
-						{
-							"id": "pause-resume-timer",
-							"objectClass": "Timer",
-							"sid": 202050745889596,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"\"",
-								"state": "resumed"
-							}
 						}
 					],
 					"sid": 828600162641819
@@ -675,16 +665,6 @@
 							"parameters": {
 								"variable": "moveFlag",
 								"value": "false"
-							}
-						},
-						{
-							"id": "pause-resume-timer",
-							"objectClass": "Timer",
-							"sid": 479641766660407,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"\"",
-								"state": "paused"
 							}
 						},
 						{
@@ -973,6 +953,14 @@
 								"variable": "xFlag",
 								"value": "true"
 							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "snakeBody",
+							"sid": 501632543372557,
+							"parameters": {
+								"x": "snakeHead.X"
+							}
 						}
 					],
 					"sid": 237861365698367
@@ -1008,6 +996,14 @@
 					],
 					"actions": [
 						{
+							"id": "set-y",
+							"objectClass": "snakeBody",
+							"sid": 960089503069089,
+							"parameters": {
+								"y": "snakeHead.Y"
+							}
+						},
+						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 460831288128259,
@@ -1023,14 +1019,6 @@
 							"parameters": {
 								"variable": "toggleY",
 								"value": "0"
-							}
-						},
-						{
-							"id": "set-y",
-							"objectClass": "snakeBody",
-							"sid": 334831081613773,
-							"parameters": {
-								"y": "snakeHead.Y"
 							}
 						},
 						{
@@ -1403,6 +1391,14 @@
 								"variable": "timerFlag",
 								"value": "true"
 							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "snakeBody",
+							"sid": 619169325487442,
+							"parameters": {
+								"y": "snakeHead.Y"
+							}
 						}
 					],
 					"sid": 925600898160191,
@@ -1488,6 +1484,14 @@
 							"parameters": {
 								"variable": "timerFlag",
 								"value": "true"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "snakeBody",
+							"sid": 731228597249424,
+							"parameters": {
+								"y": "snakeHead.Y"
 							}
 						}
 					],
@@ -1575,6 +1579,14 @@
 								"variable": "timerFlag",
 								"value": "true"
 							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "snakeBody",
+							"sid": 852002424683058,
+							"parameters": {
+								"x": "snakeHead.X"
+							}
 						}
 					],
 					"sid": 842619030925177,
@@ -1660,6 +1672,14 @@
 							"parameters": {
 								"variable": "timerFlag",
 								"value": "true"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "snakeBody",
+							"sid": 677329725753068,
+							"parameters": {
+								"x": "snakeHead.X"
 							}
 						}
 					],

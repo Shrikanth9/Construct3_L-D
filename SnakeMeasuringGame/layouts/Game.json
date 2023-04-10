@@ -1512,11 +1512,7 @@
 					},
 					"uid": 43,
 					"instanceVariables": {},
-					"behaviors": {
-						"Timer": {
-							"properties": {}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": 845,
 						"y": 55,
