@@ -172,6 +172,16 @@
 			"sid": 932848002989628
 		},
 		{
+			"eventType": "variable",
+			"name": "speed",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 214438516830180
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -287,28 +297,28 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 644379338114033,
+					"sid": 314839986310385,
 					"parameters": {
 						"variable": "red",
-						"value": "floor(random(0, 200))"
+						"value": "floor(random(0, 128))"
 					}
 				},
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 706466429004419,
+					"sid": 805335952649836,
 					"parameters": {
 						"variable": "blue",
-						"value": "floor(random(0, 200))"
+						"value": "floor(random(0, 128))"
 					}
 				},
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 769738337075392,
+					"sid": 884615383897544,
 					"parameters": {
 						"variable": "green",
-						"value": "floor(random(0, 200))"
+						"value": "floor(random(0, 128))"
 					}
 				},
 				{
@@ -1009,7 +1019,6 @@
 							"id": "set-y",
 							"objectClass": "snakeBody",
 							"sid": 960089503069089,
-							"disabled": true,
 							"parameters": {
 								"y": "snakeHead.Y"
 							}
@@ -1370,10 +1379,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 228455135709506,
+							"sid": 505903223143479,
 							"parameters": {
 								"variable": "toggleX",
-								"value": "5"
+								"value": "speed"
 							}
 						},
 						{
@@ -1465,10 +1474,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 432829681377323,
+							"sid": 331165820141217,
 							"parameters": {
 								"variable": "toggleX",
-								"value": "-5"
+								"value": "-speed"
 							}
 						},
 						{
@@ -1569,10 +1578,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 898739009157595,
+							"sid": 552149352707971,
 							"parameters": {
 								"variable": "toggleY",
-								"value": "-5"
+								"value": "-speed"
 							}
 						},
 						{
@@ -1664,10 +1673,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 902230975570278,
+							"sid": 807794703857365,
 							"parameters": {
 								"variable": "toggleY",
-								"value": "5"
+								"value": "speed"
 							}
 						},
 						{
@@ -1822,28 +1831,28 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 893533480382332,
+									"sid": 541631802623249,
 									"parameters": {
 										"variable": "red",
-										"value": "floor(random(0, 200))"
+										"value": "floor(random(0, 128))"
 									}
 								},
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 658918685228081,
+									"sid": 547257670251079,
 									"parameters": {
 										"variable": "blue",
-										"value": "floor(random(0, 200))"
+										"value": "floor(random(0, 128))"
 									}
 								},
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 703247907716176,
+									"sid": 319552846373121,
 									"parameters": {
 										"variable": "green",
-										"value": "floor(random(0, 200))"
+										"value": "floor(random(0, 128))"
 									}
 								},
 								{
@@ -1908,6 +1917,51 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-released",
+					"objectClass": "Keyboard",
+					"sid": 919132889316385
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "leftBtn",
+					"sid": 682117828056839,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "rightBtn",
+					"sid": 872966153672353,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "upBtn",
+					"sid": 488297704537315,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "downBtn",
+					"sid": 217126893807049,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 249818288840271
 		},
 		{
 			"functionName": "setOptions",
