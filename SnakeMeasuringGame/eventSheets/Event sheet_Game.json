@@ -898,6 +898,7 @@
 					"id": "set-x",
 					"objectClass": "snakeBody",
 					"sid": 480546379745323,
+					"disabled": true,
 					"parameters": {
 						"x": "snakeHead.X"
 					}
@@ -966,6 +967,7 @@
 							"id": "set-y",
 							"objectClass": "snakeBody",
 							"sid": 291817684691362,
+							"disabled": true,
 							"parameters": {
 								"y": "snakeHead.y"
 							}
@@ -1007,6 +1009,7 @@
 							"id": "set-y",
 							"objectClass": "snakeBody",
 							"sid": 960089503069089,
+							"disabled": true,
 							"parameters": {
 								"y": "snakeHead.Y"
 							}
@@ -1404,6 +1407,7 @@
 							"id": "set-y",
 							"objectClass": "snakeBody",
 							"sid": 619169325487442,
+							"disabled": true,
 							"parameters": {
 								"y": "snakeHead.Y"
 							}
@@ -1498,6 +1502,7 @@
 							"id": "set-y",
 							"objectClass": "snakeBody",
 							"sid": 731228597249424,
+							"disabled": true,
 							"parameters": {
 								"y": "snakeHead.Y"
 							}
@@ -1592,6 +1597,7 @@
 							"id": "set-x",
 							"objectClass": "snakeBody",
 							"sid": 852002424683058,
+							"disabled": true,
 							"parameters": {
 								"x": "snakeHead.X"
 							}
@@ -1686,6 +1692,7 @@
 							"id": "set-x",
 							"objectClass": "snakeBody",
 							"sid": 677329725753068,
+							"disabled": true,
 							"parameters": {
 								"x": "snakeHead.X"
 							}
