@@ -175,11 +175,41 @@
 			"eventType": "variable",
 			"name": "speed",
 			"type": "number",
-			"initialValue": "5",
+			"initialValue": "6",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 214438516830180
+		},
+		{
+			"eventType": "variable",
+			"name": "tweenTime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 197718618181016
+		},
+		{
+			"eventType": "variable",
+			"name": "xPos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 323512988295178
+		},
+		{
+			"eventType": "variable",
+			"name": "yPos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 358762176214441
 		},
 		{
 			"eventType": "block",
@@ -209,33 +239,6 @@
 					}
 				},
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 394572000066740,
-					"parameters": {
-						"variable": "red",
-						"value": "floor(random(0, 250))"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 320108608196183,
-					"parameters": {
-						"variable": "blue",
-						"value": "floor(random(0, 250))"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 911813259322410,
-					"parameters": {
-						"variable": "green",
-						"value": "floor(random(0, 250))"
-					}
-				},
-				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
 					"sid": 927878555025258,
@@ -257,6 +260,7 @@
 					"id": "pin-to-object-distance",
 					"objectClass": "snakeBody",
 					"sid": 508830709011704,
+					"disabled": true,
 					"behaviorType": "Pin",
 					"parameters": {
 						"pin-to": "snakeHead",
@@ -861,7 +865,72 @@
 							}
 						}
 					],
-					"sid": 963818793920187
+					"sid": 963818793920187,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 676870205284364,
+									"parameters": {
+										"object": "snakeBody",
+										"expression": "0",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 656575172837415,
+									"parameters": {
+										"variable": "tweenTime",
+										"value": "0.13 * (loopindex + 1)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 854651747431768,
+									"parameters": {
+										"variable": "xPos",
+										"value": "snakeHead.x - toggleX * loopindex * 0.9"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 686410024135583,
+									"parameters": {
+										"variable": "yPos",
+										"value": "snakeHead.Y - toggleY * loopindex * 0.9"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "snakeBody",
+									"sid": 331955457736223,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "xPos",
+										"end-y": "yPos",
+										"time": "tweenTime",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 132538515228344
+						}
+					]
 				}
 			]
 		},
@@ -1016,6 +1085,24 @@
 					],
 					"actions": [
 						{
+							"id": "stop-tweens",
+							"objectClass": "snakeBody",
+							"sid": 700661639604938,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 762074094315966,
+							"parameters": {
+								"variable": "moveFlag",
+								"value": "false"
+							}
+						},
+						{
 							"id": "set-y",
 							"objectClass": "snakeBody",
 							"sid": 960089503069089,
@@ -1082,9 +1169,35 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 613116058569221,
+									"parameters": {
+										"object": "snakeBody",
+										"expression": "0",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "snakeBody",
+									"sid": 633998387529289,
+									"parameters": {
+										"x": "snakeHead.X + (loopindex + 1) * 40"
+									}
+								}
+							],
+							"sid": 650902907126020
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "pick-by-unique-id",
 									"objectClass": "snakeBody",
-									"sid": 238576590582570,
+									"sid": 664863528515498,
 									"parameters": {
 										"unique-id": "currentUID"
 									}
@@ -1094,7 +1207,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 184691469732684,
+									"sid": 208165838716798,
 									"parameters": {
 										"variable": "ans",
 										"value": "(snakeBody.X * 6)/1920 - error"
@@ -1103,18 +1216,23 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 752292677311925,
+									"sid": 861632263383316,
 									"parameters": {
 										"variable": "ans",
 										"value": "floor(ans * 10)/10"
 									}
 								},
 								{
-									"callFunction": "setOptions",
-									"sid": 659278370871692
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 202956661218157,
+									"parameters": {
+										"variable": "crctAnswerIndex",
+										"value": "floor(random(0,4))"
+									}
 								}
 							],
-							"sid": 889222356323122
+							"sid": 840893173446169
 						},
 						{
 							"eventType": "block",
@@ -1122,7 +1240,7 @@
 								{
 									"id": "for-each-ordered",
 									"objectClass": "System",
-									"sid": 491975627820255,
+									"sid": 210492772745051,
 									"parameters": {
 										"object": "Option",
 										"expression": "0",
@@ -1132,9 +1250,17 @@
 							],
 							"actions": [
 								{
+									"id": "set-text",
+									"objectClass": "Option",
+									"sid": 583916180799019,
+									"parameters": {
+										"text": "ans + ((loopindex - crctAnswerIndex) * 0.1)&\" in\""
+									}
+								},
+								{
 									"id": "tween-two-properties",
 									"objectClass": "Option",
-									"sid": 987128486774001,
+									"sid": 982303860204747,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"\"",
@@ -1150,7 +1276,7 @@
 									}
 								}
 							],
-							"sid": 946859015136843
+							"sid": 789016773497778
 						}
 					]
 				}
@@ -1377,6 +1503,14 @@
 							}
 						},
 						{
+							"id": "set-angle",
+							"objectClass": "snakeBody",
+							"sid": 634590028103569,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 505903223143479,
@@ -1467,6 +1601,14 @@
 							"id": "set-angle",
 							"objectClass": "snakeHead",
 							"sid": 447320096668322,
+							"parameters": {
+								"angle": "180"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "snakeBody",
+							"sid": 292030591152344,
 							"parameters": {
 								"angle": "180"
 							}
@@ -1567,6 +1709,14 @@
 							}
 						},
 						{
+							"id": "set-angle",
+							"objectClass": "snakeBody",
+							"sid": 601160370302723,
+							"parameters": {
+								"angle": "-90"
+							}
+						},
+						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 154352751341624,
@@ -1657,6 +1807,14 @@
 							"id": "set-angle",
 							"objectClass": "snakeHead",
 							"sid": 647613939073496,
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "snakeBody",
+							"sid": 451768858197594,
 							"parameters": {
 								"angle": "90"
 							}
@@ -1962,97 +2120,6 @@
 				}
 			],
 			"sid": 249818288840271
-		},
-		{
-			"functionName": "setOptions",
-			"functionCopyPicked": false,
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 971285677055364,
-					"parameters": {
-						"variable": "crctAnswerIndex",
-						"value": "floor(random(0,4))"
-					}
-				}
-			],
-			"sid": 465942731743511,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each-ordered",
-							"objectClass": "System",
-							"sid": 328599207226174,
-							"parameters": {
-								"object": "Option",
-								"expression": "0",
-								"order": "ascending"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 857768913886730,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 338525828384360,
-									"parameters": {
-										"first-value": "loopindex",
-										"comparison": 0,
-										"second-value": "crctAnswerIndex"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "Option",
-									"sid": 759090811941136,
-									"parameters": {
-										"text": "ans&\" in\""
-									}
-								}
-							],
-							"sid": 562420951133717
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 820153445195156
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "Option",
-									"sid": 305205544562775,
-									"parameters": {
-										"text": "ans + ((loopindex - crctAnswerIndex) * 0.1)&\" in\""
-									}
-								}
-							],
-							"sid": 413323422580387
-						}
-					]
-				}
-			]
 		},
 		{
 			"eventType": "block",
