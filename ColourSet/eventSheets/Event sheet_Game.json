@@ -600,9 +600,9 @@
 				{
 					"id": "set-size",
 					"objectClass": "scoreGameOver",
-					"sid": 950126358777484,
+					"sid": 287512274279900,
 					"parameters": {
-						"width": "432",
+						"width": "632",
 						"height": "96"
 					}
 				},
@@ -769,10 +769,10 @@
 		},
 		{
 			"functionName": "showPopUp",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -823,10 +823,10 @@
 		},
 		{
 			"functionName": "hidePopUp",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -918,10 +918,10 @@
 		},
 		{
 			"functionName": "3x3",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1075,10 +1075,10 @@
 		},
 		{
 			"functionName": "4x4",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1232,10 +1232,10 @@
 		},
 		{
 			"functionName": "reset",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1453,10 +1453,10 @@
 		},
 		{
 			"functionName": "selectLevel",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
