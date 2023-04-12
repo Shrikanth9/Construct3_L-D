@@ -1,0 +1,120 @@
+{
+	"name": "Event sheet_Home",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "touchFlag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 460745156013482
+		},
+		{
+			"eventType": "variable",
+			"name": "gameOverFlag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 177706256583190
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 536617076200655,
+					"parameters": {
+						"object": "playBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "playBtn",
+					"sid": 837278721369272,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 434629328506557
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 776910307063548
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "playBtn",
+					"sid": 839225074565806,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 428729606325030
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 902624713081546
+				}
+			],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 973749935541903,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "auto"
+					}
+				}
+			],
+			"sid": 314169190624813,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "playBtn",
+							"sid": 844897784355649,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 462808481022844,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 875504690790869
+				}
+			]
+		}
+	],
+	"sid": 892276727457936
+}
