@@ -5,10 +5,22 @@
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [],
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
 	"uniqueId": "oz1zze584no",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"Ground",
+			"sky",
+			"mountain"
+		],
 		"subfolders": []
 	},
 	"autosaveData": null,
@@ -19,13 +31,13 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Game"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Event_sheet_Game"
 		],
 		"subfolders": []
 	},

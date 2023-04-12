@@ -1,0 +1,57 @@
+{
+	"name": "mountain",
+	"plugin-id": "Sprite",
+	"sid": 493853566135484,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1665,
+						"height": 215,
+						"originX": 0.5777777777777777,
+						"originY": -0.8046511627906977,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 99715,
+						"collisionPoly": {
+							"points": [
+								0.0012012012012012011,
+								0,
+								0.5777777777777777,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0.5777777777777777,
+								1,
+								0.11291291291291292,
+								1,
+								0,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 193142292678789,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
