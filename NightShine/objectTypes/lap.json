@@ -1,0 +1,57 @@
+{
+	"name": "lap",
+	"plugin-id": "Sprite",
+	"sid": 369110813888384,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 107,
+						"height": 91,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8955976,
+						"collisionPoly": {
+							"points": [
+								0.29906542056074764,
+								0.3516483516483517,
+								0.5,
+								0.23076923076923078,
+								0.9345794392523364,
+								0.07692307692307693,
+								0.7289719626168224,
+								0.5,
+								0.6448598130841121,
+								0.5824175824175825,
+								0.5,
+								0.7032967032967034,
+								0.056074766355140186,
+								0.9340659340659341,
+								0.16822429906542055,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 394272625413738,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

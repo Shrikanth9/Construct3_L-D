@@ -1,0 +1,212 @@
+{
+	"name": "raven",
+	"plugin-id": "Sprite",
+	"sid": 217656609233171,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 369443875190146
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 364338756214844
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 520813772690784
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 70,
+						"height": 214,
+						"originX": 0.6571428571428571,
+						"originY": 0.5093457943925234,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7135320,
+						"collisionPoly": {
+							"points": [
+								0.24285714285714285,
+								0.07476635514018691,
+								0.6571428571428571,
+								0.009345794392523364,
+								0.8857142857142857,
+								0.13551401869158877,
+								0.8142857142857143,
+								0.5093457943925234,
+								0.8285714285714286,
+								0.8644859813084113,
+								0.6571428571428571,
+								0.9719626168224299,
+								0.24285714285714285,
+								0.9439252336448598,
+								0.12857142857142856,
+								0.5093457943925234
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 131,
+						"height": 223,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6498271,
+						"collisionPoly": {
+							"points": [
+								0.366412213740458,
+								0.21524663677130046,
+								0.5,
+								0.07174887892376682,
+								0.7633587786259542,
+								0.13901345291479822,
+								0.8015267175572519,
+								0.5,
+								0.648854961832061,
+								0.7937219730941704,
+								0.5,
+								0.9506726457399103,
+								0.16030534351145037,
+								0.905829596412556,
+								0.2748091603053435,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 125,
+						"height": 204,
+						"originX": 0.504,
+						"originY": 0.49754901960784315,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9193519,
+						"collisionPoly": {
+							"points": [
+								0.48,
+								0.2990196078431373,
+								0.504,
+								0.05392156862745098,
+								0.816,
+								0.12254901960784313,
+								0.76,
+								0.49754901960784315,
+								0.968,
+								0.9656862745098039,
+								0.504,
+								0.8284313725490197,
+								0.096,
+								0.9313725490196079,
+								0.272,
+								0.49754901960784315
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 268495830823485,
+				"name": "walk",
+				"isLooping": true,
+				"isPingPong": true,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 120,
+						"height": 203,
+						"originX": 0.5125,
+						"originY": 0.49014778325123154,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9196779,
+						"collisionPoly": {
+							"points": [
+								0.5833333333333333,
+								0.49014778325123154,
+								0.7416666666666667,
+								0.8275862068965517,
+								0.5125,
+								0.8177339901477833,
+								0.09166666666666667,
+								0.9408866995073891,
+								0.22499999999999998,
+								0.49014778325123154,
+								0.31666666666666665,
+								0.1724137931034483,
+								0.5125,
+								0.034482758620689655,
+								0.8,
+								0.11822660098522167
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 213,
+						"height": 186,
+						"originX": 0.4976525821596244,
+						"originY": 0.510752688172043,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9250446,
+						"collisionPoly": {
+							"points": [
+								0.5821596244131455,
+								0.510752688172043,
+								0.6244131455399061,
+								0.596774193548387,
+								0.4976525821596244,
+								0.553763440860215,
+								0.215962441314554,
+								0.7741935483870968,
+								0.16431924882629112,
+								0.510752688172043,
+								0.3145539906103286,
+								0.3602150537634409,
+								0.4976525821596244,
+								0.11290322580645161,
+								0.784037558685446,
+								0.24193548387096775
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 662384823632630,
+				"name": "fight",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
