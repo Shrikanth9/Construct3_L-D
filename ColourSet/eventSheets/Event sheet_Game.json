@@ -185,6 +185,10 @@
 					"sid": 846411704835439
 				},
 				{
+					"type": "comment",
+					"text": "importing json file through AJAX object"
+				},
+				{
 					"id": "request-project-file",
 					"objectClass": "AJAX",
 					"sid": 257591428210279,
@@ -698,6 +702,10 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Parse the imported json file."
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -917,6 +925,10 @@
 			"sid": 694610805670046
 		},
 		{
+			"eventType": "comment",
+			"text": "Generates 3x3 colored tiles based on the json data."
+		},
+		{
 			"functionName": "3x3",
 			"functionCopyPicked": false,
 			"functionDescription": "",
@@ -944,6 +956,10 @@
 						"ping-pong": "no",
 						"repeat-count": "1"
 					}
+				},
+				{
+					"type": "comment",
+					"text": "Level for 3x3 selected at random."
 				},
 				{
 					"id": "set-eventvar-value",
@@ -1051,6 +1067,10 @@
 							}
 						},
 						{
+							"type": "comment",
+							"text": "Adding answer of the current level of 3x3 to the dictionary."
+						},
+						{
 							"id": "add-key",
 							"objectClass": "Dictionary",
 							"sid": 880868081487532,
@@ -1072,6 +1092,10 @@
 					"sid": 372078151287352
 				}
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Generates 4x4 colored tiles based on the json data."
 		},
 		{
 			"functionName": "4x4",
@@ -1101,6 +1125,10 @@
 						"ping-pong": "no",
 						"repeat-count": "1"
 					}
+				},
+				{
+					"type": "comment",
+					"text": "Level for 4x4 selected at random."
 				},
 				{
 					"id": "set-eventvar-value",
@@ -1208,6 +1236,10 @@
 							}
 						},
 						{
+							"type": "comment",
+							"text": "Adding answer of the current level of 4x4 to the dictionary."
+						},
+						{
 							"id": "add-key",
 							"objectClass": "Dictionary",
 							"sid": 766825454317346,
@@ -1284,6 +1316,10 @@
 				}
 			],
 			"sid": 130564110153584
+		},
+		{
+			"eventType": "comment",
+			"text": "Checking if the lives are empty (14 is the initial UID of the first instance)"
 		},
 		{
 			"eventType": "block",
@@ -1450,6 +1486,10 @@
 					"sid": 257113936960168
 				}
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Select type of grid at random (3x3 or 4x4)"
 		},
 		{
 			"functionName": "selectLevel",

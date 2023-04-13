@@ -249,6 +249,10 @@
 					}
 				},
 				{
+					"type": "comment",
+					"text": "Importing json file through AJAX object"
+				},
+				{
 					"id": "request-project-file",
 					"objectClass": "AJAX",
 					"sid": 672758028538249,
@@ -896,6 +900,10 @@
 					"sid": 914942430161327
 				},
 				{
+					"eventType": "comment",
+					"text": "Calculate the weight exerted by stone after it's placed on weightChecker "
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -1366,6 +1374,10 @@
 			"sid": 420069723290096
 		},
 		{
+			"eventType": "comment",
+			"text": "Parse the imported json file."
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1399,11 +1411,15 @@
 			"sid": 181641847004616
 		},
 		{
+			"eventType": "comment",
+			"text": "Set the positions of stones on weightChecker OR sideRacks after it is selected and dropped by the user."
+		},
+		{
 			"functionName": "setStones",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1508,11 +1524,15 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Setup all the data needed for the current level"
+		},
+		{
 			"functionName": "setframesAndArrays",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1760,10 +1780,10 @@
 		},
 		{
 			"functionName": "showPopUp",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1823,10 +1843,10 @@
 		},
 		{
 			"functionName": "hidePopUp",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1935,11 +1955,15 @@
 			"sid": 771324370248977
 		},
 		{
+			"eventType": "comment",
+			"text": "Measure the weight and move the weightchecker to up/down "
+		},
+		{
 			"functionName": "MeasureWeight",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1991,11 +2015,15 @@
 			"sid": 189462986208934
 		},
 		{
+			"eventType": "comment",
+			"text": "Check if selected answer is right or wrong."
+		},
+		{
 			"functionName": "checkAnswer",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",

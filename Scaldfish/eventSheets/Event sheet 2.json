@@ -187,6 +187,10 @@
 			"sid": 863951155538713,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Animation of the building"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -371,6 +375,10 @@
 									}
 								},
 								{
+									"type": "comment",
+									"text": "Placed buildings is made as a child of first building"
+								},
+								{
 									"id": "add-child",
 									"objectClass": "game_bg",
 									"sid": 318786742443425,
@@ -381,7 +389,9 @@
 										"transform-w": true,
 										"transform-h": true,
 										"transform-a": true,
+										"transform-o": false,
 										"transform-z-elevation": true,
+										"transform-visibility": false,
 										"destroy-with-parent": false
 									}
 								},
@@ -608,6 +618,10 @@
 								}
 							],
 							"sid": 392770135655436
+						},
+						{
+							"eventType": "comment",
+							"text": "Compare if width of currently placed building is greater than previous building"
 						},
 						{
 							"eventType": "block",

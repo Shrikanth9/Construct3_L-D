@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 32703,
+	"savedWithRelease": 33600,
 	"name": "Rock_paper_scissor game",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -106,16 +106,7 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [
-				{
-					"name": "main.js",
-					"type": "application/javascript",
-					"sid": 805166246211044,
-					"script-info": {
-						"purpose": "main"
-					}
-				}
-			],
+			"items": [],
 			"subfolders": []
 		},
 		"sound": {

@@ -163,7 +163,9 @@
 						"transform-w": true,
 						"transform-h": true,
 						"transform-a": true,
+						"transform-o": false,
 						"transform-z-elevation": true,
+						"transform-visibility": false,
 						"destroy-with-parent": false
 					}
 				},
@@ -178,7 +180,9 @@
 						"transform-w": true,
 						"transform-h": true,
 						"transform-a": true,
+						"transform-o": false,
 						"transform-z-elevation": true,
+						"transform-visibility": false,
 						"destroy-with-parent": false
 					}
 				},
@@ -193,7 +197,9 @@
 						"transform-w": true,
 						"transform-h": true,
 						"transform-a": true,
+						"transform-o": false,
 						"transform-z-elevation": true,
+						"transform-visibility": false,
 						"destroy-with-parent": false
 					}
 				},
@@ -208,7 +214,9 @@
 						"transform-w": true,
 						"transform-h": true,
 						"transform-a": true,
+						"transform-o": false,
 						"transform-z-elevation": true,
+						"transform-visibility": false,
 						"destroy-with-parent": false
 					}
 				},
@@ -326,18 +334,7 @@
 					"sid": 314080789788158
 				}
 			],
-			"actions": [
-				{
-					"id": "request-fullscreen",
-					"objectClass": "Browser",
-					"sid": 784642625157137,
-					"disabled": true,
-					"parameters": {
-						"mode": "stretch-letterbox-scale",
-						"navigation-ui": "auto"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 677461938637437,
 			"children": [
 				{
@@ -934,11 +931,15 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Placing the alphabet after it's drag and dropped by the user"
+		},
+		{
 			"functionName": "PlacingAlphabets",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1055,11 +1056,15 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Check if the placed Alphabet is in proper block"
+		},
+		{
 			"functionName": "checkAlphabets",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1496,10 +1501,10 @@
 		},
 		{
 			"functionName": "resetArr",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",

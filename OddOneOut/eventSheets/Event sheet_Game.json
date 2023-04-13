@@ -184,6 +184,10 @@
 					}
 				},
 				{
+					"type": "comment",
+					"text": "Requesting project file through AJAX object"
+				},
+				{
 					"id": "request-project-file",
 					"objectClass": "AJAX",
 					"sid": 791436109138129,
@@ -194,6 +198,10 @@
 				}
 			],
 			"sid": 638308306856133
+		},
+		{
+			"eventType": "comment",
+			"text": "Parsing json file"
 		},
 		{
 			"eventType": "block",
@@ -1200,11 +1208,15 @@
 			"sid": 204143958450975
 		},
 		{
+			"eventType": "comment",
+			"text": "Picking random question from the questions array and placing on layout"
+		},
+		{
 			"functionName": "generateQuestion",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1376,10 +1388,10 @@
 		},
 		{
 			"functionName": "setArray",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1418,10 +1430,10 @@
 		},
 		{
 			"functionName": "shuffleArray",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1486,11 +1498,15 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Check if the selected answer is right or wrong"
+		},
+		{
 			"functionName": "checkAnswer",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1668,10 +1684,10 @@
 		},
 		{
 			"functionName": "Playanimation",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1700,10 +1716,10 @@
 		},
 		{
 			"functionName": "hidePopUp",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1762,10 +1778,10 @@
 		},
 		{
 			"functionName": "showPopUp",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",

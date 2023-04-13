@@ -264,6 +264,10 @@
 					"sid": 899552331422444
 				},
 				{
+					"eventType": "comment",
+					"text": "Shuffling the array"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -318,6 +322,10 @@
 					"sid": 365245929322621
 				},
 				{
+					"eventType": "comment",
+					"text": "Shuffling the Prices"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -360,6 +368,10 @@
 						}
 					],
 					"sid": 933632189757780
+				},
+				{
+					"eventType": "comment",
+					"text": "Shuffling the Objects"
 				},
 				{
 					"eventType": "block",
@@ -613,10 +625,10 @@
 		},
 		{
 			"functionName": "hidePopUp",
+			"functionCopyPicked": false,
 			"functionDescription": "hides the popUP",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -672,10 +684,10 @@
 		},
 		{
 			"functionName": "showPopUp",
+			"functionCopyPicked": false,
 			"functionDescription": "hides the popUP",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1641,6 +1653,10 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Calculate the total price of selected notes and compare with the expected price"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1790,10 +1806,10 @@
 		},
 		{
 			"functionName": "setUID",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",

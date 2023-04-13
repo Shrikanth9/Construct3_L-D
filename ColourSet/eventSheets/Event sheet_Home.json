@@ -32,6 +32,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "hiding the helpScreen."
+				},
+				{
 					"id": "move-to-bottom",
 					"objectClass": "gameBG",
 					"sid": 849647644043637
