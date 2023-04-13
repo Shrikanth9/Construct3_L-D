@@ -1,5 +1,5 @@
 {
-	"name": "Sprite2",
+	"name": "Obstacle",
 	"plugin-id": "Sprite",
 	"sid": 742683631690474,
 	"isGlobal": false,
@@ -19,12 +19,12 @@
 					{
 						"width": 251,
 						"height": 388,
-						"originX": -2.8286852589641436,
-						"originY": -0.49226804123711343,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6728704,
+						"imageSpriteId": 8147766,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -48,7 +48,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2926154,
+						"imageSpriteId": 5938923,
 						"collisionPoly": {
 							"points": [
 								0.00392156862745098,
@@ -80,7 +80,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 720648,
+						"imageSpriteId": 8377761,
 						"collisionPoly": {
 							"points": [
 								0.003861003861003861,
