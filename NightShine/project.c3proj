@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -58,7 +65,8 @@
 			"lap",
 			"Keyboard",
 			"raven",
-			"Sprite"
+			"Sprite",
+			"Browser"
 		],
 		"subfolders": []
 	},

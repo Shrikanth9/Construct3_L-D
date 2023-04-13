@@ -21,7 +21,7 @@
 					"world": {
 						"x": 2312,
 						"y": 150.11070110701107,
-						"width": 4000,
+						"width": 4000.0000000000005,
 						"height": 360,
 						"originX": 0.5779650812763396,
 						"originY": 0.41697416974169743,
@@ -50,7 +50,7 @@
 					"world": {
 						"x": 2314,
 						"y": 1266,
-						"width": 4000,
+						"width": 4000.0000000000005,
 						"height": 760,
 						"originX": 0.5784726398075767,
 						"originY": 1.2451612903225806,
@@ -113,7 +113,7 @@
 								"directions": "dir-4",
 								"set-angle": "no",
 								"allow-sliding": false,
-								"default-controls": true,
+								"default-controls": false,
 								"enabled": true
 							}
 						},
