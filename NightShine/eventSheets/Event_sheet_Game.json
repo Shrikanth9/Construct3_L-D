@@ -288,18 +288,18 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "for-each-ordered",
-					"objectClass": "System",
-					"sid": 193166285003953,
+					"id": "pick-nearestfurthest",
+					"objectClass": "Obstacle",
+					"sid": 711644166327308,
 					"parameters": {
-						"object": "Obstacle",
-						"expression": "0",
-						"order": "ascending"
+						"which": "nearest",
+						"x": "raven.X",
+						"y": "raven.Y"
 					}
 				}
 			],
 			"actions": [],
-			"sid": 455774396750596,
+			"sid": 453121378049946,
 			"children": [
 				{
 					"eventType": "block",
@@ -307,7 +307,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 798362885698063,
+							"sid": 329381821248214,
 							"parameters": {
 								"first-value": "abs(raven.BBoxBottom - Obstacle.BBoxBottom)",
 								"comparison": 2,
@@ -317,7 +317,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 150139518232708,
+							"sid": 959515158786257,
 							"parameters": {
 								"first-value": "abs(raven.BBoxRight - Obstacle.BBoxRight)",
 								"comparison": 2,
@@ -326,7 +326,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 104834439735856,
+					"sid": 871814605318190,
 					"children": [
 						{
 							"eventType": "block",
@@ -334,7 +334,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 594913628667538,
+									"sid": 167584499502778,
 									"parameters": {
 										"first-value": "raven.BBoxBottom",
 										"comparison": 4,
@@ -346,7 +346,7 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "raven",
-									"sid": 669906531246722,
+									"sid": 196498264353919,
 									"parameters": {
 										"layer": "1"
 									}
@@ -354,13 +354,13 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "Obstacle",
-									"sid": 990766323191990,
+									"sid": 389006933807941,
 									"parameters": {
 										"layer": "0"
 									}
 								}
 							],
-							"sid": 683692946358304
+							"sid": 127952172041461
 						},
 						{
 							"eventType": "block",
@@ -368,14 +368,14 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 408133096861547
+									"sid": 858207343058444
 								}
 							],
 							"actions": [
 								{
 									"id": "move-to-layer",
 									"objectClass": "raven",
-									"sid": 531705833899134,
+									"sid": 212575311836070,
 									"parameters": {
 										"layer": "0"
 									}
@@ -383,13 +383,13 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "Obstacle",
-									"sid": 216129301511098,
+									"sid": 899888130511861,
 									"parameters": {
 										"layer": "1"
 									}
 								}
 							],
-							"sid": 865436890688880
+							"sid": 177872858589311
 						}
 					]
 				}
@@ -399,18 +399,18 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "for-each-ordered",
-					"objectClass": "System",
-					"sid": 991082374743048,
+					"id": "pick-nearestfurthest",
+					"objectClass": "skullMonster",
+					"sid": 957214633065363,
 					"parameters": {
-						"object": "skullMonster",
-						"expression": "0",
-						"order": "ascending"
+						"which": "nearest",
+						"x": "raven.X",
+						"y": "raven.Y"
 					}
 				}
 			],
 			"actions": [],
-			"sid": 977029763763037,
+			"sid": 318815196434094,
 			"children": [
 				{
 					"eventType": "block",
@@ -418,7 +418,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 297207049586035,
+							"sid": 482327744400415,
 							"parameters": {
 								"first-value": "abs(raven.BBoxBottom - skullMonster.BBoxBottom)",
 								"comparison": 2,
@@ -428,7 +428,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 613924167975128,
+							"sid": 153051609225771,
 							"parameters": {
 								"first-value": "abs(raven.BBoxRight - skullMonster.BBoxRight)",
 								"comparison": 2,
@@ -437,7 +437,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 826877149877389,
+					"sid": 182801136127325,
 					"children": [
 						{
 							"eventType": "block",
@@ -445,7 +445,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 793898836571875,
+									"sid": 685082338607252,
 									"parameters": {
 										"first-value": "raven.BBoxBottom",
 										"comparison": 4,
@@ -457,7 +457,7 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "raven",
-									"sid": 812187102587798,
+									"sid": 698182212476808,
 									"parameters": {
 										"layer": "1"
 									}
@@ -465,13 +465,13 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "skullMonster",
-									"sid": 894522369643343,
+									"sid": 398475041947053,
 									"parameters": {
 										"layer": "0"
 									}
 								}
 							],
-							"sid": 467266298577278
+							"sid": 607745211014946
 						},
 						{
 							"eventType": "block",
@@ -479,14 +479,14 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 418767342540876
+									"sid": 785610563114791
 								}
 							],
 							"actions": [
 								{
 									"id": "move-to-layer",
 									"objectClass": "raven",
-									"sid": 329824951019883,
+									"sid": 864766983637673,
 									"parameters": {
 										"layer": "0"
 									}
@@ -494,13 +494,13 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "skullMonster",
-									"sid": 935777431758544,
+									"sid": 966674985317347,
 									"parameters": {
 										"layer": "1"
 									}
 								}
 							],
-							"sid": 117883338778899
+							"sid": 584660837819786
 						}
 					]
 				}
