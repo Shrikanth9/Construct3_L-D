@@ -2,6 +2,16 @@
 	"name": "Event_sheet_Game",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "touchFlag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 837660337453044
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -28,155 +38,7 @@
 				{
 					"id": "key-is-down",
 					"objectClass": "Keyboard",
-					"sid": 159282482882127,
-					"parameters": {
-						"key": 37
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-mirrored",
-					"objectClass": "raven",
-					"sid": 820153791812171,
-					"parameters": {
-						"state": "mirrored"
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "raven",
-					"sid": 150521740196859,
-					"parameters": {
-						"animation": "\"walk\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-animation-speed",
-					"objectClass": "raven",
-					"sid": 222972169152421,
-					"parameters": {
-						"speed": "5"
-					}
-				}
-			],
-			"sid": 225066445208157
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 644753134138949,
-					"parameters": {
-						"key": 39
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-mirrored",
-					"objectClass": "raven",
-					"sid": 937180815238314,
-					"parameters": {
-						"state": "not-mirrored"
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "raven",
-					"sid": 937385443225044,
-					"parameters": {
-						"animation": "\"walk\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-animation-speed",
-					"objectClass": "raven",
-					"sid": 812801054875973,
-					"parameters": {
-						"speed": "5"
-					}
-				}
-			],
-			"sid": 381946546234567
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 763231460305317,
-					"parameters": {
-						"key": 38
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation",
-					"objectClass": "raven",
-					"sid": 111438333265717,
-					"parameters": {
-						"animation": "\"walk\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-animation-speed",
-					"objectClass": "raven",
-					"sid": 889664888203931,
-					"parameters": {
-						"speed": "5"
-					}
-				}
-			],
-			"sid": 254345991983604
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 394191538668036,
-					"parameters": {
-						"key": 40
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation",
-					"objectClass": "raven",
-					"sid": 718734984869529,
-					"parameters": {
-						"animation": "\"walk\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-animation-speed",
-					"objectClass": "raven",
-					"sid": 673772376402467,
-					"parameters": {
-						"speed": "5"
-					}
-				}
-			],
-			"sid": 479770713720615
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 987381125913716,
+					"sid": 234333134044481,
 					"parameters": {
 						"key": 88
 					}
@@ -184,61 +46,226 @@
 			],
 			"actions": [
 				{
+					"id": "set-animation-speed",
+					"objectClass": "raven",
+					"sid": 184072598815927,
+					"parameters": {
+						"speed": "5"
+					}
+				},
+				{
 					"id": "set-animation",
 					"objectClass": "raven",
-					"sid": 298594037202664,
+					"sid": 515446406067918,
 					"parameters": {
 						"animation": "\"fight\"",
 						"from": "beginning"
 					}
-				},
-				{
-					"id": "set-animation-speed",
-					"objectClass": "raven",
-					"sid": 745393681643102,
-					"parameters": {
-						"speed": "5"
-					}
 				}
 			],
-			"sid": 850590004737133
+			"sid": 857478568101360
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-moving",
-					"objectClass": "raven",
-					"sid": 420813741343823,
-					"behaviorType": "8Direction",
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 822612720634833,
+					"parameters": {
+						"key": 88
+					},
 					"isInverted": true
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 258464865823231,
+			"children": [
 				{
-					"id": "stop-animation",
-					"objectClass": "raven",
-					"sid": 832114176117648
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 762742872993797,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-speed",
+							"objectClass": "raven",
+							"sid": 475173383433353,
+							"parameters": {
+								"speed": "5"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "raven",
+							"sid": 441173592497751,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "raven",
+							"sid": 827054244093084,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "raven",
+							"sid": 724454035089023,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 878453728386757
 				},
 				{
-					"id": "set-animation-frame",
-					"objectClass": "raven",
-					"sid": 203875407053831,
-					"parameters": {
-						"frame-number": "0"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 769684018874079,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-speed",
+							"objectClass": "raven",
+							"sid": 137806292876295,
+							"parameters": {
+								"speed": "5"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "raven",
+							"sid": 108588243397566,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "raven",
+							"sid": 244520059755759,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "raven",
+							"sid": 479307659126800,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 563387514247649
 				},
 				{
-					"id": "set-animation",
-					"objectClass": "raven",
-					"sid": 754294888053372,
-					"parameters": {
-						"animation": "\"walk\"",
-						"from": "beginning"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 447260823945631,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-speed",
+							"objectClass": "raven",
+							"sid": 633785259275739,
+							"parameters": {
+								"speed": "5"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "raven",
+							"sid": 372817272663853,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "raven",
+							"sid": 445591193692969,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 237082556705822
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 553750285116791,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-speed",
+							"objectClass": "raven",
+							"sid": 214654966689901,
+							"parameters": {
+								"speed": "5"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "raven",
+							"sid": 103729156222028,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "raven",
+							"sid": 917660262224492,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 654851003226177
 				}
-			],
-			"sid": 469246481931562
+			]
 		}
 	],
 	"sid": 926089363705902
