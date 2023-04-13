@@ -28,6 +28,23 @@
 					"parameters": {
 						"speed": "0"
 					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "skullMonster",
+					"sid": 620124554604598,
+					"parameters": {
+						"animation": "\"walk\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation-speed",
+					"objectClass": "skullMonster",
+					"sid": 736079103431621,
+					"parameters": {
+						"speed": "5"
+					}
 				}
 			],
 			"sid": 865973628913864
@@ -266,6 +283,88 @@
 					"sid": 654851003226177
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 243129664633307,
+					"parameters": {
+						"first-value": "distance(skullMonster.X, skullMonster.Y, raven.X, raven.Y)",
+						"comparison": 2,
+						"second-value": "250"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 232858813458870,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 766623519566168,
+							"parameters": {
+								"interval-seconds": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "skullMonster",
+							"sid": 866242961467105,
+							"parameters": {
+								"animation": "\"fight\"",
+								"from": "current-frame"
+							}
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "skullMonster",
+							"sid": 724788315454447,
+							"parameters": {
+								"speed": "5"
+							}
+						}
+					],
+					"sid": 885172088251198
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 332744442518568
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "skullMonster",
+					"sid": 707529267918603,
+					"parameters": {
+						"animation": "\"walk\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation-speed",
+					"objectClass": "skullMonster",
+					"sid": 243055473193793,
+					"parameters": {
+						"speed": "5"
+					}
+				}
+			],
+			"sid": 950189102433901
 		}
 	],
 	"sid": 926089363705902
