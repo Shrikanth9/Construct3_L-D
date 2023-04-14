@@ -45,6 +45,15 @@
 					"parameters": {
 						"speed": "5"
 					}
+				},
+				{
+					"id": "add-obstacle",
+					"objectClass": "skullMonster",
+					"sid": 210875003368380,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"obstacle": "Obstacle"
+					}
 				}
 			],
 			"sid": 865973628913864
@@ -144,6 +153,23 @@
 							"parameters": {
 								"control": "left"
 							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "skullMonster",
+							"sid": 914409735092544,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "skullMonster",
+							"sid": 152675012286410,
+							"parameters": {
+								"speed": "5"
+							}
 						}
 					],
 					"sid": 878453728386757
@@ -194,6 +220,23 @@
 							"parameters": {
 								"control": "right"
 							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "skullMonster",
+							"sid": 479190848889776,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "skullMonster",
+							"sid": 865650589631081,
+							"parameters": {
+								"speed": "5"
+							}
 						}
 					],
 					"sid": 563387514247649
@@ -235,6 +278,23 @@
 							"behaviorType": "8Direction",
 							"parameters": {
 								"control": "up"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "skullMonster",
+							"sid": 177907777121963,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "skullMonster",
+							"sid": 359569203414988,
+							"parameters": {
+								"speed": "5"
 							}
 						}
 					],
@@ -278,9 +338,137 @@
 							"parameters": {
 								"control": "down"
 							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "skullMonster",
+							"sid": 216508307136704,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "skullMonster",
+							"sid": 500734694048855,
+							"parameters": {
+								"speed": "5"
+							}
 						}
 					],
 					"sid": 654851003226177
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "pick-nearestfurthest",
+					"objectClass": "Obstacle",
+					"sid": 492615894740543,
+					"parameters": {
+						"which": "nearest",
+						"x": "skullMonster.X",
+						"y": "skullMonster.Y"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 483869946171647,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 733616421997385,
+							"parameters": {
+								"first-value": "abs(skullMonster.BBoxBottom - Obstacle.BBoxBottom)",
+								"comparison": 2,
+								"second-value": "Obstacle.Height"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 794957921450803,
+							"parameters": {
+								"first-value": "abs(skullMonster.BBoxRight - Obstacle.BBoxRight)",
+								"comparison": 2,
+								"second-value": "Obstacle.Width"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 625502396486220,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 866570185253122,
+									"parameters": {
+										"first-value": "skullMonster.BBoxBottom",
+										"comparison": 4,
+										"second-value": "Obstacle.BBoxBottom"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "skullMonster",
+									"sid": 862552094424359,
+									"parameters": {
+										"layer": "1"
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "Obstacle",
+									"sid": 330806470258874,
+									"parameters": {
+										"layer": "0"
+									}
+								}
+							],
+							"sid": 759848403291782
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 615569553752646
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "skullMonster",
+									"sid": 953185877211089,
+									"parameters": {
+										"layer": "0"
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "Obstacle",
+									"sid": 853490936087006,
+									"parameters": {
+										"layer": "1"
+									}
+								}
+							],
+							"sid": 237732126035824
+						}
+					]
 				}
 			]
 		},
@@ -505,6 +693,134 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 168934918232381,
+					"parameters": {
+						"first-value": "abs(raven.X - skullMonster.X)",
+						"comparison": 2,
+						"second-value": "200"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 845218656903116,
+					"parameters": {
+						"first-value": "abs(raven.Y - skullMonster.Y)",
+						"comparison": 2,
+						"second-value": "100"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 112055127741355,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 734414155368284,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "skullMonster",
+							"sid": 620208149884184,
+							"parameters": {
+								"animation": "\"fight\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 958711576168732
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 305152873320353,
+					"parameters": {
+						"first-value": "raven.X - skullMonster.X",
+						"comparison": 2,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-position",
+					"objectClass": "skullMonster",
+					"sid": 616546998010764,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "raven.X + 100",
+						"y": "raven.y",
+						"mode": "direct"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "skullMonster",
+					"sid": 182659747281292,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 461431512108282
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 857680324221119,
+					"parameters": {
+						"first-value": "raven.X - skullMonster.X",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-position",
+					"objectClass": "skullMonster",
+					"sid": 817369393478874,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "raven.X - 100",
+						"y": "raven.y",
+						"mode": "direct"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "skullMonster",
+					"sid": 506829185497568,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 466223350668399
 		}
 	],
 	"sid": 926089363705902

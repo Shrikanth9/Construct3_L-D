@@ -4,7 +4,23 @@
 	"sid": 561192558042472,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 872126150106640
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 679035225960983
+		},
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 871727977294400
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -46,21 +62,13 @@
 						"collisionPoly": {
 							"points": [
 								0,
-								0,
-								0.379747769009514,
-								0,
+								0.8829365079365076,
 								1,
-								0,
+								0.8789682539682535,
 								1,
-								0.49184782608695654,
-								1,
-								1,
-								0.379747769009514,
 								1,
 								0,
-								1,
-								0,
-								0.49184782608695654
+								1
 							]
 						},
 						"useCollisionPoly": true,
@@ -89,21 +97,13 @@
 						"collisionPoly": {
 							"points": [
 								0,
-								0,
-								0.4010989010989011,
-								0,
-								0.989010989010989,
-								0,
-								0.989010989010989,
-								0.5,
-								0.989010989010989,
+								0.8829365079365076,
 								1,
-								0.4010989010989011,
+								0.8789682539682535,
+								1,
 								1,
 								0,
-								1,
-								0,
-								0.5
+								1
 							]
 						},
 						"useCollisionPoly": true,
@@ -120,22 +120,14 @@
 						"imageSpriteId": 7326877,
 						"collisionPoly": {
 							"points": [
-								1,
-								0.5,
-								1,
-								1,
-								0.5989010989010989,
-								1,
-								0.01098901098901095,
-								1,
-								0.01098901098901095,
-								0.5,
-								0.01098901098901095,
 								0,
-								0.5989010989010989,
-								0,
+								0.8829365079365076,
 								1,
-								0
+								0.8789682539682535,
+								1,
+								1,
+								0,
+								1
 							]
 						},
 						"useCollisionPoly": true,
@@ -148,7 +140,7 @@
 				"isPingPong": true,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 0
+				"speed": 5
 			}
 		],
 		"subfolders": []
