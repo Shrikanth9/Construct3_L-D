@@ -49,8 +49,8 @@
 				{
 					"id": "add-obstacle",
 					"objectClass": "skullMonster",
-					"sid": 210875003368380,
-					"behaviorType": "LineOfSight",
+					"sid": 456482828567675,
+					"behaviorType": "Pathfinding",
 					"parameters": {
 						"obstacle": "Obstacle"
 					}
@@ -718,7 +718,14 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "skullMonster",
+					"sid": 930078957174009,
+					"behaviorType": "MoveTo"
+				}
+			],
 			"sid": 112055127741355,
 			"children": [
 				{
@@ -752,75 +759,110 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-two-values",
+					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 305152873320353,
+					"sid": 312512179076478,
 					"parameters": {
-						"first-value": "raven.X - skullMonster.X",
-						"comparison": 2,
-						"second-value": "0"
+						"interval-seconds": "1"
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 318514117569529,
+			"children": [
 				{
-					"id": "move-to-position",
-					"objectClass": "skullMonster",
-					"sid": 616546998010764,
-					"behaviorType": "MoveTo",
-					"parameters": {
-						"x": "raven.X + 100",
-						"y": "raven.y",
-						"mode": "direct"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 964356428787979,
+							"parameters": {
+								"first-value": "raven.X - skullMonster.X",
+								"comparison": 2,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "find-path",
+							"objectClass": "skullMonster",
+							"sid": 913643702218090,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"x": "raven.X + 100",
+								"y": "raven.Y"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "skullMonster",
+							"sid": 799452831258914,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 415505892793056
 				},
 				{
-					"id": "set-mirrored",
-					"objectClass": "skullMonster",
-					"sid": 182659747281292,
-					"parameters": {
-						"state": "not-mirrored"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 917319736205935,
+							"parameters": {
+								"first-value": "raven.X - skullMonster.X",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "find-path",
+							"objectClass": "skullMonster",
+							"sid": 718758718771558,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"x": "raven.X - 100",
+								"y": "raven.Y"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "skullMonster",
+							"sid": 569597594362193,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 321967160309009
 				}
-			],
-			"sid": 461431512108282
+			]
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 857680324221119,
-					"parameters": {
-						"first-value": "raven.X - skullMonster.X",
-						"comparison": 4,
-						"second-value": "0"
-					}
+					"id": "on-path-found",
+					"objectClass": "skullMonster",
+					"sid": 568677381465646,
+					"behaviorType": "Pathfinding"
 				}
 			],
 			"actions": [
 				{
-					"id": "move-to-position",
+					"id": "move-along-path",
 					"objectClass": "skullMonster",
-					"sid": 817369393478874,
-					"behaviorType": "MoveTo",
-					"parameters": {
-						"x": "raven.X - 100",
-						"y": "raven.y",
-						"mode": "direct"
-					}
-				},
-				{
-					"id": "set-mirrored",
-					"objectClass": "skullMonster",
-					"sid": 506829185497568,
-					"parameters": {
-						"state": "mirrored"
-					}
+					"sid": 712314018182177,
+					"behaviorType": "Pathfinding"
 				}
 			],
-			"sid": 466223350668399
+			"sid": 530165521057094
 		}
 	],
 	"sid": 926089363705902
