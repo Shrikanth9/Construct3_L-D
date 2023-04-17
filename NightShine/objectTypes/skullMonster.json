@@ -11,11 +11,6 @@
 			"sid": 872126150106640
 		},
 		{
-			"behaviorId": "LOS",
-			"name": "LineOfSight",
-			"sid": 679035225960983
-		},
-		{
 			"behaviorId": "Pathfinding",
 			"name": "Pathfinding",
 			"sid": 871727977294400

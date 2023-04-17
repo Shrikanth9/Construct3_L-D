@@ -710,22 +710,15 @@
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 845218656903116,
+					"sid": 704261980053743,
 					"parameters": {
 						"first-value": "abs(raven.Y - skullMonster.Y)",
 						"comparison": 2,
-						"second-value": "100"
+						"second-value": "10"
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "stop",
-					"objectClass": "skullMonster",
-					"sid": 930078957174009,
-					"behaviorType": "MoveTo"
-				}
-			],
+			"actions": [],
 			"sid": 112055127741355,
 			"children": [
 				{
@@ -748,6 +741,14 @@
 							"parameters": {
 								"animation": "\"fight\"",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "playerHealth",
+							"sid": 888371446037870,
+							"parameters": {
+								"width": "playerHealth.Width - 10"
 							}
 						}
 					],
@@ -863,6 +864,38 @@
 				}
 			],
 			"sid": 530165521057094
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-width",
+					"objectClass": "playerHealth",
+					"sid": 932131096516253,
+					"parameters": {
+						"comparison": 3,
+						"width": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "raven",
+					"sid": 152957766146983
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "skullMonster",
+					"sid": 801955963070271
+				},
+				{
+					"id": "destroy",
+					"objectClass": "playerHealth",
+					"sid": 143646017041596
+				}
+			],
+			"sid": 116039890594820
 		}
 	],
 	"sid": 926089363705902

@@ -172,8 +172,8 @@
 						}
 					},
 					"world": {
-						"x": 2000,
-						"y": 1145,
+						"x": 2000.431822161515,
+						"y": 1141.8333041488916,
 						"width": 4000,
 						"height": 124,
 						"originX": 0.5,
@@ -353,14 +353,6 @@
 								"enabled": true
 							}
 						},
-						"LineOfSight": {
-							"properties": {
-								"obstacles": "solids",
-								"range": 10000,
-								"cone-of-view": 360,
-								"use-collision-cells": true
-							}
-						},
 						"Pathfinding": {
 							"properties": {
 								"cell-size": 30,
@@ -383,6 +375,45 @@
 						"width": 144.5201654090918,
 						"height": 266.80645921678484,
 						"originX": 0.4010989010989011,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "playerHealth",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 6,
+					"instanceVariables": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 78,
+						"y": 80,
+						"width": 604,
+						"height": 34,
+						"originX": 0,
 						"originY": 0.5,
 						"color": [
 							1,

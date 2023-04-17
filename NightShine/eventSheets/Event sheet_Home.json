@@ -1,0 +1,306 @@
+{
+	"name": "Event sheet_Home",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "soundFlag",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 902034342261246
+		},
+		{
+			"eventType": "variable",
+			"name": "hoverFlag",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 501572681611172
+		},
+		{
+			"eventType": "variable",
+			"name": "frame",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 201881435117216
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 324701559352557,
+					"parameters": {
+						"object": "PlayBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "PlayBtn",
+					"sid": 294692216334626,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 594977114976020,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 928150394841469,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "PlayBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 489083257934015,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 317695894421872
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 364718259994107
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "PlayBtn",
+					"sid": 592729086602098,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 892629271887917
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 300136639051276,
+					"parameters": {
+						"variable": "hoverFlag"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 476626064014018,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 515549424036117,
+							"parameters": {
+								"object": "Sound"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Sound",
+							"sid": 388397198070172,
+							"parameters": {
+								"frame-number": "soundFlag"
+							}
+						}
+					],
+					"sid": 996525825152079,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 500551768378932,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "Sound"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 273523320861198,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 906390706011811,
+											"parameters": {
+												"variable": "soundFlag",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Sound",
+											"sid": 598168111712332,
+											"parameters": {
+												"frame-number": "2"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 165918051705684,
+											"parameters": {
+												"variable": "soundFlag",
+												"value": "3"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 330422285112177,
+											"parameters": {
+												"variable": "hoverFlag",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 122855616127995,
+											"parameters": {
+												"variable": "frame",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 919692527837271
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 743537425416156
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Sound",
+											"sid": 442546284757298,
+											"parameters": {
+												"frame-number": "0"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 752600539123008,
+											"parameters": {
+												"variable": "soundFlag",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 730881963778437,
+											"parameters": {
+												"variable": "hoverFlag",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 760711540928656,
+											"parameters": {
+												"variable": "frame",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 746480646168129
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 561655103750350,
+					"parameters": {
+						"object": "Sound"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 951371126216355,
+					"parameters": {
+						"variable": "hoverFlag",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Sound",
+					"sid": 754446554840111,
+					"parameters": {
+						"frame-number": "frame"
+					}
+				}
+			],
+			"sid": 729959526232781
+		}
+	],
+	"sid": 403027711596709
+}
