@@ -80,9 +80,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "key-is-down",
+					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 234333134044481,
+					"sid": 941810627856485,
 					"parameters": {
 						"key": 88
 					}
@@ -151,9 +151,9 @@
 						{
 							"id": "set-width",
 							"objectClass": "EnemyHealthBar",
-							"sid": 138983609501613,
+							"sid": 606829691054373,
 							"parameters": {
-								"width": "EnemyHealthBar.Width - 5"
+								"width": "EnemyHealthBar.Width - 15"
 							}
 						}
 					],
