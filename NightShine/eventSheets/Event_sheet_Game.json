@@ -12,6 +12,16 @@
 			"sid": 837660337453044
 		},
 		{
+			"eventType": "variable",
+			"name": "fightFlag",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 739047028491157
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -54,6 +64,14 @@
 					"parameters": {
 						"obstacle": "Obstacle"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite2",
+					"sid": 456182170047123,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 865973628913864
@@ -72,6 +90,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 219146384121097,
+					"parameters": {
+						"variable": "fightFlag",
+						"value": "1"
+					}
+				},
+				{
 					"id": "set-animation-speed",
 					"objectClass": "raven",
 					"sid": 184072598815927,
@@ -87,9 +114,52 @@
 						"animation": "\"fight\"",
 						"from": "beginning"
 					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 662933644830101,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 795452334630367,
+					"parameters": {
+						"variable": "fightFlag",
+						"value": "0"
+					}
 				}
 			],
-			"sid": 857478568101360
+			"sid": 857478568101360,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "skullMonster",
+							"sid": 583045105450458,
+							"parameters": {
+								"object": "raven"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-width",
+							"objectClass": "EnemyHealthBar",
+							"sid": 994823882542362,
+							"parameters": {
+								"width": "EnemyHealthBar.Width - 15"
+							}
+						}
+					],
+					"sid": 458511724385463
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -599,6 +669,7 @@
 			],
 			"actions": [],
 			"sid": 318815196434094,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -626,6 +697,7 @@
 					],
 					"actions": [],
 					"sid": 182801136127325,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -659,7 +731,8 @@
 									}
 								}
 							],
-							"sid": 607745211014946
+							"sid": 607745211014946,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -688,7 +761,8 @@
 									}
 								}
 							],
-							"sid": 584660837819786
+							"sid": 584660837819786,
+							"disabled": true
 						}
 					]
 				}
@@ -733,26 +807,45 @@
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 958711576168732,
+					"children": [
 						{
-							"id": "set-animation",
-							"objectClass": "skullMonster",
-							"sid": 620208149884184,
-							"parameters": {
-								"animation": "\"fight\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-width",
-							"objectClass": "playerHealth",
-							"sid": 888371446037870,
-							"parameters": {
-								"width": "playerHealth.Width - 10"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 399655474952971,
+									"parameters": {
+										"variable": "fightFlag",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "skullMonster",
+									"sid": 936451112792603,
+									"parameters": {
+										"animation": "\"fight\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "playerHealth",
+									"sid": 899512151250718,
+									"parameters": {
+										"width": "playerHealth.Width - 10"
+									}
+								}
+							],
+							"sid": 471250465353129
 						}
-					],
-					"sid": 958711576168732
+					]
 				}
 			]
 		},
@@ -893,9 +986,85 @@
 					"id": "destroy",
 					"objectClass": "playerHealth",
 					"sid": 143646017041596
+				},
+				{
+					"id": "set-width",
+					"objectClass": "playerHealth",
+					"sid": 775165837038517,
+					"parameters": {
+						"width": "0"
+					}
 				}
 			],
 			"sid": 116039890594820
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-width",
+					"objectClass": "EnemyHealthBar",
+					"sid": 270087247087427,
+					"parameters": {
+						"comparison": 3,
+						"width": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-animation",
+					"objectClass": "skullMonster",
+					"sid": 310605954051844
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "skullMonster",
+					"sid": 488566735868227,
+					"behaviorType": "Fade"
+				},
+				{
+					"id": "set-width",
+					"objectClass": "EnemyHealthBar",
+					"sid": 355311316096796,
+					"parameters": {
+						"width": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Sprite2",
+					"sid": 244407737988053,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 733404595779713,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 196216305601303,
+							"parameters": {
+								"interval-seconds": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-fade",
+							"objectClass": "Sprite2",
+							"sid": 603726400329723,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 101855126173056
+				}
+			]
 		}
 	],
 	"sid": 926089363705902

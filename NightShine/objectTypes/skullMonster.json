@@ -14,6 +14,11 @@
 			"behaviorId": "Pathfinding",
 			"name": "Pathfinding",
 			"sid": 871727977294400
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 790607151789727
 		}
 	],
 	"effectTypes": [],
