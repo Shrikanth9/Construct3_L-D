@@ -139,9 +139,9 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-collision-with-another-object",
+							"id": "is-overlapping-another-object",
 							"objectClass": "skullMonster",
-							"sid": 583045105450458,
+							"sid": 966963097027088,
 							"parameters": {
 								"object": "raven"
 							}
@@ -151,9 +151,9 @@
 						{
 							"id": "set-width",
 							"objectClass": "EnemyHealthBar",
-							"sid": 994823882542362,
+							"sid": 138983609501613,
 							"parameters": {
-								"width": "EnemyHealthBar.Width - 15"
+								"width": "EnemyHealthBar.Width - 5"
 							}
 						}
 					],
@@ -784,11 +784,11 @@
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 704261980053743,
+					"sid": 961670815580048,
 					"parameters": {
 						"first-value": "abs(raven.Y - skullMonster.Y)",
 						"comparison": 2,
-						"second-value": "10"
+						"second-value": "50"
 					}
 				}
 			],
