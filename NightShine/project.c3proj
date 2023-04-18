@@ -112,9 +112,18 @@
 			"Sound",
 			"EnemyHealthBar",
 			"goto",
-			"Pause"
+			"Pause",
+			"Sprite",
+			"stageComplete",
+			"stageComplete2"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": [],
+				"name": "Object types"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
@@ -126,8 +135,7 @@
 		"items": [
 			"Home",
 			"Game",
-			"GameOver",
-			"Pause"
+			"GameOver"
 		],
 		"subfolders": []
 	},

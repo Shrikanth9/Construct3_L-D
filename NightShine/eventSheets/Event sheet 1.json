@@ -1,5 +1,10 @@
 {
 	"name": "Event sheet 1",
-	"events": [],
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet_Home"
+		}
+	],
 	"sid": 421583324279569
 }

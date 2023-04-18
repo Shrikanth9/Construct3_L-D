@@ -1,5 +1,10 @@
 {
 	"name": "Event sheet_GameOver",
-	"events": [],
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet_Home"
+		}
+	],
 	"sid": 656580228797998
 }

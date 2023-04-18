@@ -22,6 +22,16 @@
 			"sid": 739047028491157
 		},
 		{
+			"eventType": "variable",
+			"name": "gameOverFlag",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 723828927699022
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -994,6 +1004,15 @@
 					"parameters": {
 						"width": "0"
 					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 817835803548369,
+					"parameters": {
+						"variable": "gameOverFlag",
+						"value": "2"
+					}
 				}
 			],
 			"sid": 116039890594820
@@ -1038,6 +1057,15 @@
 					"parameters": {
 						"visibility": "visible"
 					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 946189977291896,
+					"parameters": {
+						"variable": "gameOverFlag",
+						"value": "1"
+					}
 				}
 			],
 			"sid": 733404595779713,
@@ -1063,6 +1091,31 @@
 						}
 					],
 					"sid": 101855126173056
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "raven",
+							"sid": 846123892791444,
+							"parameters": {
+								"comparison": 4,
+								"x-co-ordinate": "goto.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 672455945997755,
+							"parameters": {
+								"layout": "GameOver"
+							}
+						}
+					],
+					"sid": 447411223839937
 				}
 			]
 		},
@@ -1104,16 +1157,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 340548493059814,
-							"parameters": {
-								"layout": "GameOver"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 702385979457821
 				}
 			]
