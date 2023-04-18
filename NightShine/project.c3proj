@@ -100,18 +100,19 @@
 			"lap",
 			"Keyboard",
 			"raven",
-			"Sprite",
+			"bottomSolid",
 			"Browser",
 			"skullMonster",
 			"Obstacle",
 			"playerHealth",
-			"Sprite3",
-			"Sprite4",
+			"Homescreen",
+			"GameTitle",
 			"PlayBtn",
 			"Mouse",
 			"Sound",
 			"EnemyHealthBar",
-			"Sprite2"
+			"goto",
+			"Pause"
 		],
 		"subfolders": []
 	},
@@ -124,14 +125,18 @@
 	"layouts": {
 		"items": [
 			"Home",
-			"Game"
+			"Game",
+			"GameOver",
+			"Pause"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
 			"Event_sheet_Game",
-			"Event sheet_Home"
+			"Event sheet_Home",
+			"Event sheet_GameOver",
+			"Event sheet 1"
 		],
 		"subfolders": []
 	},

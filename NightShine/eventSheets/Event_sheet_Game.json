@@ -67,7 +67,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "Sprite2",
+					"objectClass": "goto",
 					"sid": 456182170047123,
 					"parameters": {
 						"visibility": "invisible"
@@ -1033,7 +1033,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "Sprite2",
+					"objectClass": "goto",
 					"sid": 244407737988053,
 					"parameters": {
 						"visibility": "visible"
@@ -1057,7 +1057,7 @@
 					"actions": [
 						{
 							"id": "start-fade",
-							"objectClass": "Sprite2",
+							"objectClass": "goto",
 							"sid": 603726400329723,
 							"behaviorType": "Fade"
 						}
@@ -1065,6 +1065,79 @@
 					"sid": 101855126173056
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 940719283471466,
+					"parameters": {
+						"object": "Pause"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Pause",
+					"sid": 318882782241494,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 649131288172805,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 792693631575288,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Pause"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 340548493059814,
+							"parameters": {
+								"layout": "GameOver"
+							}
+						}
+					],
+					"sid": 702385979457821
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 795399057838166
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Pause",
+					"sid": 389892979662469,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 236083059127596
 		}
 	],
 	"sid": 926089363705902
